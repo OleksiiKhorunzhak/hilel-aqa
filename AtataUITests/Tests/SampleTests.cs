@@ -4,7 +4,7 @@
     {
         [Test]
         public void SampleTest() =>
-            Go.To<OrdinaryPage>()
+            Go.To<OrdinaryPage>(url: "https://atata.io/")
                 .PageTitle.Should.Contain("Atata");
     }
 }

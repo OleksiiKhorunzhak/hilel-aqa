@@ -3,11 +3,12 @@ using Microsoft.Playwright;
 
 namespace AtataUITests.Tests
 {
+    [Description("Verify Buttons on buttons page")]
     public sealed class ButtonsTests : UITestFixture
     {
-        [Test]
+        [Test, Description("Verify Click Me button"), Retry(2)]
         public void ClickButtonTest() =>
-            //Given I go to DemoQa Elements page 
+            // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
             // When I Click the Buttons button in menu
             Buttons.ClickAndGo().
@@ -20,9 +21,9 @@ namespace AtataUITests.Tests
             // And I NOT see "You have done a dynamic click" text.
             DoubleClickMessage.Should.Not.BeVisible();
 
-        [Test]
+        [Test, Description("Verify Double Click Me button"), Retry(2)]
         public void DoubleClickButtonTest() =>
-            //Given I go to DemoQa Elements page 
+            // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
             // When I Click the Buttons button in menu
             Buttons.ClickAndGo().
@@ -36,16 +37,15 @@ namespace AtataUITests.Tests
             DinamicClickMessage.Should.Not.BeVisible();
 
 
-        [Test]
+        [Test, Description("Verify Rigth Click Me button"), Retry(2)]
         public void RigthClickButtonTest() =>
-            //Given I go to DemoQa Elements page 
+            // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
             // When I Click the Buttons button in menu
-            // And I see 'buttons page
             Buttons.ClickAndGo().
             // And I see 'buttons' page
             PageUrl.Should.Be("https://demoqa.com/buttons").
-            // And I click the 'RigthClickMee' button
+            // And I click the 'RigthClickMe' button
             RigthClickMe.RightClick().
             // Then  I see "You have done a dynamic click" text.
             RightClickMessage.Should.Be("You have done a right click").

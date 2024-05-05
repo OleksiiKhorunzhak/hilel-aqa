@@ -9,8 +9,7 @@ namespace PlaywrigthUITests.Tests
     [Description("Verify Buttons on buttons page")]
     class ButtonsTests
     {
-        [Test]
-        [Description("Verify Buttons on buttons page")]
+        [Test, Description("Verify Click Me button"), Retry(2)]
         public async Task ClickButtonTest()
         {
             // Background
@@ -21,7 +20,7 @@ namespace PlaywrigthUITests.Tests
             });
             var context = await browser.NewContextAsync();
             var page = await context.NewPageAsync();
-            //Given I go to DemoQa Elements page 
+            // Given I go to DemoQa Elements page 
             await page.GotoAsync("https://demoqa.com/elements");
             // When I Click the Buttons button in menu
             await page.Locator("li:has-text('Buttons')").ClickAsync();
@@ -30,14 +29,14 @@ namespace PlaywrigthUITests.Tests
             // And I click the 'Click Me' button
             await page.GetByRole(AriaRole.Button, new() { NameString = "Click Me" }).ClickAsync();
             // Then  I see "You have done a dynamic click" text.
-            var isVisible = await page.GetByText("You have done a double click").IsVisibleAsync();
+            var isVisible = await page.GetByText("You have done a dynamic click").IsVisibleAsync();
             Assert.IsTrue(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");
             // And I NOT see "You have done a dynamic click" text.
             var isNotVisible = await page.GetByText("You have done a double click").IsVisibleAsync();
             Assert.IsFalse(isNotVisible, "The element with text 'You have done a double click' should NOT be visible after clicking the button.");
         }
 
-        [Test]
+        [Test, Description("Verify Double Click Me button"), Retry(2)]
         public async Task DoubleClickButtonTest()
         {
             using var playwright = await Playwright.CreateAsync();
@@ -47,7 +46,7 @@ namespace PlaywrigthUITests.Tests
             });
             var context = await browser.NewContextAsync();
             var page = await context.NewPageAsync();
-            //Given I go to DemoQA Elements page 
+            // Given I go to DemoQA Elements page 
             await page.GotoAsync("https://demoqa.com/elements");
             // When I Click the Buttons button in menu
             await page.Locator("li:has-text('Buttons')").ClickAsync();
@@ -63,7 +62,7 @@ namespace PlaywrigthUITests.Tests
             Assert.IsFalse(isNotVisible, "The element with text 'You have done a dynamic click' should NOT be visible after a double click.");
         }
 
-        [Test]
+        [Test, Description("Verify Rigth Click Me button"), Retry(2)]
         public async Task RigthClickButtonTest()
         {
             using var playwright = await Playwright.CreateAsync();
@@ -73,7 +72,7 @@ namespace PlaywrigthUITests.Tests
             });
             var context = await browser.NewContextAsync();
             var page = await context.NewPageAsync();
-            //Given I go to DemoQA Elements page 
+            // Given I go to DemoQA Elements page 
             await page.GotoAsync("https://demoqa.com/elements");
             // When I Click the Buttons button in menu
             await page.Locator("li:has-text('Buttons')").ClickAsync();

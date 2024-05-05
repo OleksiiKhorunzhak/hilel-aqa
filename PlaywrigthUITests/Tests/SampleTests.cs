@@ -2,7 +2,7 @@ namespace PlaywrigthUITests.Tests
 {
     [Parallelizable(ParallelScope.Self)]
     [TestFixture]
-    public class Tests : PageTest
+    public class SampleTests : PageTest
     {
         [Test]
         public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()

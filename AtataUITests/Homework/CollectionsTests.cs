@@ -1,8 +1,9 @@
 ﻿using NUnit.Framework.Legacy;
 using System.Collections.Immutable;
 using NUnit.Framework;
+using AtataUITests;
 
-namespace AtataUITests
+namespace Homework
 {
     public sealed class CollectionsTests : UITestFixture
     {
