@@ -1,6 +1,4 @@
-﻿using Atata;
-
-namespace AtataUITests.PageObjects
+﻿namespace AtataUITests.PageObjects
 {
     [Url("https://demoqa.com/")]
     public abstract class DemoQAPage<TOwner> : Page<TOwner>

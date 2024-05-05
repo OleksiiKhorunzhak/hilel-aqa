@@ -1,5 +1,4 @@
 ﻿using AtataUITests.PageObjects;
-using Microsoft.Playwright;
 
 namespace AtataUITests.Tests
 {
@@ -36,7 +35,6 @@ namespace AtataUITests.Tests
             // And I NOT see "You have done a dynamic click" text.
             DinamicClickMessage.Should.Not.BeVisible();
 
-
         [Test, Description("Verify Rigth Click Me button"), Retry(2)]
         public void RigthClickButtonTest() =>
             // Given I go to DemoQa Elements page 
@@ -51,6 +49,5 @@ namespace AtataUITests.Tests
             RightClickMessage.Should.Be("You have done a right click").
             // And I NOT see "You have done a dynamic click" text.
             DoubleClickMessage.Should.Not.BeVisible();
-
     }
 }

@@ -1,6 +1,4 @@
 ﻿using Microsoft.Playwright;
-using System;
-using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.Tests
 {

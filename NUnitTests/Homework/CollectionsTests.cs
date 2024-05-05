@@ -1,8 +1,6 @@
-﻿using NUnit.Framework;
-
-namespace NUnitTests
+﻿namespace NUnitTests
 {
-    public sealed class CollectionsTests 
+    public sealed class CollectionsTests
     {
         public string[] UkrainianCitiesArray =
         {

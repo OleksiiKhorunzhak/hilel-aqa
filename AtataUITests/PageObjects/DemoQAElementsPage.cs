@@ -1,5 +1,4 @@
-﻿using Atata;
-using _ = AtataUITests.PageObjects.DemoQAElementsPage;
+﻿using _ = AtataUITests.PageObjects.DemoQAElementsPage;
 
 namespace AtataUITests.PageObjects
 {
@@ -7,6 +6,6 @@ namespace AtataUITests.PageObjects
     public sealed class DemoQAElementsPage : DemoQAPage<_>
     {
         [FindById("item-4")]
-       public Clickable<DemoQAButtonsPage, _> Buttons { get; private set; }
+        public Clickable<DemoQAButtonsPage, _> Buttons { get; private set; }
     }
 }
