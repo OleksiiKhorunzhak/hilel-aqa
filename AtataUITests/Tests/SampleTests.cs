@@ -1,4 +1,4 @@
-﻿namespace AtataUITests
+﻿namespace AtataUITests.Tests
 {
     public sealed class SampleTests : UITestFixture
     {
