@@ -17,7 +17,7 @@ namespace AtataUITests.Tests
             ClickMe.Click().
             // Then  I see "You have done a dynamic click" text.
             DinamicClickMessage.Should.Be("You have done a dynamic click").
-            // And I NOT see "You have done a dynamic click" text.
+            // And I NOT see "You have done a double click" text.
             DoubleClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
@@ -30,7 +30,7 @@ namespace AtataUITests.Tests
             PageUrl.Should.Be("https://demoqa.com/buttons").
             // And I double click the 'DoubleClickMe' button
             DoubleClickMe.DoubleClick().
-            // Then  I see "You have done a dynamic click" text.
+            // Then  I see "You have done a double click" text.
             DoubleClickMessage.Should.Be("You have done a double click").
             // And I NOT see "You have done a dynamic click" text.
             DinamicClickMessage.Should.Not.BeVisible();
@@ -45,9 +45,9 @@ namespace AtataUITests.Tests
             PageUrl.Should.Be("https://demoqa.com/buttons").
             // And I click the 'RigthClickMe' button
             RigthClickMe.RightClick().
-            // Then  I see "You have done a dynamic click" text.
+            // Then  I see "You have done a right click" text.
             RightClickMessage.Should.Be("You have done a right click").
-            // And I NOT see "You have done a dynamic click" text.
+            // And I NOT see "You have done a double click" text.
             DoubleClickMessage.Should.Not.BeVisible();
     }
 }
