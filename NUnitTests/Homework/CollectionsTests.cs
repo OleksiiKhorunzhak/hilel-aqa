@@ -1,10 +1,8 @@
-﻿using NUnit.Framework.Legacy;
-using System.Collections.Immutable;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace AtataUITests
+namespace NUnitTests
 {
-    public sealed class CollectionsTests : UITestFixture
+    public sealed class CollectionsTests 
     {
         public string[] UkrainianCitiesArray =
         {
@@ -60,18 +58,18 @@ namespace AtataUITests
         [Description("TC-41 first expect to be Kyiv")]
         public void FirstCityTest()
         {
-            //TODO: fix code below
+            //TODO: uncomment and fix code below
             string expectedCity = "Kyiv";
-            Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedCity), "First city is not Kyiv");
+            //Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedCity), "First city is not Kyiv");
         }
 
         [Test]
         [Description("TC-41 city quantity expected to be 21")]
         public void ArrayLengthTest()
         {
-            //TODO: fix code below
+            //TODO: uncomment and fix code below
             int expectedQuantity = 21;
-            Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedQuantity), "City quantity is not 21");
+            //Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedQuantity), "City quantity is not 21");
         }
 
         [Test]
@@ -127,8 +125,8 @@ namespace AtataUITests
         public void ListCountTest()
         {
             int expectedCount = 21;
-            //TODO: Fix asssertion
-            Assert.That(UkrainianCitiesList, Is.EqualTo(expectedCount), "City list count is not 21");
+            //TODO: Uncomment and ix asssertion
+            //Assert.That(UkrainianCitiesList, Is.EqualTo(expectedCount), "City list count is not 21");
         }
 
         [Test]

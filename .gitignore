@@ -5,11 +5,12 @@
 /.vs/hilel-aqa/v17
 /.vs/hilel-aqa/FileContentIndex
 /.vs
-/AtataUITests/.vs/AtataUITests
+/AtataUITests/.vs/
 /AtataUITests/bin/Debug/net8.0
 /AtataUITests/obj
-/AtataUITests/.vs/ProjectEvaluation
-/PlaywrigthUITests/.vs/PlaywrigthUITests
+/PlaywrigthUITests/.vs
 /PlaywrigthUITests/bin/Debug/net8.0
 /PlaywrigthUITests/obj
-/PlaywrigthUITests/.vs/ProjectEvaluation
+/NUnitTests/.vs
+/NUnitTests/bin/Debug/net8.0
+/NUnitTests/obj

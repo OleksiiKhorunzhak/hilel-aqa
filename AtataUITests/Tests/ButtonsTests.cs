@@ -1,0 +1,56 @@
+﻿using AtataUITests.PageObjects;
+using Microsoft.Playwright;
+
+namespace AtataUITests.Tests
+{
+    public sealed class ButtonsTests : UITestFixture
+    {
+        [Test]
+        public void ClickButtonTest() =>
+            //Given I go to DemoQa Elements page 
+            Go.To<DemoQAElementsPage>().
+            // When I Click the Buttons button in menu
+            Buttons.ClickAndGo().
+            // And I see 'buttons' page
+            PageUrl.Should.Be("https://demoqa.com/buttons").
+            // And I click the 'Click Me' button
+            ClickMe.Click().
+            // Then  I see "You have done a dynamic click" text.
+            DinamicClickMessage.Should.Be("You have done a dynamic click").
+            // And I NOT see "You have done a dynamic click" text.
+            DoubleClickMessage.Should.Not.BeVisible();
+
+        [Test]
+        public void DoubleClickButtonTest() =>
+            //Given I go to DemoQa Elements page 
+            Go.To<DemoQAElementsPage>().
+            // When I Click the Buttons button in menu
+            Buttons.ClickAndGo().
+            // And I see 'buttons' page
+            PageUrl.Should.Be("https://demoqa.com/buttons").
+            // And I double click the 'DoubleClickMe' button
+            DoubleClickMe.DoubleClick().
+            // Then  I see "You have done a dynamic click" text.
+            DoubleClickMessage.Should.Be("You have done a double click").
+            // And I NOT see "You have done a dynamic click" text.
+            DinamicClickMessage.Should.Not.BeVisible();
+
+
+        [Test]
+        public void RigthClickButtonTest() =>
+            //Given I go to DemoQa Elements page 
+            Go.To<DemoQAElementsPage>().
+            // When I Click the Buttons button in menu
+            // And I see 'buttons page
+            Buttons.ClickAndGo().
+            // And I see 'buttons' page
+            PageUrl.Should.Be("https://demoqa.com/buttons").
+            // And I click the 'RigthClickMee' button
+            RigthClickMe.RightClick().
+            // Then  I see "You have done a dynamic click" text.
+            RightClickMessage.Should.Be("You have done a right click").
+            // And I NOT see "You have done a dynamic click" text.
+            DoubleClickMessage.Should.Not.BeVisible();
+
+    }
+}
