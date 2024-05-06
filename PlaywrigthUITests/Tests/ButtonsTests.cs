@@ -2,7 +2,6 @@
 
 namespace PlaywrigthUITests.Tests
 {
-
     [Description("Verify Buttons on buttons page")]
     class ButtonsTestsrun : UITestFixture
     {
