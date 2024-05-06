@@ -1,4 +1,6 @@
-﻿namespace NUnitTests
+﻿using NUnit.Framework.Legacy;
+
+namespace NUnitTests
 {
     public sealed class CollectionsTests
     {

@@ -1,4 +1,6 @@
-﻿namespace Homework
+﻿using NUnit.Framework.Legacy;
+
+namespace Homework
 {
     public sealed class CollectionsTests
     {

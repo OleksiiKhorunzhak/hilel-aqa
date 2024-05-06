@@ -18,10 +18,10 @@ namespace PlaywrigthUITests.Tests
             await Page.GetByRole(AriaRole.Button, new() { NameString = "Click Me" }).ClickAsync();
             // Then  I see "You have done a dynamic click" text.
             var isVisible = await Page.GetByText("You have done a dynamic click").IsVisibleAsync();
-            Assert.IsTrue(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");
+            Assert.That(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");
             // And I NOT see "You have done a double click" text.
             var isNotVisible = await Page.GetByText("You have done a double click").IsHiddenAsync();
-            Assert.IsTrue(isNotVisible, "The element with text 'You have done a double click' should NOT be visible after clicking the button.");
+            Assert.That(isNotVisible, "The element with text 'You have done a double click' should NOT be visible after clicking the button.");
         }
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
@@ -37,10 +37,10 @@ namespace PlaywrigthUITests.Tests
             await Page.GetByRole(AriaRole.Button, new() { NameString = "Double Click Me" }).DblClickAsync();
             // Then I see "You have done a double click" text.
             var isVisible = await Page.GetByText("You have done a double click").IsVisibleAsync();
-            Assert.IsTrue(isVisible, "The element with text 'You have done a double click' should be visible after clicking the button.");
+            Assert.That(isVisible, "The element with text 'You have done a double click' should be visible after clicking the button.");
             // And I NOT see "You have done a dynamic click" text.
             var isNotVisible = await Page.GetByText("You have done a dynamic click").IsHiddenAsync();
-            Assert.IsTrue(isNotVisible, "The element with text 'You have done a dynamic click' should NOT be visible after a double click.");
+            Assert.That(isNotVisible, "The element with text 'You have done a dynamic click' should NOT be visible after a double click.");
         }
 
         [Test, Description("Verify Rigth Click Me button"), Retry(2)]
@@ -59,10 +59,10 @@ namespace PlaywrigthUITests.Tests
             });
             // Then I see "You have done a right click" text.
             var isVisible = await Page.GetByText("You have done a right click").IsVisibleAsync();
-            Assert.IsTrue(isVisible, "The element with text 'You have done a double click' should be visible after Rigth clicking the button.");
+            Assert.That(isVisible, "The element with text 'You have done a double click' should be visible after Rigth clicking the button.");
             // And I NOT see "You have done a dynamic click" text.
             var isNotVisible = await Page.GetByText("You have done a double click").IsHiddenAsync();
-            Assert.IsTrue(isNotVisible, "The element with text 'You have done a dynamic click' should NOT be visible after Rigth clicking the button.");
+            Assert.That(isNotVisible, "The element with text 'You have done a dynamic click' should NOT be visible after Rigth clicking the button.");
         }
     }
 }

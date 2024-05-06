@@ -17,11 +17,11 @@
         //TODO: Scenario - verify CharJ return 'j' after UpdateChars method
         public char CharJ;
         //TODO: Scenario - verify cutestAnimal return null before and 'Cat' after UpdateStrings
-        public string CutestAnimal;
+        public string? CutestAnimal;
         //TODO: Scenario - verify cutestAnimal return Dog before and 'Dog' after UpdateStrings
         public string BestFriendAnimal = "Dog";
         //TODO: Scenario - verify coolestAnimal return null before and 'Horse' after UpdateStrings with parameter 'Horse'
-        public string CoolestAnimal;
+        public string? CoolestAnimal;
 
         public void UpdateChars(char charC)
         {
