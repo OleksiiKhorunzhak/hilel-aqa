@@ -15,7 +15,7 @@ namespace PlaywrigthUITests.Tests
             // And I see 'buttons page
             await Page.WaitForURLAsync("https://demoqa.com/buttons");
             // And I click the 'Click Me' button
-            await Page.GetByRole(AriaRole.Button, new() { NameString = "Click Me" }).ClickAsync();
+            await Page.GetByRole(AriaRole.Button, new() { Name = "Click Me", Exact = true }).ClickAsync();
             // Then  I see "You have done a dynamic click" text.
             var isVisible = await Page.GetByText("You have done a dynamic click").IsVisibleAsync();
             Assert.That(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");

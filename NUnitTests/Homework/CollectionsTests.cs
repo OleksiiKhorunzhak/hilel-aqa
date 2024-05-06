@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework.Legacy;
 
-namespace NUnitTests
+namespace Homework
 {
     public sealed class CollectionsTests
     {

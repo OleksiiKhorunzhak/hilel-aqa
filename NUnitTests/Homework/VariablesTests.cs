@@ -1,4 +1,4 @@
-﻿namespace NUnitTests
+﻿namespace Homework
 {
     public sealed class VariablesTests
     {
