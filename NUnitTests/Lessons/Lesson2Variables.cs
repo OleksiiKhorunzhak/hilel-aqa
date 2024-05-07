@@ -4,6 +4,8 @@
     internal class Lesson2Variables
     {
         #region[TestSetup]
+
+        //dsfdfdfg 
         //TODO: Scenario - verify maxIntValue2 = 2147483647
         public int maxIntValue = (int)(Math.Pow(2, 32 -1) - 1);
         //TODO: Scenario - verify maxIntValue2 = 4294967295
