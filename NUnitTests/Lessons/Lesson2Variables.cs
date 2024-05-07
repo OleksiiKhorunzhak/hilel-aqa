@@ -3,11 +3,13 @@
     // Lesson Suite Variables
     internal class Lesson2Variables
     {
-        //TODO: Scenario - verify maxIntValue = 4294967295
+        #region[TestSetup]
+        //TODO: Scenario - verify maxIntValue2 = 2147483647
         public int maxIntValue = (int)(Math.Pow(2, 32 -1) - 1);
+        //TODO: Scenario - verify maxIntValue2 = 4294967295
+        public uint maxIntValue2 = 4294967295;
         //TODO: Scenario - verify minIntValue = -2147483648
         public int minIntValue = (int)(0 - Math.Pow(2, 32 - 1));
-
         //TODO: Scenario - verify char a return 'a' after UpdateChars method
         public char CharA;
         //TODO: Scenario - verify CharB return 'b' before and after UpdateChars method
@@ -36,5 +38,6 @@
             BestFriendAnimal = "Dog";
             CoolestAnimal = setAnimal;
         }
+        #endregion
     }
 }
