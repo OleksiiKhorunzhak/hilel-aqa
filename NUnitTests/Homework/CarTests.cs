@@ -5,11 +5,11 @@ namespace NUnitTests.Homework
     internal class CarTests : Lesson3Logic
     {
         //TODO: Finish car tests here or in Lesson3Logic file folowing example
-        [Test, Description("Ensure that GetAcceleration correctly retrieves the current acceleration")]
+        [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
         public void TestAcceleration()
         {
             CurrentAcceleration = 50;
-            GetAcceleration();
+            Accelerate(CurrentAcceleration);
             Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
         }
 

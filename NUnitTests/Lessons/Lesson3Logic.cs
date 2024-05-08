@@ -84,7 +84,7 @@
             while (AccelerationAllowed)
             {
                 // Only continue accelerating if it's allowed and Speed has not exceeded the limit
-                Acceleration += acceleratePedalValue;
+                Acceleration = acceleratePedalValue;
             }
         }
 
