@@ -31,7 +31,7 @@ namespace Homework
 
         //TODO: uncomment and fix code below
 
-        //Mised test attribute
+        //Is not a test if missed [Test] attribute
         [Description("TC-23 text that represent higth should match expected pattern")]
         public void StringsTest()
         {
@@ -43,7 +43,6 @@ namespace Homework
         }
 
         //TODO: example for 3 test
-        [Test]
         [Description("TC-23 text that represent higth should match expected pattern")]
         public void StringsTest2()
         {
