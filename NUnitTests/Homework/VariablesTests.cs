@@ -43,6 +43,7 @@ namespace Homework
         }
 
         //TODO: example for 3 test
+        [Test]
         [Description("TC-23 text that represent higth should match expected pattern")]
         public void StringsTest2()
         {
