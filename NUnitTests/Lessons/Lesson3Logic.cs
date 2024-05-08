@@ -23,10 +23,12 @@
         public static int MaxAceleration = 90;
         public static readonly int CriticalCharge = 10;
         public static readonly int CriticalOvercharge = 98;
+        public bool AccelerationAllowed;
         public bool DecelerationChargeMode = true;
         #endregion
 
         #region[Methods]
+
         public void GetAcceleration()
         {
             Acceleration = CurrentAcceleration;
@@ -67,6 +69,25 @@
                 SpeedAlert = "Charge Full! Deceleration charging disabled.";
             }
         }
+
+        public void Accelerate(int acceleratePedalValue)
+        {
+            while (Speed <= MaxSpeed + 20)
+            {
+                AccelerationAllowed = true;
+
+                if (Speed > MaxSpeed + 20)
+                {
+                    break;
+                }
+            }
+            while (AccelerationAllowed)
+            {
+                // Only continue accelerating if it's allowed and Speed has not exceeded the limit
+                Acceleration += acceleratePedalValue;
+            }
+        }
+
         /// <summary>
         /// Activates or deactivates the deceleration charge feature based on the current charge level and a specified threshold.
         /// </summary>
