@@ -4,7 +4,7 @@ namespace Homework
 {
     public sealed class VariablesTests
     {
-        //protected static string Combine(***) => "higth equals " + higth;
+        protected static string Combine(int higth) => "higth equals " + higth;
 
         [Test]
         [Description("TC-21 higth expected to be bigger than low")]
@@ -30,14 +30,28 @@ namespace Homework
         }
 
         //TODO: uncomment and fix code below
+
+        //Mised test attribute
         [Description("TC-23 text that represent higth should match expected pattern")]
         public void StringsTest()
         {
             int higth = 64;
             string Pattern = "higth equals " + higth;
             //Uncomment and fix code below
-            string GetCombinedString = Path.Combine(Pattern);
+            string GetCombinedString = Path.Combine(Pattern); //this part is wrong
             Assert.That(GetCombinedString, Is.EqualTo(Pattern), "Expected text not match actual text");
+        }
+
+        //TODO: example for 3 test
+        [Test]
+        [Description("TC-23 text that represent higth should match expected pattern")]
+        public void StringsTest2()
+        {
+            int higth = 64;
+            string Pattern = "higth equals " + higth;
+            //Uncomment and fix code below
+            string GetCombinedString = Combine(higth);
+            //Assert.***(***, ***, "expected text not match actual text");
         }
     }
 }
