@@ -6,7 +6,7 @@
         #region[TestSetup]
         public int Speed { get; private set; }
         public int Acceleration { get; private set; }
-        public string? SpeedAlert { get; private set; }
+        public string? Alert { get; private set; }
         public bool IsDecelerationChargeActive { get; private set; }
         public int Deceleration { get; private set; }
         public int DecelerationCharge { get; private set; }
@@ -31,60 +31,64 @@
 
         public void GetAcceleration()
         {
-            Acceleration = CurrentAcceleration;
+            //TODO set acceleration as CurrentAcceleration
+            //Acceleration 
         }
 
         public void GetSpeed()
         {
-            if (Acceleration >= 0)
+            //TODO if acceleration is more than 0 set speed as current speed
+            if (true)
             {
-                Speed = CurrentSpeed;
             }
         }
 
         public void GetDeceleration()
         {
-            if (Acceleration >= 0)
+            //TODO if acceleration is more than 0 set deceleration as CurrentSpeed - CurrentDeceleration
+            if (true)
             {
-                Deceleration = CurrentSpeed - CurrentDeceleration;
             }
         }
 
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
-            if (CurrentSpeed >= MaxSpeed && Acceleration >= 0)
+            //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
+            if (true)
             {
-                SpeedAlert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
+                Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
             }
         }
 
         public void SetChargeAlert()
-        {
-            if (Charge >= CriticalCharge)
+        {   //TODO if Charge lower or equal critical charge show alert
+            if (true)
             {
-                SpeedAlert = "Take caution! Charge Low at " + Charge + "%!";
+                Alert = "Take caution! Charge Low at " + Charge + "%!";
             }
-            if (Charge >= CriticalOvercharge)
+            //TODO if Chargehigher or equal CriticalOvercharge show alert
+            if (true)
             {
-                SpeedAlert = "Charge Full! Deceleration charging disabled.";
+                Alert = "Charge Full! Deceleration charging disabled.";
             }
         }
 
         public void Accelerate(int acceleratePedalValue)
         {
-            while (Speed <= MaxSpeed + 20)
+            if(Speed <= MaxSpeed + 20)
             {
                 AccelerationAllowed = true;
+            }
+
+            while (AccelerationAllowed)
+            {
+                // Only continue accelerating if it's allowed and Speed has not exceeded the limit
+                Acceleration = acceleratePedalValue;
 
                 if (Speed > MaxSpeed + 20)
                 {
                     break;
                 }
-            }
-            while (AccelerationAllowed)
-            {
-                // Only continue accelerating if it's allowed and Speed has not exceeded the limit
-                Acceleration = acceleratePedalValue;
             }
         }
 
