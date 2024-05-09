@@ -2,9 +2,10 @@
 
 namespace NUnitTests.Homework
 {
-    internal class CarTests : Lesson3Logic
+    public class CarTests : Lesson3Logic
     {
         //TODO: Finish car tests here or in Lesson3Logic file folowing example
+        [Order(1)]
         [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
         public void TestAcceleration()
         {
@@ -25,9 +26,18 @@ namespace NUnitTests.Homework
         //Test Case 2: Test GetSpeed with Positive Acceleration
         //Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
         //Steps:
-        //Set CurrentAcceleration to a positive value.
-        //Call the GetSpeed method.
-        //Check that Speed equals CurrentSpeed.
+        [Test]
+        [Order(2)]
+        public void TestGetSpeed()
+        {
+            //Set CurrentAcceleration to a positive value.
+            CurrentAcceleration = 50;
+            //Call the GetSpeed method.
+            GetSpeed();
+            //Check that Speed equals CurrentSpeed.
+            Assert.That(Speed, Is.EqualTo(CurrentSpeed));
+        }
+
 
         //Test Case 3: Test GetDeceleration
         //Description: Check if GetDeceleration correctly calculates deceleration as the difference between current speed and deceleration.

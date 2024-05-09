@@ -1,11 +1,11 @@
 ﻿namespace NUnitTests.Lessons
 {
     //Lesson Suite Logic
-    internal class Lesson3Logic
+    public class Lesson3Logic
     {
         #region[TestSetup]
         public int Speed { get; private set; }
-        public int Acceleration { get; private set; }
+        public int Acceleration { get; set; }
         public string? Alert { get; private set; }
         public bool IsDecelerationChargeActive { get; private set; }
         public int Deceleration { get; private set; }
@@ -32,29 +32,31 @@
         public void GetAcceleration()
         {
             //TODO set acceleration as CurrentAcceleration
-            //Acceleration 
+            Acceleration = CurrentAcceleration;
         }
 
         public void GetSpeed()
         {
             //TODO if acceleration is more than 0 set speed as current speed
-            if (true)
+            if (Acceleration > 0)
             {
+                Speed = CurrentSpeed;
             }
         }
 
         public void GetDeceleration()
         {
             //TODO if acceleration is more than 0 set deceleration as CurrentSpeed - CurrentDeceleration
-            if (true)
+            if (Acceleration > 0)
             {
+                Deceleration = CurrentSpeed - CurrentDeceleration;
             }
         }
 
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
             //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
-            if (true)
+            if (CurrentSpeed >= maxSpeed && Acceleration > 0)
             {
                 Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
             }
@@ -62,12 +64,12 @@
 
         public void SetChargeAlert()
         {   //TODO if Charge lower or equal critical charge show alert
-            if (true)
+            if (Charge <= CriticalCharge)
             {
                 Alert = "Take caution! Charge Low at " + Charge + "%!";
             }
-            //TODO if Chargehigher or equal CriticalOvercharge show alert
-            if (true)
+            //TODO if Charge higher or equal CriticalOvercharge show alert
+            if (Charge >= CriticalOvercharge)
             {
                 Alert = "Charge Full! Deceleration charging disabled.";
             }
@@ -75,7 +77,7 @@
 
         public void Accelerate(int acceleratePedalValue)
         {
-            if(Speed <= MaxSpeed + 20)
+            if (Speed <= MaxSpeed + 20)
             {
                 AccelerationAllowed = true;
             }
@@ -85,18 +87,20 @@
                 // Only continue accelerating if it's allowed and Speed has not exceeded the limit
                 Acceleration = acceleratePedalValue;
 
-                if (Speed > MaxSpeed + 20)
+                if (Speed <= MaxSpeed + 20)
                 {
-                    break;
+                    Speed++;
                 }
+                 else { break; }
             }
         }
 
         /// <summary>
-        /// Activates or deactivates the deceleration charge feature based on the current charge level and a specified threshold.
+        /// Activates or deactivates the deceleration charge based on the current charge level relative to a specified critical overcharge threshold.
         /// </summary>
-        /// <param name="isActive">A boolean flag indicating whether the feature should be activated.</param>
-        /// <param name="criticalOvercharge">The charge level above which activation is considered unsafe and thus prevented.</param>
+        /// <param name="isActive">A boolean value indicating whether the deceleration charge should be attempted to activate.</param>
+        /// <param name="criticalOvercharge">An integer representing the critical overcharge threshold which must not be exceeded for activation.</param>
+        /// <returns>A boolean indicating the activation status of the deceleration charge. Returns true if the charge is activated, otherwise false.</returns>
         public bool DecelerationChargeActivation(bool isActive, int criticalOvercharge)
         {
             if (isActive && Charge < criticalOvercharge)
