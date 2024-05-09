@@ -31,14 +31,14 @@ namespace Homework
 
         //TODO: uncomment and fix code below
 
-        //Is not a test if missed [Test] attribute
+        [Test]
         [Description("TC-23 text that represent higth should match expected pattern")]
         public void StringsTest()
         {
             int higth = 64;
             string Pattern = "higth equals " + higth;
             //Uncomment and fix code below
-            string GetCombinedString = Path.Combine(Pattern); //this part is wrong
+            string GetCombinedString = Combine(higth);
             Assert.That(GetCombinedString, Is.EqualTo(Pattern), "Expected text not match actual text");
         }
 
