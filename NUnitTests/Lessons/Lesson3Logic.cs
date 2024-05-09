@@ -1,6 +1,7 @@
 ﻿namespace NUnitTests.Lessons
 {
     //Lesson Suite Logic
+    //Tests presetup
     internal class Lesson3Logic
     {
         #region[TestSetup]
