@@ -32,29 +32,31 @@
         public void GetAcceleration()
         {
             //TODO set acceleration as CurrentAcceleration
-            //Acceleration 
+            Acceleration = CurrentAcceleration;
         }
 
         public void GetSpeed()
         {
             //TODO if acceleration is more than 0 set speed as current speed
-            if (true)
+            if (Acceleration>0)
             {
+                Speed = CurrentSpeed;
             }
         }
 
         public void GetDeceleration()
         {
             //TODO if acceleration is more than 0 set deceleration as CurrentSpeed - CurrentDeceleration
-            if (true)
+            if (Acceleration>0)
             {
+                Deceleration = CurrentSpeed - CurrentDeceleration;
             }
         }
 
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
             //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
-            if (true)
+            if (CurrentSpeed > MaxSpeed && Acceleration>0)
             {
                 Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
             }
