@@ -5,7 +5,6 @@ namespace NUnitTests.Homework
 {
     public class CarTests : Lesson3Logic
     {
-        private int maxSpeed;
 
         //TODO: Finish car tests here or in Lesson3Logic file folowing example
         //Test Case 1: Test Acceleration
@@ -33,7 +32,7 @@ namespace NUnitTests.Homework
         public void TestGetSpeed()
         {
             //Set CurrentAcceleration to a positive value.
-            CurrentAcceleration = 50;
+            CurrentAcceleration = 110;
             //Call the GetSpeed method.
             GetSpeed();
             //Check that Speed equals CurrentSpeed.
@@ -64,7 +63,7 @@ namespace NUnitTests.Homework
             public void TestSetSpeedAlert()
             {
                 //Set CurrentSpeed to exceed MaxSpeed.
-                CurrentSpeed = maxSpeed +10;
+                CurrentSpeed = MaxSpeed +10;
 
                 //Execute SetSpeedAlert.
                 SetSpeedAlert(CurrentSpeed, MaxSpeed);
@@ -75,50 +74,113 @@ namespace NUnitTests.Homework
                 Assert.That(Alert, Is.EqualTo(expectedAlertMessage));
             }
 
-            
 
-            //Test Case 5: Low Charge Alert
-            //Description: Test SetChargeAlert for generating a low charge alert when charge falls below the critical level.
-            //Steps:
+
+        //Test Case 5: Low Charge Alert
+        //Description: Test SetChargeAlert for generating a low charge alert when charge falls below the critical level.
+              [Test]
+              [Order(5)]
+
+        public void TestSetChargeAlert()
+        {
             //Set Charge to just below CriticalCharge.
+            Charge = CriticalCharge;
+
             //Call SetChargeAlert.
-            //Check that SpeedAlert includes the low charge warning.
+            SetChargeAlert();
 
-            //Test Case 6: Full Charge Alert
-            //Description: Check that SetChargeAlert correctly alerts when charge exceeds critical overcharge level.
-            //Steps:
-            //Set Charge above CriticalOvercharge.
-            //Call SetChargeAlert.
-            //Verify that SpeedAlert warns about full charge and deceleration charge being disabled.
-
-            //Test Case 7: Deceleration Charge Activation Safety
-            //Description: Test the logic for enabling or disabling the deceleration charge feature based on the charge level.
-            //Steps:
-            //Set Charge below CriticalOvercharge.
-            //Invoke DecelerationChargeActivation with isActive as true.
-            //Confirm that IsDecelerationChargeActive is true.
-
-            //Test Case 8: Deceleration Charge Deactivation Safety
-            //Description: Ensure that deceleration charging is disabled when charge exceeds the safe threshold.
-            //Steps:
-            //Set Charge above CriticalOvercharge.
-            //Call DecelerationChargeActivation with isActive as true.
-            //Ensure IsDecelerationChargeActive is false.
-
-            //Test Case 9: Compute Deceleration Charge Power When Active
-            //Description: Validate that GetDecelerationChargePower computes the correct power when the feature is active.
-            //Steps:
-            //Ensure DecelerationChargeMode is true.
-            //Call GetDecelerationChargePower with isActive set to true.
-            //Check that the returned value equals CurrentSpeed - CurrentAcceleration.
-
-            //Test Case 10: Compute Deceleration Charge Power When Inactive
-            //Description: Check that GetDecelerationChargePower returns 0 when the feature is not active.
-            //Steps:
-            //Ensure DecelerationChargeMode is true.
-            //Invoke GetDecelerationChargePower with isActive set to false.
-            //Verify that the result is 0.
-
+            //Check that SpeedAlert includes the low charge warning
+            Assert.That(Alert, Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"));
         }
+
+
+
+        //Test Case 6: Full Charge Alert
+        //Description: Check that SetChargeAlert correctly alerts when charge exceeds critical overcharge level.
+        [Test]
+        [Order(6)]
+        public void TestChargeAlert2()
+        {
+            //Set Charge above CriticalOvercharge.
+            Charge = CriticalOvercharge;
+
+            //Call SetChargeAlert.
+            SetChargeAlert();
+
+            //Verify that SpeedAlert warns about full charge and deceleration charge being disabled.
+            Assert.That(Alert, Is.EqualTo("Charge Full! Deceleration charging disabled."));
+        }
+
+
+        //Test Case 7: Deceleration Charge Activation Safety
+        //Description: Test the logic for enabling or disabling the deceleration charge feature based on the charge level.
+        [Test]
+        [Order(7)]
+        public void TestDecelerationActivation()
+        {
+            //Set Charge below CriticalOvercharge.
+            Charge = CriticalOvercharge - 10;
+
+            //Invoke DecelerationChargeActivation with isActive as true.
+            DecelerationChargeActivation(true, CriticalOvercharge);
+
+            //Confirm that IsDecelerationChargeActive is true.
+            Assert.That(IsDecelerationChargeActive, Is.True);
+        }
+
+
+        //Test Case 8: Deceleration Charge Deactivation Safety
+        //Description: Ensure that deceleration charging is disabled when charge exceeds the safe threshold.
+        [Test]
+        [Order(8)]
+        public void TestDecelerationActivation2()
+        {
+            //Set Charge above CriticalOvercharge.
+            Charge = CriticalOvercharge + 10;
+
+            //Call DecelerationChargeActivation with isActive as true.
+            DecelerationChargeActivation(true, CriticalOvercharge);
+
+            //Ensure IsDecelerationChargeActive is false.
+            Assert.That(IsDecelerationChargeActive, Is.False);
+        }
+
+
+
+
+        //Test Case 9: Compute Deceleration Charge Power When Active
+        //Description: Validate that GetDecelerationChargePower computes the correct power when the feature is active.
+        [Test]
+        [Order(9)]
+        public void TestGetDecelerationChargePower()
+        {
+            //Ensure DecelerationChargeMode is true.
+             DecelerationChargeMode = true;
+
+            //Call GetDecelerationChargePower with isActive set to true.
+            GetDecelerationChargePower(true);
+
+            //Check that the returned value equals CurrentSpeed - CurrentAcceleration.
+            Assert.That(DecelerationCharge == CurrentSpeed - CurrentAcceleration);
+        }
+
+
+        //Test Case 10: Compute Deceleration Charge Power When Inactive
+        //Description: Check that GetDecelerationChargePower returns 0 when the feature is not active.
+        [Test]
+        [Order(10)]
+        public void TestGetDecelerationChargePower2()
+        {
+
+            //Ensure DecelerationChargeMode is true.
+            DecelerationChargeMode = true;
+
+            //Invoke GetDecelerationChargePower with isActive set to false.
+            GetDecelerationChargePower(false);
+
+            //Verify that the result is 0.
+            Assert.That(DecelerationCharge == CurrentSpeed - CurrentAcceleration);
+        }
+    }
 }
 
