@@ -66,14 +66,13 @@ namespace NUnitTests.Homework
                 //Set CurrentSpeed to exceed MaxSpeed.
                 CurrentSpeed = maxSpeed +10;
 
-            //Execute SetSpeedAlert.
-            SetSpeedAlert(CurrentSpeed, MaxSpeed);
+                //Execute SetSpeedAlert.
+                SetSpeedAlert(CurrentSpeed, MaxSpeed);
 
-            string expectedAlertMessage = "Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!";
+                string expectedAlertMessage = "Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!";
 
-            //Confirm that SpeedAlert contains the appropriate warning message.
-            Assert.That(SetSpeedAlert, Is.EqualTo(expectedAlertMessage));
-
+                //Confirm that SpeedAlert contains the appropriate warning message.
+                Assert.That(Alert, Is.EqualTo(expectedAlertMessage));
             }
 
             
