@@ -10,7 +10,7 @@
         public bool IsDecelerationChargeActive { get; private set; }
         public int Deceleration { get; private set; }
         public int DecelerationCharge { get; private set; }
-        public int Charge { get; private set; }
+        public int Charge { get; set; }
 
         //Mock values - change at will
         public int CurrentSpeed = 50;
