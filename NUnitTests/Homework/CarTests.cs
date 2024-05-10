@@ -31,12 +31,9 @@ namespace NUnitTests.Homework
         {
             //Call the GetAcceleration method.
             GetAcceleration();
-            
-           //Verify that the Acceleration property matches CurrentAcceleration.
-           if(Acceleration == CurrentAcceleration);
-           {
-               
-           }
+
+            //Verify that the Acceleration property matches CurrentAcceleration.
+            Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration), "Acceleration does not match CurrentAcceleration");
         }
 
         //Test Case 2: Test GetSpeed with Positive Acceleration
@@ -191,12 +188,13 @@ namespace NUnitTests.Homework
         {
             // Attempt to activate the deceleration charge feature
             DecelerationChargeActivation(true, CriticalOvercharge);
-            
+
             // Check if the charge is above the critical overcharge level and if the deceleration charge feature is currently inactive
-            if (Charge > CriticalOvercharge && IsDecelerationChargeActive == false);
-            {
-                
-            }
+            //if (Charge > CriticalOvercharge && IsDecelerationChargeActive == false);
+            //{
+
+            //}
+            Assert.That((Charge > CriticalOvercharge && IsDecelerationChargeActive == false), "AssertFailed");
         }
 
         //Test Case 9: Compute Deceleration Charge Power When Active
