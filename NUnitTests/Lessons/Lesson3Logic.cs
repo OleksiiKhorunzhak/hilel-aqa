@@ -85,9 +85,14 @@
                 // Only continue accelerating if it's allowed and Speed has not exceeded the limit
                 Acceleration = acceleratePedalValue;
 
-                if (Speed > MaxSpeed + 20)
+                if (Speed <= MaxSpeed + 20)
                 {
-                    break;
+                    Speed++;
+                    
+                }
+                else 
+                { 
+                    break; 
                 }
             }
         }

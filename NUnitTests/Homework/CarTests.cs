@@ -5,6 +5,7 @@ namespace NUnitTests.Homework
     internal class CarTests : Lesson3Logic
     {
         //TODO: Finish car tests here or in Lesson3Logic file folowing example
+        [Order(1)]
         [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
         public void TestAcceleration()
         {
@@ -21,6 +22,19 @@ namespace NUnitTests.Homework
         //Initialize an instance of Lesson3Logic.
         //Call the GetAcceleration method.
         //Verify that the Acceleration property matches CurrentAcceleration.
+        
+        [Test]
+        [Order(2)]
+        public void TestGetSpeed() 
+        {
+            //Initialize an instance of Lesson3Logic.
+            CurrentAcceleration = 50;
+            Accelerate(CurrentAcceleration);
+            //Call the GetAcceleration method.
+            GetSpeed();
+            //Verify that the Acceleration property matches CurrentAcceleration.
+            Assert.That(Speed, Is.EqualTo(CurrentSpeed));
+        }
 
         //Test Case 2: Test GetSpeed with Positive Acceleration
         //Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
