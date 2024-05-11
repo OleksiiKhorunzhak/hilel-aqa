@@ -8,10 +8,16 @@
         public int maxIntValue = (int)(Math.Pow(2, 32 - 1) - 1);
 
         [Test]
-        public void TestMaxIntValue()
+        public void VerifyMaxIntValue()
         {
             Assert.That(maxIntValue, Is.EqualTo(2147483647), "maxIntValue is not equal to 2147483647");
         }
+
+        //[Test]
+        //public void TestMaxIntValue()
+        //{
+        //    Assert.That(maxIntValue, Is.EqualTo(2147483647), "maxIntValue is not equal to 2147483647");
+        //}
 
         //TODO: Scenario - verify maxIntValue2 = 4294967295
         public uint maxIntValue2 = 4294967295;
