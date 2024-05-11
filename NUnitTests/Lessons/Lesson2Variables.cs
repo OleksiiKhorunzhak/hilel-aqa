@@ -12,7 +12,6 @@
         {
             Assert.That(maxIntValue, Is.EqualTo(2147483647), "maxIntValue is not equal to 2147483647");
         }
-
         //[Test]
         //public void TestMaxIntValue()
         //{
@@ -23,10 +22,15 @@
         public uint maxIntValue2 = 4294967295;
 
         [Test]
-        public void TestMaxUnSignedValue()
+        public void VerifyMaxUintValue()
         {
             Assert.That(maxIntValue2, Is.EqualTo(4294967295), "maxIntValue2 is not equal to 4294967295");
         }
+        //[Test]
+        //public void TestMaxUnSignedValue()
+        //{
+        //    Assert.That(maxIntValue2, Is.EqualTo(4294967295), "maxIntValue2 is not equal to 4294967295");
+        //}
 
         //TODO: Scenario - verify minIntValue = -2147483648
         public int minIntValue = (int)(0 - Math.Pow(2, 32 - 1));
