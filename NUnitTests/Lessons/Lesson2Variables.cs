@@ -55,7 +55,7 @@
         {
             var a = 'a';
             UpdateChars(a);
-            Assert.That(CharA, Is.EqualTo(a), "CharA is not equal to a");
+            Assert.That(CharA, Is.EqualTo(a), "CharA is not equal to 'a'");
         }
 
         //[Test]
@@ -70,13 +70,21 @@
         public char CharB = 'b';
 
         [Test]
-        public void TestCharB()
+        public void VerifyCharB_return_b()
         {
             var a = 'a';
-            Assert.That(CharB, Is.EqualTo('b'), "CharB is not eual to 'b'");
+            Assert.That(CharB, Is.EqualTo('b'), "Char b is not equal to 'b' before UpdateChars method");
             UpdateChars(a);
-            Assert.That(CharB, Is.EqualTo('b'), "CharB is not eual to 'b'");
+            Assert.That(CharB, Is.EqualTo('b'), "Char b is not equal to 'b' after UpdateChars method");
         }
+        //[Test]
+        //public void TestCharB()
+        //{
+        //    var a = 'a';
+        //    Assert.That(CharB, Is.EqualTo('b'), "CharB is not eual to 'b'");
+        //    UpdateChars(a);
+        //    Assert.That(CharB, Is.EqualTo('b'), "CharB is not eual to 'b'");
+        //}
 
         //TODO: Scenario - verify CharC return 'c' after UpdateChars method
         public char CharC;
