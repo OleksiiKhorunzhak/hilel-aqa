@@ -107,15 +107,23 @@
         //}
 
         //TODO: Scenario - verify CharJ return 'j' after UpdateChars method
+        
         public char CharJ;
 
         [Test]
-        public void TestCharJ()
+        public void VerifyCharJ_return_j()
         {
-            var a = 'a';
+            var a = 'O';   
             UpdateChars(a);
-            Assert.That(CharJ, Is.EqualTo('j'), "CharJ is not eual to 'j'");
+            Assert.That(CharJ,Is.EqualTo('j'), "CharJ is not equal to 'j' after UpdateChars method");
         }
+        //[Test]
+        //public void TestCharJ()
+        //{
+        //    var a = 'a';
+        //    UpdateChars(a);
+        //    Assert.That(CharJ, Is.EqualTo('j'), "CharJ is not eual to 'j'");
+        //}
 
         //TODO: Scenario - verify cutestAnimal return null before and 'Cat' after UpdateStrings
         public string? CutestAnimal;
