@@ -6,6 +6,14 @@
         #region[TestSetup]
         //TODO: Scenario - verify maxIntValue2 = 2147483647
         public int maxIntValue = (int)(Math.Pow(2, 32 -1) - 1);
+
+
+       
+        [Test]
+        public void VerifyMaxInt()
+        {
+            Assert.That(maxIntValue, Is.EqualTo(2147483647) );
+        }
         //TODO: Scenario - verify maxIntValue2 = 4294967295
         public uint maxIntValue2 = 4294967295;
         //TODO: Scenario - verify minIntValue = -2147483648
