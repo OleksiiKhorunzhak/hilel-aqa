@@ -1,4 +1,6 @@
-﻿namespace NUnitTests.Lessons
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace NUnitTests.Lessons
 {
     // Lesson Suite Variables
     internal class Lesson2Variables
@@ -36,10 +38,16 @@
         public int minIntValue = (int)(0 - Math.Pow(2, 32 - 1));
 
         [Test]
-        public void TestMinIntValue()
+        public void VerifyMinIntValue()
         {
-            Assert.That(minIntValue, Is.EqualTo(-2147483648), "minIntValue is not equal to -2147483648");
+           Assert.That(minIntValue, Is.EqualTo(-2147483648), "minIntValue is not equal to -2147483648"); 
         }
+
+        //[Test]
+        //public void TestMinIntValue()
+        //{
+        //    Assert.That(minIntValue, Is.EqualTo(-2147483648), "minIntValue is not equal to -2147483648");
+        //}
 
         //TODO: Scenario - verify CharA return 'a' after UpdateChars method
         public char CharA;
