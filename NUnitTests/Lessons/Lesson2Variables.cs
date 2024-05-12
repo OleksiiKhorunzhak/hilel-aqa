@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace NUnitTests.Lessons
+﻿namespace NUnitTests.Lessons
 {
     // Lesson Suite Variables
     internal class Lesson2Variables
