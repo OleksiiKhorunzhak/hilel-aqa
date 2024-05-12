@@ -91,6 +91,19 @@ namespace NUnitTests.Homework
         //Call SetChargeAlert.
         //Check that SpeedAlert includes the low charge warning.
 
+        [Test]
+        [Order(5)]
+        public void LowChargeAlert()
+        {
+            int charge = 8;
+            Charge = charge;
+            if (charge <= CriticalCharge)
+            {
+                SetChargeAlert();
+            }
+            Assert.That(Alert,Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"));
+        }
+
         //Test Case 6: Full Charge Alert
         //Description: Check that SetChargeAlert correctly alerts when charge exceeds critical overcharge level.
         //Steps:
@@ -98,12 +111,35 @@ namespace NUnitTests.Homework
         //Call SetChargeAlert.
         //Verify that SpeedAlert warns about full charge and deceleration charge being disabled.
 
+        [Test]
+        [Order(6)]
+        public void FullChargeAlert()
+        {
+            int charge = 100;
+            Charge = charge;
+            if (charge >= CriticalOvercharge)
+            {
+                SetChargeAlert();
+            }
+
+            Assert.That(Alert,Is.EqualTo("Charge Full! Deceleration charging disabled."));
+        }
         //Test Case 7: Deceleration Charge Activation Safety
         //Description: Test the logic for enabling or disabling the deceleration charge feature based on the charge level.
         //Steps:
         //Set Charge below CriticalOvercharge.
         //Invoke DecelerationChargeActivation with isActive as true.
         //Confirm that IsDecelerationChargeActive is true.
+        [Test]
+        [Order(7)]
+
+        public void DecelerationChargeActivation()
+        {
+            int charge = 95;
+            Charge = charge;
+            DecelerationChargeActivation(true, 98);
+            Assert.That(IsDecelerationChargeActive,Is.EqualTo(true));
+        }
 
         //Test Case 8: Deceleration Charge Deactivation Safety
         //Description: Ensure that deceleration charging is disabled when charge exceeds the safe threshold.
@@ -112,12 +148,34 @@ namespace NUnitTests.Homework
         //Call DecelerationChargeActivation with isActive as true.
         //Ensure IsDecelerationChargeActive is false.
 
+        [Test]
+        [Order(8)]
+
+        public void DecelerationChargeDeactivation()
+        {
+            int charge = 101;
+            Charge = charge;
+            DecelerationChargeActivation(true, 98);
+            Assert.That(IsDecelerationChargeActive,Is.EqualTo(false));
+        }
+
         //Test Case 9: Compute Deceleration Charge Power When Active
         //Description: Validate that GetDecelerationChargePower computes the correct power when the feature is active.
         //Steps:
         //Ensure DecelerationChargeMode is true.
         //Call GetDecelerationChargePower with isActive set to true.
         //Check that the returned value equals CurrentSpeed - CurrentAcceleration.
+        [Test]
+        [Order(9)]
+
+        public void ComputeDecelerationWhenActive()
+        {
+            if (DecelerationChargeMode == true)
+            {
+                GetDecelerationChargePower(true);
+            }
+            Assert.That(DecelerationCharge,Is.EqualTo(CurrentSpeed - CurrentAcceleration));
+        }
 
         //Test Case 10: Compute Deceleration Charge Power When Inactive
         //Description: Check that GetDecelerationChargePower returns 0 when the feature is not active.
@@ -125,6 +183,17 @@ namespace NUnitTests.Homework
         //Ensure DecelerationChargeMode is true.
         //Invoke GetDecelerationChargePower with isActive set to false.
         //Verify that the result is 0.
+
+        [Test]
+        [Order(10)]
+        public void ComputeDecelerationWhenInactive()
+        {
+            if (DecelerationChargeMode == false)
+            {
+                GetDecelerationChargePower(false);
+            }
+            Assert.That(GetDecelerationChargePower(false),Is.EqualTo(0));
+        }
         #endregion
 
     }

@@ -10,7 +10,7 @@
         public bool IsDecelerationChargeActive { get; private set; }
         public int Deceleration { get; private set; }
         public int DecelerationCharge { get; private set; }
-        public int Charge { get; private set; }
+        public int Charge { get; set; }
 
         //Mock values - change at will
         public int CurrentSpeed = 50;
@@ -64,12 +64,12 @@
 
         public void SetChargeAlert()
         {   //TODO if Charge lower or equal critical charge show alert
-            if (true)
+            if (Charge<=CriticalCharge)
             {
                 Alert = "Take caution! Charge Low at " + Charge + "%!";
             }
             //TODO if Chargehigher or equal CriticalOvercharge show alert
-            if (true)
+            if (Charge>=CriticalOvercharge)
             {
                 Alert = "Charge Full! Deceleration charging disabled.";
             }
