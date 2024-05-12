@@ -51,12 +51,20 @@
         public char CharA;
 
         [Test]
-        public void TestCharA()
+        public void VerifyCharA_return_a()
         {
             var a = 'a';
             UpdateChars(a);
-            Assert.That(CharA, Is.EqualTo('a'), "CharA is not eual to 'a'");
+            Assert.That(CharA, Is.EqualTo(a), "CharA is not equal to a");
         }
+
+        //[Test]
+        //public void TestCharA()
+        //{
+        //    var a = 'a';
+        //    UpdateChars(a);
+        //    Assert.That(CharA, Is.EqualTo('a'), "CharA is not eual to 'a'");
+        //}
 
         //TODO: Scenario - verify CharB return 'b' before and after UpdateChars method
         public char CharB = 'b';
