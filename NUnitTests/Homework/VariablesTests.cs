@@ -22,10 +22,10 @@
         {
             //TODO: uncomment and fix code below 
 
-            //part = 25.5;
-            //whole = 100;
+            double part = 25.5;
+            int whole = 100;
 
-            //Assert("part is not smaller than whole");
+            Assert.That(part, Is.LessThan(whole),"part is not smaller than whole");
         }
 
         //TODO: uncomment and fix code below
