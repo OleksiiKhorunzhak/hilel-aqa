@@ -9,11 +9,8 @@ namespace Homework
         [Description("TC-21 higth expected to be bigger than low")]
         public void IntegerTest()
         {
-            //TODO: uncomment and fix code below 
-
             int low = 32;
             int higth = 64;
-
             Assert.That(low < higth, "higth is not bigger than low");
         }
 
@@ -21,15 +18,10 @@ namespace Homework
         [Description("TC-22 part expected to be smaller than whole")]
         public void DecimalTest()
         {
-            //TODO: uncomment and fix code below 
-
             double part = 25.5;
             int whole = 100;
-
             Assert.That(part, Is.LessThan(whole),"part is not smaller than whole");
         }
-
-        //TODO: uncomment and fix code below
 
         [Description("TC-23 text that represent higth should match expected pattern")]
         [Test]
