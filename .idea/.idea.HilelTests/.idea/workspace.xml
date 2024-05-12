@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3179d7f-1369-4c12-a031-0656cf26db28" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HilelTests/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HilelTests/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NUnitTests/Homework/CarTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NUnitTests/Homework/CarTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NUnitTests/Lessons/Lesson3Logic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NUnitTests/Lessons/Lesson3Logic.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -61,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1715274680703</updated>
       <workItem from="1715274681896" duration="882000" />
-      <workItem from="1715283559506" duration="19298000" />
+      <workItem from="1715283559506" duration="31042000" />
+      <workItem from="1715503992771" duration="5442000" />
     </task>
     <servers />
   </component>
@@ -69,6 +71,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

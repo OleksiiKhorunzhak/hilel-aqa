@@ -43,17 +43,10 @@ namespace NUnitTests.Homework
         [Order(2)]
         public void TestGetSpeedPositiveAcceleration()
         {
-            //Set CurrentAcceleration to a positive value.
-            CurrentAcceleration = 50;
-            
             //Call the GetSpeed method.
             GetSpeed();
-            
             //Check that Speed equals CurrentSpeed.
-            if (Acceleration > 0)
-            {
-                Assert.That(Speed, Is.EqualTo(CurrentSpeed));
-            }
+            Assert.That(Acceleration > 0 && Speed == CurrentSpeed, "Speed does not match CurrentSpeed");
         }
 
         //Test Case 3: Test GetDeceleration
@@ -75,10 +68,7 @@ namespace NUnitTests.Homework
             GetDeceleration();
             
             //Ensure Deceleration equals CurrentSpeed - CurrentDeceleration.
-            if (Deceleration == (CurrentSpeed - CurrentDeceleration));
-            {
-                
-            }
+            Assert.That(Deceleration, Is.EqualTo(CurrentSpeed - CurrentDeceleration), "Deceleration does not equal CurrentSpeed - CurrentDeceleration");
         }
 
         //Test Case 4: Speed Alert on Exceeding Max Speed
@@ -97,12 +87,8 @@ namespace NUnitTests.Homework
             {
                 //Execute SetSpeedAlert.
                 SetSpeedAlert(CurrentSpeed, MaxSpeed);
-                
                 //Confirm that SpeedAlert contains the appropriate warning message.
-                if (Alert != null)
-                {
-                    Assert.That(Alert, Does.Contain("Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!"));
-                }
+                Assert.That(Alert, Does.Contain("Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!"), "SpeedAlert does not contain the appropriate warning message"); 
             }
         }
 
@@ -118,16 +104,13 @@ namespace NUnitTests.Homework
         public void TestLowChargeAlertWarningMessage()
         {
             //Set Charge to just below CriticalCharge.
-            if (Charge <= CriticalCharge);
+            if (Charge <= CriticalCharge)
             {
-                //Call SetChargeAlert.
-                SetChargeAlert();
+               //Call SetChargeAlert.
+               SetChargeAlert();
                 
-                //Check that SpeedAlert includes the low charge warning.
-                if (Alert != null)
-                {
-                    Assert.That(Alert, Does.Contain("Take caution! Charge Low at " + Charge + "%!"));
-                }
+               //Check that SpeedAlert includes the low charge warning.
+               Assert.That(Alert, Does.Contain("Take caution! Charge Low at " + Charge + "%!"), "SpeedAlert does not contain the appropriate warning message");
             }
         }
 
@@ -143,16 +126,14 @@ namespace NUnitTests.Homework
         public void TestFullChargeAlertWarningMessage()
         {
             //Verify Charge above CriticalOvercharge.
-            if (Charge >= CriticalOvercharge)
+            if (Charge > CriticalOvercharge)
             {
                 //Call SetChargeAlert.
                 SetChargeAlert();
-                
+
                 //Verify that SpeedAlert warns about full charge and deceleration charge being disabled.
-                if (Alert != null)
-                {
-                    Assert.That(Alert, Does.Contain("Charge Full! Deceleration charging disabled."));
-                }
+                Assert.That(Alert, Does.Contain("Charge Full! Deceleration charging disabled."),
+                    "SpeedAlert does not contain the appropriate warning message");
             }
         }
 
@@ -167,11 +148,15 @@ namespace NUnitTests.Homework
         [Description("Confirm that IsDecelerationChargeActive is true")]
         public void TestDecelerationChargeActivationSafety()
         { 
+            //Invoke DecelerationChargeActivation with isActive as true.
+            DecelerationChargeActivation(true, CriticalOvercharge);
+            
             // Check if the charge is below the critical overcharge level and if the deceleration charge is active
-            if ((Charge < CriticalOvercharge) && (IsDecelerationChargeActive == true))
+            if (Charge < CriticalOvercharge)
             {
+                
                 // Assert that the IsDecelerationChargeActive property is true
-                Assert.That(IsDecelerationChargeActive, Is.True);
+                Assert.That(IsDecelerationChargeActive, Is.True, "IsDecelerationChargeActive is not true");
             }
         }
 
@@ -186,15 +171,11 @@ namespace NUnitTests.Homework
         [Description("Ensure IsDecelerationChargeActive is false")]
         public void TestDecelerationChargeDeactivationSafety()
         {
-            // Attempt to activate the deceleration charge feature
+            // Check if the charge is above the critical overcharge level and if the deceleration charge is active
             DecelerationChargeActivation(true, CriticalOvercharge);
-
-            // Check if the charge is above the critical overcharge level and if the deceleration charge feature is currently inactive
-            //if (Charge > CriticalOvercharge && IsDecelerationChargeActive == false);
-            //{
-
-            //}
-            Assert.That((Charge > CriticalOvercharge && IsDecelerationChargeActive == false), "AssertFailed");
+            
+            // Assert that the IsDecelerationChargeActive property is false
+            Assert.That(Charge > CriticalOvercharge && IsDecelerationChargeActive, Is.EqualTo(false), "IsDecelerationChargeActive is not false");
         }
 
         //Test Case 9: Compute Deceleration Charge Power When Active
@@ -209,14 +190,17 @@ namespace NUnitTests.Homework
         public void TestDecelerationChargePowerWhenActiveReturnsValue()
         {
             //Ensure DecelerationChargeMode is true.
-            if (DecelerationChargeMode);
+            DecelerationChargeMode = true;
+            
+            //Check that the returned value equals CurrentSpeed - CurrentAcceleration.
+            Assert.That(GetDecelerationChargePower(true), Is.EqualTo(CurrentSpeed - CurrentAcceleration), "DecelerationChargePower does not equal CurrentSpeed - CurrentAcceleration");
+            
+            //Alternative solution
+            /*
+            if (DecelerationChargeMode)
             {
-               //Check that the returned value equals CurrentSpeed - CurrentAcceleration.
-               if (GetDecelerationChargePower(true) == (CurrentSpeed - CurrentAcceleration));
-               {
-                    
-               }
-            }
+                Assert.That(GetDecelerationChargePower(true), Is.EqualTo(CurrentSpeed - CurrentAcceleration), "DecelerationChargePower does not equal CurrentSpeed - CurrentAcceleration");
+            } */
         }
 
         //Test Case 10: Compute Deceleration Charge Power When Inactive
@@ -231,15 +215,19 @@ namespace NUnitTests.Homework
         public void TestDecelerationChargePowerWhenInactiveReturnsZero()
         {
             //Ensure DecelerationChargeMode is true.
-            if (DecelerationChargeMode);
+            DecelerationChargeMode = true;
+            
+            //Invoke GetDecelerationChargePower with isActive set to false.
+            //Verify that the result is 0.
+            Assert.That(GetDecelerationChargePower(false), Is.EqualTo(0), "GetDecelerationChargePower is not 0");
+            
+            //Alternative solution
+            /*if (DecelerationChargeMode)
             {
-                //Verify that the result is 0 when GetDecelerationChargePower(false).
-                if (GetDecelerationChargePower(false) == 0);
-                {
-                    
-                }
-            }
+                Assert.That(GetDecelerationChargePower(false), Is.EqualTo(0), "GetDecelerationChargePower is not 0");
+            } */
         }
+        
         #endregion
 
     }
