@@ -126,37 +126,66 @@
         //}
 
         //TODO: Scenario - verify cutestAnimal return null before and 'Cat' after UpdateStrings
+        
         public string? CutestAnimal;
 
         [Test]
-        public void TestStringA()
+        public void Verify_string_CutestAnimal()
         {
-            Assert.That(CutestAnimal, Is.EqualTo(null), "String is not eual to 'null'");
+            Assert.That(CutestAnimal, Is.EqualTo(null), "string CutestAnimal is not Null");
             UpdateStrings();
-            Assert.That(CutestAnimal, Is.EqualTo("Cat"), "String is not eual to 'Cat'");
+            Assert.That(CutestAnimal,Is.EqualTo("Cat"), "string CutestAnimal is not 'Cat'");
         }
 
-        //TODO: Scenario - verify cutestAnimal return Dog before and 'Dog' after UpdateStrings
+        //[Test]
+        //public void TestStringA()
+        //{
+        //    Assert.That(CutestAnimal, Is.EqualTo(null), "String is not eual to 'null'");
+        //    UpdateStrings();
+        //    Assert.That(CutestAnimal, Is.EqualTo("Cat"), "String is not eual to 'Cat'");
+        //}
+
+        //TODO: Scenario - verify BestFriendAnimal return Dog before and 'Dog' after UpdateStrings
+
         public string BestFriendAnimal = "Dog";
 
         [Test]
-        public void TestStringB()
+        public void Verify_string_BestFriendAnimal()
         {
-            Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "String is not eual to 'null'");
+            Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "string BestFriendAnimal is not 'Dog' before UpdateStrings");
             UpdateStrings();
-            Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "String is not eual to 'Cat'");
+            Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "string BestFriendAnimal is not 'Dog' after UpdateStrings");
         }
 
-        //TODO: Scenario - verify coolestAnimal return null before and 'Horse' after UpdateStrings with parameter 'Horse'
+        //[Test]
+        //public void TestStringB()
+        //{
+        //    Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "String is not eual to 'null'");
+        //    UpdateStrings();
+        //    Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "String is not eual to 'Cat'");
+        //}
+
+            //TODO: Scenario - verify coolestAnimal return null before and 'Horse' after UpdateStrings with parameter 'Horse'
+
         public string? CoolestAnimal;
+
         [Test]
-        public void TestStringC()
+        public void Verify_string_CoolestAnimal()
         {
-            string animal = "Horse";
-            Assert.That(CoolestAnimal, Is.EqualTo(null), "String is not eual to 'Horse'");
-            UpdateStrings(animal);
-            Assert.That(CoolestAnimal, Is.EqualTo(animal), "String is not eual to 'Horse'");
+            string testAnimal = "Horse";
+            Assert.That(CoolestAnimal, Is.EqualTo(null), "CoolestAnimal is not Null before UpdateStrings");
+            UpdateStrings(testAnimal);
+            Assert.That(CoolestAnimal, Is.EqualTo(testAnimal), "CoolestAnimal is not 'Horse' after UpdateStrings");
         }
+
+        //[Test]
+        //public void TestStringC()
+        //{
+        //    string animal = "Horse";
+        //    Assert.That(CoolestAnimal, Is.EqualTo(null), "String is not eual to 'Horse'");
+        //    UpdateStrings(animal);
+        //    Assert.That(CoolestAnimal, Is.EqualTo(animal), "String is not eual to 'Horse'");
+        //}
 
         public void UpdateChars(char charC)
         {
