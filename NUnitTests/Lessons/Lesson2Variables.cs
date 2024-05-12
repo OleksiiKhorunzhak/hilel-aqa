@@ -146,7 +146,7 @@
         //}
 
         //TODO: Scenario - verify BestFriendAnimal return Dog before and 'Dog' after UpdateStrings
-
+        
         public string BestFriendAnimal = "Dog";
 
         [Test]
@@ -168,11 +168,12 @@
             //TODO: Scenario - verify coolestAnimal return null before and 'Horse' after UpdateStrings with parameter 'Horse'
 
         public string? CoolestAnimal;
-
+        
         [Test]
         public void Verify_string_CoolestAnimal()
         {
             string testAnimal = "Horse";
+            
             Assert.That(CoolestAnimal, Is.EqualTo(null), "CoolestAnimal is not Null before UpdateStrings");
             UpdateStrings(testAnimal);
             Assert.That(CoolestAnimal, Is.EqualTo(testAnimal), "CoolestAnimal is not 'Horse' after UpdateStrings");

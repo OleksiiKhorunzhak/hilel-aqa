@@ -10,10 +10,10 @@
         {
             //TODO: uncomment and fix code below 
 
-            //low = 32;
-            //higth = 64;
+            int low = 32;
+            int higth = 64;
 
-            // Assert.That(32 < 64, "higth is not bigger than low");
+            Assert.That(low < higth, "higth is not bigger than low");
         }
 
         [Test]
