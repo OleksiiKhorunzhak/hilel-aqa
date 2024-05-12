@@ -87,15 +87,24 @@
         //}
 
         //TODO: Scenario - verify CharC return 'c' after UpdateChars method
+       
         public char CharC;
 
         [Test]
-        public void TestCharC()
+        public void VerifyCharC_return_c()
         {
             var a = 'c';
             UpdateChars(a);
-            Assert.That(CharC, Is.EqualTo('c'), "CharC is not eual to 'c'");
+            Assert.That(CharC, Is.EqualTo('c'), "CharC is not equal to 'c' after UpdateChars method");
         }
+
+        //[Test]
+        //public void TestCharC()
+        //{
+        //    var a = 'c';
+        //    UpdateChars(a);
+        //    Assert.That(CharC, Is.EqualTo('c'), "CharC is not eual to 'c'");
+        //}
 
         //TODO: Scenario - verify CharJ return 'j' after UpdateChars method
         public char CharJ;
