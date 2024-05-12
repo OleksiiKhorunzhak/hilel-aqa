@@ -3,7 +3,7 @@ namespace Homework
 {
     public sealed class VariablesTests
     {
-        //protected static string Combine(***) => "higth equals " + higth;
+        protected static string Combine(int higth) => "higth equals " + higth;
 
         [Test]
         [Description("TC-21 higth expected to be bigger than low")]
@@ -30,7 +30,7 @@ namespace Homework
         }
 
         //TODO: uncomment and fix code below
-        //***
+
         [Description("TC-23 text that represent higth should match expected pattern")]
         [Test]
         public void StringsTest()
@@ -40,9 +40,6 @@ namespace Homework
             string GetCombinedString = Combine(higth);
             Assert.That(Pattern,Is.EqualTo(GetCombinedString),"expected text not match actual text");
         }
-        private string Combine(int higth)
-        {
-            return "higth equals " + higth;
-        }
+
     }
 }
