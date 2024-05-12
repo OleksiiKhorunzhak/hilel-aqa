@@ -1,4 +1,5 @@
-﻿namespace Homework
+﻿
+namespace Homework
 {
     public sealed class VariablesTests
     {
@@ -31,13 +32,17 @@
         //TODO: uncomment and fix code below
         //***
         [Description("TC-23 text that represent higth should match expected pattern")]
+        [Test]
         public void StringsTest()
         {
             int higth = 64;
             string Pattern = "higth equals " + higth;
-            //Uncomment and fix code below
-            //string GetCombinedString = Combine(higth);
-            //Assert.***(***, ***, "expected text not match actual text");
+            string GetCombinedString = Combine(higth);
+            Assert.That(Pattern,Is.EqualTo(GetCombinedString),"expected text not match actual text");
+        }
+        private string Combine(int higth)
+        {
+            return "higth equals " + higth;
         }
     }
 }
