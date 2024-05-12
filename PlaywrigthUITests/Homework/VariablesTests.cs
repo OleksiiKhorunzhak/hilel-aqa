@@ -31,5 +31,7 @@
             string GetCombinedString = Combine(higth);
             Assert.That(Pattern,Is.EqualTo(GetCombinedString), "expected text not match actual text");
         }
+
+        private string Finished = "Home Work #1 finished";
     }
 }
