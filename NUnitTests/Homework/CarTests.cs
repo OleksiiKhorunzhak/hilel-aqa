@@ -45,6 +45,7 @@ namespace NUnitTests.Homework
 
 
 		[Test]
+		[Order(3)]
 		public void TestGetDeceleration()
 		{
 			//Set a known value for CurrentSpeed and CurrentDeceleration.
@@ -59,21 +60,20 @@ namespace NUnitTests.Homework
 
 		//Test Case 4: Speed Alert on Exceeding Max Speed
 		//Description: Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.
-		//Steps:
-		//Set CurrentSpeed to exceed MaxSpeed.
-		//Execute SetSpeedAlert.
-		//Confirm that SpeedAlert contains the appropriate warning message.
+		
+		
+		
 		[Test]
+		[Order(4)]
 		public void TestExceedingMaxSpeedAlert()
 		{
-			//Set a known value for CurrentSpeed and CurrentDeceleration.
-			CurrentSpeed = 50;
-			CurrentDeceleration = 5;
-			int expectedValue = CurrentSpeed - CurrentDeceleration;
-			//Invoke GetDeceleration.
-			GetDeceleration();
-			//Ensure Deceleration equals CurrentSpeed - CurrentDeceleration.
-			Assert.That(Deceleration, Is.EqualTo(expectedValue), $"Deceleration = {Deceleration} is not equal to {expectedValue}");
+			//Set CurrentSpeed to exceed MaxSpeed.
+			CurrentSpeed = 110;
+			MaxSpeed = 100;
+			//Execute SetSpeedAlert.
+			SetSpeedAlert(CurrentSpeed, MaxSpeed);
+			//Confirm that SpeedAlert contains the appropriate warning message.
+			Assert.That(Alert, Is.EquivalentTo($"Take caution! Speed limit overdue \" + ({CurrentSpeed} - {MaxSpeed}) + \"!\""), "Alert is not equal to expected");
 		}
 
 		//Test Case 5: Low Charge Alert
