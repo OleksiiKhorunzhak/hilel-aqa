@@ -1,6 +1,6 @@
 ﻿namespace NUnitTests.Lessons
 {
-    //Test changed
+    //Test change
     //Lesson Suite Logic
     public class Lesson3Logic
     {
