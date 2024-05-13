@@ -14,3 +14,7 @@
 /NUnitTests/.vs
 /NUnitTests/bin/Debug/net8.0
 /NUnitTests/obj
+/NUnitTests/Homework/VariablesTests.cs
+/AtataUITests/Homework/VariablesTests.cs
+/PlaywrigthUITests/Homework/VariablesTests.cs
+/NUnitTests/Lessons/Lesson2Variables.cs
