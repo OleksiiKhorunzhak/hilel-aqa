@@ -5,7 +5,7 @@
     {
         [SetUp]
         public void SetUp() =>
-            AtataContext.Configure().Build();
+            AtataContext.Configure().UseChrome().Build();
 
         [TearDown]
         public void TearDown() =>
