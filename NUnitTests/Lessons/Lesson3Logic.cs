@@ -32,29 +32,32 @@
         public void GetAcceleration()
         {
             //TODO set acceleration as CurrentAcceleration
-            //Acceleration 
+            Acceleration = CurrentAcceleration;
         }
 
         public void GetSpeed()
         {
             //TODO if acceleration is more than 0 set speed as current speed
-            if (true)
+            if (Acceleration > 0)
             {
+                Speed = CurrentSpeed; 
             }
         }
 
         public void GetDeceleration()
         {
             //TODO if acceleration is more than 0 set deceleration as CurrentSpeed - CurrentDeceleration
-            if (true)
+            if (Acceleration >0)
             {
+                Deceleration = CurrentSpeed - CurrentDeceleration;
             }
         }
+
 
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
             //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
-            if (true)
+            if (CurrentSpeed >= maxSpeed && Acceleration > 0)
             {
                 Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
             }
@@ -62,12 +65,12 @@
 
         public void SetChargeAlert()
         {   //TODO if Charge lower or equal critical charge show alert
-            if (true)
+            if (Charge <= CriticalCharge)
             {
                 Alert = "Take caution! Charge Low at " + Charge + "%!";
             }
             //TODO if Chargehigher or equal CriticalOvercharge show alert
-            if (true)
+            if (Charge >= CriticalCharge)
             {
                 Alert = "Charge Full! Deceleration charging disabled.";
             }
@@ -85,7 +88,13 @@
                 // Only continue accelerating if it's allowed and Speed has not exceeded the limit
                 Acceleration = acceleratePedalValue;
 
-                if (Speed > MaxSpeed + 20)
+                //Speed = Speed <= MaxSpeed + 20 ? Speed + 1 : Speed;
+
+                if (Speed <= MaxSpeed + 20)
+                {
+                    Speed++;                    
+                }
+                else
                 {
                     break;
                 }
@@ -139,6 +148,14 @@
         //Call the GetAcceleration method.
         //Verify that the Acceleration property matches CurrentAcceleration.
 
+        [Test]
+        [Order(2)]
+        public void TestGetSpeed()
+        {
+            CurrentAcceleration = 50;
+
+            GetSpeed();
+        }
         //Test Case 2: Test GetSpeed with Positive Acceleration
         //Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
         //Steps:
