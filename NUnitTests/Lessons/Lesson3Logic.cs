@@ -1,5 +1,6 @@
 ﻿namespace NUnitTests.Lessons
 {
+    //Test change
     //Lesson Suite Logic
     public class Lesson3Logic
     {
@@ -11,7 +12,7 @@
         public int Deceleration { get; set; }
         public int DecelerationCharge { get; set; }
         public int Charge { get; set; }
-
+        
         //Mock values - change at will
         public int CurrentSpeed = 50;
         public int CurrentAcceleration = 50;
