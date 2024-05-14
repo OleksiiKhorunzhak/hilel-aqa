@@ -35,6 +35,12 @@
             // Filter the array using LINQ where the starting letter matches 'startsFrom' character
             return selectFromArray.Where(country => char.ToUpper(country[0]) == upperStartsFrom).ToArray();
         }
+        [Test]
+        public void SelectCountries()
+        {
+            string[] countries = SelectCountriesStartingWith(EuropeanCountriesArray, 'a');
+            Assert.That(countries.Length == 4);
+		}
 
         //TODO: test SortCountries, verify sot corresponds ascend = true descend = false
         public string[] SortCountries(string[] arrayToSort, bool sortAscDesc)
@@ -55,11 +61,19 @@
             //: arrayToSort.OrderByDescending(country => country).ToArray();
         }
 
+        [Test, Description("test SortCountries, verify sot corresponds ascend = true descend = false")]
+        public void TestSortCountries()
+        {
+            string[] sortedDesc = SortCountries(EuropeanCountriesArray, false);
+            Assert.That(sortedDesc, Is.Ordered.Descending, "Array is not sorted");
+
+		}
+
         //TODO: test CombineCountryAndPopulation
         public string[] CombineCountryAndPopulation(string[] countries, int[] populations)
         {
             //TODO: Add countries and populations array size check
-            if (true)
+            if (countries.Length != populations.Length)
             {
                 throw new ArgumentException("Countries and populations arrays must be of the same length.");
             }
@@ -73,5 +87,12 @@
 
             return combined;
         }
+        [Test]
+        public void TestCombineArrays()
+        {
+            string[] CombinedArray = CombineCountryAndPopulation(EuropeanCountriesArray, CountryPopulations);
+            Assert.That(CombinedArray.Length, Is.EqualTo(EuropeanCountriesArray.Length));
+
+		}
     }
 }
