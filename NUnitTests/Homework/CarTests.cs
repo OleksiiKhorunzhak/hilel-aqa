@@ -1,9 +1,11 @@
-﻿using NUnitTests.Lessons;
+﻿using System.Security.Cryptography.X509Certificates;
+using NUnitTests.Lessons;
 
 namespace NUnitTests.Homework
 {
     public class CarTests : Lesson3Logic
     {
+
         //TODO: Finish car tests here or in Lesson3Logic file folowing example
 
         #region[TestCases]
@@ -31,7 +33,7 @@ namespace NUnitTests.Homework
         public void TestGetSpeed()
         {
             //Set CurrentAcceleration to a positive value.
-            CurrentAcceleration = 50;
+            CurrentAcceleration = 110;
             //Call the GetSpeed method.
             GetSpeed();
             //Check that Speed equals CurrentSpeed.
@@ -84,6 +86,12 @@ namespace NUnitTests.Homework
             SetChargeAlert();
             Assert.That(Alert, Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"));
         }
+
+            //Check that SpeedAlert includes the low charge warning
+            Assert.That(Alert, Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"));
+        }
+
+
 
         //Test Case 6: Full Charge Alert
         //Description: Check that SetChargeAlert correctly alerts when charge exceeds critical overcharge level.
@@ -164,3 +172,4 @@ namespace NUnitTests.Homework
             #endregion
         }
 }
+
