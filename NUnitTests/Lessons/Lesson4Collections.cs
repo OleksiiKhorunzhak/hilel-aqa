@@ -13,6 +13,7 @@
             "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden",
             "Switzerland", "Ukraine", "United Kingdom", "Vatican City"
         ];
+        
 
         readonly string[] northAmericanCountries =
         [
@@ -25,7 +26,7 @@
 
         public static int[] CountryPopulations =
         [
-        2877797, 77265, 2963243, 8917205, 11589623,
+        2877797, 77265, 2963243, 8917205, 11589623, 
         3280819, 6951482, 4105267, 1207359, 10708981,
         5822763, 1326535, 5540718, 67320213, 3717000, 83149300, 10423054,
         9660351, 356991, 4937796, 60461826, 1810469, 1886198, 38128,
