@@ -118,7 +118,7 @@ namespace Homework
         {
             string cityToCheck = "Kyiv";
             //TODO: Uncomment and put correct assert type and method
-            //(UkrainianCitiesList, cityToCheck, "List does not contain Kyiv");
+            Assert.That(UkrainianCitiesList.Contains(cityToCheck), "List does not contain Kyiv");
         }
 
         [Test]
@@ -127,7 +127,7 @@ namespace Homework
         {
             int expectedCount = 21;
             //TODO: Uncomment and ix asssertion
-            //Assert.That(UkrainianCitiesList, Is.EqualTo(expectedCount), "City list count is not 21");
+            Assert.That(UkrainianCitiesList.Count, Is.EqualTo(expectedCount), "City list count is not 21");
         }
 
         [Test]
@@ -136,6 +136,7 @@ namespace Homework
         {
             var initialCount = UkrainianCitiesList.Count;
             //TODO: use Add() to add new city to cities list
+            UkrainianCitiesList.Add("Crimea");
             Assert.That(UkrainianCitiesList.Count, Is.EqualTo(initialCount + 1), "Adding a city did not increase the list size as expected");
         }
     }
