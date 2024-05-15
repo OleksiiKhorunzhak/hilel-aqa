@@ -11,12 +11,10 @@
         public int Deceleration { get; set; }
         public int DecelerationCharge { get; set; }
         public int Charge { get; set; }
-
         //Mock values - change at will
         public int CurrentSpeed = 50;
         public int CurrentAcceleration = 50;
         public int CurrentDeceleration = 30;
-
         // Default values, change with caution
         public static int MaxSpeed = 100;
         public static int MinSpeed = 60;
@@ -26,55 +24,60 @@
         public bool AccelerationAllowed;
         public bool DecelerationChargeMode = true;
         #endregion
-
         #region[Methods]
-
         public void GetAcceleration()
         {
             //TODO set acceleration as CurrentAcceleration
+            //Acceleration = CurrentAcceleration;
             Acceleration = CurrentAcceleration;
         }
-
         public void GetSpeed()
         {
             //TODO if acceleration is more than 0 set speed as current speed
             if (Acceleration > 0)
             {
+                //Speed = CurrentSpeed;
                 Speed = CurrentSpeed;
             }
         }
-
         public void GetDeceleration()
         {
             //TODO if acceleration is more than 0 set deceleration as CurrentSpeed - CurrentDeceleration
             if (Acceleration > 0)
             {
-                Deceleration = CurrentSpeed - CurrentDeceleration;
+                //Deceleration = CurrentSpeed - CurrentDeceleration;
+                Deceleration = CurrentSpeed;
             }
         }
-
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
             //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
             if (CurrentSpeed >= maxSpeed && Acceleration > 0)
             {
+                //Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
                 Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
             }
         }
-
         public void SetChargeAlert()
         {   //TODO if Charge lower or equal critical charge show alert
+            //if (Charge <= CriticalCharge)
+            //{
+            //    Alert = "Take caution! Charge Low at " + Charge + "%!";
+            //}
             if (Charge <= CriticalCharge)
             {
                 Alert = "Take caution! Charge Low at " + Charge + "%!";
             }
             //TODO if Charge higher or equal CriticalOvercharge show alert
+            //if (Charge >= CriticalOvercharge)
+            //{
+            //    Alert = "Charge Full! Deceleration charging disabled.";
+            //}
             if (Charge >= CriticalOvercharge)
             {
                 Alert = "Charge Full! Deceleration charging disabled.";
             }
         }
-
         public void Accelerate(int acceleratePedalValue)
         {
             if (Speed <= MaxSpeed + 20)
@@ -86,15 +89,14 @@
             {
                 // Only continue accelerating if it's allowed and Speed has not exceeded the limit
                 Acceleration = acceleratePedalValue;
-
-                if (Speed <= MaxSpeed + 20)
-                {
-                    Speed++;
-                }
-                 else { break; }
+                Speed = (Speed <= MaxSpeed + 20) ? (Speed + 1) : (Speed); // (if true) ? (then do this) : (if false)
+                if (Speed > MaxSpeed + 20) { break; }
+                //Acceleration = acceleratePedalValue;
+                //if (Speed <= MaxSpeed + 20)
+                //{ Speed++ };
+                //else { break; }
             }
         }
-
         /// <summary>
         /// Activates or deactivates the deceleration charge based on the current charge level relative to a specified critical overcharge threshold.
         /// </summary>
