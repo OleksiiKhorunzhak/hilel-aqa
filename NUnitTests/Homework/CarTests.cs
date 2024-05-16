@@ -128,11 +128,17 @@ namespace NUnitTests.Homework
         }
 
         //Test Case 9: Compute Deceleration Charge Power When Active
-        //Description: Validate that GetDecelerationChargePower computes the correct power when the feature is active.
-        //Steps:
-        //Ensure DecelerationChargeMode is true.
-        //Call GetDecelerationChargePower with isActive set to true.
-        //Check that the returned value equals CurrentSpeed - CurrentAcceleration.
+        [Test, Order(9), Description("Validate that GetDecelerationChargePower computes the correct power when the feature is active.")]
+        public void ComputeDecelerationChargePowerWhenActive()
+        {
+            //Steps:
+            //Ensure DecelerationChargeMode is true.
+            Assert.That(DecelerationChargeMode, Is.True, "DecelerationChargeMode is false");
+            //Call GetDecelerationChargePower with isActive set to true.
+            GetDecelerationChargePower(true);
+            //Check that the returned value equals CurrentSpeed - CurrentAcceleration.
+            Assert.That(DecelerationCharge, Is.EqualTo(CurrentSpeed - CurrentAcceleration), "DecelerationCharge returns wrong value");
+        }
 
         //Test Case 10: Compute Deceleration Charge Power When Inactive
         //Description: Check that GetDecelerationChargePower returns 0 when the feature is not active.
