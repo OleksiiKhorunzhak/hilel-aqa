@@ -18,12 +18,13 @@
         // Default values, change with caution
         public static int MaxSpeed = 100;
         public static int MinSpeed = 60;
-        public static int MaxAceleration = 90;
+        public static int MaxAcceleration = 90;
         public static readonly int CriticalCharge = 10;
         public static readonly int CriticalOvercharge = 98;
         public bool AccelerationAllowed;
         public bool DecelerationChargeMode = true;
         #endregion
+
         #region[Methods]
         public void GetAcceleration()
         {
@@ -46,13 +47,13 @@
             if (Acceleration > 0)
             {
                 //Deceleration = CurrentSpeed - CurrentDeceleration;
-                Deceleration = CurrentSpeed;
+                Deceleration = CurrentSpeed - CurrentDeceleration;
             }
         }
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
-            //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
-            if (CurrentSpeed >= maxSpeed && Acceleration > 0)
+            //TODO if current speed EXCEEDS max speed AND acceleration is more than 0 show speed alert
+            if (CurrentSpeed > maxSpeed && Acceleration > 0)
             {
                 //Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
                 Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
@@ -105,14 +106,8 @@
         /// <returns>A boolean indicating the activation status of the deceleration charge. Returns true if the charge is activated, otherwise false.</returns>
         public bool DecelerationChargeActivation(bool isActive, int criticalOvercharge)
         {
-            if (isActive && Charge < criticalOvercharge)
-            {
-                return IsDecelerationChargeActive = true;
-            }
-            else
-            {
-                return IsDecelerationChargeActive = false;
-            }
+            IsDecelerationChargeActive = isActive && Charge < criticalOvercharge;
+            return IsDecelerationChargeActive;
         }
 
         /// <summary>
@@ -208,6 +203,5 @@
         //Invoke GetDecelerationChargePower with isActive set to false.
         //Verify that the result is 0.
         #endregion
-
     }
 }

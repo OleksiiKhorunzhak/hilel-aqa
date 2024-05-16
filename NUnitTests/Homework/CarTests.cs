@@ -16,6 +16,7 @@ namespace NUnitTests.Homework
 
         #region[TestCases]
         //TODO: TestCases
+
         //Test Case 1: Test Acceleration
         //Description: Ensure that the method GetAcceleration correctly retrieves the current acceleration value.
         //Steps:
@@ -37,7 +38,6 @@ namespace NUnitTests.Homework
             //Check that Speed equals CurrentSpeed.
             Assert.That(Speed, Is.EqualTo(CurrentSpeed));
         }
-
 
         //Test Case 3: Test GetDeceleration
         //Description: Check if GetDeceleration correctly calculates deceleration as the difference between current speed and deceleration.
