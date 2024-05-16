@@ -89,11 +89,17 @@ namespace NUnitTests.Homework
         }
 
         //Test Case 6: Full Charge Alert
-        //Description: Check that SetChargeAlert correctly alerts when charge exceeds critical overcharge level.
-        //Steps:
-        //Set Charge above CriticalOvercharge.
-        //Call SetChargeAlert.
-        //Verify that SpeedAlert warns about full charge and deceleration charge being disabled.
+        [Test,Order(6), Description("Check that SetChargeAlert correctly alerts when charge exceeds critical overcharge level.")]
+        public void FullChargeAlert()
+        {
+            //Steps:
+            //Set Charge above CriticalOvercharge.
+            Charge = 99;
+            //Call SetChargeAlert.
+            SetChargeAlert();
+            //Verify that SpeedAlert warns about full charge and deceleration charge being disabled.
+            Assert.That(Alert, Is.EqualTo("Charge Full! Deceleration charging disabled."), "SpeedAlert is not warns about full charge and deceleration charge being disabled");
+        }
 
         //Test Case 7: Deceleration Charge Activation Safety
         //Description: Test the logic for enabling or disabling the deceleration charge feature based on the charge level.
