@@ -75,13 +75,18 @@ namespace NUnitTests.Homework
             Assert.That(Alert, Is.EqualTo("Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!"), "SpeedAlert is not contains the appropriate warning message");
         }
 
-
         //Test Case 5: Low Charge Alert
-        //Description: Test SetChargeAlert for generating a low charge alert when charge falls below the critical level.
-        //Steps:
-        //Set Charge to just below CriticalCharge.
-        //Call SetChargeAlert.
-        //Check that SpeedAlert includes the low charge warning.
+        [Test, Order(5), Description("Test SetChargeAlert for generating a low charge alert when charge falls below the critical level.")]
+        public void LowChargeAlert()
+        {
+            //Steps:
+            //Set Charge to just below CriticalCharge.
+            Charge = 9;
+            //Call SetChargeAlert.
+            SetChargeAlert();
+            //Check that SpeedAlert includes the low charge warning.
+            Assert.That(Alert, Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"), "SpeedAlert is not includes the low charge warning");
+        }
 
         //Test Case 6: Full Charge Alert
         //Description: Check that SetChargeAlert correctly alerts when charge exceeds critical overcharge level.
