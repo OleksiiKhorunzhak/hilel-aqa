@@ -62,11 +62,19 @@ namespace NUnitTests.Homework
 
 
         //Test Case 4: Speed Alert on Exceeding Max Speed
-        //Description: Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.
-        //Steps:
-        //Set CurrentSpeed to exceed MaxSpeed.
-        //Execute SetSpeedAlert.
-        //Confirm that SpeedAlert contains the appropriate warning message.
+        [Test, Description("Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.")] 
+        [Order(4)]
+        public void SpeedAlertExceedingMaxSpeed()
+        {
+            //Steps:
+            //Set CurrentSpeed to exceed MaxSpeed.
+            CurrentSpeed = 190;
+            //Execute SetSpeedAlert.
+            SetSpeedAlert(CurrentSpeed, MaxSpeed);
+            //Confirm that SpeedAlert contains the appropriate warning message.
+            Assert.That(Alert, Is.EqualTo("Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!"), "SpeedAlert is not contains the appropriate warning message");
+        }
+
 
         //Test Case 5: Low Charge Alert
         //Description: Test SetChargeAlert for generating a low charge alert when charge falls below the critical level.
