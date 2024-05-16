@@ -21,8 +21,8 @@
         public static int MaxSpeed = 100;
         public static int MinSpeed = 60;
         public static int MaxAceleration = 90;
-        public static readonly int CriticalCharge = 10;
-        public static readonly int CriticalOvercharge = 98;
+        public int  CriticalCharge = 10;
+        public int CriticalOvercharge = 98;
         public bool AccelerationAllowed;
         public bool DecelerationChargeMode = true;
         #endregion
