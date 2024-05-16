@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NUnitTests.Homework
+﻿namespace NUnitTests.Homework
 {
     internal class LoopsAndCase
     {
@@ -52,9 +45,24 @@ namespace NUnitTests.Homework
             // for index equal ShortCarManufacturerNames length - 1, while index less or equal 0, increment index
             // if ShortCarManufacturerNames by index .length is less or equal 5
             // remove ShortCarManufacturerNames by index
-            // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
+            // after loop finishes
+            // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
         }
 
+        [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
+        public void TestSwitchCaseSelection()
+        {
+            List<string> ShortCarManufacturerNames = new(CarManufacturers);
+            int requestedIndex = 2;
+            string selectedName;
 
+
+            // apply next logic
+
+            // use switch case selection to select manufacturer by requestedIndex
+            // make cases from 0 to 9 as first index in list is 0
+            // rewrite selectedName with ShortCarManufacturerNames by requestedIndex    
+            // Assert that string selectedName is eqal to expected string (for example 2 = "Honda")
+        }
     }
 }
