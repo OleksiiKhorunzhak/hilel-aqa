@@ -2,10 +2,10 @@
 {
     internal class LoopsAndCase
     {
-       public readonly List<string> CarManufacturers =
+        public readonly List<string> CarManufacturers =
         [
             "Toyota", "Ford", "Honda", "Chevrolet", "Nissan",
-                        "BMW", "Mercedes-Benz", "Volkswagen", "Hyundai", "Audi"
+            "BMW", "Mercedes-Benz", "Volkswagen", "Hyundai", "Audi"
         ];
 
         [Test, Description("TODO use foreach loop to count all CarManufacturers names")]
@@ -20,7 +20,9 @@
             // after loop end assert that counter is equal to 4
         }
 
-        [Test, Description("TODO use while loop to get a new list of car brands where brand nama is less than 5 characters.\r\n")]
+        [Test,
+         Description(
+             "TODO use while loop to get a new list of car brands where brand nama is less than 5 characters.\r\n")]
         public void TestWhileLoop()
         {
             List<string> ShortCarManufacturerNames;
@@ -34,7 +36,9 @@
             // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
         }
 
-        [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
+        [Test,
+         Description(
+             "TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestForLoop()
         {
             List<string> ShortCarManufacturerNames = new(CarManufacturers);
@@ -49,7 +53,9 @@
             // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
         }
 
-        [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
+        [Test,
+         Description(
+             "TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestSwitchCaseSelection()
         {
             List<string> ShortCarManufacturerNames = new(CarManufacturers);
