@@ -115,11 +115,17 @@ namespace NUnitTests.Homework
         }
 
         //Test Case 8: Deceleration Charge Deactivation Safety
-        //Description: Ensure that deceleration charging is disabled when charge exceeds the safe threshold.
-        //Steps:
-        //Set Charge above CriticalOvercharge.
-        //Call DecelerationChargeActivation with isActive as true.
-        //Ensure IsDecelerationChargeActive is false.
+        [Test, Order(8), Description("Ensure that deceleration charging is disabled when charge exceeds the safe threshold.")]
+        public void DecelerationChargeDeactivationSafety()
+        {
+            //Steps:
+            //Set Charge above CriticalOvercharge.
+            Charge = 99;
+            //Call DecelerationChargeActivation with isActive as true.
+            DecelerationChargeActivation(true, CriticalOvercharge);
+            //Ensure IsDecelerationChargeActive is false.
+            Assert.That(IsDecelerationChargeActive, Is.False, "IsDecelerationChargeActive is true");
+        }
 
         //Test Case 9: Compute Deceleration Charge Power When Active
         //Description: Validate that GetDecelerationChargePower computes the correct power when the feature is active.
