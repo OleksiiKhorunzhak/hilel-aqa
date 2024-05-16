@@ -133,7 +133,7 @@
             }
             else
             {
-                return 0;
+                return DecelerationCharge = 0;
             }
         }
         #endregion
