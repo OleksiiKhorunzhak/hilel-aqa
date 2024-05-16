@@ -108,6 +108,14 @@
         {
             IsDecelerationChargeActive = isActive && Charge < criticalOvercharge;
             return IsDecelerationChargeActive;
+            //if (isActive && Charge < criticalOvercharge)
+            //{
+            //    return IsDecelerationChargeActive = true;
+            //}
+            //else
+            //{
+            //    return IsDecelerationChargeActive = false;
+            //}
         }
 
         /// <summary>
@@ -119,15 +127,17 @@
         /// <returns>The deceleration charge if the feature is active, otherwise 0.</returns>
         public int GetDecelerationChargePower(bool isActive)
         {
-            if (isActive)
-            {
-                DecelerationCharge = CurrentSpeed - CurrentAcceleration;
-                return DecelerationCharge;
-            }
-            else
-            {
-                return DecelerationCharge = 0;
-            }
+            DecelerationCharge = isActive ? CurrentSpeed - CurrentAcceleration : 0;
+            return DecelerationCharge;
+            //if (isActive)
+            //{
+            //    DecelerationCharge = CurrentSpeed - CurrentAcceleration;
+            //    return DecelerationCharge;
+            //}
+            //else
+            //{
+            //    return DecelerationCharge = 0;
+            //}
         }
         #endregion
 
