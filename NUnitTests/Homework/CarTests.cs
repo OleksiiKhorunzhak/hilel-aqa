@@ -5,29 +5,19 @@ namespace NUnitTests.Homework
     public class CarTests : Lesson3Logic
     {
         //TODO: Finish car tests here or in Lesson3Logic file following example
-        //[Order(1)]
-        //[Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
-        //public void TestAcceleration()
-        //{
-        //    CurrentAcceleration = 50;
-        //    Accelerate(CurrentAcceleration);
-        //    Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
-        //}
-
         #region[TestCases]
         //TODO: TestCases
 
         //Test Case 1: Test Acceleration
-        //Description: Ensure that the method GetAcceleration correctly retrieves the current acceleration value.
-        //Steps:
-        //Initialize an instance of Lesson3Logic.
-        //Call the GetAcceleration method.
-        //Verify that the Acceleration property matches CurrentAcceleration.
         [Test, Description("Ensure that the method GetAcceleration correctly retrieves the current acceleration value.")]
         [Order(1)]
         public void TestAcceleration()
         {
+            //Steps:
+            //Initialize an instance of Lesson3Logic.
+            //Call the GetAcceleration method.
             GetAcceleration();
+            //Verify that the Acceleration property matches CurrentAcceleration.
             Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration), "Acceleration is not equal to CurrentAcceleration");
         }
 
@@ -59,7 +49,6 @@ namespace NUnitTests.Homework
             //Ensure Deceleration equals CurrentSpeed - CurrentDeceleration.
             Assert.That(Deceleration, Is.EqualTo(CurrentSpeed), "Deceleration is not equal to CurrentSpeed");
         }
-
 
         //Test Case 4: Speed Alert on Exceeding Max Speed
         [Test, Description("Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.")] 
@@ -152,8 +141,6 @@ namespace NUnitTests.Homework
             //Verify that the result is 0.
             Assert.That(DecelerationCharge, Is.Zero, "DecelerationCharge is not 0");
         }
-
         #endregion
-
     }
 }
