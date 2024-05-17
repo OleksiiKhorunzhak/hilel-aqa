@@ -4,6 +4,7 @@
     public class Lesson3Logic
     {
         #region[TestSetup]
+
         public int Speed { get; set; }
         public int Acceleration { get; set; }
         public string? Alert { get; set; }
@@ -20,7 +21,8 @@
         // Default values, change with caution
         public static int MaxSpeed = 100;
         public static int MinSpeed = 60;
-        public static int MaxAceleration = 90;
+        public static int MaxAcceleration = 90;
+
         public static readonly int CriticalCharge = 10;
         public static readonly int CriticalOvercharge = 98;
         public bool AccelerationAllowed;
@@ -32,6 +34,7 @@
         public void GetAcceleration()
         {
             //TODO set acceleration as CurrentAcceleration
+            //Acceleration = CurrentAcceleration;
             Acceleration = CurrentAcceleration;
         }
 
@@ -40,6 +43,8 @@
             //TODO if acceleration is more than 0 set speed as current speed
             if (Acceleration > 0)
             {
+
+                //Speed = CurrentSpeed;
                 Speed = CurrentSpeed;
             }
         }
@@ -49,26 +54,38 @@
             //TODO if acceleration is more than 0 set deceleration as CurrentSpeed - CurrentDeceleration
             if (Acceleration > 0)
             {
+
+                //Deceleration = CurrentSpeed - CurrentDeceleration;
                 Deceleration = CurrentSpeed - CurrentDeceleration;
             }
         }
-
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
-            //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
-            if (CurrentSpeed >= maxSpeed && Acceleration > 0)
+            //TODO if current speed EXCEEDS max speed AND acceleration is more than 0 show speed alert
+            if (CurrentSpeed > maxSpeed && Acceleration > 0)
             {
+                //Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
                 Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
             }
         }
-
         public void SetChargeAlert()
         {   //TODO if Charge lower or equal critical charge show alert
+            //if (Charge <= CriticalCharge)
+            //{
+            //    Alert = "Take caution! Charge Low at " + Charge + "%!";
+            //}
+
             if (Charge <= CriticalCharge)
             {
                 Alert = "Take caution! Charge Low at " + Charge + "%!";
             }
             //TODO if Charge higher or equal CriticalOvercharge show alert
+
+            //if (Charge >= CriticalOvercharge)
+            //{
+            //    Alert = "Charge Full! Deceleration charging disabled.";
+            //}
+
             if (Charge >= CriticalOvercharge)
             {
                 Alert = "Charge Full! Deceleration charging disabled.";
@@ -87,11 +104,12 @@
                 // Only continue accelerating if it's allowed and Speed has not exceeded the limit
                 Acceleration = acceleratePedalValue;
 
-                if (Speed <= MaxSpeed + 20)
-                {
-                    Speed++;
-                }
-                 else { break; }
+                Speed = (Speed <= MaxSpeed + 20) ? (Speed + 1) : (Speed); // (if true) ? (then do this) : (if false)
+                if (Speed > MaxSpeed + 20) { break; }
+                //Acceleration = acceleratePedalValue;
+                //if (Speed <= MaxSpeed + 20)
+                //{ Speed++ };
+                //else { break; }
             }
         }
 
@@ -103,14 +121,17 @@
         /// <returns>A boolean indicating the activation status of the deceleration charge. Returns true if the charge is activated, otherwise false.</returns>
         public bool DecelerationChargeActivation(bool isActive, int criticalOvercharge)
         {
-            if (isActive && Charge < criticalOvercharge)
-            {
-                return IsDecelerationChargeActive = true;
-            }
-            else
-            {
-                return IsDecelerationChargeActive = false;
-            }
+
+            IsDecelerationChargeActive = isActive && Charge < criticalOvercharge;
+            return IsDecelerationChargeActive;
+            //if (isActive && Charge < criticalOvercharge)
+            //{
+            //    return IsDecelerationChargeActive = true;
+            //}
+            //else
+            //{
+            //    return IsDecelerationChargeActive = false;
+            //}
         }
 
         /// <summary>
@@ -122,15 +143,18 @@
         /// <returns>The deceleration charge if the feature is active, otherwise 0.</returns>
         public int GetDecelerationChargePower(bool isActive)
         {
-            if (isActive)
-            {
-                DecelerationCharge = CurrentSpeed - CurrentAcceleration;
-                return DecelerationCharge;
-            }
-            else
-            {
-                return DecelerationCharge = 0;
-            }
+
+            DecelerationCharge = isActive ? CurrentSpeed - CurrentAcceleration : 0;
+            return DecelerationCharge;
+            //if (isActive)
+            //{
+            //    DecelerationCharge = CurrentSpeed - CurrentAcceleration;
+            //    return DecelerationCharge;
+            //}
+            //else
+            //{
+            //    return DecelerationCharge = 0;
+            //}
         }
         #endregion
 
@@ -206,6 +230,5 @@
         //Invoke GetDecelerationChargePower with isActive set to false.
         //Verify that the result is 0.
         #endregion
-
     }
 }
