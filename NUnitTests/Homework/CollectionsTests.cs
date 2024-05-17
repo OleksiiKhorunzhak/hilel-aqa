@@ -58,18 +58,16 @@ namespace Homework
         [Description("TC-41 first expect to be Kyiv")]
         public void FirstCityTest()
         {
-            //TODO: uncomment and fix code below
             string expectedCity = "Kyiv";
-            //Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedCity), "First city is not Kyiv");
+            Assert.That(UkrainianCitiesArray[0], Is.EqualTo(expectedCity), "First city is not Kyiv");
         }
 
         [Test]
         [Description("TC-41 city quantity expected to be 21")]
         public void ArrayLengthTest()
         {
-            //TODO: uncomment and fix code below
             int expectedQuantity = 21;
-            //Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedQuantity), "City quantity is not 21");
+            Assert.That(UkrainianCitiesArray.Length, Is.EqualTo(expectedQuantity), "City quantity is not 21");
         }
 
         [Test]
@@ -78,17 +76,12 @@ namespace Homework
         {
             // Initialize a new string array of the same length as UkrainianCities
             string[] sortedArray = new string[UkrainianCitiesArray.Length];
-
             // Copy the contents of UkrainianCities into sortedArray
-            //TODO: Uncomment and fix Copy() 
-            //Array.Copy(*, sortedArray, UkrainianCitiesArray.Length);
-
+            Array.Copy(UkrainianCitiesArray, sortedArray, UkrainianCitiesArray.Length);
             // Sort sortedArray in place
-            //TODO: fix test below **
-            //Array.*(sortedArray);
-
+            Array.Sort(sortedArray);
             // Assert that sortedArray is in ascending order
-            CollectionAssert.IsOrdered(sortedArray, "The sorted array is not in ascending order.");
+            Assert.That(sortedArray, Is.Ordered.Ascending, "The sorted array is not in ascending order.");
         }
 
         [Test]
