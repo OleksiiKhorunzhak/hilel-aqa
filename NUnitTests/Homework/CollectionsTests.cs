@@ -89,9 +89,7 @@ namespace Homework
         public void ArrayNotContainTest()
         {
             string terroristsCity = "Moskow";
-
-            //TODO: Uncomment and put correct assert definition
-            //(UkrainianCitiesArray, terroristsCity, "Terroris city " + terroristsCity + " is not Ukrainian city.");
+            Assert.That(!UkrainianCitiesArray.Contains(terroristsCity), "Terroris city " + terroristsCity + " is not Ukrainian city.");
         }
 
         [Test]
@@ -100,8 +98,7 @@ namespace Homework
         {
             string expectedLastCity = "Rivne";
             int lastIndex = UkrainianCitiesArray.Length - 1;
-            //TODO: Uncomment and put correct assert definition
-            //Assert.That();
+            Assert.That(UkrainianCitiesArray[lastIndex], Is.EqualTo(expectedLastCity), "last city is not Rivne");
         }
 
         [Test]
@@ -109,8 +106,7 @@ namespace Homework
         public void ListContains()
         {
             string cityToCheck = "Kyiv";
-            //TODO: Uncomment and put correct assert type and method
-            //(UkrainianCitiesList, cityToCheck, "List does not contain Kyiv");
+            Assert.That(UkrainianCitiesList.Contains(cityToCheck), "List does not contain Kyiv");
         }
 
         [Test]
