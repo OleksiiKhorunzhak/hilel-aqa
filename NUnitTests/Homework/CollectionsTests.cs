@@ -5,7 +5,7 @@ namespace Homework
     public sealed class CollectionsTests
     {
         public string[] UkrainianCitiesArray =
-        {
+        [
             "Kyiv",
             "Kharkiv",
             "Odesa",
@@ -27,10 +27,10 @@ namespace Homework
             "Zhytomyr",
             "Sumy",
             "Rivne"
-        };
+        ];
 
-        public List<string> UkrainianCitiesList = new List<string>
-        {
+        public List<string> UkrainianCitiesList =
+        [
             "Kyiv",
             "Kharkiv",
             "Odesa",
@@ -52,7 +52,7 @@ namespace Homework
             "Zhytomyr",
             "Sumy",
             "Rivne",
-        };
+        ];
 
         [Test]
         [Description("TC-41 first expect to be Kyiv")]

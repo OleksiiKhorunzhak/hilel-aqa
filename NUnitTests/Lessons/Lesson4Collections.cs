@@ -100,14 +100,14 @@
             }
 
             string[] combined = new string[countries.Length];
-            //for (int i = 0; i < countries.Length; i++)
-            //{
-            //    //TODO: fix type to string for population
-            //    combined[i] = $"Country " + countries[i] + " population is " + populations[i].ToString() + " people!";
-            //}
+            for (int i = 0; i < countries.Length; i++)
+            {
+                //TODO: fix type to string for population
+                combined[i] = $"Country " + countries[i] + " population is " + populations[i].ToString() + " people!";
+            }
 
             int counter = 0;
-
+           
             while (counter <= 46-1)
             {
                 combined[counter] = $"Country " + countries[counter] + " population is " + populations[counter].ToString() + " people!";
