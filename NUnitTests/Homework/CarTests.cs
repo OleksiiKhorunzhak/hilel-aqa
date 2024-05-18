@@ -28,7 +28,7 @@ namespace NUnitTests.Homework
         {
             //Steps:
             //Set CurrentAcceleration to a positive value.
-            CurrentAcceleration = 50;
+            CurrentAcceleration = MaxAcceleration;
             //Call the GetSpeed method.
             GetSpeed();
             //Check that Speed equals CurrentSpeed.
@@ -42,13 +42,14 @@ namespace NUnitTests.Homework
         {
             //Steps:
             //Set a known value for CurrentSpeed and CurrentDeceleration.
-            CurrentSpeed = 10;
+            CurrentSpeed = MinSpeed;
             CurrentDeceleration = 0;
             //Invoke GetDeceleration.
             GetDeceleration();
             //Ensure Deceleration equals CurrentSpeed - CurrentDeceleration.
             Assert.That(Deceleration, Is.EqualTo(CurrentSpeed), "Deceleration is not equal to CurrentSpeed");
         }
+
 
         //Test Case 4: Speed Alert on Exceeding Max Speed
         [Test, Description("Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.")] 
@@ -57,12 +58,13 @@ namespace NUnitTests.Homework
         {
             //Steps:
             //Set CurrentSpeed to exceed MaxSpeed.
-            CurrentSpeed = 190;
+            CurrentSpeed = MaxSpeed + 1;
             //Execute SetSpeedAlert.
             SetSpeedAlert(CurrentSpeed, MaxSpeed);
             //Confirm that SpeedAlert contains the appropriate warning message.
             Assert.That(Alert, Is.EqualTo("Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!"), "SpeedAlert is not contains the appropriate warning message");
         }
+
 
         //Test Case 5: Low Charge Alert
         [Test, Order(5), Description("Test SetChargeAlert for generating a low charge alert when charge falls below the critical level.")]
@@ -70,7 +72,7 @@ namespace NUnitTests.Homework
         {
             //Steps:
             //Set Charge to just below CriticalCharge.
-            Charge = 9;
+            Charge = CriticalCharge - 1;
             //Call SetChargeAlert.
             SetChargeAlert();
             //Check that SpeedAlert includes the low charge warning.
@@ -83,7 +85,7 @@ namespace NUnitTests.Homework
         {
             //Steps:
             //Set Charge above CriticalOvercharge.
-            Charge = 99;
+            Charge = CriticalOvercharge + 1;
             //Call SetChargeAlert.
             SetChargeAlert();
             //Verify that SpeedAlert warns about full charge and deceleration charge being disabled.
@@ -96,7 +98,7 @@ namespace NUnitTests.Homework
         {
             //Steps:
             //Set Charge below CriticalOvercharge.
-            Charge = 50;
+            Charge = CriticalOvercharge - 1;
             //Invoke DecelerationChargeActivation with isActive as true.
             DecelerationChargeActivation(true, CriticalOvercharge);
             //Confirm that IsDecelerationChargeActive is true. 
@@ -109,7 +111,7 @@ namespace NUnitTests.Homework
         {
             //Steps:
             //Set Charge above CriticalOvercharge.
-            Charge = 99;
+            Charge = CriticalOvercharge + 1;
             //Call DecelerationChargeActivation with isActive as true.
             DecelerationChargeActivation(true, CriticalOvercharge);
             //Ensure IsDecelerationChargeActive is false.
