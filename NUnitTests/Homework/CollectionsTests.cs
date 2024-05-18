@@ -114,17 +114,20 @@ namespace Homework
         public void ListCountTest()
         {
             int expectedCount = 21;
-            //TODO: Uncomment and ix asssertion
-            //Assert.That(UkrainianCitiesList, Is.EqualTo(expectedCount), "City list count is not 21");
+            Assert.That(UkrainianCitiesList.Count, Is.EqualTo(expectedCount), "City list count is not 21");
         }
 
         [Test]
         [Description("TC-46 adding a city increases list size")]
         public void AddCityIncreasesListSizeTest()
         {
+            string newCity = "New City";
             var initialCount = UkrainianCitiesList.Count;
-            //TODO: use Add() to add new city to cities list
+            UkrainianCitiesList.Add(newCity);
             Assert.That(UkrainianCitiesList.Count, Is.EqualTo(initialCount + 1), "Adding a city did not increase the list size as expected");
+            // Cleanup: Remove the added city
+            UkrainianCitiesList.Remove(newCity);
+            Assert.That(UkrainianCitiesList.Count, Is.EqualTo(initialCount), "Removing the city did not restore the list size as expected");
         }
     }
 }
