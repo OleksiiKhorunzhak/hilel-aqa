@@ -20,7 +20,7 @@ namespace NUnitTests.Homework
 		[Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
 		public void TestAcceleration()
 		{
-			CurrentAcceleration = 50;
+			CurrentAcceleration = CurrentAcceleration; // 50
 			Accelerate(CurrentAcceleration);
 			Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
 		}
@@ -36,8 +36,8 @@ namespace NUnitTests.Homework
         [Order(2)]
         public void TestGetSpeed()
         {
-	        Acceleration = 25;
-            CurrentAcceleration = 50;
+	        Acceleration = Acceleration -25; // = 25
+            CurrentAcceleration = CurrentAcceleration; // = 50
             GetSpeed();
             Assert.That(Speed, Is.EqualTo(CurrentSpeed));
         }
@@ -55,8 +55,8 @@ namespace NUnitTests.Homework
 		public void TestGetDeceleration()
 		{
 
-			CurrentSpeed = 90;
-			CurrentDeceleration = 30;
+			CurrentSpeed = CurrentSpeed + 40; // = 90
+			CurrentDeceleration = CurrentDeceleration; // = 30
 			GetDeceleration();
 			Assert.That(Deceleration, Is.EqualTo(CurrentSpeed-CurrentDeceleration));
 		}
@@ -74,7 +74,7 @@ namespace NUnitTests.Homework
 		public void TestExceedingMaxSpeed()
 		{
 
-			CurrentSpeed = 150;
+			CurrentSpeed = CurrentSpeed + 100; // = 150
 			var expectedAlert = "Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!";
 			SetSpeedAlert(CurrentSpeed, MaxSpeed);
 			Assert.That(Alert, Is.EqualTo(expectedAlert));
@@ -94,16 +94,9 @@ namespace NUnitTests.Homework
 		[Order(5)]
 		public void TestChargeAlert()
 		{
-			var StaticCriticalCharge = 10;
-			var MyCriticalCharge = 8;
-			var expectedAlert = "Take caution! Charge Low at " + Charge + "%!";
-
-			
-			if (MyCriticalCharge < StaticCriticalCharge)
-			{
-				SetChargeAlert();
-			}
-			Assert.That(Alert, Is.EqualTo(expectedAlert));
+			Charge = CriticalCharge - 2; // = 8
+			SetChargeAlert();
+			Assert.That(Alert, Is.EqualTo("Take caution! Charge Low at \" + Charge + \"%!"));
 
 		}
 
@@ -121,16 +114,13 @@ namespace NUnitTests.Homework
 		[Order(6)]
 		public void TestFullChargeAlert()
 		{
-			int CriticalOvercharge = 98;
-			int charge = 129;
-			charge = 129;
+			Charge = CriticalOvercharge + 12; // = 110
 			string expectedAlert = "Charge Full! Deceleration charging disabled.";
 
-			if (charge >= CriticalOvercharge)
+			if (Charge > CriticalOvercharge)
 			{
 				SetChargeAlert();
 			}
-
 			Assert.That(Alert, Is.EqualTo(expectedAlert));
 		}
 
@@ -142,6 +132,16 @@ namespace NUnitTests.Homework
 		//Invoke DecelerationChargeActivation with isActive as true.
 		//Confirm that IsDecelerationChargeActive is true.
 
+		[Test]
+		[Order(7)]
+		public void DecelerationChargeActivation()
+		{
+			var charge = 80;
+			Charge = charge;
+			DecelerationChargeActivation(true, 98);
+			Assert.That(IsDecelerationChargeActive, Is.EqualTo(true));
+		}
+
 
 		//Test Case 8: Deceleration Charge Deactivation Safety
 		//Description: Ensure that deceleration charging is disabled when charge exceeds the safe threshold.
@@ -150,6 +150,18 @@ namespace NUnitTests.Homework
 		//Call DecelerationChargeActivation with isActive as true.
 		//Ensure IsDecelerationChargeActive is false.
 
+		[Test]
+		[Order(8)]
+		public void DecelerationChargeDeactivation()
+		{
+			var charge = 130;
+			Charge = charge;
+			DecelerationChargeActivation(true, 98);
+			Assert.That(IsDecelerationChargeActive, Is.EqualTo(false));
+		}
+
+
+
 		//Test Case 9: Compute Deceleration Charge Power When Active
 		//Description: Validate that GetDecelerationChargePower computes the correct power when the feature is active.
 		//Steps:
@@ -157,12 +169,38 @@ namespace NUnitTests.Homework
 		//Call GetDecelerationChargePower with isActive set to true.
 		//Check that the returned value equals CurrentSpeed - CurrentAcceleration.
 
+		[Test]
+		[Order(9)]
+		public void ComputeDecelerationChargePowerWhenActive()
+		{
+			if (DecelerationChargeMode == true)
+			{
+				GetDecelerationChargePower(true);
+			}
+			Assert.That(DecelerationCharge, Is.EqualTo(CurrentSpeed - CurrentAcceleration));
+		}
+
+
 		//Test Case 10: Compute Deceleration Charge Power When Inactive
 		//Description: Check that GetDecelerationChargePower returns 0 when the feature is not active.
 		//Steps:
 		//Ensure DecelerationChargeMode is true.
 		//Invoke GetDecelerationChargePower with isActive set to false.
 		//Verify that the result is 0.
+
+		[Test]
+		[Order(10)]
+		public void ComputeDecelerationChargePowerWhenInactive()
+		{
+			if (DecelerationChargeMode == false)
+			{
+				GetDecelerationChargePower(false);
+			}
+			Assert.That(GetDecelerationChargePower(false), Is.EqualTo(0));
+		}
+
+
+
 		#endregion
 
 	}
