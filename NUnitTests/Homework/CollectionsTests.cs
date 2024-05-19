@@ -2,6 +2,7 @@
 
 namespace Homework
 {
+    //Test change
     public sealed class CollectionsTests
     {
         public string[] UkrainianCitiesArray =
