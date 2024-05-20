@@ -11,11 +11,11 @@ namespace NUnitTests.Features.Drive
     internal class DrivePresetup
     {
         // Property to hold the result of Engine.Accelerate
-        public byte Accelerate { get; private set; }
+        public static byte Accelerate { get; private set; }
         // Property to hold the result of Transmission.Accelerate
-        public byte Gear { get; private set; }
+        public static byte Gear { get; private set; }
         // Property to hold the result of Transmission.Accelerate
-        public byte BreaksPower { get; private set; }
+        public static byte BreaksPower { get; private set; }
 
         //Engine Accelerate sub feature presetup
         public void GetAcceleration(byte acceletareInput)
@@ -24,7 +24,7 @@ namespace NUnitTests.Features.Drive
             Accelerate = engine.Accelerate(acceletareInput);
         }
 
-        //Transmission sub feature Gear presetup
+        //Transmission sub feature Gear pre
         public void SetGear(byte speedSensor)
         {
             Transmission transmission = new Transmission();
