@@ -2,8 +2,8 @@
 {
     internal class Lesson4Collections
     {
-        public string[] EuropeanCountriesArray = new string[]
-        {
+        public string[] EuropeanCountriesArray =
+        [
             "Albania", "Andorra", "Armenia", "Austria", "Belgium",
             "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic",
             "Denmark", "Estonia", "Finland", "France", "Georgia", "Germany", "Greece",
@@ -12,10 +12,19 @@
             "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", "Romania",
             "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden",
             "Switzerland", "Ukraine", "United Kingdom", "Vatican City"
-        };
+        ];
 
-        public int[] CountryPopulations = new int[]
-        {
+        readonly string[] northAmericanCountries =
+        [
+            "Antigua and Barbuda", "Bahamas", "Barbados", "Belize", "Canada",
+            "Costa Rica", "Cuba", "Dominica", "Dominican Republic", "El Salvador",
+            "Grenada", "Guatemala", "Haiti", "Honduras", "Jamaica",
+            "Mexico", "Nicaragua", "Panama", "Saint Kitts and Nevis", "Saint Lucia",
+            "Saint Vincent and the Grenadines", "Trinidad and Tobago", "United States"
+        ];
+
+        public static int[] CountryPopulations =
+        [
         2877797, 77265, 2963243, 8917205, 11589623,
         3280819, 6951482, 4105267, 1207359, 10708981,
         5822763, 1326535, 5540718, 67320213, 3717000, 83149300, 10423054,
@@ -24,7 +33,7 @@
         17441139, 2083374, 5421241, 37978548, 10196709, 19237691,
         33931, 6908224, 5455000, 2078938, 46754778, 10286162,
         8570146, 41632422, 67886011, 801
-        };
+        ];
 
         //TODO: test SelectCountriesStartingWith
         public string[] SelectCountriesStartingWith(string[] selectFromArray, char startsFrom)
@@ -33,7 +42,25 @@
             char upperStartsFrom = char.ToUpper(startsFrom);
 
             // Filter the array using LINQ where the starting letter matches 'startsFrom' character
-            return selectFromArray.Where(country => char.ToUpper(country[0]) == upperStartsFrom).ToArray();
+            return selectFromArray.Where(country => country[0] == upperStartsFrom).ToArray();
+        }
+
+        [Test]
+        public void SelectCountries()
+        {
+            string[] countries = SelectCountriesStartingWith(EuropeanCountriesArray, 'a');
+            Assert.That(countries.Length == 4);
+
+            EuropeanCountriesArray[3] = "TestValue1";
+            string[] countriesTest = SelectCountriesStartingWith(EuropeanCountriesArray, 'a');
+            Assert.That(countriesTest.Length, Is.EqualTo(3));
+        }
+
+        [Test]
+        public void SelectNAmericanCountries()
+        {
+            string[] countries = SelectCountriesStartingWith(northAmericanCountries, 'a');
+            Assert.That(countries.Length == 1);
         }
         [Test]
         public void SelectCountries()
@@ -42,7 +69,7 @@
             Assert.That(countries.Length == 4);
 		}
 
-        //TODO: test SortCountries, verify sot corresponds ascend = true descend = false
+        //TODO: test SortCountries, verify sort corresponds ascend = true descend = false
         public string[] SortCountries(string[] arrayToSort, bool sortAscDesc)
         {
             if (sortAscDesc)
@@ -57,8 +84,16 @@
             }
 
             //return sortAscDesc
-            //? arrayToSort.OrderBy(country => country).ToArray()
-            //: arrayToSort.OrderByDescending(country => country).ToArray();
+            //    ? arrayToSort.OrderBy(country => country).ToArray() 
+            //    : arrayToSort.OrderByDescending(country => country).ToArray();
+        }
+
+        [Test, Description("Test SortCountries, verify sort corresponds ascend = true descend = false")]
+        public void TestSortCountries()
+        {
+            string[] sortedDescend = SortCountries(northAmericanCountries, false);
+
+            Assert.That(sortedDescend, Is.Ordered.Descending, "Array not ordered Descending");
         }
 
         [Test, Description("test SortCountries, verify sot corresponds ascend = true descend = false")]
@@ -79,20 +114,28 @@
             }
 
             string[] combined = new string[countries.Length];
-            for (int i = 0; i < countries.Length; i++)
+            //for (int i = 0; i < countries.Length; i++)
+            //{
+            //    //TODO: fix type to string for population
+            //    combined[i] = $"Country " + countries[i] + " population is " + populations[i].ToString() + " people!";
+            //}
+
+            int counter = 0;
+
+            while (counter <= 46-1)
             {
-                //TODO: fix type to string for population
-                combined[i] = $"Country " + countries[i] + " population is " + populations[i] + " people!";
+                combined[counter] = $"Country " + countries[counter] + " population is " + populations[counter].ToString() + " people!";
+                counter++;
             }
 
             return combined;
         }
+
         [Test]
-        public void TestCombineArrays()
+        public void TestCombimeArays()
         {
             string[] CombinedArray = CombineCountryAndPopulation(EuropeanCountriesArray, CountryPopulations);
             Assert.That(CombinedArray.Length, Is.EqualTo(EuropeanCountriesArray.Length));
-
-		}
+        }
     }
 }

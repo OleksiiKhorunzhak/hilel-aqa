@@ -105,7 +105,7 @@ namespace Homework
         [Description("TC-43 last city expected to be Rivne")]
         public void LastCityTest()
         {
-            string expectedLastCity = "Rivne";
+			string expectedLastCity = "Rivne";
             int lastIndex = UkrainianCitiesArray.Length - 1;
             //TODO: Uncomment and put correct assert definition
             Assert.That(UkrainianCitiesArray[lastIndex], Is.EqualTo(expectedLastCity), $"Rivne is not the last city in the list, actual - {UkrainianCitiesArray[lastIndex]}");
