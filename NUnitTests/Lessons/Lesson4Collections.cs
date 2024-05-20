@@ -62,6 +62,12 @@
             string[] countries = SelectCountriesStartingWith(northAmericanCountries, 'a');
             Assert.That(countries.Length == 1);
         }
+        [Test]
+        public void SelectCountries()
+        {
+            string[] countries = SelectCountriesStartingWith(EuropeanCountriesArray, 'a');
+            Assert.That(countries.Length == 4);
+		}
 
         //TODO: test SortCountries, verify sort corresponds ascend = true descend = false
         public string[] SortCountries(string[] arrayToSort, bool sortAscDesc)
@@ -89,6 +95,14 @@
 
             Assert.That(sortedDescend, Is.Ordered.Descending, "Array not ordered Descending");
         }
+
+        [Test, Description("test SortCountries, verify sot corresponds ascend = true descend = false")]
+        public void TestSortCountries()
+        {
+            string[] sortedDesc = SortCountries(EuropeanCountriesArray, false);
+            Assert.That(sortedDesc, Is.Ordered.Descending, "Array is not sorted");
+
+		}
 
         //TODO: test CombineCountryAndPopulation
         public string[] CombineCountryAndPopulation(string[] countries, int[] populations)
