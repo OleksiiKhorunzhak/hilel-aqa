@@ -26,6 +26,10 @@
             List<string> ShortCarManufacturerNames;
             int counter = 0;
 
+
+            string[] emptyArray = [];
+            decimal number = 1.01M;
+
             // apply next logic
 
             // while counter less thant CarManufacturers size and name length less or equal 5
@@ -33,6 +37,8 @@
             // increment counter
             // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
         }
+
+        float number = 1.01F;
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestForLoop()
