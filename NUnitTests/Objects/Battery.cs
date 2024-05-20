@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace NUnitTests.Objects
 {
-    internal class Battery
+    internal class Battery : BaseCar
     {
-        public int Charge;
+
     }
 }

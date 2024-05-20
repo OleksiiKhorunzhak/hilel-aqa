@@ -23,5 +23,7 @@ namespace NUnitTests.Objects
         public byte Gear { get; set; }
 
         public byte BreakPower { get; set; }
+
+        public int Charge { get; set; }
     }
 }
