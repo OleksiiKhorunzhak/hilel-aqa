@@ -41,14 +41,15 @@
             // increment counter
             // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
             
-			foreach(string name in CarManufacturers)
+			while(counter < CarManufacturers.Count)
             {
-                if (name.Length <= 5)
+                if (CarManufacturers[counter].Length <= 5)
                 {
-                    ShortCarManufacturerNames.Add(name);
+                    ShortCarManufacturerNames.Add(CarManufacturers[counter]);
                     counter++;
 				}
-            }
+				counter++;
+			}
             foreach (string name in ShortCarManufacturerNames)
             {
                 Assert.That(name.Length, Is.LessThanOrEqualTo(5), $"{name} lenght is not less or equal to 5");
