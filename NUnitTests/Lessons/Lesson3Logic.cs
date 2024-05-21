@@ -55,7 +55,7 @@
 
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
-            //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
+            //TODO if current speed EXCEEDS max speed AND acceleration is more than 0 show speed alert
             if (CurrentSpeed >= maxSpeed && Acceleration > 0)
             {
                 Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
@@ -91,7 +91,11 @@
                 {
                     Speed++;
                 }
-                 else { break; }
+
+                else
+                {
+                    break;
+                }
             }
         }
 
