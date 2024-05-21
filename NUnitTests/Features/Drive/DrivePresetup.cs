@@ -1,4 +1,4 @@
-﻿using NUnitTests.Objects;
+﻿using NUnitTests.Objects.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +8,19 @@ using System.Threading.Tasks;
 namespace NUnitTests.Features.Drive
 {
     [TestFixture]
-    internal class DrivePresetup
+    public class DrivePresetup
     {
+        public class InternalClass
+        {
+            public static byte InternalAccelerate { get; private set; }
+        }
+
         // Property to hold the result of Engine.Accelerate
         public static byte Accelerate { get; private set; }
         // Property to hold the result of Transmission.Accelerate
-        public static byte Gear { get; private set; }
+        protected static byte Gear { get; private set; }
         // Property to hold the result of Transmission.Accelerate
-        public static byte BreaksPower { get; private set; }
+        protected static byte BreaksPower { get; private set; }
 
         //Engine Accelerate sub feature presetup
         public void GetAcceleration(byte acceletareInput)
@@ -24,7 +29,7 @@ namespace NUnitTests.Features.Drive
             Accelerate = engine.Accelerate(acceletareInput);
         }
 
-        //Transmission sub feature Gear pre
+        //Transmission sub feature Gear presetup
         public void SetGear(byte speedSensor)
         {
             Transmission transmission = new Transmission();

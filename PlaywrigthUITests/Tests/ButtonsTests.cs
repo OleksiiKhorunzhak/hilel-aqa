@@ -1,10 +1,14 @@
 ﻿using Microsoft.Playwright;
-
+using NUnitTests.Features.Drive;
 namespace PlaywrigthUITests.Tests
 {
     [Description("Verify Buttons on buttons page")]
     class ButtonsTestsrun : UITestFixture
     {
+
+        public byte newstring = DrivePresetup.Accelerate;
+        public byte newstring1 = DrivePresetup.InternalClass.InternalAccelerate
+
         [Test, Description("Verify Click Me button"), Retry(2)]
         public async Task ClickButtonTest()
         {

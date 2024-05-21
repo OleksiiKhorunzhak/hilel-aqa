@@ -18,6 +18,7 @@
             // if name length less or equal 5
             // increase counter
             // after loop end assert that counter is equal to 4
+
         }
 
         [Test, Description("TODO use while loop to get a new list of car brands where brand nama is less than 5 characters.\r\n")]

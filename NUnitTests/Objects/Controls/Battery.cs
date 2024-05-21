@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NUnitTests.Objects
+namespace NUnitTests.Objects.Controls
 {
     internal class Battery : BaseCar
     {

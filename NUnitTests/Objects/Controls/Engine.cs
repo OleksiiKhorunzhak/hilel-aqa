@@ -6,35 +6,20 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NUnitTests.Objects
+namespace NUnitTests.Objects.Controls
 {
     internal class Engine : BaseCar
     {
         //TODO Optimize AccelerationInput by DRY
-        public byte AccelerationInput { get; set; }
 
         private byte Power { get; set; } = 255;
 
         //TODO Optimize Accelerate by KISS
-        public byte Accelerate(byte currentAcceleration)
+        public byte? Accelerate(byte currentAcceleration)
         {
-            if (currentAcceleration <= Power)
+            if(0 >= currentAcceleration && currentAcceleration <= Power)
             {
                 AccelerationInput = currentAcceleration;
-                return AccelerationInput;
-            }
-            if (currentAcceleration > Power)
-            {
-                return Power;
-            }
-            if (currentAcceleration < 0)
-            {
-                AccelerationInput = 0;
-                return AccelerationInput;
-            }
-            if (currentAcceleration == Power)
-            {
-                AccelerationInput = Power;
                 return AccelerationInput;
             }
             else
