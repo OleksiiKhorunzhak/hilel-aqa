@@ -5,23 +5,23 @@ namespace NUnitTests.Homework
     public class CarTests : Lesson3Logic
     {
         //TODO: Finish car tests here or in Lesson3Logic file folowing example
-        [Order(1)]
-        [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
-        public void TestAcceleration()
-        {
-            CurrentAcceleration = 50;
-            Accelerate(CurrentAcceleration);
-            Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
-        }
 
         #region[TestCases]
         //TODO: TestCases
         //Test Case 1: Test Acceleration
         //Description: Ensure that the method GetAcceleration correctly retrieves the current acceleration value.
-        //Steps:
-        //Initialize an instance of Lesson3Logic.
-        //Call the GetAcceleration method.
-        //Verify that the Acceleration property matches CurrentAcceleration.
+        [Order(1)]
+        [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
+        public void TestAcceleration()
+        {
+            //Steps:
+            //Initialize an instance of Lesson3Logic.
+            //Call the GetAcceleration method.
+            //Verify that the Acceleration property matches CurrentAcceleration.
+            CurrentAcceleration = 50;
+            Accelerate(CurrentAcceleration);
+            Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
+        }
 
         //Test Case 2: Test GetSpeed with Positive Acceleration
         //Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
@@ -78,10 +78,18 @@ namespace NUnitTests.Homework
 
         //Test Case 5: Low Charge Alert
         //Description: Test SetChargeAlert for generating a low charge alert when charge falls below the critical level.
-        //Steps:
-        //Set Charge to just below CriticalCharge.
-        //Call SetChargeAlert.
-        //Check that SpeedAlert includes the low charge warning.
+        [Test]
+        [Order(5)]
+        public void TestSetChargeAlert()
+        {
+            //Steps:
+            //Set Charge to just below CriticalCharge.
+            //Call SetChargeAlert.
+            //Check that SpeedAlert includes the low charge warning.
+            Charge = CriticalCharge - 1;
+            SetChargeAlert();
+            Assert.That(Alert, Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"));
+        }
 
         [Test]
         [Order(5)]
