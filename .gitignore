@@ -14,6 +14,18 @@
 /NUnitTests/.vs
 /NUnitTests/bin/Debug/net8.0
 /NUnitTests/obj
+<<<<<<< HEAD
 /.idea
 /.vscode
 /HilelTests.sln
+=======
+/NUnitTests/Homework/VariablesTests.cs
+/AtataUITests/Homework/VariablesTests.cs
+/PlaywrigthUITests/Homework/VariablesTests.cs
+/NUnitTests/Lessons/Lesson2Variables.cs
+>>>>>>> Ernest_Bukhanevych_Main
+/AtataUITests/Homework/VariablesTests.cs
+/NUnitTests/Homework/VariablesTests.cs
+/NUnitTests/Lessons/Lesson2Variables.cs
+/NUnitTests/Lessons/Lesson3Logic.cs
+/PlaywrigthUITests/Homework/VariablesTests.cs
