@@ -2,7 +2,7 @@
 
 namespace NUnitTests.Lessons
 {
-    internal class Lesson5Loops
+    public class Lesson5Loops
     {
         [Test]
         public void TestRandomNumbersArray()
@@ -153,5 +153,54 @@ namespace NUnitTests.Lessons
                 }
             }
         }
+
+        [Test]
+        public void RemoveitemTest()
+        {
+            List<string> list = new List<string>
+            {
+                 "apple", "banana", "cherry", "date"
+             };
+
+            //list.RemoveAll(item => item == "banana");
+            
+            list.Remove("banana");
+            Assert.That(list.Count, Is.EqualTo(3), "The list count isn`t correct after removing an item.");
+            Assert.That(list, Does.Not.Contain("banana"), "The list still contains item 'banana'. ");
+
+        }
+
+
     }
+
+   // public class ListTests 
+    //{
+    //    [Test]
+    //    public void RemoveitemTest()
+    //    {
+    //        List<string> list = new List<string>
+    //    {
+    //             "apple", "banana", "cherry", "date"
+    //    };
+
+    //        //list.RemoveAll(item => item == "banana");
+    //        list.Remove("banana");
+    //        Assert.That(list.Count, Is.EqualTo(3), "The list count isn`t correct after removing an item.");
+    //        Assert.That(list, Does.Not.Contain("banana"), "The list still contains item 'banana'. ");
+
+    //    }
+
+
+    //}
+
+
+
+
+
+
+
+
 }
+
+
+
