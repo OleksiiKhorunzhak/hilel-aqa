@@ -1,6 +1,24 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=949d71f1_002D6ca3_002D4012_002Dbc0e_002D5ea998852506/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetAcceleration" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.CarTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=326ea759_002Dcce3_002D4408_002D9184_002Dff08a939150f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestForeach" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestForeach&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=53d5eff6_002Db4fb_002D4c1c_002D9e5c_002De54e487d4e68/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestForeach #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestForeach&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f3782054_002D4164_002D4dc5_002D898b_002Df90c0be68bb4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestForeach #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestForeach&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestForLoop&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestSwitchCaseSelection&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestWhileLoop&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=febf10cc_002D1511_002D4d27_002Daf43_002D32d573050ce4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestForeach #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestForeach&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
