@@ -57,16 +57,28 @@ namespace NUnitTests.Homework
         public void TestForLoop()
         {
             List<string> ShortCarManufacturerNames = new(CarManufacturers);
+            int expectedNameLength = 5;
 
             // apply next logic
             // caution - starting loop from last element to avoid modifying a collection while iterating over it
-
             // for index equal ShortCarManufacturerNames length - 1, while index less or equal 0, increment index
             // if ShortCarManufacturerNames by index .length is less or equal 5
             // remove ShortCarManufacturerNames by index
             // after loop finishes
-            // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
+            // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters
+            for (int i = ShortCarManufacturerNames.Count - 1; i >= 0; i--)
+            {
+                if (ShortCarManufacturerNames[i].Length <= expectedNameLength)
+                {
+                    ShortCarManufacturerNames.RemoveAt(i);
+                }
+            }
+            foreach (string name in ShortCarManufacturerNames)
+            {
+                Assert.That(name.Length, Is.GreaterThanOrEqualTo(expectedNameLength), $"Name length is NOT less than {expectedNameLength} craracters");
+            }
         }
+
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestSwitchCaseSelection()
