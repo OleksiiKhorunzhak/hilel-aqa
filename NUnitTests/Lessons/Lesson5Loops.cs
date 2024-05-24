@@ -66,7 +66,7 @@ namespace NUnitTests.Lessons
             }
         }
 
-        //TODO: Test sequence is multiplied by 3, add more nimbers to list
+        //TODO: Test sequence is multiplied by 3, add more numbers to list
         [Test]
         public void TestSequenceNumbersList()
         {

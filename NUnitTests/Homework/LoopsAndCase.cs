@@ -1,37 +1,56 @@
-﻿namespace NUnitTests.Homework
+﻿using System.Xml.Linq;
+
+namespace NUnitTests.Homework
 {
     internal class LoopsAndCase
     {
-       public readonly List<string> CarManufacturers =
-        [
-            "Toyota", "Ford", "Honda", "Chevrolet", "Nissan",
+        public readonly List<string> CarManufacturers =
+         [
+             "Toyota", "Ford", "Honda", "Chevrolet", "Nissan",
                         "BMW", "Mercedes-Benz", "Volkswagen", "Hyundai", "Audi"
-        ];
+         ];
 
         [Test, Description("TODO use foreach loop to count all CarManufacturers names")]
         public void TestForeach()
         {
-            int counter = 0;
-            // apply next logic
-
-            // foreach string name in CarManufacturers
+            // apply next logic:
             // if name length less or equal 5
             // increase counter
             // after loop end assert that counter is equal to 4
+            int counter = 0;
+            int expectedCount = 4;
+            foreach (string name in CarManufacturers)
+            {
+                if (name.Length <= 5)
+                {
+                    counter++;
+                }
+            }
+            Assert.That(counter, Is.EqualTo(expectedCount), $"counter is NOT equal to {expectedCount}");
         }
 
-        [Test, Description("TODO use while loop to get a new list of car brands where brand nama is less than 5 characters.\r\n")]
+        [Test, Description("TODO use while loop to get a new list of car brands where brand name is less than 5 characters.")]
         public void TestWhileLoop()
         {
-            List<string> ShortCarManufacturerNames;
+            List<string> ShortCarManufacturerNames = new List<string>();
             int counter = 0;
-
             // apply next logic
-
             // while counter less thant CarManufacturers size and name length less or equal 5
             // add current name into ShortCarManufacturerNames
             // increment counter
             // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
+            while (counter < CarManufacturers.Count)
+            {
+                if (CarManufacturers[counter].Length <= 5)
+                {
+                    ShortCarManufacturerNames.Add(CarManufacturers[counter]);
+                }
+                counter++;
+            }
+            foreach (string name in ShortCarManufacturerNames)
+            {
+                Assert.That(name.Length, Is.LessThan(5), $"The name '{name}' should be less then 5 characters");
+            }
         }
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
