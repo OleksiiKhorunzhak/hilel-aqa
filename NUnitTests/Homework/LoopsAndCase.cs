@@ -69,7 +69,7 @@
             // caution - starting loop from last element to avoid modifying a collection while iterating over it
 
             // for index equal ShortCarManufacturerNames length - 1, while index less or equal 0, increment index
-            // if ShortCarManufacturerNames by index .length is less or equal 5 (incorrect condition, should be >= 5)
+            // if ShortCarManufacturerNames by index .length is less or equal 5 (incorrect condition, should be > 5)
             // remove ShortCarManufacturerNames by index
             // after loop finishes
             // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
@@ -77,13 +77,13 @@
 
             for (int i = shortCarManufacturerNames.Count - 1; i >= 0; i--)
             {
-                if (shortCarManufacturerNames[i].Length >= 5)
+                if (shortCarManufacturerNames[i].Length < 5)
                 {
                     shortCarManufacturerNames.RemoveAt(i);
                 }
             }
             
-            Assert.That(shortCarManufacturerNames, Has.All.Length.LessThan(5),
+            Assert.That(shortCarManufacturerNames, Has.All.Length.GreaterThanOrEqualTo(5),
                 "Not all names are less than 5 characters");
         }
 
