@@ -8,9 +8,5 @@ namespace NUnitTests.Objects
 {
     internal class VolvoCar : BaseCar
     {
-        public override void CriticalCharge()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
