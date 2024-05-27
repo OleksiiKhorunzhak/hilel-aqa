@@ -42,6 +42,10 @@ namespace NUnitTests.Homework
             List<string> shortCarManufacturerNames = new List<string>();
             int counter = 0;
 
+
+            string[] emptyArray = [];
+            decimal number = 1.01M;
+
             // apply next logic
 
             // while counter less that CarManufacturers size and name length less or equal 5
