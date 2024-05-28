@@ -10,5 +10,10 @@ namespace AtataUITests.PageObjects
 
         [FindById("userName-label")]
         public Label<_> FullNameLabel { get; set; }
+
+        public Button<_> Submit { get; set; }
+
+        [FindById("name")]
+        public Text<_> FullNameText { get; set; }
     }
 }
