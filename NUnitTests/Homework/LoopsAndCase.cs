@@ -33,6 +33,7 @@ namespace NUnitTests.Homework
             // if name length less or equal 5
             // increase counter
             // after loop end assert that counter is equal to 4
+
         }
 
         [Test, Description("TODO use while loop to get a new list of car brands where brand nama is less than 5 characters.\r\n")]
@@ -58,6 +59,10 @@ namespace NUnitTests.Homework
                 Assert.That(item.Length, Is.LessThan(6), $"Car name '{item}' is longer than 5 symbols");
             }
 
+
+            string[] emptyArray = [];
+            decimal number = 1.01M;
+
             // apply next logic
 
             // while counter less thant CarManufacturers size and name length less or equal 5
@@ -65,6 +70,8 @@ namespace NUnitTests.Homework
             // increment counter
             // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
         }
+
+        float number = 1.01F;
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestForLoop()
