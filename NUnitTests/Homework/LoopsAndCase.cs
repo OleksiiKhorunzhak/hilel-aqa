@@ -70,6 +70,66 @@
             // make cases from 0 to 9 as first index in list is 0
             // rewrite selectedName with ShortCarManufacturerNames by requestedIndex    
             // Assert that string selectedName is eqal to expected string (for example 2 = "Honda")
+
+            switch (requestedIndex)
+            {
+                case 0:
+                {
+                    selectedName = ShortCarManufacturerNames[0];
+                    break;
+                }
+                case 1:
+                {
+                    selectedName = ShortCarManufacturerNames[1];
+                    break;
+                }
+                case 2:
+                {
+                    selectedName = ShortCarManufacturerNames[2];
+                    break;
+                }
+                case 3:
+                {
+                    selectedName = ShortCarManufacturerNames[3];
+                    break;
+                }
+                case 4:
+                {
+                    selectedName = ShortCarManufacturerNames[4];
+                    break;
+                }
+                case 5:
+                {
+                    selectedName = ShortCarManufacturerNames[5];
+                    break;
+                }
+                case 6:
+                {
+                    selectedName = ShortCarManufacturerNames[6];
+                    break;
+                }
+                case 7:
+                {
+                    selectedName = ShortCarManufacturerNames[7];
+                    break;
+                }
+                case 8:
+                {
+                    selectedName = ShortCarManufacturerNames[8];
+                    break;
+                }
+                case 9:
+                {
+                    selectedName = ShortCarManufacturerNames[9];
+                    break;
+                }
+                default:
+                {
+                    throw new ArgumentOutOfRangeException(nameof(requestedIndex), "Index out of range");
+                }
+            }
+            string expectedName = ShortCarManufacturerNames[requestedIndex];
+            Assert.That(selectedName, Is.EqualTo(expectedName), $"{selectedName} is NOT equal to {expectedName}");
         }
     }
 }
