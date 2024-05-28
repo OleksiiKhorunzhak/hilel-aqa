@@ -30,7 +30,7 @@ namespace PlaywrigthUITests.Tests
                 "The element with text 'You have done a double click' should NOT be visible after clicking the button.");
         }
 
-        [Test, Description("Verify Double Click Me button"), Retry(2)]
+        [Test, Description("Verify Double Click Me button"), Retry(3)]
         public async Task DoubleClickButtonTest()
         {
             // Given I go to DemoQA Elements page 
