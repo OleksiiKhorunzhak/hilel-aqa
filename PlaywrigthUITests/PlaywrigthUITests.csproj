@@ -10,12 +10,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Atata" Version="3.1.0" />
+    <PackageReference Include="Atata.Bootstrap" Version="3.0.0" />
+    <PackageReference Include="Atata.Configuration.Json" Version="3.0.0" />
+    <PackageReference Include="Atata.WebDriverExtras" Version="3.0.0" />
+    <PackageReference Include="Atata.WebDriverSetup" Version="2.10.0" />
     <PackageReference Include="coverlet.collector" Version="6.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
-    <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.43.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.44.0" />
+    <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.44.0" />
+    <PackageReference Include="Microsoft.Playwright.TestAdapter" Version="1.44.0" />
+    <PackageReference Include="NLog" Version="5.3.2" />
     <PackageReference Include="NUnit" Version="4.1.0" />
     <PackageReference Include="NUnit.Analyzers" Version="4.2.0">
       <PrivateAssets>all</PrivateAssets>
