@@ -14,7 +14,6 @@ namespace PlaywrigthUITests.Tests
             await Page.GetByText("Text Box").ClickAsync();
             // And I see 'buttons page
             await Page.WaitForURLAsync("https://demoqa.com/text-box");
-
             var isVisible = await Page.GetByText("Full Name").IsVisibleAsync();
             Assert.That(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");
         }
