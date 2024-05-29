@@ -1,0 +1,105 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Andrii.Mykytenko\\source\\repos\\hilel-aqa\\AtataHomeworks\\AtataHomeworks.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Andrii.Mykytenko\\source\\repos\\hilel-aqa\\AtataHomeworks\\AtataHomeworks.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Andrii.Mykytenko\\source\\repos\\hilel-aqa\\AtataHomeworks\\AtataHomeworks.csproj",
+        "projectName": "AtataHomeworks",
+        "projectPath": "C:\\Users\\Andrii.Mykytenko\\source\\repos\\hilel-aqa\\AtataHomeworks\\AtataHomeworks.csproj",
+        "packagesPath": "C:\\Users\\Andrii.Mykytenko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andrii.Mykytenko\\source\\repos\\hilel-aqa\\AtataHomeworks\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Andrii.Mykytenko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Atata": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Atata.Bootstrap": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Atata.WebDriverExtras": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Atata.WebDriverSetup": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.9.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
