@@ -33,7 +33,6 @@ namespace NUnitTests.Homework
         {
             List<string> ShortCarManufacturerNames = new List<string>();
             int counter = 0;
-            int expectedNameLength = 5;
             // apply next logic
             // while counter less thant CarManufacturers size and name length less or equal 5
             // add current name into ShortCarManufacturerNames
@@ -52,6 +51,8 @@ namespace NUnitTests.Homework
                 Assert.That(name.Length, Is.LessThanOrEqualTo(expectedNameLength), $"The name '{name}' should be less or equal to {expectedNameLength} characters");
             }
         }
+
+        float number = 1.01F;
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestForLoop()

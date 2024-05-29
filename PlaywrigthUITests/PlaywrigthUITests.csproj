@@ -43,4 +43,8 @@
     <Folder Include="Lessons\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NUnitTests\NUnitTests.csproj" />
+  </ItemGroup>
+
 </Project>
