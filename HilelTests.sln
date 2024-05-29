@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTests", "NUnitTests\NU
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrigthUITests", "PlaywrigthUITests\PlaywrigthUITests.csproj", "{7EBE0D15-2330-4BFE-A211-A214557320CE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtataHomeworks", "AtataHomeworks\AtataHomeworks.csproj", "{90A208D4-7850-4BAD-BB22-7048BAE57A0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaywrightHomeworks", "PlaywrightHomeworks\PlaywrightHomeworks.csproj", "{375B0AFE-1771-487A-816E-F2DF6F5350ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{7EBE0D15-2330-4BFE-A211-A214557320CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EBE0D15-2330-4BFE-A211-A214557320CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EBE0D15-2330-4BFE-A211-A214557320CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90A208D4-7850-4BAD-BB22-7048BAE57A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A208D4-7850-4BAD-BB22-7048BAE57A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A208D4-7850-4BAD-BB22-7048BAE57A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A208D4-7850-4BAD-BB22-7048BAE57A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375B0AFE-1771-487A-816E-F2DF6F5350ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375B0AFE-1771-487A-816E-F2DF6F5350ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375B0AFE-1771-487A-816E-F2DF6F5350ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375B0AFE-1771-487A-816E-F2DF6F5350ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

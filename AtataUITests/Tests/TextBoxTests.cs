@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AtataUITests.PageObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,14 @@ namespace AtataUITests.Tests
     {
 		//Preconditions: Go to https://demoqa.com/text-box
 		//Test Case 1: Text Full Name should be visible
+		[Test]
+		public void VerifyTextFieldFullName()
+		{
+			Go.To<DemoQAElementsPage>().
+				TextBox.ClickAndGo();
+
+			Go.To<DemoQATextBoxPage>().PageUrl.Should.Be("https://demoqa.com/elements");
+		}
 		//Test Case 2: "Full Name" placeholder should be visible
 		//Test Case 3: Enter "John Doe" in Text Full Name Input, press submit, text Name should be "Name:John Doe"
 		//Test Case 4: Clear Text Full Name Input, press submit, text Name should not be visible
