@@ -61,7 +61,7 @@ namespace Homework
         {
             //TODO: fix code below
             string expectedCity = "Kyiv";
-            Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedCity), "First city is not Kyiv");
+            Assert.That(UkrainianCitiesArray[0], Is.EqualTo(expectedCity), "First city is not Kyiv");
         }
 
         [Test]
@@ -70,7 +70,7 @@ namespace Homework
         {
             //TODO: fix code below
             int expectedQuantity = 21;
-            Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedQuantity), "City quantity is not 21");
+            Assert.That(UkrainianCitiesArray.Length, Is.EqualTo(expectedQuantity), "City quantity is not 21");
         }
 
         [Test]
@@ -127,7 +127,7 @@ namespace Homework
         {
             int expectedCount = 21;
             //TODO: Fix asssertion
-            Assert.That(UkrainianCitiesList, Is.EqualTo(expectedCount), "City list count is not 21");
+            Assert.That(UkrainianCitiesList.Count, Is.EqualTo(expectedCount), "City list count is not 21");
         }
 
         [Test]
