@@ -53,6 +53,7 @@ namespace NUnitTests.Homework
         }
 
         float number = 1.01F;
+        private int expectedNameLength;
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestForLoop()
