@@ -24,7 +24,7 @@ namespace AtataUITests.Tests
 
         //TC 1: class="text-center" should have text = "Text Box"
 
-        //[Full Name input]:
+        //[Full Name input]: - textInput
         //TC 2: label id="userName-label" text should be "Full Name"
         //TC 3: input id="userName" should be type="text"
         //TC 4: input id="userName" should be placeholder="Full Name"
@@ -32,7 +32,7 @@ namespace AtataUITests.Tests
         //TC 6: input id="userName" enter value "FirstName 123" => input id="userName" text should be "FirstName 123" and placeholder style="display: none"
         //TC 7: clear input id="userName" => input id="userName" text should be "" and placeholder style="display: block"
 
-        //[Email input]:
+        //[Email input]: - use EmailInput
         //TC 8: label id="userEmail-label" text should be "Email"
         //TC 9: input id="userEmail" should be type="email"
         //TC 10: input id="userEmail" should be placeholder="name@example.com"
