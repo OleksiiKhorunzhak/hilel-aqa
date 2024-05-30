@@ -25,9 +25,17 @@ namespace PlaywrigthUITests.Tests
         //Homework Lesson_9
         //TODO : 
         //TC-2 : Verify Impressive radio Button can be checked and display text 'You have selected Impressive'
-        //TC-2 : Verify No radio Button disabled and not show text 'You have selected'
-        //TC-3 : Verify H1 Radio Button is visible
-        //TC-7 : Verify text 'You have selected Impressive' is not visible after page refresh
+        //[Test]
+        //[Description("Verify Impressive radio Button can be checked and display text 'You have selected Impressive'")]
+        //public async Task VerifyImpressiveRadioButton()
+        //{
+        //    await _radioButtonPage.GoToRadiButtonsPage();
+        //    await _radioButtonPage.
+        //}
+
+        //TC-3 : Verify No radio Button disabled and not show text 'You have selected'
+        //TC-4 : Verify H1 Radio Button is visible
+        //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
 
 
     }

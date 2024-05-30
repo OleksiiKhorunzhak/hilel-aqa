@@ -25,6 +25,11 @@ namespace PlaywrigthUITests.PageObjects
             await _page.GetByText("Yes").CheckAsync();
         }
 
+        public async Task ClickImpressiveRadioButton()
+        {
+            await _page.GetByText("Impressive").CheckAsync();
+        }
+
         public async Task VerifyTextYesVisible()
         {
             await Assertions.Expect(_page.GetByText("You have selected Yes")).ToBeVisibleAsync();
@@ -33,6 +38,11 @@ namespace PlaywrigthUITests.PageObjects
         public async Task CheckYesRadioChecked()
         {
             await _page.Locator("#yesRadio").IsCheckedAsync();
+        }
+
+        public async Task CheckImpressiveRadioButton()
+        {
+            await _page.Locator("#impressiveRadio").IsCheckedAsync();
         }
     }
 }
