@@ -10,11 +10,10 @@ namespace AtataUITests.PageObjects
 
         [FindById("item-4")]
         public Clickable<DemoQAButtonsPage, _> Buttons { get; private set; }
-   
-        public _ TextBoxVisible()
+
+        public static DemoQATextBoxPage GoToTextBoxesPage()
         {
-            TextBox.Should.BeVisible
-            return this;
+            return Go.To<_>().TextBox.ClickAndGo();
         }
     }
 }

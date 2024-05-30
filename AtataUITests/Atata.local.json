@@ -1,4 +1,10 @@
 {
-  "baseUrl": "https://demoqa.com/"
-  // Other environment specific configuration properties can be added here.
-}
+  "baseUrl": "https://demoqa.com/",
+  //"DriverAlias": "chrome",
+  //"chrome": {
+  //  "version": "latest",
+  //  "arguments": [
+  //    "start-maximized"
+  //  ]
+  //}
+} 
