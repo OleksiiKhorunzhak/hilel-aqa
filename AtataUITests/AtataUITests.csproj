@@ -14,7 +14,7 @@
     <PackageReference Include="Atata.WebDriverExtras" Version="3.0.0" />
     <PackageReference Include="Atata.WebDriverSetup" Version="2.10.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
-    <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.43.0" />
+    <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.44.0" />
     <PackageReference Include="NLog" Version="5.3.2" />
     <PackageReference Include="SpecFlow" Version="3.9.74" />
     <PackageReference Include="SpecFlow.Internal.Json" Version="1.0.8" />
