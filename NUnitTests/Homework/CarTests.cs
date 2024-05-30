@@ -8,31 +8,30 @@ namespace NUnitTests.Homework
     public class CarTests : Lesson3Logic
     {
 
-		#region[TestCases]
-		//Test Case 1: Test Acceleration
-		//Description: Ensure that the method GetAcceleration correctly retrieves the current acceleration value.
-		//Steps:
-		//Initialize an instance of Lesson3Logic.
-		//Call the GetAcceleration method.
-		//Verify that the Acceleration property matches CurrentAcceleration.
+        //TODO: Finish car tests here or in Lesson3Logic file folowing example
 
-		[Order(1)]
-		[Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
-		public void TestAcceleration()
-		{
-			CurrentAcceleration = CurrentAcceleration; // 50
-			Accelerate(CurrentAcceleration);
-			Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
-		}
+        #region[TestCases]
+        //TODO: TestCases
+        //Test Case 1: Test Acceleration
+        //Description: Ensure that the method GetAcceleration correctly retrieves the current acceleration value.
+        [Order(1)]
+        [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
+        public void TestAcceleration()
+        {
+            //Steps:
+            //Initialize an instance of Lesson3Logic.
+            //Call the GetAcceleration method.
+            //Verify that the Acceleration property matches CurrentAcceleration.
+            CurrentAcceleration = 50;
+            Accelerate(CurrentAcceleration);
+            Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
+        }
 
-		//Test Case 2: Test GetSpeed with Positive Acceleration
-		//Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
-		//Steps:
-		//Set CurrentAcceleration to a positive value.
-		//Call the GetSpeed method.
-		//Check that Speed equals CurrentSpeed.
-
-		[Test]
+        //Test Case 2: Test GetSpeed with Positive Acceleration
+        //Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
+        //Steps:
+        [Test]
+        
         [Order(2)]
         public void TestGetSpeed()
         {
@@ -41,7 +40,6 @@ namespace NUnitTests.Homework
             GetSpeed();
             Assert.That(Speed, Is.EqualTo(CurrentSpeed));
         }
-
 
 		//Test Case 3: Test GetDeceleration
 		//Description: Check if GetDeceleration correctly calculates deceleration as the difference between current speed and deceleration.
@@ -204,4 +202,3 @@ namespace NUnitTests.Homework
 		#endregion
 
 	}
-}

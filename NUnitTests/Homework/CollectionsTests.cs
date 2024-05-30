@@ -81,17 +81,6 @@ namespace Homework
         // Sort sortedArray in place
         // Assert that sortedArray is in ascending order
 
-		[Test]
-        [Description("TC-42 sorted aray shoud be in ascending order")]
-        public void SortArrayTest()
-        
-        {
-			string[] sortedArray = new string[UkrainianCitiesArray.Length];
-			Array.Copy(UkrainianCitiesArray,sortedArray, UkrainianCitiesArray.Length);
-			Array.Sort(sortedArray);
-			CollectionAssert.IsOrdered(sortedArray, "The sorted array is not in ascending order.");
-
-        }
 
         [Test]
         [Description("TC-42 array should not contain terrorist cities")]
