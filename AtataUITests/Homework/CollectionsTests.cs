@@ -1,5 +1,4 @@
 ﻿using AtataUITests;
-using NUnit.Framework.Legacy;
 
 namespace AtataUITests.Homework
 {
