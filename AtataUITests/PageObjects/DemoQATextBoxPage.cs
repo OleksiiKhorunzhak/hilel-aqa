@@ -1,5 +1,4 @@
-﻿using Atata;
-using _ = AtataUITests.PageObjects.DemoQATextBoxPage;
+﻿using _ = AtataUITests.PageObjects.DemoQATextBoxPage;
 
 namespace AtataUITests.PageObjects
 {

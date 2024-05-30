@@ -161,6 +161,6 @@ namespace NUnitTests.Homework
             GetDecelerationChargePower(false);
             Assert.That(DecelerationCharge, Is.EqualTo(0));
         }
-            #endregion
-        }
+        #endregion
+    }
 }
