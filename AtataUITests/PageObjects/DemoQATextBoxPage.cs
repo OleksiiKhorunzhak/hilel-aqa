@@ -33,10 +33,5 @@ namespace AtataUITests.PageObjects
             bool isMatch = System.Text.RegularExpressions.Regex.IsMatch(emailValue, pattern);
             Assert.That(isMatch, $"The email '{emailValue}' does not match the pattern '{pattern}'");
         }
-
-        public static void ShouldBeResizable(TextArea<_> textarea)
-        {
-
-        }
     }
 }
