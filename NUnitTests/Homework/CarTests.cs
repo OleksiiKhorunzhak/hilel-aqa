@@ -14,7 +14,7 @@ namespace NUnitTests.Homework
         //Description: Ensure that the method GetAcceleration correctly retrieves the current acceleration value.
 
         [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
-        [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
+
         public void TestAcceleration()
         {
             //Initialize an instance of Lesson3Logic.
@@ -22,13 +22,14 @@ namespace NUnitTests.Homework
 
             //Call the GetAcceleration method.
             Accelerate(CurrentAcceleration);
+        }
 
-            //Verify that the Acceleration property matches CurrentAcceleration.
-            //Verify that the Acceleration property matches CurrentAcceleration.
-=========
+        //Verify that the Acceleration property matches CurrentAcceleration.
+        //Verify that the Acceleration property matches CurrentAcceleration.
+
         [Order(1)]
         [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
-        public void TestAcceleration()
+        public void TestAccelerationVerification()
         {
             //Steps:
             //Initialize an instance of Lesson3Logic.
@@ -36,8 +37,6 @@ namespace NUnitTests.Homework
             //Verify that the Acceleration property matches CurrentAcceleration.
             CurrentAcceleration = 50;
             Accelerate(CurrentAcceleration);
->>>>>>>>> Temporary merge branch 2
->>>>>>>>> Temporary merge branch 2
             Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
         }
 
@@ -71,26 +70,30 @@ namespace NUnitTests.Homework
             //Invoke GetDeceleration.
             GetDeceleration();
             //Ensure Deceleration equals CurrentSpeed - CurrentDeceleration.
-        //Description: Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.
-        [Test]
-        [Order(4)]
-        public void TestSetSpeedAlert()
-        {
-            //Steps:
-            //Set CurrentSpeed to exceed MaxSpeed.
-            //Execute SetSpeedAlert.
-            //Confirm that SpeedAlert contains the appropriate warning message.
-            CurrentSpeed = MaxSpeed + 30;
-            SetSpeedAlert(CurrentSpeed, MaxSpeed);
-            Assert.That(Alert, Is.EqualTo("Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!"));
+
         }
+
             //Description: Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.
             [Test]
             [Order(4)]
             public void TestSetSpeedAlert()
             {
+                //Steps:
                 //Set CurrentSpeed to exceed MaxSpeed.
-                CurrentSpeed = MaxSpeed +10;
+                //Execute SetSpeedAlert.
+                //Confirm that SpeedAlert contains the appropriate warning message.
+                CurrentSpeed = MaxSpeed + 30;
+                SetSpeedAlert(CurrentSpeed, MaxSpeed);
+                Assert.That(Alert, Is.EqualTo("Take caution! Speed limit overdue " + (CurrentSpeed - MaxSpeed) + "!"));
+            }
+            //Description: Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.
+            [Test]
+            [Order(4)]
+
+            public void TestSetSpeedAlert_2()
+            {
+                //Set CurrentSpeed to exceed MaxSpeed.
+                CurrentSpeed = MaxSpeed + 10;
 
                 //Execute SetSpeedAlert.
                 SetSpeedAlert(CurrentSpeed, MaxSpeed);
@@ -101,6 +104,8 @@ namespace NUnitTests.Homework
                 Assert.That(Alert, Is.EqualTo(expectedAlertMessage));
             }
 
+        }
+    }
 
 =========
         //Description: Validate that SetSpeedAlert generates the correct alert when the speed exceeds the maximum speed.
@@ -329,9 +334,5 @@ namespace NUnitTests.Homework
             GetDecelerationChargePower(false);
             Assert.That(DecelerationCharge, Is.EqualTo(0));
         }
-            #endregion
-        }
->>>>>>>>> Temporary merge branch 2
->>>>>>>>> Temporary merge branch 2
 }
-
+// #endregion
