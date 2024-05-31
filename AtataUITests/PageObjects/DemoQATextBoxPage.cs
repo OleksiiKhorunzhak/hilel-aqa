@@ -11,9 +11,33 @@ namespace AtataUITests.PageObjects
         [FindById("userName-label")]
         public Label<_> FullNameLabel { get; set; }
 
+        [WaitSeconds(10, TriggerEvents.BeforeClick)]
+        [FindById("submit")]
         public Button<_> Submit { get; set; }
 
         [FindById("name")]
         public Text<_> FullNameText { get; set; }
-    }
+
+        [FindByPlaceholder("name@example.com")]
+        public Label<_> EmailLabel { get; set; }
+
+        [FindById("userEmail")]
+        public EmailInput<_> Email { get; set; }
+
+        [FindById("email")]
+        public Text<_> EmailText { get; set; }
+
+        [FindById("currentAddress-label")]
+        public Label<_> CurrentAddressLabel { get; set; }
+
+        [FindById("currentAddress")]
+        public TextInput<_> CurrentAddress { get; set; }
+
+        [FindById("permanentAddress-label")]
+        public Label<_> PermanentAddressLabel { get; set; }
+
+        [FindById("permanentAddress")]
+        public TextInput<_> PermanentAddress { get; set; }
+
+	}
 }
