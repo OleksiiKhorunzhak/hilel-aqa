@@ -10,7 +10,7 @@ namespace AtataUITests.PageObjects
         [FindById("userName-label")]
         public Label<_> FullNameLabel { get; set; }
 
-        [WaitSeconds(1, TriggerEvents.BeforeClick)]
+        [ScrollTo]
         public Button<_> Submit { get; set; }
 
         [FindById("name")]
