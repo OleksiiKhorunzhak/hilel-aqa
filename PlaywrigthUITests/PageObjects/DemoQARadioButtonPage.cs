@@ -30,12 +30,32 @@ namespace PlaywrigthUITests.PageObjects
             await _page.GetByText("Impressive").CheckAsync();
         }
 
+        public async Task ClickNoRadioButton()
+        {
+            await _page.Locator("custom-control-input.disabled").ClickAsync();
+		}
+
         public async Task VerifyTextYesVisible()
         {
             await Assertions.Expect(_page.GetByText("You have selected Yes")).ToBeVisibleAsync();
         }
 
-        public async Task CheckYesRadioChecked()
+		public async Task VerifySelectedImpressiveButtonTextRow()
+		{
+			await Assertions.Expect(_page.GetByText("You have selected Impressive")).ToBeVisibleAsync();
+		}
+
+		public async Task VerifySelectedImpressiveButtonTextRowIsNotVisible()
+		{
+			await Assertions.Expect(_page.GetByText("You have selected Impressive")).Not.ToBeVisibleAsync();
+		}
+
+		public async Task VerifySelectedTextRowNotExists()
+		{
+			await Assertions.Expect(_page.GetByText("You have selected")).Not.ToBeVisibleAsync();
+		}
+
+		public async Task CheckYesRadioChecked()
         {
             await _page.Locator("#yesRadio").IsCheckedAsync();
         }
@@ -44,5 +64,15 @@ namespace PlaywrigthUITests.PageObjects
         {
             await _page.Locator("#impressiveRadio").IsCheckedAsync();
         }
-    }
+
+		public async Task CheckNoRadioButtonIsDisabled()
+		{
+			await _page.Locator("#noRadio").IsDisabledAsync();
+		}
+
+		public async Task CheckHeaderRadioButtonVisible()
+		{
+            await _page.GetByRole(AriaRole.Heading, new() { Name = "Radio Button" }).IsVisibleAsync();
+		}
+	}
 }
