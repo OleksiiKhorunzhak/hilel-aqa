@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AtataUITests.PageObjects;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +18,20 @@ namespace AtataUITests.Tests
         //Test Case 2: Text Full Name Input should be visible
         //Test Case 3: Enter "John Doe" in Text Full Name Input, press submit, text Name should be "Name:John Doe"
         //Test Case 4: Clear Text Full Name Input, press submit, text Name should not be visible
+        #region "Full Name" input field
 
+        //TC1: Label "Full Name" should be visible
+        [Test]
+        public void VerifyFullNameFieldLabelVisible()
+        {
+            Go.To<DemoQAElementsPage>().
+               TextBox.ClickAndGo().
+               FullName.Should.BeVisible().
+               FullName.Set("John Doe").
+               FullName.Should.BeVisible();
+        }
+
+        //TC2: Full Name input should be visible
 
         //[Email] field:
 
@@ -44,3 +59,4 @@ namespace AtataUITests.Tests
         //Test Case 4: Clear Text Permanent Address Input, press submit, text Permanent Address should not be visible
     }
 }
+
