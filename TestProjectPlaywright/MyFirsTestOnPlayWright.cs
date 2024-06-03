@@ -18,7 +18,6 @@ namespace TestProjectPlaywright
                 Headless = false,
             });
             var context = await browser.NewContextAsync();
-
             var page = await context.NewPageAsync();
             await page.GotoAsync("https://demoqa.com/");
             await page.GetByRole(AriaRole.Heading, new() { Name = "Elements" }).ClickAsync();
@@ -26,7 +25,6 @@ namespace TestProjectPlaywright
             await page.GetByPlaceholder("Full Name").ClickAsync();
             await page.GetByPlaceholder("Full Name").FillAsync("test name");
             await page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
-
         }
     }
 }
