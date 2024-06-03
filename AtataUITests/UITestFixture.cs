@@ -10,6 +10,6 @@
 
         [TearDown]
         public void TearDown() =>
-        AtataContext.Current?.Dispose();
+            AtataContext.Current?.Dispose();
     }
 }

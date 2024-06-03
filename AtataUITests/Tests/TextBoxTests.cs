@@ -1,4 +1,5 @@
 ﻿using Atata;
+using AtataUITests.PageObjects;
 using NUnit.Framework.Internal;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,14 @@ namespace AtataUITests.Tests
         //Preconditions: Go to https://demoqa.com/text-box
 
         //TC 1: class="text-center" should have text = "Text Box"
+        [Test]
+        [Description("class=\"text-center\" should have text = \"Text Box\"")]
+        public void TestName()
+        {
+            Go.To<DemoQAButtonsPage>().
+               
+
+        }
 
         //[Full Name input]: - textInput
         //TC 2: label id="userName-label" text should be "Full Name"
