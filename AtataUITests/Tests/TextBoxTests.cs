@@ -11,15 +11,6 @@ namespace AtataUITests.Tests
 {
     internal class TextBoxTests : UITestFixture
     {
-
-        //Elements:
-        //Preconditions: Go to https://demoqa.com/elements
-        //TC 1: Image "https://demoqa.com/images/Toolsqa.jpg" should be in the Header
-        //TC 2: Image "https://demoqa.com/images/Toolsqa.jpg" should be centered in the header
-        //TC 3: Image "https://demoqa.com/images/Toolsqa.jpg" should be a link to Home page "https://demoqa.com/"
-
-        //___________________________________________________
-        //Text Box:
         //Preconditions: Go to https://demoqa.com/text-box
         [Test]
         [Description("TextBox Url should be https://demoqa.com/text-box")]
@@ -28,6 +19,7 @@ namespace AtataUITests.Tests
             Go.To<TextBoxPage>().
                 PageUrl.Should.Be("https://demoqa.com/text-box");
         }
+
         //TC 1: class="text-center" should have text = "Text Box"
         [Test]
         [Description("TextBox Page title <h1> text should be = Text Box")]
