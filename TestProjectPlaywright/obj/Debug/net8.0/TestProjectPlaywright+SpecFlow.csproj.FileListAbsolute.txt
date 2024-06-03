@@ -1,0 +1,6 @@
+C:\Users\yusta\source\repos\hilel-aqa\TestProjectPlaywright\obj\Debug\net8.0\TestProjectPlaywright+SpecFlow.csproj.AssemblyReference.cache
+C:\Users\yusta\source\repos\hilel-aqa\TestProjectPlaywright\obj\Debug\net8.0\TestProjectPlaywright+SpecFlow.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusta\source\repos\hilel-aqa\TestProjectPlaywright\obj\Debug\net8.0\TestProjectPlaywright+SpecFlow.AssemblyInfoInputs.cache
+C:\Users\yusta\source\repos\hilel-aqa\TestProjectPlaywright\obj\Debug\net8.0\TestProjectPlaywright+SpecFlow.AssemblyInfo.cs
+C:\Users\yusta\source\repos\hilel-aqa\TestProjectPlaywright\obj\Debug\net8.0\TestProjectPlaywright+SpecFlow.csproj.CoreCompileInputs.cache
+C:\Users\yusta\source\repos\hilel-aqa\TestProjectPlaywright\obj\Debug\net8.0\TestProjectPlaywright+SpecFlow.sourcelink.json
