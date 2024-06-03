@@ -19,17 +19,24 @@ namespace AtataUITests.Tests
         //TC 3: Image "https://demoqa.com/images/Toolsqa.jpg" should be a link to Home page "https://demoqa.com/"
 
         //___________________________________________________
-
         //Text Box:
         //Preconditions: Go to https://demoqa.com/text-box
-
+        [Test]
+        [Description("TextBox Url should be https://demoqa.com/text-box")]
+        public void VerifyTextBoxUrl()
+        {
+            Go.To<TextBoxPage>().
+                PageUrl.Should.Be("https://demoqa.com/text-box");
+        }
         //TC 1: class="text-center" should have text = "Text Box"
         [Test]
-        [Description("class=\"text-center\" should have text = \"Text Box\"")]
-        public void VerifyTextBoxTitle()
+        [Description("TextBox Page title <h1> text should be = Text Box")]
+        public void VerifyPageH1()
         {
-            Go.To<TextBoxPage>();
+            Go.To<TextBoxPage>().
+                PageTitleH1.Should.Be("Text Box");
         }
+
 
         //[Full Name input]: - textInput
         //TC 2: label id="userName-label" text should be "Full Name"
