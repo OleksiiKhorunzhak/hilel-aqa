@@ -5,6 +5,5 @@ namespace AtataUITests.Tests
 {
     public sealed class CheckBoxTests : UITestFixture
     {
-
     }
 }
