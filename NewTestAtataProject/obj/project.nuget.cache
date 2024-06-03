@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "svLHtbT8Zh4=",
+  "dgSpecHash": "WwXcLl8mCy0=",
   "success": true,
   "projectFilePath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\NewTestAtataProject\\NewTestAtataProject.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,8 @@
     "C:\\Users\\yusta\\.nuget\\packages\\selenium.webdriver\\4.20.0\\selenium.webdriver.4.20.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\specflow\\3.9.74\\specflow.3.9.74.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\specflow.internal.json\\1.0.8\\specflow.internal.json.1.0.8.nupkg.sha512",
+    "C:\\Users\\yusta\\.nuget\\packages\\specflow.nunit\\3.9.74\\specflow.nunit.3.9.74.nupkg.sha512",
+    "C:\\Users\\yusta\\.nuget\\packages\\specflow.tools.msbuild.generation\\3.9.74\\specflow.tools.msbuild.generation.3.9.74.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

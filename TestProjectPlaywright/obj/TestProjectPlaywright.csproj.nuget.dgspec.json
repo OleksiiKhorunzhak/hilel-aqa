@@ -78,6 +78,14 @@
               "target": "Package",
               "version": "[3.9.74, )"
             },
+            "SpecFlow.NUnit": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "SpecFlow.Tools.MsBuild.Generation": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[6.0.0, )"
