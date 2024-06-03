@@ -1,9 +1,9 @@
-﻿using _ = AtataUITests.PageObjects.DemoQAButtonsPage;
+﻿using _ = AtataUITests.PageObjects.ButtonsPage;
 
 namespace AtataUITests.PageObjects
 {
     [Url("/buttons")]
-    public sealed class DemoQAButtonsPage : DemoQAPage<_>
+    public sealed class ButtonsPage : DemoQAPage<_>
     {
         [FindById("doubleClickBtn")]
         public Button<_> DoubleClickMe { get; private set; }

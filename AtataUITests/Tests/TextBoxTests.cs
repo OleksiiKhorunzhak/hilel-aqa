@@ -26,11 +26,9 @@ namespace AtataUITests.Tests
         //TC 1: class="text-center" should have text = "Text Box"
         [Test]
         [Description("class=\"text-center\" should have text = \"Text Box\"")]
-        public void TestName()
+        public void VerifyTextBoxTitle()
         {
-            //Go.To<DemoQAButtonsPage>().
-               
-
+            Go.To<TextBoxPage>();
         }
 
         //[Full Name input]: - textInput
