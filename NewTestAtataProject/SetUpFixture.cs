@@ -10,7 +10,7 @@
             AtataContext.GlobalConfiguration
                 .UseChrome()
                     .WithArguments("start-maximized")
-                .UseBaseUrl("https://atata.io/")
+                .UseBaseUrl("https://demoqa.com/")
                 .UseCulture("en-US")
                 .UseAllNUnitFeatures();
 

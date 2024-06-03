@@ -5,6 +5,6 @@
         [Test]
         public void SampleTest() =>
             Go.To<OrdinaryPage>()
-                .PageTitle.Should.Contain("Atata");
+                .PageTitle.Should.Contain("DEMOQA");
     }
 }
