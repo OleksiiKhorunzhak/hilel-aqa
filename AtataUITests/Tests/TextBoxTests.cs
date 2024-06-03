@@ -28,7 +28,7 @@ namespace AtataUITests.Tests
         [Description("class=\"text-center\" should have text = \"Text Box\"")]
         public void TestName()
         {
-            Go.To<DemoQAButtonsPage>().
+            //Go.To<DemoQAButtonsPage>().
                
 
         }

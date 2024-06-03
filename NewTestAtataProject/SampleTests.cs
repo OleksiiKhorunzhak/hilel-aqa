@@ -1,6 +1,6 @@
 ﻿namespace NewTestAtataProject
 {
-    public sealed class SampleTests : UITestFixture
+    public sealed class SampleTests : UITestFixtureDemoQa
     {
         [Test]
         public void SampleTest() =>

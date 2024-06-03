@@ -50,6 +50,18 @@
               "target": "Package",
               "version": "[3.1.0, )"
             },
+            "Atata.Bootstrap": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Atata.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Atata.WebDriverExtras": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Atata.WebDriverSetup": {
               "target": "Package",
               "version": "[2.10.0, )"

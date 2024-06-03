@@ -106,3 +106,5 @@ C:\Users\yusta\source\repos\hilel-aqa\NewTestAtataProject\obj\Debug\net8.0\refin
 C:\Users\yusta\source\repos\hilel-aqa\NewTestAtataProject\obj\Debug\net8.0\NewTestAtataProject.pdb
 C:\Users\yusta\source\repos\hilel-aqa\NewTestAtataProject\obj\Debug\net8.0\NewTestAtataProject.genruntimeconfig.cache
 C:\Users\yusta\source\repos\hilel-aqa\NewTestAtataProject\obj\Debug\net8.0\ref\NewTestAtataProject.dll
+C:\Users\yusta\source\repos\hilel-aqa\NewTestAtataProject\bin\Debug\net8.0\Atata.Bootstrap.dll
+C:\Users\yusta\source\repos\hilel-aqa\NewTestAtataProject\bin\Debug\net8.0\Atata.Configuration.Json.dll

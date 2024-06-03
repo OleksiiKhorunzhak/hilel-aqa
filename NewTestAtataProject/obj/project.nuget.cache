@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Wfu8YoDV7Lc=",
+  "dgSpecHash": "czQ4subZNwk=",
   "success": true,
   "projectFilePath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\NewTestAtataProject\\NewTestAtataProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yusta\\.nuget\\packages\\atata\\3.1.0\\atata.3.1.0.nupkg.sha512",
+    "C:\\Users\\yusta\\.nuget\\packages\\atata.bootstrap\\3.0.0\\atata.bootstrap.3.0.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\atata.cli\\2.2.0\\atata.cli.2.2.0.nupkg.sha512",
+    "C:\\Users\\yusta\\.nuget\\packages\\atata.configuration.json\\3.0.0\\atata.configuration.json.3.0.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\atata.webdriverextras\\3.0.0\\atata.webdriverextras.3.0.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\atata.webdriversetup\\2.10.0\\atata.webdriversetup.2.10.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\microsoft.codecoverage\\17.9.0\\microsoft.codecoverage.17.9.0.nupkg.sha512",
@@ -15,7 +17,7 @@
     "C:\\Users\\yusta\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.9.0\\microsoft.testplatform.objectmodel.17.9.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\microsoft.testplatform.testhost\\17.9.0\\microsoft.testplatform.testhost.17.9.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "C:\\Users\\yusta\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\yusta\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\selenium.webdriver\\4.20.0\\selenium.webdriver.4.20.0.nupkg.sha512",

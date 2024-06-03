@@ -1,7 +1,7 @@
 ﻿namespace NewTestAtataProject
 {
     [Parallelizable(ParallelScope.Self)]
-    public class UITestFixture
+    public class UITestFixtureDemoQa
     {
         [SetUp]
         public void SetUp() =>

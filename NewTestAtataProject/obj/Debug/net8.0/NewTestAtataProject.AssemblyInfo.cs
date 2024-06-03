@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NewTestAtataProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fd67f5d1c6ab25a62c832de63b4777ffdc26aef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70c00e7a6af1c7130c3dab77d5a043a1fc16c7c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("NewTestAtataProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NewTestAtataProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -20,6 +20,22 @@
           }
         }
       },
+      "Atata.Bootstrap/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Atata": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Atata.Bootstrap.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Atata.Bootstrap.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Atata.Cli/2.2.0": {
         "type": "package",
         "compile": {
@@ -29,6 +45,23 @@
         },
         "runtime": {
           "lib/netstandard2.0/Atata.Cli.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Atata.Configuration.Json/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Atata": "3.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Atata.Configuration.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Atata.Configuration.Json.dll": {
             "related": ".xml"
           }
         }
@@ -390,15 +423,15 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -567,6 +600,20 @@
         "lib/netstandard2.0/Atata.xml"
       ]
     },
+    "Atata.Bootstrap/3.0.0": {
+      "sha512": "pyQIvSj68nMJvS8v5DQdzgISihY9z5IeSZZPJQwA4/XGi0SwDc7Mpb7RAFAX7H27sce33GeDO9D3eVbbthPFcQ==",
+      "type": "package",
+      "path": "atata.bootstrap/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "atata.bootstrap.3.0.0.nupkg.sha512",
+        "atata.bootstrap.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Atata.Bootstrap.dll",
+        "lib/netstandard2.0/Atata.Bootstrap.xml"
+      ]
+    },
     "Atata.Cli/2.2.0": {
       "sha512": "7EuFbGcQCgl1RFojIevFCOtawJnrWn8oQwRHsTuHMaiwC6xsxCjpTrtOxUvEHrleC46f+HWmgimF8gsV2OIpVg==",
       "type": "package",
@@ -579,6 +626,20 @@
         "icon.png",
         "lib/netstandard2.0/Atata.Cli.dll",
         "lib/netstandard2.0/Atata.Cli.xml"
+      ]
+    },
+    "Atata.Configuration.Json/3.0.0": {
+      "sha512": "e42Y74+crmm1ZDYhDIq1NAB+Jdw8t28V+aafkTtZHpRD0f4sugAVw3BtS5EKsLEW1dQ7PrwIkmAT+qTBIijbiw==",
+      "type": "package",
+      "path": "atata.configuration.json/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "atata.configuration.json.3.0.0.nupkg.sha512",
+        "atata.configuration.json.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Atata.Configuration.Json.dll",
+        "lib/netstandard2.0/Atata.Configuration.Json.xml"
       ]
     },
     "Atata.WebDriverExtras/3.0.0": {
@@ -999,14 +1060,15 @@
         "version.txt"
       ]
     },
-    "Newtonsoft.Json/13.0.1": {
-      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
-      "path": "newtonsoft.json/13.0.1",
+      "path": "newtonsoft.json/13.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
+        "README.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -1015,13 +1077,15 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
@@ -1328,6 +1392,9 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Atata >= 3.1.0",
+      "Atata.Bootstrap >= 3.0.0",
+      "Atata.Configuration.Json >= 3.0.0",
+      "Atata.WebDriverExtras >= 3.0.0",
       "Atata.WebDriverSetup >= 2.10.0",
       "Microsoft.NET.Test.Sdk >= 17.9.0",
       "NUnit >= 4.1.0",
@@ -1382,6 +1449,18 @@
           "Atata": {
             "target": "Package",
             "version": "[3.1.0, )"
+          },
+          "Atata.Bootstrap": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
+          "Atata.Configuration.Json": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
+          "Atata.WebDriverExtras": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           },
           "Atata.WebDriverSetup": {
             "target": "Package",
