@@ -7,7 +7,12 @@ namespace AtataUITests.PageObjects
     public sealed class TextBoxPage : DemoQAPage<_>
     {
         [FindByClass("text-center")]
-        public Text<_> PageTitleH1 { get; set; }
+        public Text<_> TextBoxPageH1 { get; set; }
+
+        [FindById("userName-label")]
+        public Text<_> UserNameLable { get; set; }
+
+
     }
 }
     

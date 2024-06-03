@@ -26,12 +26,17 @@ namespace AtataUITests.Tests
         public void VerifyPageH1()
         {
             Go.To<TextBoxPage>().
-                PageTitleH1.Should.Be("Text Box");
+                TextBoxPageH1.Should.Be("Text Box");
         }
 
-
-        //[Full Name input]: - textInput
         //TC 2: label id="userName-label" text should be "Full Name"
+        [Test]
+        [Description("userName-label text should be = Full Name")]
+        public void VerifyUserNameLabelText()
+        {
+            Go.To<TextBoxPage>().
+                UserNameLable.Should.Be("Full Name");
+        }
         //TC 3: input id="userName" should be type="text"
         //TC 4: input id="userName" should be placeholder="Full Name"
         //TC 5: input id="userName" should be autocomplete = "off"
