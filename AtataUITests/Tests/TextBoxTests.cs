@@ -38,6 +38,13 @@ namespace AtataUITests.Tests
                 UserNameLable.Should.Be("Full Name");
         }
         //TC 3: input id="userName" should be type="text"
+        [Test]
+        [Description("UserNameInput type should be = text")]
+        public void VerifyUserNameInputType()
+        {
+            Go.To<TextBoxPage>().
+                UserNameInput.Type("text");
+        }
         //TC 4: input id="userName" should be placeholder="Full Name"
         //TC 5: input id="userName" should be autocomplete = "off"
         //TC 6: input id="userName" enter value "FirstName 123" => input id="userName" text should be "FirstName 123" and placeholder style="display: none"

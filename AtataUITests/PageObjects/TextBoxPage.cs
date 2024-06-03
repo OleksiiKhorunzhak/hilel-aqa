@@ -12,7 +12,8 @@ namespace AtataUITests.PageObjects
         [FindById("userName-label")]
         public Text<_> UserNameLable { get; set; }
 
-
+        [FindByPlaceholder("Full Name")]
+        public TextInput<_> UserNameInput { get; set; }   
     }
 }
     
