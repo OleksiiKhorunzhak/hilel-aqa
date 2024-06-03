@@ -22,7 +22,7 @@ namespace AtataUITests.PageObjects
         public Frame<_> BorderColorFullName { get; set; }
 
         [FindByClass("alert-message")]
-        public AlertBox<_> AlertMessage { get; set; }
+        public Text<_> AlertMessage { get; set; }
 
         [FindByPlaceholder("name@example.com")]
         public EmailInput<_> EmailInput { get; set; }

@@ -111,14 +111,13 @@ namespace AtataUITests.Tests
         [Description("Checking that empty field \"Full Name\" can`t be submmited and after pressing submit an appropriate alert appears")]
         public void VerifyEmptyFullNameInputSetAllert()
         {
+            string expectedAlertText = "The field Full Name must be fill in";
             Go.To<DemoQAElementsPage>().
                 TextBox.ClickAndGo().
                     FullName.Set("  ").
                     ScrollDown().
-                    Submit.Click();
-            string expectedAlertText = "The field Full Name must be fill in";
-            AlertMessage.Should.BeVisible().And.Contain(expectedAlertText);
-
+                    Submit.Click(). 
+            AlertMessage.Should.Be(expectedAlertText);
 
         }
 
@@ -173,7 +172,7 @@ namespace AtataUITests.Tests
                     CurrentAddressInput.Set("Varash city, Budivelnikiv street, building 3, apartment 333").
                     ScrollDown().
                     Submit.Click().
-                    CurrentAddressText.Content.Should.Contain("Current Address:Varash city, Budivelnikiv street, building 3, apartment 333");
+                    CurrentAddressText.Should.Be("Current Address:Varash city, Budivelnikiv street, building 3, apartment 333");
 
         }
 
