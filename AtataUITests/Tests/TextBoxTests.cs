@@ -1,4 +1,5 @@
 ﻿using Atata;
+using AtataUITests.PageObjects;
 using NUnit.Framework.Internal;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,81 @@ namespace AtataUITests.Tests
 {
     internal class TextBoxTests : UITestFixture
     {
-
-        //Elements:
-        //Preconditions: Go to https://demoqa.com/elements
-        //TC 1: Image "https://demoqa.com/images/Toolsqa.jpg" should be in the Header
-        //TC 2: Image "https://demoqa.com/images/Toolsqa.jpg" should be centered in the header
-        //TC 3: Image "https://demoqa.com/images/Toolsqa.jpg" should be a link to Home page "https://demoqa.com/"
-
-        //___________________________________________________
-
-        //Text Box:
         //Preconditions: Go to https://demoqa.com/text-box
+        [Test]
+        [Description("TextBox Url should be https://demoqa.com/text-box")]
+        public void TextBoxUrl()
+        {
+            Go.To<TextBoxPage>().
+                PageUrl.Should.Be("https://demoqa.com/text-box");
+            Go.On<TextBoxPage>().
+                PageUrl.Should.EndWith("/text-box");
+        }
 
         //TC 1: class="text-center" should have text = "Text Box"
+        [Test]
+        [Description("TextBoxPageH1 text should be = Text Box")]
+        public void PageTitleH1()
+        {
+            Go.To<TextBoxPage>().
+                TextBoxPageH1.Should.Be("Text Box");
+        }
 
-        //[Full Name input]:
         //TC 2: label id="userName-label" text should be "Full Name"
-        //TC 3: input id="userName" should be type="text"
-        //TC 4: input id="userName" should be placeholder="Full Name"
-        //TC 5: input id="userName" should be autocomplete = "off"
-        //TC 6: input id="userName" enter value "FirstName 123" => input id="userName" text should be "FirstName 123" and placeholder style="display: none"
-        //TC 7: clear input id="userName" => input id="userName" text should be "" and placeholder style="display: block"
+        [Test]
+        [Description("UserNameLable text should be = Full Name")]
+        public void UserNameLabelText()
+        {
+            Go.To<TextBoxPage>().
+                UserNameLable.Should.Be("Full Name");
+        }
+        //TC 3:
+        //TC 4:
+        [Test]
+        [Description("UserNameInput type should be = text and placeholder = Full Name")]
+        public void UserNameInputType()
+        {
+            Go.To<TextBoxPage>().
+                UserNameInput.DomAttributes["type"].Should.Equal("text");
+        }
 
-        //[Email input]:
+        //TC 5:
+        [Test]
+        [Description("UserNameInput should be autocomplete = off")]
+        public void UserNameInputAutocomplete()
+        {
+            Go.To<TextBoxPage>().
+                UserNameInput.DomAttributes["autocomplete"].Should.Equal("off");
+        }
+        //TC 6:
+        [Test]
+        [Description("UserNameInput style should be display: block")]
+        public void UserNameInputStyle()
+        {
+            Go.To<TextBoxPage>().
+                UserNameInput.Css["display"].Should.Equal("block");
+        }
+
+        //TC 7: 
+        [Test]
+        [Description("UserNameInput enter value FirstName 123")]
+        public void UserNameInputEnterValue()
+        {
+            Go.To<TextBoxPage>().
+                UserNameInput.Type("FirstName 123")
+                    .Should.Equals("FirstName 123");
+        }
+
+        //TC 8: 
+        [Test]
+        [Description("UserNameInput clear should be empty")]
+        public void UserNameInputClear()
+        {
+            Go.To<TextBoxPage>().
+                UserNameInput.Clear()
+                    .UserNameInput.Should.BeEmpty();
+        }
+        //[Email input]: - use EmailInput
         //TC 8: label id="userEmail-label" text should be "Email"
         //TC 9: input id="userEmail" should be type="email"
         //TC 10: input id="userEmail" should be placeholder="name@example.com"
