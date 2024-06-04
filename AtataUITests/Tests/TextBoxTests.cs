@@ -14,7 +14,7 @@ namespace AtataUITests.Tests
         //Preconditions: Go to https://demoqa.com/text-box
         [Test]
         [Description("TextBox Url should be https://demoqa.com/text-box")]
-        public void VerifyTextBoxUrl()
+        public void TextBoxUrl()
         {
             Go.To<TextBoxPage>().
                 PageUrl.Should.Be("https://demoqa.com/text-box");
@@ -23,7 +23,7 @@ namespace AtataUITests.Tests
         //TC 1: class="text-center" should have text = "Text Box"
         [Test]
         [Description("TextBox Page title <h1> text should be = Text Box")]
-        public void VerifyPageH1()
+        public void PageTitleH1()
         {
             Go.To<TextBoxPage>().
                 TextBoxPageH1.Should.Be("Text Box");
@@ -32,22 +32,39 @@ namespace AtataUITests.Tests
         //TC 2: label id="userName-label" text should be "Full Name"
         [Test]
         [Description("userName-label text should be = Full Name")]
-        public void VerifyUserNameLabelText()
+        public void UserNameLabelText()
         {
             Go.To<TextBoxPage>().
                 UserNameLable.Should.Be("Full Name");
         }
         //TC 3: input id="userName" should be type="text"
+        //TC 4: input id="userName" should be placeholder="Full Name"
         [Test]
         [Description("UserNameInput type should be = text")]
-        public void VerifyUserNameInputType()
+        public void UserNameInputType()
         {
             Go.To<TextBoxPage>().
                 UserNameInput.Type("text");
         }
-        //TC 4: input id="userName" should be placeholder="Full Name"
+
         //TC 5: input id="userName" should be autocomplete = "off"
+        //[Test]
+        //[Description("UserNameInput should be autocomplete = off")]
+        //public void UserNameInputAutocomplete()
+        //{
+        //    Go.To<TextBoxPage>().
+        //        UserNameInput.
+        //}
+
         //TC 6: input id="userName" enter value "FirstName 123" => input id="userName" text should be "FirstName 123" and placeholder style="display: none"
+        [Test]
+        [Description("UserNameInput type should be = text")]
+        public void UserNameInputEnterValue()
+        {
+            Go.To<TextBoxPage>().
+                UserNameInput
+        }
+
         //TC 7: clear input id="userName" => input id="userName" text should be "" and placeholder style="display: block"
 
         //[Email input]: - use EmailInput
