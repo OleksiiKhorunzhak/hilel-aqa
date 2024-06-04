@@ -85,8 +85,6 @@ namespace PlaywrigthUITests.Tests
             Assert.That(isEnabled, Is.True, "'Click Me' button should be enabled");
         }
 
-
-
         [Test, Description("Verify Click Rigth Click Me button verify button focused")]
         public async Task VerifyClickOfRightClickButtonIsFocused()
         {
@@ -134,7 +132,5 @@ namespace PlaywrigthUITests.Tests
             Assert.That(isNotVisibleAfterRefresh, Is.False, "The element with text 'You have done a dynamic click' should not be visible after the page refresh.");
 
         }
-
-
     }
 }
