@@ -6,17 +6,25 @@
         [OneTimeSetUp]
         public void GlobalSetUp()
         {
-            string testEnvironmentAlias = TestContext.Parameters.Get("TestEnvironment", "local");
-            string driverAlias = TestContext.Parameters.Get("DriverAlias", DriverAliases.Chrome);
-
-            // Find information on AtataContext configuration on https://atata.io/getting-started/#configuration
-            // Find information on Atata JSON configuration on https://github.com/atata-framework/atata-configuration-json
             AtataContext.GlobalConfiguration
-                .ApplyJsonConfig<AtataConfig>()
-                .ApplyJsonConfig<AtataConfig>(environmentAlias: testEnvironmentAlias)
-                .UseDriver(driverAlias);
+                .UseChrome()
+                .WithArguments("start-maximized")
+                .UseBaseUrl("https://atata.io/")
+                .UseCulture("en-US")
+                .UseAllNUnitFeatures();
 
-            AtataContext.GlobalConfiguration.AutoSetUpDriverToUse();
+        //    AtataContext.GlobalConfiguration.AutoSetUpDriverToUse();
+        //    string testEnvironmentAlias = TestContext.Parameters.Get("TestEnvironment", "local");
+        //    string driverAlias = TestContext.Parameters.Get("DriverAlias", DriverAliases.Chrome);
+
+        //    // Find information on AtataContext configuration on https://atata.io/getting-started/#configuration
+        //    // Find information on Atata JSON configuration on https://github.com/atata-framework/atata-configuration-json
+        //    AtataContext.GlobalConfiguration
+        //        .ApplyJsonConfig<AtataConfig>()
+        //        .ApplyJsonConfig<AtataConfig>(environmentAlias: testEnvironmentAlias)
+        //        .UseDriver(driverAlias);
+
+        //    AtataContext.GlobalConfiguration.AutoSetUpDriverToUse();
         }
     }
 }
