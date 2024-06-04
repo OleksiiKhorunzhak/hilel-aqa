@@ -8,7 +8,7 @@ namespace AtataUITests.Tests
         [Test, Description("Verify Click Me button"), Retry(2)]
         public void ClickButtonTest() =>
             // Given I go to DemoQa Elements page 
-            Go.To<DemoQAElementsPage>().
+            Go.To<ElementsPage>().
             // When I Click the Buttons button in menu
             Buttons.ClickAndGo().
             // And I see 'buttons' page
@@ -23,7 +23,7 @@ namespace AtataUITests.Tests
         [Test, Description("Verify Double Click Me button"), Retry(2)]
         public void DoubleClickButtonTest() =>
             // Given I go to DemoQa Elements page 
-            Go.To<DemoQAElementsPage>().
+            Go.To<ElementsPage>().
             // When I Click the Buttons button in menu
             Buttons.ClickAndGo().
             // And I see 'buttons' page
@@ -38,7 +38,7 @@ namespace AtataUITests.Tests
         [Test, Description("Verify Rigth Click Me button"), Retry(2)]
         public void RigthClickButtonTest() =>
             // Given I go to DemoQa Elements page 
-            Go.To<DemoQAElementsPage>().
+            Go.To<ElementsPage>().
             // When I Click the Buttons button in menu
             Buttons.ClickAndGo().
             // And I see 'buttons' page

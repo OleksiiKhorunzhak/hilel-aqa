@@ -6,6 +6,14 @@
         [OneTimeSetUp]
         public void GlobalSetUp()
         {
+            //AtataContext.GlobalConfiguration
+            //    .UseChrome()
+            //    .WithArguments("start-maximized")
+            //    .UseBaseUrl("https://atata.io/")
+            //    .UseCulture("en-US")
+            //    .UseAllNUnitFeatures();
+
+            AtataContext.GlobalConfiguration.AutoSetUpDriverToUse();
             string testEnvironmentAlias = TestContext.Parameters.Get("TestEnvironment", "local");
             string driverAlias = TestContext.Parameters.Get("DriverAlias", DriverAliases.Chrome);
 

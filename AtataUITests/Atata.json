@@ -1,4 +1,5 @@
 {
+  "culture": "en-US",
   "drivers": [
     {
       "type": "chrome",
@@ -21,8 +22,6 @@
       }
     }
   ],
-  "culture": "en-US",
-  "useAllNUnitFeatures": true,
   "logConsumers": [
     {
       "type": "nlog-file"
@@ -32,5 +31,6 @@
     {
       "type": "file"
     }
-  ]
+  ],
+  "useAllNUnitFeatures": true
 }

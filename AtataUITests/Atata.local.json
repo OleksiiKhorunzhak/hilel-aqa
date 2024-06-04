@@ -1,4 +1,11 @@
 {
-  "baseUrl": "https://demoqa.com/"
-  // Other environment specific configuration properties can be added here.
+  "driver": {
+    "type": "chrome",
+    "options": {
+      "arguments": [ "start-maximized" ]
+    }
+  },
+  "baseUrl": "https://demoqa.com/",
+  "culture": "en-US",
+  "useAllNUnitFeatures": true
 }
