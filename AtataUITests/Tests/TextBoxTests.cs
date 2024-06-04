@@ -81,7 +81,7 @@ namespace AtataUITests.Tests
                     FullName.Set("Dog Pulya").
                     ScrollDown().
                     Submit.Click().
-                    FullNameText.Should.Contain("Name:Dog Pulya");
+                    FullNameText.Should.Be("Name:Dog Pulya");
         }
 
         // Test Case 4 :Full Name Input doesn`t accept any number or special symbol and after entering invalid imput, frame of the field "Full Name" is highlighted in red
@@ -117,7 +117,7 @@ namespace AtataUITests.Tests
                     FullName.Set("  ").
                     ScrollDown().
                     Submit.Click(). 
-            AlertMessage.Should.Be(expectedAlertText);
+                    AlertMessage.Should.Be(expectedAlertText);
 
         }
 
@@ -173,7 +173,6 @@ namespace AtataUITests.Tests
                     ScrollDown().
                     Submit.Click().
                     CurrentAddressText.Should.Be("Current Address:Varash city, Budivelnikiv street, building 3, apartment 333");
-
         }
 
 
@@ -193,7 +192,6 @@ namespace AtataUITests.Tests
 
         }
 
-
         // Field "Permanent Address" -  NOTE: There are the same tests for field "Current Address"
 
         //Test Case 16: Permanent Address Input should be visible and  "valid permanent address" as input  can be done
@@ -210,13 +208,13 @@ namespace AtataUITests.Tests
         [Description("Enter character \"!\" in Full Name Input leaving other fields of the TextBox Form empty and after pressing submit an appropriate alert appears")]
         public void VerifyEmptyFieldsOfTextBoxFormSetAllert()
         {
+            string expectedAlertTextBoxForm = "The fields of the TextBox Form must be fill in";
             Go.To<DemoQAElementsPage>().
                 TextBox.ClickAndGo().
                     FullName.Set("!").EmailInput.Set("  ").CurrentAddressInput.Set("  ").PermanentAddressInput.Set("  ").
                     ScrollDown().
-                    Submit.Click();
-            string expectedAlertTextBoxForm = "The fields of the TextBox Form must be fill in";
-            AlertMessage.Should.BeVisible().And.Contain(expectedAlertTextBoxForm);
+                    Submit.Click().
+                    AlertMessage.Should.Be(expectedAlertTextBoxForm);
 
 
         }
