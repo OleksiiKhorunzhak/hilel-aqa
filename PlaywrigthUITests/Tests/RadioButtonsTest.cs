@@ -24,18 +24,43 @@ namespace PlaywrigthUITests.Tests
 
         //Homework Lesson_9
         //TODO : 
-        //TC-2 : Verify Impressive radio Button can be checked and display text 'You have selected Impressive'
-        //[Test]
-        //[Description("Verify Impressive radio Button can be checked and display text 'You have selected Impressive'")]
-        //public async Task VerifyImpressiveRadioButton()
-        //{
-        //    await _radioButtonPage.GoToRadiButtonsPage();
-        //    await _radioButtonPage.
-        //}
 
-        //TC-3 : Verify No radio Button disabled and not show text 'You have selected'
-        //TC-4 : Verify H1 Radio Button is visible
-        //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
+        [Test]
+        [Description("Verify Impressive radio Button can be checked and display text 'You have selected Impressive'")]
+        public async Task VerifyImpressiveRadioButton()
+        {
+            await _radioButtonPage.GoToRadiButtonsPage();
+            await _radioButtonPage.ClickImpressiveRadioButton();
+            await _radioButtonPage.CheckImpressiveRadioButton();
+            await _radioButtonPage.VerifyTextImpressiveButtonIsVisible();
+        }
+
+        [Test, Description("Verify No radio Button disabled and not show text 'You have selected'")]
+        public async Task VerifyNoButtonIsDisabled()
+        {
+            await _radioButtonPage.GoToRadiButtonsPage();
+            await _radioButtonPage.ClickNoRadioButton();
+            await _radioButtonPage.VerifyNoButtonIsDisabled();
+            await _radioButtonPage.VerifyTextNoIsNotVisible();
+        }
+
+        [Test, Description("Verify H1 Radio Button is visible")]
+        public async Task VerifyTitleOfRadioButtonPage()
+        {
+            await _radioButtonPage.GoToRadiButtonsPage();
+            await _radioButtonPage.CheckTitleOfRadioButtonPage();
+        }
+
+        [Test, Description("Verify text 'You have selected Impressive' is not visible after page refresh")]
+        public async Task VerifyTextOfImpressiveButtonIsNotVisibleAfrePageRefresh()
+        {
+            await _radioButtonPage.GoToRadiButtonsPage();
+            await _radioButtonPage.ClickImpressiveRadioButton();
+            await _radioButtonPage.CheckImpressiveRadioButton();
+           // await _radioButtonPage.VerifyTextImpressiveButtonIsVisible(); Oleksiy do we need this Verification step in this test?
+            await _radioButtonPage.RefreshPage();
+            await _radioButtonPage.VerifyTextImpressiveButtonIsVisible();
+        }
 
 
     }
