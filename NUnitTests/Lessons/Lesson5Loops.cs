@@ -22,10 +22,11 @@
             int[] sequenceNumbers = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45];
             int expectedMultiple = 3;
 
-            foreach (var number in sequenceNumbers)
+            foreach (int number in sequenceNumbers)
             {
-                Assert.That(number % expectedMultiple, Is.EqualTo(0), "Number " + number + " is not a multiple of " + expectedMultiple);
-                //expectedMultiple += 3;
+                Assert.That(number % expectedMultiple, Is.EqualTo(0),
+                    "Number " + number + " is not a multiple of " + expectedMultiple);
+                expectedMultiple += 3;
             }
         }
 
@@ -34,7 +35,6 @@
         public void TestFibonacciSequence()
         {
             int[] fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181];
-
             Assert.Multiple(() =>
             {
                 // Assert the first two values separately as they are seed values.
@@ -43,10 +43,10 @@
             });
 
             // Start loop from index 2 as first two values do not follow the sum rule
-            for (int index = 2; index < fibonacci.Length; index++)
+            for (int i = 2; i < fibonacci.Length; i++)
             {
-                Assert.That(fibonacci[index], Is.EqualTo(fibonacci[index - 1] + fibonacci[index - 2]),
-                            $"Element at index {index} should be the sum of elements at indexes {index - 1} ({fibonacci[index - 1]}) and {index - 2} ({fibonacci[index - 2]}), but got {fibonacci[index]}.");
+                Assert.That(fibonacci[i], Is.EqualTo(fibonacci[i - 1] + fibonacci[i - 2]),
+                    $"Element at index {i} should be the sum of elements at indexes {i - 1} ({fibonacci[i - 1]}) and {i - 2} ({fibonacci[i - 2]}), but got {fibonacci[i]}.");
             }
         }
 
@@ -73,7 +73,8 @@
 
             foreach (int number in sequenceNumbers)
             {
-                Assert.That(number % expectedMultiple, Is.EqualTo(0), "Number " + number + " is not a multiple of " + expectedMultiple);
+                Assert.That(number % expectedMultiple, Is.EqualTo(0),
+                    "Number " + number + " is not a multiple of " + expectedMultiple);
                 expectedMultiple += 3;
             }
         }
@@ -91,13 +92,13 @@
             for (int i = 2; i < fibonacci.Count; i++)
             {
                 Assert.That(fibonacci[i], Is.EqualTo(fibonacci[i - 1] + fibonacci[i - 2]),
-                            $"Element at index {i} should be the sum of elements at indexes {i - 1} ({fibonacci[i - 1]}) and {i - 2} ({fibonacci[i - 2]}), but got {fibonacci[i]}.");
+                    $"Element at index {i} should be the sum of elements at indexes {i - 1} ({fibonacci[i - 1]}) and {i - 2} ({fibonacci[i - 2]}), but got {fibonacci[i]}.");
             }
         }
 
-        private List<string> Friuts = new List<string>
+        private List<string> fruits = new List<string>
         {
-            "Apple", "Ananas", "Banana", "Cherry", "Date", "Eggplant", "Fig", "Grape",
+            "Apple", "Banana", "Cherry", "Date", "Eggplant", "Fig", "Grape",
             "Honeydew", "Ivy", "Jackfruit", "Kiwi", "Lemon", "Mango",
             "Nectarine", "Orange", "Peach", "Quince", "Raspberry", "Strawberry",
             "Tomato", "Ugli fruit", "Vanilla", "Watermelon", "Xigua", "Yam", "Zucchini"
@@ -107,32 +108,32 @@
         {
             switch (letter)
             {
-                case 'A': return Friuts.Where(i => i.StartsWith("A")).ToList();
-                case 'B': return Friuts.Where(i => i.StartsWith("B")).ToList();
-                case 'C': return Friuts.Where(i => i.StartsWith("C")).ToList();
-                case 'D': return Friuts.Where(i => i.StartsWith("D")).ToList();
+                case 'A': return fruits.Where(i => i.StartsWith('A')).ToList();
+                case 'B': return fruits.Where(i => i.StartsWith('B')).ToList();
+                case 'C': return fruits.Where(i => i.StartsWith('C')).ToList();
+                case 'D': return fruits.Where(i => i.StartsWith('D')).ToList();
                 // Continue for the rest of the alphabet...
-                case 'X': return Friuts.Where(i => i.StartsWith("X")).ToList();
-                case 'Y': return Friuts.Where(i => i.StartsWith("Y")).ToList();
-                case 'Z': return Friuts.Where(i => i.StartsWith("Z")).ToList();
-                default: return new List<string>(); // No items for letters not in the list
-                    //TODO handle continue
+                case 'X': return fruits.Where(i => i.StartsWith('X')).ToList();
+                case 'Y': return fruits.Where(i => i.StartsWith('Y')).ToList();
+                case 'Z': return fruits.Where(i => i.StartsWith('Z')).ToList();
+                default: return new List<string>(); // No fruits for letters not in the list
             }
         }
+
 
         private List<string> SelectItemsByFirstLetterCase(char letter)
         {
             return letter switch
             {
-                'A' => Friuts.Where(i => i.StartsWith("A")).ToList(),
-                'B' => Friuts.Where(i => i.StartsWith("B")).ToList(),
-                'C' => Friuts.Where(i => i.StartsWith("C")).ToList(),
-                'D' => Friuts.Where(i => i.StartsWith("D")).ToList(),
+                'A' => fruits.Where(i => i.StartsWith('A')).ToList(),
+                'B' => fruits.Where(i => i.StartsWith('B')).ToList(),
+                'C' => fruits.Where(i => i.StartsWith('C')).ToList(),
+                'D' => fruits.Where(i => i.StartsWith('D')).ToList(),
                 // Continue for the rest of the alphabet...
-                'X' => Friuts.Where(i => i.StartsWith("X")).ToList(),
-                'Y' => Friuts.Where(i => i.StartsWith("Y")).ToList(),
-                'Z' => Friuts.Where(i => i.StartsWith("Z")).ToList(),
-                _ => new List<string>(),// No items for letters not in the list
+                'X' => fruits.Where(i => i.StartsWith('X')).ToList(),
+                'Y' => fruits.Where(i => i.StartsWith('Y')).ToList(),
+                'Z' => fruits.Where(i => i.StartsWith('Z')).ToList(),
+                _ => new List<string>(), // No fruits for letters not in the list
             };
         }
 
@@ -144,10 +145,11 @@
             foreach (char letter in alphabet)
             {
                 List<string> selectedItems = SelectItemsByFirstLetter(letter);
-                Assert.That(selectedItems, Is.Not.Empty, $"No items start with the letter {letter}.");
+                Assert.That(selectedItems, Is.Not.Empty, $"No fruits start with the letter {letter}.");
                 foreach (var item in selectedItems)
                 {
-                    Assert.That(item.StartsWith(letter.ToString()), Is.True, $"Item {item} does not start with {letter}.");
+                    Assert.That(item.StartsWith(letter.ToString()), Is.True,
+                        $"Item {item} does not start with {letter}.");
                 }
             }
         }
