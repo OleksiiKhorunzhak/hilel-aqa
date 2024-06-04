@@ -62,7 +62,7 @@ namespace AtataUITests.Tests
         public void UserNameInputEnterValue()
         {
             Go.To<TextBoxPage>().
-                UserNameInput
+                UserNameInput.Should.BeVisible();
         }
 
         //TC 7: clear input id="userName" => input id="userName" text should be "" and placeholder style="display: block"
