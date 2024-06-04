@@ -1,6 +1,7 @@
 ﻿namespace AtataUITests
 {
-    [Parallelizable(ParallelScope.Self)]
+    [TestFixture]
+    [Parallelizable(ParallelScope.All)]
     public class UITestFixture
     {
         [SetUp]
@@ -9,6 +10,6 @@
 
         [TearDown]
         public void TearDown() =>
-            AtataContext.Current?.Dispose();
+        AtataContext.Current?.Dispose();
     }
 }
