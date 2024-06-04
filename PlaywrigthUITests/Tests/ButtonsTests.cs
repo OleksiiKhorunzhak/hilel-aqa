@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using NUnit.Framework.Internal;
 using NUnitTests.Features.Drive;
 namespace PlaywrigthUITests.Tests
 {
@@ -7,8 +8,8 @@ namespace PlaywrigthUITests.Tests
     {
 
         public byte newstring = DrivePresetup.Accelerate;
-        public byte newstring1 = DrivePresetup.InternalClass.InternalAccelerate
-
+        public byte newstring1 = DrivePresetup.InternalClass.InternalAccelerate;
+            
         [Test, Description("Verify Click Me button"), Retry(2)]
         public async Task ClickButtonTest()
         {
