@@ -98,7 +98,7 @@ namespace Homework
             string terroristsCity = "Moskow";
 
             //TODO: Uncomment and put correct assert definition
-            CollectionAssert.DoesNotContain(UkrainianCitiesArray, terroristsCity, "Terroris city " + terroristsCity + " is not Ukrainian city.");
+            Assert.That(UkrainianCitiesArray, Does.Not.Contain(terroristsCity), "Terroris city " + terroristsCity + " is not Ukrainian city.");
         }
 
         [Test]
@@ -117,7 +117,7 @@ namespace Homework
         {
             string cityToCheck = "Kyiv";
             //TODO: Uncomment and put correct assert type and method
-            CollectionAssert.Contains(UkrainianCitiesList, cityToCheck, "List does not contain Kyiv");
+            Assert.That(UkrainianCitiesList, Does.Contain(cityToCheck), "List does not contain Kyiv");
         }
 
         [Test]
