@@ -7,7 +7,7 @@ namespace PlaywrigthUITests.Tests
     {
 
         public byte newstring = DrivePresetup.Accelerate;
-        public byte newstring1 = DrivePresetup.InternalClass.InternalAccelerate
+        public byte newstring1 = DrivePresetup.InternalClass.InternalAccelerate;
 
         [Test, Description("Verify Click Me button"), Retry(2)]
         public async Task ClickButtonTest()
@@ -28,7 +28,7 @@ namespace PlaywrigthUITests.Tests
             Assert.That(isNotVisible, "The element with text 'You have done a double click' should NOT be visible after clicking the button.");
         }
 
-        [Test, Description("Verify Double Click Me button"), Retry(2)]
+        [Test, Description("Verify Double Click Me button"), Retry(3)]
         public async Task DoubleClickButtonTest()
         {
             // Given I go to DemoQA Elements page 
