@@ -1,15 +1,3 @@
-//{
-//  "driver": {
-//    "type": "chrome",
-//    "options": {
-//      "arguments": [ "start-maximized" ]
-//    }
-//  },
-//  "baseUrl": "https://demoqa.com/",
-//  "culture": "en-US",
-//  "useAllNUnitFeatures": true
-//}
-
 {
   "culture": "en-US",
   "drivers": [
