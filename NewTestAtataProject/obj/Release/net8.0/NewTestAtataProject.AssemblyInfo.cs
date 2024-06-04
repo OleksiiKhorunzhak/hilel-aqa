@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("NewTestAtataProject")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a9de9b6ae68a3fbaf62bfc57a73e4788139ca90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9eb0cad83eef8c3d43e9f4531c7d5c45a8e6f2b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("NewTestAtataProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NewTestAtataProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
