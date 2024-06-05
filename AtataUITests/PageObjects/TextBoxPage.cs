@@ -7,22 +7,21 @@ namespace AtataUITests.PageObjects
     [Url("/text-box")]
     public sealed class TextBoxPage : DemoQAPage<_>
     {
-        [ControlDefinition("Header <h1> - page title")]
+        //[ControlDefinition("Header <h1> - page title")]
         [FindByClass("text-center")]
         public Text<_> TextBoxPageH1 { get; set; }
 
-        [ControlDefinition("Label to 'Full Name' input")]
+        //[ControlDefinition("Label to 'Full Name' input")]
         [FindById("userName-label")]
         public Label<_> UserNameLable { get; set; }
 
-        [ControlDefinition("'Full Name' input type=text")]
+        //[ControlDefinition("'Full Name' input type=text")]
         [FindByPlaceholder("Full Name")]
         public TextInput<_> UserNameInput { get; set; }
 
         
         //[ControlDefinition("Label to 'Email' input")]
-        
-
+  
         //[ControlDefinition("'Email' input type=email")]
 
         //[ControlDefinition("Label to 'Current Address' textarea")]
