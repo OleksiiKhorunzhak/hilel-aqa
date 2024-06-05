@@ -49,5 +49,7 @@ namespace AtataUITests.Tests
             RightClickMessage.Should.Be("You have done a right click").
             // And I NOT see "You have done a double click" text.
             DoubleClickMessage.Should.Not.BeVisible();
+
+        //Check - Is Button Active?
     }
 }
