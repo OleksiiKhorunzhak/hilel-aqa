@@ -124,7 +124,7 @@ namespace NUnitTests.Homework
         public void TestDecelerationDisabling()
         {
             //Steps:
-            //Set Charge above CriticalOvercharge.
+            //Set Charge above CriticalOvercharge._
             //Call DecelerationChargeActivation with isActive as true.
             //Ensure IsDecelerationChargeActive is false.
             Charge = CriticalOvercharge + 4;
