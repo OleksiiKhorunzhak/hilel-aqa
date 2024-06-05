@@ -2,7 +2,7 @@
 
 namespace AtataUITests.PageObjects
 {
-    [Url("/buttons")]
+    [Url("buttons")]
     public sealed class ButtonsPage : DemoQAPage<_>
     {
         [FindById("doubleClickBtn")]

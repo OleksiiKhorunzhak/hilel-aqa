@@ -3,7 +3,7 @@ using _ = AtataUITests.PageObjects.ElementsPage;
 
 namespace AtataUITests.PageObjects
 {
-    [Url("/elements")]
+    [Url("elements")]
     public sealed class ElementsPage : DemoQAPage<_>
     {
         [FindById("item-0")]

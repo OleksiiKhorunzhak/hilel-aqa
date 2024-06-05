@@ -3,7 +3,7 @@ using _ = AtataUITests.PageObjects.WebTablesPage;
 
 namespace AtataUITests.PageObjects
 {
-    [Url("/webtables")]
+    [Url("webtables")]
     public sealed class WebTablesPage : DemoQAPage<_>
     {
     }

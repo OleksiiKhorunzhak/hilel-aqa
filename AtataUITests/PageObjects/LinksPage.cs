@@ -3,7 +3,7 @@ using _ = AtataUITests.PageObjects.LinksPage;
 
 namespace AtataUITests.PageObjects
 {
-    [Url("/links")]
+    [Url("links")]
     public sealed class LinksPage : DemoQAPage<_>
     {
     }
