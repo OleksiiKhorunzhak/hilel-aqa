@@ -20,14 +20,14 @@ namespace AtataUITests.PageObjects
         public TextInput<_> UserNameInput { get; set; }
 
         
-        [ControlDefinition("Label to 'Email' input")]
+        //[ControlDefinition("Label to 'Email' input")]
         
 
-        [ControlDefinition("'Email' input type=email")]
+        //[ControlDefinition("'Email' input type=email")]
 
-        [ControlDefinition("Label to 'Current Address' textarea")]
+        //[ControlDefinition("Label to 'Current Address' textarea")]
 
-        [ControlDefinition("'Current Address' textarea size:rows=5, cols=20")]
+        //[ControlDefinition("'Current Address' textarea size:rows=5, cols=20")]
 
         //[ControlDefinition("'Email' input type=email")]
 
