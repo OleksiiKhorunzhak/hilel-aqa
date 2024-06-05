@@ -32,7 +32,6 @@ namespace AtataUITests.PageObjects
         //[ControlDefinition("'Email' input type=email")]
 
         //[ControlDefinition("'Email' input type=email")]
-
     }
 }
     
