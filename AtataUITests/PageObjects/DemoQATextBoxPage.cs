@@ -11,15 +11,20 @@ namespace AtataUITests.PageObjects
         [FindByPlaceholder("name@example.com")]
         public EmailInput<_> EmailInput { get; set; }
 
-        [FindByPlaceholder("Current Address")] public TextArea<_> CurrentAddressInput { get; set; }
+        [FindByPlaceholder("Current Address")] 
+        public TextArea<_> CurrentAddressInput { get; set; }
 
-        [FindById("userName-label")] public Label<_> FullNameLabel { get; set; }
+        [FindById("userName-label")] 
+        public Label<_> FullNameLabel { get; set; }
 
-        [FindById("submit")] public Button<_> Submit { get; private set; }
+        [FindById("submit")]
+        public Button<_> Submit { get; private set; }
 
-        [FindById("name")] public Text<_> NameOutput { get; private set; }
+        [FindById("name")] 
+        public Text<_> NameOutput { get; private set; }
 
-        [FindById("email")] public Text<_> EmailOutput { get; private set; }
+        [FindById("email")] 
+        public Text<_> EmailOutput { get; private set; }
 
         [FindById("currentAddress")] 
         public Text<_> CurrentAddressOutput { get; set; }
