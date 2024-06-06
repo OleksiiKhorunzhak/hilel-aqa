@@ -21,7 +21,7 @@ namespace AtataUITests.Tests
             .RigthClickMe.RightClick()
             .RightClickMessage.Should.Be("You have done a right click")
             .DinamicClickMessage.Should.Not.BeVisible()
-            .DoubleClickMessage.Should.BeVisible();
+            .DoubleClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Click Me button"), Retry(2)]
         public void ClickButtonTest() =>
@@ -29,7 +29,7 @@ namespace AtataUITests.Tests
             .ClickMe.Should.BeEnabled()
             .ClickMe.Click()
             .DinamicClickMessage.Should.Be("You have done a dynamic click")
-            .DoubleClickMessage.Should.BeVisible()
-            .RightClickMessage.Should.BeVisible();
+            .DoubleClickMessage.Should.Not.BeVisible()
+            .RightClickMessage.Should.Not.BeVisible();
     }
 }
