@@ -20,6 +20,7 @@ namespace AtataUITests.Tests
             Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
             .DoubleClickMe.Should.BeEnabled()
             .DoubleClickMe.DoubleClick()
+            .DoubleClickMe.Should.BeFocused()
             .DoubleClickMessage.Should.Be("You have done a double click")
             .DinamicClickMessage.Should.Not.BeVisible()
             .RightClickMessage.Should.Not.BeVisible();
@@ -29,6 +30,7 @@ namespace AtataUITests.Tests
             Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
             .RigthClickMe.Should.BeEnabled()
             .RigthClickMe.RightClick()
+            .RigthClickMe.Should.BeFocused()
             .RightClickMessage.Should.Be("You have done a right click")
             .DinamicClickMessage.Should.Not.BeVisible()
             .DoubleClickMessage.Should.Not.BeVisible();
@@ -38,6 +40,7 @@ namespace AtataUITests.Tests
             Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
             .ClickMe.Should.BeEnabled()
             .ClickMe.Click()
+            .ClickMe.Should.BeFocused()
             .DinamicClickMessage.Should.Be("You have done a dynamic click")
             .DoubleClickMessage.Should.Not.BeVisible()
             .RightClickMessage.Should.Not.BeVisible();
