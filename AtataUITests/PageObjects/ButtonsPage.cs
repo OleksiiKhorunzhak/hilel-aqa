@@ -8,10 +8,10 @@ namespace AtataUITests.PageObjects
     public sealed class ButtonsPage : DemoQAPage<_>
     {
         [FindById("doubleClickBtn")]
-        public Button<_> DoubleClickMe { get; private set; }
+        public Button<_> DoubleClickMeBtn { get; private set; }
 
         [FindById("rightClickBtn")]
-        public Button<_> RigthClickMe { get; private set; }
+        public Button<_> RigthClickMeBtn { get; private set; }
 
         public Button<_> ClickMeBtn { get; private set; }
 

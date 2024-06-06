@@ -16,34 +16,20 @@ namespace AtataUITests.Tests
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
         public void DoubleClickButtonTest() =>
-            // Given I go to DemoQa Elements page 
-            Go.To<ElementsPage>().
-            // When I Click the Buttons button in menu
-            Buttons.ClickAndGo().
-            // And I see 'buttons' page
-            PageUrl.Should.Be("https://demoqa.com/buttons").
-            // And I double click the 'DoubleClickMe' button
-            DoubleClickMe.DoubleClick().
-            // Then  I see "You have done a double click" text.
-            DoubleClickMessage.Should.Be("You have done a double click").
-            // And I NOT see "You have done a dynamic click" text.
-            DinamicClickMessage.Should.Not.BeVisible();
+            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            .DoubleClickMeBtn.Should.BeEnabled()
+            .DoubleClickMeBtn.DoubleClick()
+            .DoubleClickMessage.Should.Be("You have done a double click")
+            .DinamicClickMessage.Should.Not.BeVisible()
+            .RightClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Rigth Click Me button"), Retry(2)]
         public void RigthClickButtonTest() =>
-            // Given I go to DemoQa Elements page 
-            Go.To<ElementsPage>().
-            // When I Click the Buttons button in menu
-            Buttons.ClickAndGo().
-            // And I see 'buttons' page
-            PageUrl.Should.Be("https://demoqa.com/buttons").
-            // And I click the 'RigthClickMe' button
-            RigthClickMe.RightClick().
-            // Then  I see "You have done a right click" text.
-            RightClickMessage.Should.Be("You have done a right click").
-            // And I NOT see "You have done a double click" text.
-            DoubleClickMessage.Should.Not.BeVisible();
-
-        //Check - Is Button Active?
+            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            .RigthClickMeBtn.Should.BeEnabled()
+            .RigthClickMeBtn.RightClick()
+            .RightClickMessage.Should.Be("You have done a right click")
+            .DinamicClickMessage.Should.Not.BeVisible()
+            .DoubleClickMessage.Should.Not.BeVisible();
     }
 }
