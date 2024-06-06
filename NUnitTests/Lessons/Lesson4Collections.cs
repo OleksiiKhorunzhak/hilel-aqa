@@ -108,7 +108,7 @@
 
             int counter = 0;
 
-            while (counter <= 46-1)
+            while (counter <= 46 - 1)
             {
                 combined[counter] = $"Country " + countries[counter] + " population is " + populations[counter].ToString() + " people!";
                 counter++;

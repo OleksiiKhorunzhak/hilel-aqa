@@ -1,12 +1,4 @@
-﻿using NUnitTests.Homework;
-using NUnitTests.Lessons;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NUnitTests.Features.Drive
+﻿namespace NUnitTests.Features.Drive
 {
     //[TestFixture]
     internal class Drive : DrivePresetup

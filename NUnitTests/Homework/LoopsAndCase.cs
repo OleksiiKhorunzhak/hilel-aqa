@@ -4,11 +4,11 @@ namespace NUnitTests.Homework
 {
     internal class LoopsAndCase
     {
-       public readonly List<string> CarManufacturers =
-        [
-            "Toyota", "Ford", "Honda", "Chevrolet", "Nissan",
+        public readonly List<string> CarManufacturers =
+         [
+             "Toyota", "Ford", "Honda", "Chevrolet", "Nissan",
                         "BMW", "Mercedes-Benz", "Volkswagen", "Hyundai", "Audi"
-        ];
+         ];
 
         [Test, Description("TODO use foreach loop to count all CarManufacturers names")]
         public void TestForeach()
