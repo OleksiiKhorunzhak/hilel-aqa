@@ -29,7 +29,7 @@ namespace AtataUITests.PageObjects
         [FindById("impressiveRadio")]
         public RadioButton<_> ImpressiveRadioButtom{ get; set; }
 
-        [FindByClass("custom-control-label")]
+        [FindByLabel("Impressive")]
         public Label<_> ImpressiveLabel { get; set; }
 
         //No Radio:

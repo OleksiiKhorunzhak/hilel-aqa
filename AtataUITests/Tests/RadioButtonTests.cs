@@ -38,15 +38,23 @@ namespace AtataUITests.Tests
         [Retry(2)]
         public void VerifyImpressiveRadioButton()
         {
-
+            Go.To<RadioButtonPage>()
+                .ImpressiveLabel.Should.BeVisible()
+                .ImpressiveLabel.Click()
+                .ImpressiveRadioButtom.Should.BeChecked()
+                .SuccessText.Should.Be("You have selected Impressive");
         }
 
         [Test]
-        [Description("RadioButton check and Success text")]
+        [Description("Verify No radiobutton")]
+        [Retry(2)]
         public void VerifyNoRadioButton()
         {
             Go.To<RadioButtonPage>()
-
+                .NoLabel.Should.BeVisible()
+                .NoLabel.Click()
+                .NoRadioButton.Should.BeDisabled()
+                .NoRadioButton.Should.Not.BeChecked();
         }
     }
 }
