@@ -23,13 +23,13 @@ namespace AtataUITests.Tests
         }
 
         //TC 1: class="text-center" should have text = "Text Box"
-        //[Test]
-        //[Description("TextBoxPageH1 text should be = Text Box")]
-        //public void PageTitleH1()
-        //{
-        //    Go.To<TextBoxPage>().
-        //        TextBoxPageH1.Should.Be("Text Box");
-        //}
+        [Test]
+        [Description("TextBoxPageH1 text should be = Text Box")]
+        public void PageTitleH1()
+        {
+            Go.To<TextBoxPage>().
+                TextBoxPageH1.Should.Be("Text Box");
+        }
 
         //TC 2: label id="userName-label" text should be "Full Name"
         [Test]
