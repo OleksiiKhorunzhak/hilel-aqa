@@ -16,10 +16,7 @@ namespace AtataUITests.PageObjects
         public Text<_> DoYouLike { get; set; }
 
         [FindByClass("mt-3")]
-        public Text<_> HaveSelected { get; set; }
-
-        [FindByClass("text-success")]
-        public Text<_> SuccessText { get; private set; }
+        public Text<_> SuccessText { get; set; }
 
         //Yes Radio:
         [FindById("yesRadio")]

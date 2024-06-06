@@ -26,13 +26,14 @@ namespace AtataUITests.Tests
         }
 
         [Test]
-        [Description("Verify RadioButton check")]
+        [Description("RadioButton check and Success text")]
         public void RadioButtonCheck()
         {
             Go.To<RadioButtonPage>()
-                .YesRadio.Should.BeVisible()
-                .YesRadio.Check();
-                //. YesRadio.Click()
+                .YesLabel.Should.BeVisible()
+                .YesLabel.Click()
+                .YesRadio.Should.BeChecked()
+                .SuccessText.Should.Be("You have selected Yes");
         }
     }
 }
