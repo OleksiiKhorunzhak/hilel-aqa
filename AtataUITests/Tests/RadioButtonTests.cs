@@ -18,11 +18,12 @@ namespace AtataUITests.Tests
         }
 
         [Test]
-        [Description("RadioButtonH1 text should be = Radio Button")]
+        [Description("Radio Button page text content checking")]
         public void PageTitleH1()
         {
-            Go.To<RadioButtonPage>().
-                RadioButtonPageH1.Should.Be("Radio Button");
+            Go.To<RadioButtonPage>()
+                .RadioButtonPageH1.Should.Be("Radio Button")
+                .DoYouLikeText.Should.Be("Do you like the site?");
         }
 
         [Test]

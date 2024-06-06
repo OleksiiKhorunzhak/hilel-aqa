@@ -13,7 +13,7 @@ namespace AtataUITests.PageObjects
         public Text<_> RadioButtonPageH1 { get; set; }
 
         [FindByClass("mb-3")]
-        public Text<_> DoYouLike { get; set; }
+        public Text<_> DoYouLikeText { get; set; }
 
         [FindByClass("mt-3")]
         public Text<_> SuccessText { get; set; }
