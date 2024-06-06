@@ -4,11 +4,12 @@ using _ = AtataUITests.PageObjects.TextBoxPage;
 namespace AtataUITests.PageObjects
 {
     [VerifyTitle("DEMOQA")]
+    [VerifyContent("Text Box")]
     [Url("text-box")]
     public sealed class TextBoxPage : DemoQAPage<_>
     {
-        [FindByClass("text-center")]
-        public Text<_> TextBoxPageH1 { get; set; }
+        //[FindByClass("text-center")]
+        //public Text<_> TextBoxPageH1 { get; set; }
 
         [FindById("userName-label")]
         public Label<_> UserNameLable { get; set; }
