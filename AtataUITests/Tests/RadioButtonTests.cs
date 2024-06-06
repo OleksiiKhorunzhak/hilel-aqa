@@ -10,31 +10,43 @@ namespace AtataUITests.Tests
 {
     internal class RadioButtonTests : UITestFixture
     {
-        [Test][Description("Verify RadioButton page URL")]
-        public void VerifyRadioButtonUrl()
-        {
-            Go.To<RadioButtonPage>()
-                .PageUrl.Should.Equals("https://demoqa.com/radio-button");
-        }
-
         [Test]
-        [Description("Radio Button page text content checking")]
-        public void PageTitleH1()
+        [Description("Verify Radio Button Text")]
+        [Retry(2)]
+        public void VerifyTextRadioButton()
         {
             Go.To<RadioButtonPage>()
+                .PageUrl.Should.Be("https://demoqa.com/radio-button")
                 .RadioButtonPageH1.Should.Be("Radio Button")
                 .DoYouLikeText.Should.Be("Do you like the site?");
         }
 
         [Test]
-        [Description("RadioButton check and Success text")]
-        public void RadioButtonCheck()
+        [Description("Verify Yes radiobutton")]
+        [Retry(2)]
+        public void VerifyYesRadioButton()
         {
             Go.To<RadioButtonPage>()
                 .YesLabel.Should.BeVisible()
                 .YesLabel.Click()
                 .YesRadioButton.Should.BeChecked()
                 .SuccessText.Should.Be("You have selected Yes");
+        }
+
+        [Test]
+        [Description("Verify Impressive radiobutton")]
+        [Retry(2)]
+        public void VerifyImpressiveRadioButton()
+        {
+
+        }
+
+        [Test]
+        [Description("RadioButton check and Success text")]
+        public void VerifyNoRadioButton()
+        {
+            Go.To<RadioButtonPage>()
+
         }
     }
 }
