@@ -4,111 +4,107 @@
     internal class Lesson2Variables
     {
         #region[TestSetup]
-        //TODO: Scenario - verify maxIntValue2 = 2147483647
-        public int maxIntValue = (int)(Math.Pow(2, 32 - 1) - 1);
+        //TODO: Scenario - verify maxIntValue = 2147483647
+        public int maxIntValue = (int)(Math.Pow(2, 32 -1) - 1);
 
-        [Test]
-        public void TestMaxIntValue()
+
+       
+        [Test] 
+        public void VerifyMaxInt()
         {
             Assert.That(maxIntValue, Is.EqualTo(2147483647), "maxIntValue is not equal to 2147483647");
         }
-
         //TODO: Scenario - verify maxIntValue2 = 4294967295
         public uint maxIntValue2 = 4294967295;
 
         [Test]
-        public void TestMaxUnSignedValue()
+        public void VerifyMaxInt2()
         {
-            Assert.That(maxIntValue2, Is.EqualTo(4294967295), "maxIntValue2 is not equal to 4294967295");
+            Assert.That(maxIntValue2, Is.EqualTo(4294967295), "maxIntValue is not equal to 4294967295");
         }
-
         //TODO: Scenario - verify minIntValue = -2147483648
         public int minIntValue = (int)(0 - Math.Pow(2, 32 - 1));
 
         [Test]
-        public void TestMinIntValue()
+        public void VerifyminIntValue()
         {
-            Assert.That(minIntValue, Is.EqualTo(-2147483648), "minIntValue is not equal to -2147483648");
+            Assert.That(minIntValue, Is.EqualTo(-2147483648), "maxIntValue is not equal to -2147483648");
         }
 
-        //TODO: Scenario - verify CharA return 'a' after UpdateChars method
+        //TODO: Scenario - verify char a return 'a' after UpdateChars method
         public char CharA;
 
         [Test]
-        public void TestCharA()
+        public void VerifyCharA()
         {
-            var a = 'a';
-            UpdateChars(a);
-            Assert.That(CharA, Is.EqualTo('a'), "CharA is not eual to 'a'");
+            var x = 'x';
+            UpdateChars(x);
+            Assert.That(CharA, Is.EqualTo('a'), "CharA is not equal to a");
         }
 
         //TODO: Scenario - verify CharB return 'b' before and after UpdateChars method
         public char CharB = 'b';
 
         [Test]
-        public void TestCharB()
+        public void VerifyCharB()
         {
-            var a = 'a';
-            Assert.That(CharB, Is.EqualTo('b'), "CharB is not eual to 'b'");
-            UpdateChars(a);
-            Assert.That(CharB, Is.EqualTo('b'), "CharB is not eual to 'b'");
+            Assert.That(CharB, Is.EqualTo('b'), "CharB is not equal to b");
+            var k = 'x';
+            UpdateChars(k);
+            Assert.That(CharB, Is.EqualTo('b'), "CharB is not equal to b");
         }
 
         //TODO: Scenario - verify CharC return 'c' after UpdateChars method
         public char CharC;
 
         [Test]
-        public void TestCharC()
+        public void VerifyCharC()
         {
-            var a = 'c';
-            UpdateChars(a);
-            Assert.That(CharC, Is.EqualTo('c'), "CharC is not eual to 'c'");
+            var k = 'c';
+            UpdateChars(k);
+            Assert.That(CharC, Is.EqualTo('c'), "CharC is not equal to c");
         }
-
         //TODO: Scenario - verify CharJ return 'j' after UpdateChars method
         public char CharJ;
 
         [Test]
-        public void TestCharJ()
+        public void VerifyCharJ()
         {
-            var a = 'a';
-            UpdateChars(a);
-            Assert.That(CharJ, Is.EqualTo('j'), "CharJ is not eual to 'j'");
+            var k = 'c';
+            UpdateChars(k);
+            Assert.That(CharJ, Is.EqualTo('j'), "CharC is not equal to j");
         }
-
         //TODO: Scenario - verify cutestAnimal return null before and 'Cat' after UpdateStrings
         public string? CutestAnimal;
 
         [Test]
-        public void TestStringA()
+        public void VerifyStringCat()
         {
-            Assert.That(CutestAnimal, Is.EqualTo(null), "String is not eual to 'null'");
+            Assert.That(CoolestAnimal, Is.EqualTo(null), "CoolestAnimal is not null");
             UpdateStrings();
-            Assert.That(CutestAnimal, Is.EqualTo("Cat"), "String is not eual to 'Cat'");
+            Assert.That(CoolestAnimal, Is.EqualTo("Cat"), "CoolestAnimal is not equal Cat");
         }
-
         //TODO: Scenario - verify cutestAnimal return Dog before and 'Dog' after UpdateStrings
         public string BestFriendAnimal = "Dog";
 
         [Test]
-        public void TestStringB()
+        public void VerifyStringDog()
         {
-            Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "String is not eual to 'null'");
+            Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "CoolestAnimal is not dog");
+            
             UpdateStrings();
-            Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "String is not eual to 'Cat'");
+            Assert.That(BestFriendAnimal, Is.EqualTo("Dog"), "CoolestAnimal is not dog");
         }
-
         //TODO: Scenario - verify coolestAnimal return null before and 'Horse' after UpdateStrings with parameter 'Horse'
         public string? CoolestAnimal;
         [Test]
-        public void TestStringC()
+        public void VerifyStringHorse()
         {
+            Assert.That(CoolestAnimal, Is.EqualTo(null), "CoolestAnimal is not null");
             string animal = "Horse";
-            Assert.That(CoolestAnimal, Is.EqualTo(null), "String is not eual to 'Horse'");
             UpdateStrings(animal);
-            Assert.That(CoolestAnimal, Is.EqualTo(animal), "String is not eual to 'Horse'");
+            Assert.That(CoolestAnimal, Is.EqualTo(animal), "CoolestAnimal is not horse");
         }
-
         public void UpdateChars(char charC)
         {
             CharA = 'a';
