@@ -11,7 +11,7 @@ namespace AtataUITests.Tests
     internal class RadioButtonTests : UITestFixture
     {
         [Test]
-        [Description("Verify Radio Button Text")]
+        [Description("Verify Radio Button page Text")]
         [Retry(2)]
         public void VerifyTextRadioButton()
         {

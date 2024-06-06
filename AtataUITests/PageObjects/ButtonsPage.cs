@@ -7,21 +7,24 @@ namespace AtataUITests.PageObjects
     [Url("buttons")]
     public sealed class ButtonsPage : DemoQAPage<_>
     {
+        [FindByClass("text-center")]
+        public Text<_> ButtonsPageH1 { get; set; }  
+
         [FindById("doubleClickBtn")]
-        public Button<_> DoubleClickMe { get; private set; }
+        public Button<_> DoubleClickMe { get; set; }
 
         [FindById("rightClickBtn")]
-        public Button<_> RigthClickMe { get; private set; }
+        public Button<_> RigthClickMe { get;  set; }
 
-        public Button<_> ClickMe { get; private set; }
+        public Button<_> ClickMe { get; set; }
 
         [FindById("dynamicClickMessage")]
-        public Text<_> DinamicClickMessage { get; private set; }
+        public Text<_> DinamicClickMessage { get; set; }
 
         [FindById("rightClickMessage")]
-        public Text<_> RightClickMessage { get; private set; }
+        public Text<_> RightClickMessage { get; set; }
 
         [FindById("doubleClickMessage")]
-        public Text<_> DoubleClickMessage { get; private set; }
+        public Text<_> DoubleClickMessage { get; set; }
     }
 }

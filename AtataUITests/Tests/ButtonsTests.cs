@@ -2,9 +2,19 @@
 
 namespace AtataUITests.Tests
 {
-    [Description("Verify Buttons on buttons page")]
+    [Description("Verify Text on Buttons page")]
     public sealed class ButtonsTests : UITestFixture
     {
+        [Test]
+        [Description("Verify Buttons page Text")]
+        [Retry(2)]
+        public void VerifyTextButtonsPage()
+        {
+            Go.To<ButtonsPage>()
+                .PageUrl.Should.Be("https://demoqa.com/buttons")
+                .ButtonsPageH1.Should.Be("Buttons");
+        }
+
         [Test, Description("Verify Double Click Me button"), Retry(2)]
         public void DoubleClickButtonTest() =>
             Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
