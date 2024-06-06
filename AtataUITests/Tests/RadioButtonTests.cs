@@ -33,7 +33,7 @@ namespace AtataUITests.Tests
             Go.To<RadioButtonPage>()
                 .YesLabel.Should.BeVisible()
                 .YesLabel.Click()
-                .YesRadio.Should.BeChecked()
+                .YesRadioButton.Should.BeChecked()
                 .SuccessText.Should.Be("You have selected Yes");
         }
     }

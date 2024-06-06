@@ -7,18 +7,12 @@ namespace AtataUITests.Tests
     {
         [Test, Description("Verify Click Me button"), Retry(2)]
         public void ClickButtonTest() =>
-            // Given I go to DemoQa Elements page 
-            Go.To<ElementsPage>().
-            // When I Click the Buttons button in menu
-            Buttons.ClickAndGo().
-            // And I see 'buttons' page
-            PageUrl.Should.Be("https://demoqa.com/buttons").
-            // And I click the 'Click Me' button
-            ClickMe.Click().
-            // Then  I see "You have done a dynamic click" text.
-            DinamicClickMessage.Should.Be("You have done a dynamic click").
-            // And I NOT see "You have done a double click" text.
-            DoubleClickMessage.Should.Not.BeVisible();
+            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            .ClickMeBtn.Should.BeEnabled()
+            .ClickMeBtn.Click()
+            .DinamicClickMessage.Should.Be("You have done a dynamic click")
+            .DoubleClickMessage.Should.Not.BeVisible()
+            .RightClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
         public void DoubleClickButtonTest() =>

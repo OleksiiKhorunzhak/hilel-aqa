@@ -13,7 +13,7 @@ namespace AtataUITests.PageObjects
         [FindById("rightClickBtn")]
         public Button<_> RigthClickMe { get; private set; }
 
-        public Button<_> ClickMe { get; private set; }
+        public Button<_> ClickMeBtn { get; private set; }
 
         [FindById("dynamicClickMessage")]
         public Text<_> DinamicClickMessage { get; private set; }
