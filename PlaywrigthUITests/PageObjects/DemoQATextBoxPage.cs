@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class DemoQATextBoxPage 
+    internal class DemoQATextBoxPage
     {
         private IPage _page;
         private string _textBoxPageUrl = "https://demoqa.com/text-box";
@@ -43,8 +43,7 @@ namespace PlaywrigthUITests.PageObjects
 
         public async Task ClickSubmitButton()
         {
-            await _page.Locator("#submit").ClickAsync(); //more preferable selector as for me
-            //await _page.GetByRole(AriaRole.Button, new() { Name = _submitButtonName }).ClickAsync();
+            await _page.Locator("#submit").ClickAsync();
         }
 
         public async Task<bool> IsNameVisible(string name)
@@ -62,12 +61,12 @@ namespace PlaywrigthUITests.PageObjects
             await _page.GetByPlaceholder(_fullNamePlaceholder).ClearAsync();
         }
 
-        public async Task <bool> EmailCorrespondsToRegExp(string pattern)
+        public async Task<bool> EmailCorrespondsToRegExp(string pattern)
         {
-           var value = await _page.InputValueAsync("#userEmail");
-             var regexp = new Regex(pattern);
+            var value = await _page.InputValueAsync("#userEmail");
+            var regexp = new Regex(pattern);
 
-            return regexp.IsMatch(value) ? true : false;         
+            return regexp.IsMatch(value) ? true : false;
         }
 
         public async Task FillEmail(string email)
@@ -84,7 +83,7 @@ namespace PlaywrigthUITests.PageObjects
         {
             var tagName = await _page.EvalOnSelectorAsync<string>("#currentAddress", "element => element.tagName");
 
-            return tagName.ToLower() == "textarea" ? true : false;               
+            return tagName.ToLower() == "textarea" ? true : false;
         }
     }
 }

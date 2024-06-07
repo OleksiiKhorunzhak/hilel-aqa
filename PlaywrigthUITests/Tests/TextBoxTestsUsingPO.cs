@@ -19,7 +19,7 @@ namespace PlaywrigthUITests.Tests
         [Test]
         [Description("Text Full Name should be visible")]
         public async Task VerifyTextFullName()
-        {        
+        {
             var isVisible = await _demoQATextBoxPage.IsFullNameTextVisible();
             Assert.That(isVisible, Is.True, "The element with text 'Full Name' should be visible.");
         }
@@ -27,7 +27,7 @@ namespace PlaywrigthUITests.Tests
         [Test]
         [Description("Text Full Name Input should be visible")]
         public async Task VerifyTextFieldFullName()
-        {           
+        {
             var isVisible = await _demoQATextBoxPage.IsFullNameInputVisible();
             Assert.That(isVisible, Is.True, "The element with placeholder 'Full Name' should be visible.");
         }
@@ -46,7 +46,7 @@ namespace PlaywrigthUITests.Tests
         [Test]
         [Description("Clear Text Full Name Input, press submit, text Name should not be visible")]
         public async Task VerifyTextClearFullName()
-        {          
+        {
             await _demoQATextBoxPage.FillFullName("Test name");
             await _demoQATextBoxPage.ClickSubmitButton();
             await _demoQATextBoxPage.ClearFullNameInput();
@@ -78,7 +78,7 @@ namespace PlaywrigthUITests.Tests
 
             var IsIncorrectEmailSubmitted = await _demoQATextBoxPage.IsEmailOutputHidden();
 
-           Assert.That(IsIncorrectEmailSubmitted, Is.True);
+            Assert.That(IsIncorrectEmailSubmitted, Is.True);
         }
         #endregion
 
