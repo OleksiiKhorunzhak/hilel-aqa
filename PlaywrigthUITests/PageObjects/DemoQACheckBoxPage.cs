@@ -46,23 +46,10 @@ namespace PlaywrigthUITests.PageObjects
         {
             // Locate `span` element containing the branch title
             var spanElement = _page.Locator($"span.rct-text:has(span.rct-title:text-is('{branch}'))");
-
-            // Check the `span` visible
-            var spanElementVisible = await spanElement.IsVisibleAsync();
-            Console.WriteLine($"span element for '{branch}' visible: {spanElementVisible}");
-            if (!spanElementVisible)
-            {
-                Console.WriteLine($"span element for '{branch}' not found or not visible.");
-                return false;
-            }
-
             // Locate the checkbox in `span` element
             var checkboxLocator = spanElement.Locator(".rct-icon-check");
-
             // Check if the checkbox is visible
             var checkboxVisible = await checkboxLocator.IsVisibleAsync();
-            Console.WriteLine($"Checkbox for '{branch}' visible: {checkboxVisible}");
-
             return checkboxVisible;
         }
     }
