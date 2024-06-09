@@ -1,4 +1,5 @@
-﻿using PlaywrigthUITests.PageObjects;
+﻿using Microsoft.Playwright;
+using PlaywrigthUITests.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
