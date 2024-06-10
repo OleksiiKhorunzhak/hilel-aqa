@@ -46,7 +46,7 @@ namespace PlaywrigthUITests.Tests
             Assert.That(documentsCheck, "Documents checkbox unchecked");
             // This should fail
             // TODO Revert assert to make test green
-            await _demoQACheckBoxPage.CheckCheckbox("Desktop");
+            await _demoQACheckBoxPage.CheckCheckbox("Desktop"); //Passed
             var desktopCheck = await _demoQACheckBoxPage.VerifyCheckboxChecked("Desktop");
             Assert.That(desktopCheck, "Desktop checkbox unchecked");
         }
