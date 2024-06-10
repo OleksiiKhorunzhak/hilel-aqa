@@ -80,6 +80,7 @@ namespace Homework
             string[] sortedArray = new string[UkrainianCitiesArray.Length];
 
             // Copy the contents of UkrainianCities into sortedArray
+            //TODO: Uncomment and fix Copy() 
             Array.Copy(UkrainianCitiesArray, sortedArray, UkrainianCitiesArray.Length);
 
             // Sort sortedArray in place
