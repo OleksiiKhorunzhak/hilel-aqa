@@ -9,24 +9,24 @@ namespace PlaywrigthUITests.PageObjects
 {
     internal class DemoQADownloadPage
     {
-        private IPage _page;
+        private IPage page;
         private string RadioButtonPageUrl = "https://demoqa.com/upload-download";
 
         public DemoQADownloadPage(IPage page)
         {
-            _page = page;
+            this.page = page;
         }
 
         public async Task GoToDemoQaUploadDownloadPage()
         {
-            await _page.GotoAsync(RadioButtonPageUrl);
+            await page.GotoAsync(RadioButtonPageUrl);
         }
 
         public async Task ClickDownloadButton()
         {
-            var download = await _page.RunAndWaitForDownloadAsync(async () =>
+            var download = await page.RunAndWaitForDownloadAsync(async () =>
             {
-                await _page.GetByRole(AriaRole.Link, new() { Name = "Download" }).ClickAsync();
+                await page.GetByRole(AriaRole.Link, new() { Name = "Download" }).ClickAsync();
             });
 
             if (download != null)

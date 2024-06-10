@@ -4,45 +4,45 @@ namespace PlaywrigthUITests.PageObjects
 {
     internal class DemoQARadioButtonPage
     {
-        private IPage _page;
+        private IPage page;
         private string elementsPageUrl = "https://demoqa.com/elements";
         private string RadioButtonPageUrl = "https://demoqa.com/radio-button";
 
         public DemoQARadioButtonPage(IPage page)
         {
-            _page = page;
+            this.page = page;
         }
 
         public async Task GoToRadiButtonsPage()
         {
-            await _page.GotoAsync(elementsPageUrl);
-            await _page.GetByText("Radio Button").ClickAsync();
-            await _page.WaitForURLAsync(RadioButtonPageUrl);
+            await page.GotoAsync(elementsPageUrl);
+            await page.GetByText("Radio Button").ClickAsync();
+            await page.WaitForURLAsync(RadioButtonPageUrl);
         }
 
         public async Task ClickYesRadioButton()
         {
-            await _page.GetByText("Yes").CheckAsync();
+            await page.GetByText("Yes").CheckAsync();
         }
 
         public async Task ClickImpressiveRadioButton()
         {
-            await _page.GetByText("Impressive").CheckAsync();
+            await page.GetByText("Impressive").CheckAsync();
         }
 
         public async Task VerifyTextYesVisible()
         {
-            await Assertions.Expect(_page.GetByText("You have selected Yes")).ToBeVisibleAsync();
+            await Assertions.Expect(page.GetByText("You have selected Yes")).ToBeVisibleAsync();
         }
 
         public async Task CheckYesRadioChecked()
         {
-            await _page.Locator("#yesRadio").IsCheckedAsync();
+            await page.Locator("#yesRadio").IsCheckedAsync();
         }
 
         public async Task CheckImpressiveRadioButton()
         {
-            await _page.Locator("#impressiveRadio").IsCheckedAsync();
+            await page.Locator("#impressiveRadio").IsCheckedAsync();
         }
     }
 }
