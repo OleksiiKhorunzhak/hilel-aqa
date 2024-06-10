@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PlayWrigthMyTest
-build_property.ProjectDir = /Users/kristinapasichna/hilel-aqa/PlayWrigthMyTest/
+build_property.ProjectDir = C:\Users\User\source\repos\hilel-aqa\PlayWrigthMyTest\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
