@@ -1,32 +1,28 @@
 ﻿using Microsoft.Playwright;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PlaywrigthUITests.Infrastructure;
 
 namespace PlaywrigthUITests.PageObjects
 {
     internal class DemoQADownloadPage
     {
-        private IPage _page;
+        private IPage Page;
         private string RadioButtonPageUrl = "https://demoqa.com/upload-download";
 
         public DemoQADownloadPage(IPage page)
         {
-            _page = page;
+            this.Page = page;
         }
 
         public async Task GoToDemoQaUploadDownloadPage()
         {
-            await _page.GotoAsync(RadioButtonPageUrl);
+            await Page.GotoAsync(RadioButtonPageUrl);
         }
 
         public async Task ClickDownloadButton()
         {
-            var download = await _page.RunAndWaitForDownloadAsync(async () =>
+            var download = await Page.RunAndWaitForDownloadAsync(async () =>
             {
-                await _page.GetByRole(AriaRole.Link, new() { Name = "Download" }).ClickAsync();
+                await Page.GetByRole(AriaRole.Link, new() { Name = "Download" }).ClickAsync();
             });
 
             if (download != null)
@@ -50,6 +46,37 @@ namespace PlaywrigthUITests.PageObjects
                 Console.WriteLine("Download object is null. File download failed.");
             }
         }
+
+        public async Task VerifyFileDownloaded()
+        {
+            // Trigger file download
+            var download = await Page.RunAndWaitForDownloadAsync(async () =>
+            {
+                await Page.GetByRole(AriaRole.Link, new() { Name = "Download" }).ClickAsync();
+            });
+
+            if (download != null)
+            {
+                // Save the file to a specific location
+                var filePath = Path.Combine("downloads", download.SuggestedFilename);
+                // Save file to selected location
+                await download.SaveAsAsync(filePath);
+                // Verify the file exists at the specified location
+                Assert.That(File.Exists(filePath), "File download failed.");
+            }
+            else
+            {
+                Assert.Fail("Download object is null. File download failed.");
+            }
+        }
+
+        public async Task VerifyDownloadedFileUploadedSucessfully()
+        {
+            string inputFile = HelperMethods.GetProjectFilePath() + "bin/Debug/net8.0/downloads/sampleFile.jpeg";
+            await Page.GetByLabel("Select a file").ClickAsync();
+            await Page.GetByLabel("Select a file").SetInputFilesAsync(new[] { inputFile });
+            await Assertions.Expect(Page.GetByText("C:\\fakepath\\sampleFile.jpeg")).ToBeVisibleAsync();
+        } 
     }
 }
 

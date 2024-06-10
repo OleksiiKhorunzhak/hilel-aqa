@@ -1,9 +1,4 @@
 ﻿using PlaywrigthUITests.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.Tests
 {
@@ -17,18 +12,19 @@ namespace PlaywrigthUITests.Tests
             _demoQADownloadPage = new DemoQADownloadPage(Page);
         }
 
-        [Test]
+        [Test, Description("Donwload file verify file updated")]
         public async Task VerifyDownload()
         {
             await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
             await _demoQADownloadPage.ClickDownloadButton();
         }
 
-        [Test]
+        [Test, Description("Donwload file then upload same file")]
         public async Task VerifyDownloadDebug()
         {
             await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
-            await _demoQADownloadPage.ClickDownloadButton();
+            await _demoQADownloadPage.VerifyFileDownloaded();
+            await _demoQADownloadPage.VerifyDownloadedFileUploadedSucessfully();
         }
     }
 }
