@@ -17,14 +17,19 @@ namespace PlaywrigthUITests
             {
                 Headless = false, // Set to false to run the browser in non-headless mode
                 Channel = "chrome",
-                Args = new List<string> { "--start-maximized", "--window-position=0,0", /*"--window-size=1920,1080"*/ }
+                Args = new List<string>
+                {
+                    "--incognito",
+                    "--fullscreen",
+                    "--start-maximized",
+                    "--window-position=0,0",
+                    "--window-size=1920,1080"
+                }
             });
             var context = await browser.NewContextAsync(new BrowserNewContextOptions
-            {
-                ViewportSize = new ViewportSize { Width = 1900, Height = 970 },
-                // Alternatively, you can fetch the actual screen size dynamically.
-                // However, in Playwright, the viewport size setting is more reliable.
-            });
+                {
+                    ViewportSize = new ViewportSize { Width = 1900, Height = 970 },
+                });
             Page = await context.NewPageAsync();
         }
 
