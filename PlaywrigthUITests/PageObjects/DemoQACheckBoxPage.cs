@@ -72,8 +72,7 @@ namespace PlaywrigthUITests.PageObjects
         
         public async Task VerifyElementHasLeafIcon(string element)
         {
-            var selectedElement = _page.Locator("span").Filter(new() { HasText = element });
-            var leafIcon = selectedElement.Locator("label").Filter(new() { HasText = element }).GetByRole(AriaRole.Img).Nth(1);
+            var leafIcon = _page.Locator("label").Filter(new() { HasText = element }).GetByRole(AriaRole.Img).Nth(1);
             await Assertions.Expect(leafIcon).ToBeVisibleAsync();
         }
     }
