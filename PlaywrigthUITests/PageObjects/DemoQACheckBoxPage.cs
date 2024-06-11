@@ -32,6 +32,12 @@ namespace PlaywrigthUITests.PageObjects
             await _page.GetByLabel("Toggle").First.ClickAsync();
         }
 
+        public async Task OpenDocuments()
+        {
+            await _page.Locator("li").Filter(new() { HasTextRegex = new Regex("^Documents$") }).GetByLabel("Toggle")
+                .ClickAsync();
+        }
+
         public async Task VerifyHomeChecked()
         {
             await Assertions.Expect(_page.Locator("#tree-node path").Nth(3)).ToBeCheckedAsync();
@@ -46,6 +52,29 @@ namespace PlaywrigthUITests.PageObjects
             // Check if the checkbox is visible
             var checkboxVisible = await checkboxLocator.IsVisibleAsync();
             return checkboxVisible;
+        }
+
+        public async Task CheckDocumentsCheckboxResult()
+        {
+            var expectedText = "You have selected : documents workspace react angular veu office public private classified general";
+            var expectedTextNoSpaces = expectedText.Replace(" ", "");
+            
+            var result = await _page.Locator("#result").TextContentAsync();
+            var resultNoSpaces = result.Replace(" ", "");
+            Assert.That(resultNoSpaces, Is.EqualTo(expectedTextNoSpaces));
+        }
+        
+        public async Task OpenWorkSpace()
+        {
+            await _page.Locator("li").Filter(new() { HasTextRegex = new Regex("^WorkSpace$") }).GetByLabel("Toggle")
+                .ClickAsync();
+        }
+        
+        public async Task VerifyElementHasLeafIcon(string element)
+        {
+            var selectedElement = _page.Locator("span").Filter(new() { HasText = element });
+            var leafIcon = selectedElement.Locator("label").Filter(new() { HasText = element }).GetByRole(AriaRole.Img).Nth(1);
+            await Assertions.Expect(leafIcon).ToBeVisibleAsync();
         }
     }
 }
