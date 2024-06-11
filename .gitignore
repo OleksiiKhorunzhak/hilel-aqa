@@ -17,11 +17,13 @@
 /.idea
 /.vscode
 /HilelTests.sln
+/AtataUITests2
+/PlayWrigthMyTest/obj
+/HilelTests.sln
 /hilel-aqa-Lesson_2/AtataUITests/.vs/HilelTests
 /hilel-aqa-Lesson_2/AtataUITests/obj
 /hilel-aqa-Lesson_2/NUnitTests/obj
 /hilel-aqa-Lesson_2/PlaywrigthUITests/obj/Debug/net8.0
 /hilel-aqa-Lesson_2/PlaywrigthUITests/obj
 /AtataUITests2
-/PlaywrigthUITests/bin/Release/net8.0/CoverletSourceRootsMapping_PlaywrigthUITests
-/.gitignore
+/PlayWrigthMyTest/obj
