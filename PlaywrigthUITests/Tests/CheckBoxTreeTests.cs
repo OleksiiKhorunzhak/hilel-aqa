@@ -49,6 +49,7 @@ namespace PlaywrigthUITests.Tests
         //TC4 - Check Descktop Checkbox, verify checked
         
         [Test]
+        [Description("Check Descktop Checkbox, verify checked")]
         public async Task VerifyDesktopCheckBoxChecked()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
@@ -61,6 +62,7 @@ namespace PlaywrigthUITests.Tests
         //TC5 - Expand Home > Documents, Check Documents Checkbox. Verify WorkSpace checked
         
         [Test]
+        [Description("Expand Home > Documents, Check Documents Checkbox. Verify WorkSpace checked")]
         public async Task VerifyWorkSpaceCheckBoxChecked()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
@@ -74,6 +76,7 @@ namespace PlaywrigthUITests.Tests
         //TC6 - Check Documents. Verify text 'You have selected : documents workspace react angular veu office public private classified general'
         
         [Test]
+        [Description("Check Documents. Verify text 'You have selected : documents workspace react angular veu office public private classified general'")]
         public async Task VerifyTextOfCheckedDocumentsCheckbox()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
@@ -85,6 +88,7 @@ namespace PlaywrigthUITests.Tests
         //TC7 - Expand Home > Documents > WorkSpace, verify React have rct-icon-leaf-close icon
         
         [Test]
+        [Description("Expand Home > Documents > WorkSpace, verify React have rct-icon-leaf-close icon")]
         public async Task VerifyReactIcon()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
@@ -97,6 +101,7 @@ namespace PlaywrigthUITests.Tests
         //TC8 - Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxex checked
         
         [Test]
+        [Description("Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxex checked")]
         public async Task VerifyHomeSubCheckboxesChecked()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
