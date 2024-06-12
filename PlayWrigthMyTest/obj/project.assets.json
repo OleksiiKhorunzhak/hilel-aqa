@@ -2237,24 +2237,27 @@
     ]
   },
   "packageFolders": {
-    "/Users/kristinapasichna/.nuget/packages/": {}
+    "C:\\Users\\kpasichna\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kristinapasichna/hilel-aqa/PlayWrigthMyTest/PlayWrigthMyTest.csproj",
+      "projectUniqueName": "C:\\AQA course NET\\hilel-aqa\\PlayWrigthMyTest\\PlayWrigthMyTest.csproj",
       "projectName": "PlayWrigthMyTest",
-      "projectPath": "/Users/kristinapasichna/hilel-aqa/PlayWrigthMyTest/PlayWrigthMyTest.csproj",
-      "packagesPath": "/Users/kristinapasichna/.nuget/packages/",
-      "outputPath": "/Users/kristinapasichna/hilel-aqa/PlayWrigthMyTest/obj/",
+      "projectPath": "C:\\AQA course NET\\hilel-aqa\\PlayWrigthMyTest\\PlayWrigthMyTest.csproj",
+      "packagesPath": "C:\\Users\\kpasichna\\.nuget\\packages\\",
+      "outputPath": "C:\\AQA course NET\\hilel-aqa\\PlayWrigthMyTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/kristinapasichna/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\kpasichna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2326,7 +2329,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/kristinapasichna/.dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
