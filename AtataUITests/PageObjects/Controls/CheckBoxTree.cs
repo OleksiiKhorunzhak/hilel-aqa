@@ -1,4 +1,5 @@
 ﻿using Atata;
+using System.ComponentModel;
 
 namespace AtataUITests.PageObjects.Controls
 {
@@ -19,6 +20,10 @@ namespace AtataUITests.PageObjects.Controls
 
             [FindByClass("rct-title")]
             public Text<TOwner> Title { get; set; }
+
+            [FindByClass("rct-icon rct-icon-leaf-close")]
+            public Button<TOwner> Icon { get; set; }
+
         }
     }
 }

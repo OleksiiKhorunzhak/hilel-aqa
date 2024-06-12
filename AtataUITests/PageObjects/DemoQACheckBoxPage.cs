@@ -9,5 +9,9 @@ namespace AtataUITests.PageObjects
     {
         //public ReactCheckboxTree<_> reactCheckboxTree { get; private set; }
         public CheckBoxTree<_> CheckBoxTree { get; set; }
+
+        [FindByClass("text-success")]
+        public Text<_> DisplayResult { get; set; }
+
     }
 }
