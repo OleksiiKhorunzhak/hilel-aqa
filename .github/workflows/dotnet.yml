@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore hilel-aqa
+      run: dotnet restore HilelTests
     - name: Build
       run: dotnet build --no-restore
     - name: Test
