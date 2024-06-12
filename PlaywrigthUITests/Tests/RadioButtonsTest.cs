@@ -7,36 +7,67 @@ namespace PlaywrigthUITests.Tests
         private DemoQARadioButtonPage _radioButtonPage;
 
         [SetUp]
-        public void SetupRadioButtonQAPage()
+        public async Task SetupRadioButtonQAPage()
         {
             _radioButtonPage = new DemoQARadioButtonPage(Page);
+            await _radioButtonPage.GoToRadiButtonsPage();
         }
 
         [Test]
-        [Description("Verify Yes radio Button can be checked and display text You have selected Yes")]
-        public async Task VerifyTextFullName()
+        [Description("Verify 'Yes'' radio Button can be checked and result text is 'You have selected Yes'")]
+        public async Task CheckYesRadioButton()
         {
-            await _radioButtonPage.GoToRadiButtonsPage();
             await _radioButtonPage.ClickYesRadioButton();
-            await _radioButtonPage.CheckYesRadioChecked();
-            await _radioButtonPage.VerifyTextYesVisible();
+            var isYesChecked = await _radioButtonPage.IsYesRadioChecked();
+            var isYesResultVisible = await _radioButtonPage.IsYesResultVisible();
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(isYesChecked, Is.True);
+                Assert.That(isYesResultVisible, Is.True);
+            });
         }
 
-        //Homework Lesson_9
-        //TODO : 
-        //TC-2 : Verify Impressive radio Button can be checked and display text 'You have selected Impressive'
-        //[Test]
-        //[Description("Verify Impressive radio Button can be checked and display text 'You have selected Impressive'")]
-        //public async Task VerifyImpressiveRadioButton()
-        //{
-        //    await _radioButtonPage.GoToRadiButtonsPage();
-        //    await _radioButtonPage.
-        //}
+        [Test]
+        [Description("Verify 'Impressive' radio Button can be checked and result text is 'You have selected Impressive'")]
+        public async Task CheckImpressiveRadioButton()
+        {
+            await _radioButtonPage.ClickImpressiveRadioButton();
+            var isImpressiveChecked = await _radioButtonPage.IsImpressiveRadioChecked();
+            var isImpressiveResultVisible = await _radioButtonPage.IsImpressiveResultVisible();
 
-        //TC-3 : Verify No radio Button disabled and not show text 'You have selected'
-        //TC-4 : Verify H1 Radio Button is visible
-        //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
+            Assert.Multiple(() =>
+            {
+                Assert.That(isImpressiveChecked, Is.True);
+                Assert.That(isImpressiveResultVisible, Is.True);
+            });
+        }
 
+        [Test]
+        [Description("Verify No radio Button is disabled")]
+        public async Task CheckNoRadioButton()
+        {
+            var isNoEnabled = await _radioButtonPage.IsNoRadioEnabled();
 
+            Assert.That(isNoEnabled, Is.False);
+        }
+
+        [Test]
+        [Description("Verify H1 Radio Button is visible")]
+        public async Task VerifyRadioButtonPageHeader()
+        {
+            var isHeaderVisible = await _radioButtonPage.IsRadioButtonPageHeaderVisible();
+            Assert.That(isHeaderVisible, Is.True);
+        }
+
+        [Test]
+        [Description("Verify Radio Buttons page is back to default state after page refresh")]
+        public async Task VerifyRadioButtonPageStateAfterRefresh()
+        {
+            await _radioButtonPage.SelectRandomRadioButton();
+            await _radioButtonPage.RadioButtonPageRefresh();
+
+            Assert.That(await _radioButtonPage.IsRadioButtonPageInDefaultState(), Is.True);
+        }
     }
 }
