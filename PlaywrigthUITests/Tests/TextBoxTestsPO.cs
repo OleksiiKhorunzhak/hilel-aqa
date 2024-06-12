@@ -40,7 +40,7 @@ namespace PlaywrigthUITests.Tests
         [Test]
         [Order(1)]
         [Description("Enter 'Test Name 123' in Text Full Name Input, press submit, text Name should be 'Name:John Doe'")]
-        public async Task VerifyTextSetFullName()
+        public async Task VerifyFilledTextFullName()
         {
             await _demoQATextBoxPage.GoToElementsPage();
             await _demoQATextBoxPage.ClickTextBoxMenu();
@@ -64,6 +64,7 @@ namespace PlaywrigthUITests.Tests
             await _demoQATextBoxPage.WaitForTextBoxPage();
             await _demoQATextBoxPage.ClearFullNameInput();
             await _demoQATextBoxPage.ClickSubmitButton();
+            await _demoQATextBoxPage.isSubmitButtonFocused();
 
             var isVisible = await _demoQATextBoxPage.IsNameHidden("Test Name 123");
             Assert.That(isVisible, Is.True, "The element with text 'Name:Test Name 123' should not be visible.");
