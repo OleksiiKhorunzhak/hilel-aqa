@@ -417,3 +417,12 @@
 /Users/kristinapasichna/hilel-aqa/PlayWrigthMyTest/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll
 /Users/kristinapasichna/hilel-aqa/PlayWrigthMyTest/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll
 /Users/kristinapasichna/hilel-aqa/PlayWrigthMyTest/bin/Debug/net8.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\PlayWrigthMyTest.csproj.AssemblyReference.cache
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\PlayWrigthMyTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\PlayWrigthMyTest.AssemblyInfoInputs.cache
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\PlayWrigthMyTest.AssemblyInfo.cs
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\PlayWrigthMyTest.csproj.CoreCompileInputs.cache
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\PlayWrigthMyTest.sourcelink.json
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\PlayWrigthMyTest.dll
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\refint\PlayWrigthMyTest.dll
+C:\AQA course NET\hilel-aqa\PlayWrigthMyTest\obj\Debug\net8.0\PlayWrigthMyTest.pdb
