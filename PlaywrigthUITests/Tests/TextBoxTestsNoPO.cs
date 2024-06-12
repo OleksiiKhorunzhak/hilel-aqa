@@ -2,7 +2,7 @@
 namespace PlaywrigthUITests.Tests
 {
     [Description("Verify text box on buttons page")]
-    class TextBoxTests : UITestFixture
+    class TextBoxTestsNoPO : UITestFixture
     {
         [SetUp]
         [Description ("Precondition")]
