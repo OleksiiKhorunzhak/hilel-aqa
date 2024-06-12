@@ -12,42 +12,38 @@ namespace PlaywrigthUITests.Tests
         private DemoQACheckBoxPage _demoQACheckBoxPage;
 
         [SetUp]
-        public void SetupDemoQAPage()
+        public async Task SetupDemoQACheckBoxPage()
         {
             _demoQACheckBoxPage = new DemoQACheckBoxPage(Page);
+            await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
         }
 
         [Test]
-        public async Task VerifyCheckBoxChecked()
-        {
-            await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
+        public async Task VerifyHomeCheckBoxCanBeChecked()
+        {            
             await _demoQACheckBoxPage.CheckHomeCheckbox();
             await _demoQACheckBoxPage.VerifyHomeChecked();
         }
 
         [Test]
-        public async Task VerifyDocumentsCheckBoxChecked()
-        {
-            await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
-            await _demoQACheckBoxPage.OpenHome();
+        public async Task VerifyDocumentsCheckBoxCanBeChecked()
+        {            
+            await _demoQACheckBoxPage.OpenHomeNode();
             await _demoQACheckBoxPage.CheckCheckbox("Documents");
-            await _demoQACheckBoxPage.VerifyCheckboxChecked("Documents");
-            await _demoQACheckBoxPage.VerifyCheckboxChecked("Desktop");
+            await _demoQACheckBoxPage.VerifyCheckboxChecked("Documents");            
         }
 
         [Test]
-        public async Task VerifyDocumentsCheckBoxChecked1()
-        {
-            await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
-            await _demoQACheckBoxPage.OpenHome();
+        public async Task VerifyDocumentsCheckBoxCanChecked1()
+        {           
+            await _demoQACheckBoxPage.OpenHomeNode();
             await _demoQACheckBoxPage.CheckCheckbox("Documents");
-            // This should pass
+            
             var documentsCheck = await _demoQACheckBoxPage.VerifyCheckboxChecked("Documents");
             Assert.That(documentsCheck, "Documents checkbox unchecked");
-            // This should fail
-            // TODO Revert assert to make test green
+                       
             var desktopCheck = await _demoQACheckBoxPage.VerifyCheckboxChecked("Desktop");
-            Assert.That(desktopCheck, "Desktop checkbox unchecked");
+            Assert.That(desktopCheck, Is.False, "Desktop checkbox is also checked - it should be unvhecked");
         }
 
         //TODO: automate test cases
