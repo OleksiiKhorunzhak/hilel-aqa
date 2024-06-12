@@ -44,5 +44,30 @@ namespace PlaywrigthUITests.PageObjects
         {
             await _page.Locator("#impressiveRadio").IsCheckedAsync();
         }
+        
+        public async Task VerifyTextImpressiveVisible()
+        {
+            await Assertions.Expect(_page.GetByText("You have selected Impressive")).ToBeVisibleAsync();
+        }
+        
+        public async Task VerifyTextImpressiveNotVisible()
+        {
+            await Assertions.Expect(_page.GetByText("You have selected Impressive")).ToBeHiddenAsync();
+        }
+        
+        public async Task CheckNoRadioButtonDisabled()
+        {
+            await _page.Locator("#noRadio").IsDisabledAsync();
+        }
+        
+        public async Task VerifyTextNoNotVisible()
+        {
+            await Assertions.Expect(_page.GetByText("You have selected No")).ToBeHiddenAsync();
+        }
+        
+        public async Task VerifyH1RadioButtonVisible()
+        {
+            var isVisible = await _page.GetByRole(AriaRole.Heading, new() { Name = "Radio Button" }).IsVisibleAsync();
+        }
     }
 }
