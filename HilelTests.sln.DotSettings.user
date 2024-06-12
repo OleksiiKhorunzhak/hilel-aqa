@@ -1,0 +1,10 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=471297f9_002D12f6_002D4fe1_002Da462_002D5e529a4043a6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="VerifyDesktopCheckboxChecked" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.CheckBoxTreeTests.VerifyDesktopCheckboxChecked&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.CheckBoxTreeTests.VerifyWorkSpaceCheckboxChecked&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.CheckBoxTreeTests.VerifyDocumentSelectedText&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.CheckBoxTreeTests.VerifyReactIcon&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.CheckBoxTreeTests.VerifyHomeCheckboxChecked&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
