@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlayWrigthMyTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14844c3a0fd5274fac4bc8c65bf9ae8439a73ebe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ab800fd9478f1ea7fb68b16971cb63e0cd824f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlayWrigthMyTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlayWrigthMyTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
