@@ -1,4 +1,5 @@
-﻿using Microsoft.Playwright;
+﻿using Atata;
+using Microsoft.Playwright;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +51,12 @@ namespace PlaywrigthUITests.PageObjects
         {
             await _page.GetByPlaceholder(fullNamePlaceholder).FillAsync(fullName);
         }
+        public async Task isFullNameFocused()
+        {
+            await _page.GetByPlaceholder(fullNamePlaceholder).ClickAsync();
+            await Assertions.Expect(_page.GetByPlaceholder("Full Name")).ToBeFocusedAsync();
+        }
+        
 
         public async Task ClearFullNameInput()
         {
@@ -59,6 +66,11 @@ namespace PlaywrigthUITests.PageObjects
         public async Task ClickSubmitButton()
         {
             await _page.GetByRole(AriaRole.Button, new() { Name = submitButtonName }).ClickAsync();
+        }
+        public async Task isSubmitButtonFocused()
+        {
+            await _page.GetByRole(AriaRole.Button, new() { Name = submitButtonName }).ClickAsync();
+            await Assertions.Expect(_page.GetByRole(AriaRole.Button, new() { Name = submitButtonName })).ToBeFocusedAsync();
         }
 
         public async Task<bool> IsNameVisible(string name)

@@ -26,8 +26,8 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
-        [Description("Text Full Name Input should be visible")]
-        public async Task VerifyTextFieldFullName()
+        [Description("Text FullName Placeholder should be visible")]
+        public async Task VerifyFullNamePlaceholder()
         {
             await _demoQATextBoxPage.GoToElementsPage();
             await _demoQATextBoxPage.ClickTextBoxMenu();
@@ -46,7 +46,9 @@ namespace PlaywrigthUITests.Tests
             await _demoQATextBoxPage.ClickTextBoxMenu();
             await _demoQATextBoxPage.WaitForTextBoxPage();
             await _demoQATextBoxPage.FillFullName("Test Name 123");
+            await _demoQATextBoxPage.isFullNameFocused();
             await _demoQATextBoxPage.ClickSubmitButton();
+            await _demoQATextBoxPage.isSubmitButtonFocused();
 
             var isVisible = await _demoQATextBoxPage.IsNameVisible("Test Name 123");
             Assert.That(isVisible, Is.True, "The element with text 'Name:Test Name 123' should be visible.");
@@ -65,7 +67,6 @@ namespace PlaywrigthUITests.Tests
 
             var isVisible = await _demoQATextBoxPage.IsNameHidden("Test Name 123");
             Assert.That(isVisible, Is.True, "The element with text 'Name:Test Name 123' should not be visible.");
-
         }
     }
 }
