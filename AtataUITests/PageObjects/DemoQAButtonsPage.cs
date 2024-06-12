@@ -21,5 +21,8 @@ namespace AtataUITests.PageObjects
 
         [FindById("doubleClickMessage")]
         public Text<_> DoubleClickMessage { get; private set; }
+
+        [FindByClass("text-center")]
+        public H1<_> ButtonsH1 { get; private set; }
     }
 }

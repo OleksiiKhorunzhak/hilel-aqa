@@ -19,5 +19,8 @@ namespace AtataUITests.PageObjects
 
         [FindByClass("mt-3")]
         public Text<_> Text { get; set; }
+
+        [FindByClass("text-center")]
+        public H1<_> RadioButtonsH1 { get; private set; }
     }
 }
