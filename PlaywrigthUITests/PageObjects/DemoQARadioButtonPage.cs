@@ -30,7 +30,6 @@ namespace PlaywrigthUITests.PageObjects
         public async Task CheckYesRadioButton()
         {
             await _page.GetByText("Yes").CheckAsync();
-            //await _page.Locator("label").Filter(new() { HasText = "Yes" }).CheckAsync();
         }
         public async Task VerifyTextYesVisible()
         {

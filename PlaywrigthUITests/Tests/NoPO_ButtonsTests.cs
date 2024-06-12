@@ -3,7 +3,7 @@ using NUnitTests.Features.Drive;
 namespace PlaywrigthUITests.Tests
 {
     [Description("Verify Buttons on buttons page")]
-    class ButtonsTestsNoPO : UITestFixture
+    class NoPO_ButtonsTests : UITestFixture
     {
 
         public byte newstring = DrivePresetup.Accelerate;

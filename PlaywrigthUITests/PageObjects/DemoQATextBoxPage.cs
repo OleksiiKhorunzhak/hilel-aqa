@@ -41,7 +41,7 @@ namespace PlaywrigthUITests.PageObjects
             return await _page.GetByText("Full Name").IsVisibleAsync();
         }
 
-        public async Task<bool> IsFullNameInputVisible()
+        public async Task<bool> IsFullNamePlaceholderVisible()
         {
             return await _page.GetByPlaceholder(fullNamePlaceholder).IsVisibleAsync();
         }
@@ -49,6 +49,11 @@ namespace PlaywrigthUITests.PageObjects
         public async Task FillFullName(string fullName)
         {
             await _page.GetByPlaceholder(fullNamePlaceholder).FillAsync(fullName);
+        }
+
+        public async Task ClearFullNameInput()
+        {
+            await _page.GetByPlaceholder(fullNamePlaceholder).ClearAsync();
         }
 
         public async Task ClickSubmitButton()
