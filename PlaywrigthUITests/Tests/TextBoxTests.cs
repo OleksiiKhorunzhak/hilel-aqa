@@ -8,9 +8,7 @@ namespace PlaywrigthUITests.Tests
         [Description ("Precondition")]
         public async Task TextBoxPageSetUp()
         {
-            // Given I go to DemoQa Elements page 
             await Page.GotoAsync("https://demoqa.com/elements");
-            // When I Click the Text Box button in menu
             await Page.GetByText("Text Box").ClickAsync();
             await Page.WaitForURLAsync("https://demoqa.com/text-box");
         }
