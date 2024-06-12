@@ -50,7 +50,7 @@ namespace PlaywrigthUITests.Tests
             await Page.GetByPlaceholder("Full Name").ClearAsync();
             await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
             var isVisibleOutput = await Page.GetByText($"Name:{filledData}").IsHiddenAsync();
-            Assert.That(isVisibleOutput, $"Output text Name is not cleared");
+            Assert.That(isVisibleOutput, "Output text Name is not cleared");
         }
     }
 }
