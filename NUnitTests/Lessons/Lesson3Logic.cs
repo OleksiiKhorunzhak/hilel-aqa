@@ -4,13 +4,13 @@
     public class Lesson3Logic
     {
         #region[TestSetup]
-        public int Speed { get; private set; }
+        public int Speed { get; set; }
         public int Acceleration { get; set; }
-        public string? Alert { get; private set; }
-        public bool IsDecelerationChargeActive { get; private set; }
-        public int Deceleration { get; private set; }
-        public int DecelerationCharge { get; private set; }
-        public int Charge { get; private set; }
+        public string? Alert { get; set; }
+        public bool IsDecelerationChargeActive { get; set; }
+        public int Deceleration { get; set; }
+        public int DecelerationCharge { get; set; }
+        public int Charge { get; set; }
 
         //Mock values - change at will
         public int CurrentSpeed = 50;
@@ -91,7 +91,7 @@
                 {
                     Speed++;
                 }
-                 else { break; }
+                else { break; }
             }
         }
 
@@ -129,7 +129,7 @@
             }
             else
             {
-                return 0;
+                return DecelerationCharge = 0;
             }
         }
         #endregion

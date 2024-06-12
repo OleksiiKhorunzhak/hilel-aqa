@@ -49,5 +49,14 @@ namespace AtataUITests.Tests
             RightClickMessage.Should.Be("You have done a right click").
             // And I NOT see "You have done a double click" text.
             DoubleClickMessage.Should.Not.BeVisible();
+
+
+        //Homework Lesson_9
+        //TODO : 
+        //TC-4 : Verify Click Me button should be enabled
+        //TC-5 : Verify Click Rigth Click Me button verify button focused
+        //TC-6 : Verify H1 Buttons is visible
+        //TC-7 : Verify text You have done a dynamic click is not visible after page refresh
+
     }
 }

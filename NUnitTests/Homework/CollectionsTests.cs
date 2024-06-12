@@ -81,7 +81,7 @@ namespace Homework
 
             // Copy the contents of UkrainianCities into sortedArray
             //TODO: Uncomment and fix Copy() 
-            //Array.Copy(*, sortedArray, UkrainianCitiesArray.Length);
+            Array.Copy(UkrainianCitiesArray, sortedArray, UkrainianCitiesArray.Length);
 
             // Sort sortedArray in place
             //TODO: fix test below **
