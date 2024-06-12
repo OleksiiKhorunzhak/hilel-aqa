@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow.Assist.ValueRetrievers;
 
 namespace PlaywrigthUITests.PageObjects
 {
@@ -69,8 +70,9 @@ namespace PlaywrigthUITests.PageObjects
         }
         public async Task isSubmitButtonFocused()
         {
-            await _page.GetByRole(AriaRole.Button, new() { Name = submitButtonName }).ClickAsync();
-            await Assertions.Expect(_page.GetByRole(AriaRole.Button, new() { Name = submitButtonName })).ToBeFocusedAsync();
+            var submitButton = _page.GetByRole(AriaRole.Button, new() { Name = submitButtonName });
+            await submitButton.ClickAsync();
+            await Assertions.Expect(submitButton).ToBeFocusedAsync();
         }
 
         public async Task<bool> IsNameVisible(string name)
