@@ -35,7 +35,7 @@ namespace PlaywrigthUITests.Tests
 
         //TC-3 : Verify No radio Button disabled and not show text 'You have selected'
         //TC-4 : Verify H1 Radio Button is visible
-        //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
+        //TC-5 : Verify text 'You have selected Impressive' is not visible after Page refresh
 
 
     }
