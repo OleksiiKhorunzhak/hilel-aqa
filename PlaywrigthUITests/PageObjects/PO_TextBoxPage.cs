@@ -24,7 +24,7 @@ namespace PlaywrigthUITests.PageObjects
         public async Task GoToTextBoxPage()
         {
             await _page.GotoAsync(textBoxPageUrl);
-            await _page.WaitForURLAsync(textBoxPageUrl);
+            //await _page.WaitForURLAsync(textBoxPageUrl);
         }
 
         public async Task<bool> IsFullNameTextlVisible()
