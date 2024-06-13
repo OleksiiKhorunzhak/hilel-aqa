@@ -12,7 +12,6 @@ namespace PlaywrigthUITests.PageObjects
     internal class PO_TextBoxPage
     {
         private IPage _page;
-        //private string elementsPageUrl = "https://demoqa.com/elements";
         public string textBoxPageUrl = "https://demoqa.com/text-box";
         private string fullNamePlaceholder = "Full Name";
         private string submitButtonRole = "button";

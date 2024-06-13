@@ -17,8 +17,9 @@ namespace PlaywrigthUITests.Tests
         [Description("Text 'Full Name' should be visible")]
         public async Task VerifyTextFullName()
         {
+            await _TextBoxPage.GoToTextBoxPage();
             var isVisible = await _TextBoxPage.IsFullNameTextlVisible();
-            Assert.That(isVisible, Is.True, "The element with text 'Full Name' should be visible.");
+            Assert.That(isVisible, Is.True, "The element with text 'Full Name' is not visible.");
         }
 
         [Test]
