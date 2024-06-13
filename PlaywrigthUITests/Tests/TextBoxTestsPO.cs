@@ -14,16 +14,15 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
-        [Description("Text Full Name should be visible")]
-        public async Task VerifyLabelFullName()
+        [Description("Text 'Full Name' should be visible")]
+        public async Task VerifyTextFullName()
         {
-            await _demoQATextBoxPage.GoToTextBoxPage();
             var isVisible = await _demoQATextBoxPage.IsFullNameTextlVisible();
             Assert.That(isVisible, Is.True, "The element with text 'Full Name' should be visible.");
         }
 
         [Test]
-        [Description("Text FullName Placeholder should be visible")]
+        [Description("FullName Placeholder should be visible")]
         public async Task VerifyFullNamePlaceholder()
         {
             await _demoQATextBoxPage.GoToTextBoxPage();
