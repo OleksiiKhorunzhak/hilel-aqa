@@ -2,52 +2,47 @@
 
 namespace AtataUITests.Tests
 {
-    [Description("Verify Buttons on buttons page")]
+    [Description("Verify Text on Buttons page")]
     public sealed class ButtonsTests : UITestFixture
     {
-        [Test, Description("Verify Click Me button"), Retry(2)]
-        public void ClickButtonTest() =>
-            // Given I go to DemoQa Elements page 
-            Go.To<ElementsPage>().
-            // When I Click the Buttons button in menu
-            Buttons.ClickAndGo().
-            // And I see 'buttons' page
-            PageUrl.Should.Be("https://demoqa.com/buttons").
-            // And I click the 'Click Me' button
-            ClickMe.Click().
-            // Then  I see "You have done a dynamic click" text.
-            DinamicClickMessage.Should.Be("You have done a dynamic click").
-            // And I NOT see "You have done a double click" text.
-            DoubleClickMessage.Should.Not.BeVisible();
+        [Test]
+        [Description("Verify Buttons page Text")]
+        [Retry(2)]
+        public void VerifyTextButtonsPage()
+        {
+            Go.To<ButtonsPage>()
+                .PageUrl.Should.Be("https://demoqa.com/buttons")
+                .ButtonsPageH1.Should.Be("Buttons");
+        }
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
         public void DoubleClickButtonTest() =>
-            // Given I go to DemoQa Elements page 
-            Go.To<ElementsPage>().
-            // When I Click the Buttons button in menu
-            Buttons.ClickAndGo().
-            // And I see 'buttons' page
-            PageUrl.Should.Be("https://demoqa.com/buttons").
-            // And I double click the 'DoubleClickMe' button
-            DoubleClickMe.DoubleClick().
-            // Then  I see "You have done a double click" text.
-            DoubleClickMessage.Should.Be("You have done a double click").
-            // And I NOT see "You have done a dynamic click" text.
-            DinamicClickMessage.Should.Not.BeVisible();
+            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            .DoubleClickMe.Should.BeEnabled()
+            .DoubleClickMe.DoubleClick()
+            .DoubleClickMe.Should.BeFocused()
+            .DoubleClickMessage.Should.Be("You have done a double click")
+            .DinamicClickMessage.Should.Not.BeVisible()
+            .RightClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Rigth Click Me button"), Retry(2)]
         public void RigthClickButtonTest() =>
-            // Given I go to DemoQa Elements page 
-            Go.To<ElementsPage>().
-            // When I Click the Buttons button in menu
-            Buttons.ClickAndGo().
-            // And I see 'buttons' page
-            PageUrl.Should.Be("https://demoqa.com/buttons").
-            // And I click the 'RigthClickMe' button
-            RigthClickMe.RightClick().
-            // Then  I see "You have done a right click" text.
-            RightClickMessage.Should.Be("You have done a right click").
-            // And I NOT see "You have done a double click" text.
-            DoubleClickMessage.Should.Not.BeVisible();
+            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            .RigthClickMe.Should.BeEnabled()
+            .RigthClickMe.RightClick()
+            .RigthClickMe.Should.BeFocused()
+            .RightClickMessage.Should.Be("You have done a right click")
+            .DinamicClickMessage.Should.Not.BeVisible()
+            .DoubleClickMessage.Should.Not.BeVisible();
+
+        [Test, Description("Verify Click Me button"), Retry(2)]
+        public void ClickButtonTest() =>
+            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            .ClickMe.Should.BeEnabled()
+            .ClickMe.Click()
+            .ClickMe.Should.BeFocused()
+            .DinamicClickMessage.Should.Be("You have done a dynamic click")
+            .DoubleClickMessage.Should.Not.BeVisible()
+            .RightClickMessage.Should.Not.BeVisible();
     }
 }

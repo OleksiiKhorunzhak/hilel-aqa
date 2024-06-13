@@ -3,7 +3,7 @@ using _ = AtataUITests.PageObjects.UploadDownloadPage;
 
 namespace AtataUITests.PageObjects
 {
-    [Url("/upload-download")]
+    [Url("upload-download")]
     public sealed class UploadDownloadPage : DemoQAPage<_>
     {
     }

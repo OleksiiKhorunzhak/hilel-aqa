@@ -58,18 +58,16 @@ namespace Homework
         [Description("TC-41 first expect to be Kyiv")]
         public void FirstCityTest()
         {
-            //TODO: uncomment and fix code below
             string expectedCity = "Kyiv";
-            //Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedCity), "First city is not Kyiv");
+            Assert.That(UkrainianCitiesArray[0], Is.EqualTo(expectedCity), "First city is not Kyiv");
         }
 
         [Test]
         [Description("TC-41 city quantity expected to be 21")]
         public void ArrayLengthTest()
         {
-            //TODO:uncomment and fix code below
             int expectedQuantity = 21;
-            //Assert.That(UkrainianCitiesArray, Is.EqualTo(expectedQuantity), "City quantity is not 21");
+            Assert.That(UkrainianCitiesArray.Length, Is.EqualTo(expectedQuantity), "City quantity is not 21");
         }
 
         [Test]
@@ -78,17 +76,12 @@ namespace Homework
         {
             // Initialize a new string array of the same length as UkrainianCities
             string[] sortedArray = new string[UkrainianCitiesArray.Length];
-
             // Copy the contents of UkrainianCities into sortedArray
-            //TODO: Uncomment and fix Copy() 
-            //Array.Copy(*, sortedArray, UkrainianCitiesArray.Length);
-
+            Array.Copy(UkrainianCitiesArray, sortedArray, UkrainianCitiesArray.Length);
             // Sort sortedArray in place
-            //TODO: fix test below **
-            //Array.*(sortedArray);
-
-            // Assert that sortedArray is in ascending order
-            CollectionAssert.IsOrdered(sortedArray, "The sorted array is not in ascending order.");
+            Array.Sort(sortedArray);
+            Assert.That(sortedArray, Is.Ordered.Ascending, "sortedArray is ordered DESC");
+            CollectionAssert.IsOrdered(sortedArray, "The sorted array is not in ascending order."); //2nd variant
         }
 
         [Test]
@@ -96,9 +89,7 @@ namespace Homework
         public void ArrayNotContainTest()
         {
             string terroristsCity = "Moskow";
-
-            //TODO: Uncomment and put correct assert definition
-            //(UkrainianCitiesArray, terroristsCity, "Terroris city " + terroristsCity + " is not Ukrainian city.");
+            Assert.That(UkrainianCitiesArray, Is.Not.Contain(terroristsCity), "Terroris city " + terroristsCity + " is not Ukrainian city.");
         }
 
         [Test]
@@ -107,8 +98,7 @@ namespace Homework
         {
             string expectedLastCity = "Rivne";
             int lastIndex = UkrainianCitiesArray.Length - 1;
-            //TODO: Uncomment and put correct assert definition
-            //Assert.That();
+            Assert.That(UkrainianCitiesArray[lastIndex], Is.EqualTo(expectedLastCity), "last city is not Rivne");
         }
 
         [Test]
@@ -116,8 +106,7 @@ namespace Homework
         public void ListContains()
         {
             string cityToCheck = "Kyiv";
-            //TODO: Uncomment and put correct assert type and method
-            //(UkrainianCitiesList, cityToCheck, "List does not contain Kyiv");
+            Assert.That(UkrainianCitiesList.Contains(cityToCheck), "List does not contain Kyiv");
         }
 
         [Test]
@@ -125,8 +114,7 @@ namespace Homework
         public void ListCountTest()
         {
             int expectedCount = 21;
-            //TODO: Uncomment and fix asssertion
-            //Assert.That(UkrainianCitiesList, Is.EqualTo(expectedCount), "City list count is not 21");
+            Assert.That(UkrainianCitiesList.Count, Is.EqualTo(expectedCount), "City list count is not 21");
         }
 
         [Test]
@@ -134,9 +122,12 @@ namespace Homework
         public void AddCityIncreasesListSizeTest()
         {
             var initialCount = UkrainianCitiesList.Count;
-            //TODO: use Add() to add new city to cities list
-
+            string newCity = "some new city";
+            UkrainianCitiesList.Add(newCity);
             Assert.That(UkrainianCitiesList.Count, Is.EqualTo(initialCount + 1), "Adding a city did not increase the list size as expected");
+            // Cleanup: Remove the added city
+            UkrainianCitiesList.Remove(newCity);
+            Assert.That(UkrainianCitiesList.Count, Is.EqualTo(initialCount), "Removing the city did not restore the list size as expected");
         }
     }
 }

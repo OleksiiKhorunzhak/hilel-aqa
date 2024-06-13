@@ -3,7 +3,7 @@ using _ = AtataUITests.PageObjects.CheckBoxPage;
 
 namespace AtataUITests.PageObjects
 {
-    [Url("/checkbox")]
+    [Url("checkbox")]
     public sealed class CheckBoxPage : DemoQAPage<_>
     {
     }
