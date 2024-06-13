@@ -16,10 +16,9 @@ namespace PlaywrigthUITests.PageObjects
             this.page = page;
         }
 
-        public async Task GoToTestedPage(string TestPageURL)
+        public async Task GoToPage(string pageURL)
         {
-            await page.GotoAsync(TestPageURL);
-            //await page.WaitForURLAsync(TestPageURL);    uncomment if needed
+            await page.GotoAsync(pageURL);
         }
 
         public async Task VerifyPageTitle(string pageTitle)
@@ -27,41 +26,43 @@ namespace PlaywrigthUITests.PageObjects
             await Assertions.Expect(page.GetByRole(AriaRole.Heading, new() { Name = pageTitle })).ToHaveTextAsync("Check Box");
         }
 
-        public async Task ClickToggle()
+        public async Task ClickParentToggle()
         {
             await page.GetByLabel("Toggle").First.ClickAsync();
         }
 
-        public async Task VerifyToggleClicked()
+        public async Task VerifyCheckboxVisability(string checkboxName)
         {
-            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = "Desktop" }).Locator("path").First).ToBeVisibleAsync();
-            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = "Documents" }).Locator("path").First).ToBeVisibleAsync();
-            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = "Downloads" }).Locator("path").First).ToBeVisibleAsync();
+            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = checkboxName }).Locator("path").First).ToBeVisibleAsync();
         }
 
-        public async Task ClickHomeCheckbox()
+        public async Task ClickCheckbox(string checkboxName)
         {
-            await page.Locator("#tree-node").GetByRole(AriaRole.Img).Nth(3).ClickAsync();
+            await page.Locator("label").Filter(new() { HasText = checkboxName }).GetByRole(AriaRole.Img).First.ClickAsync();
         }
 
-        public async Task VerifyHomeChecked()
+        public async Task VerifyCheckboxChecked(string checkboxName)
         {
-            await Assertions.Expect(page.Locator("#tree-node").GetByRole(AriaRole.Img).Nth(3)).ToBeCheckedAsync();
+            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = checkboxName }).Locator("path").First).ToBeCheckedAsync();
         }
 
-        public async Task VerifyHomeChildChecked(string node)
+        public async Task VerifyCheckboxCheckedImg(string checkboxName)
         {
-            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = node }).GetByRole(AriaRole.Img).First).ToBeCheckedAsync();
+            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = checkboxName }).GetByRole(AriaRole.Img).First).ToBeCheckedAsync();
         }
 
-        public async Task UncheckHomeChild(string node)
+        public async Task UncheckCheckbox(string checkboxName)
         {
-            await page.Locator("label").Filter(new() { HasText = node }).ClickAsync();
+            await page.Locator("label").Filter(new() { HasText = checkboxName }).ClickAsync();
         }
 
-        public async Task VerifyHomeChildUnchecked(string node)
+        public async Task VerifyCheckboxUnchecked(string checkboxName)
         {
-            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = node }).GetByRole(AriaRole.Img).First).Not.ToBeCheckedAsync();
+            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = checkboxName }).GetByRole(AriaRole.Img).First).Not.ToBeCheckedAsync();
+        }
+        public async Task ClickToggle(string toggleName)
+        {
+            await page.Locator("li").Filter(new() { HasTextRegex = new Regex($"^{toggleName}$") }).GetByLabel("Toggle").ClickAsync();
         }
     }
 }

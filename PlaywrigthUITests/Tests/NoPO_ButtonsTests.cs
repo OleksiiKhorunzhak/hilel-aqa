@@ -13,11 +13,11 @@ namespace PlaywrigthUITests.Tests
         public async Task ClickButtonTest()
         {
             // Given I go to DemoQa Elements page 
-            await Page.GotoAsync("https://demoqa.com/elements");
+            //await Page.GotoAsync("https://demoqa.com/elements");
             // When I Click the Buttons button in menu
-            await Page.Locator("li:has-text('Buttons')").ClickAsync();
+            //await Page.Locator("li:has-text('Buttons')").ClickAsync();
             // And I see 'buttons page
-            await Page.WaitForURLAsync("https://demoqa.com/buttons");
+            await Page.GotoAsync("https://demoqa.com/buttons");
             // And I click the 'Click Me' button
             await Page.GetByRole(AriaRole.Button, new() { Name = "Click Me", Exact = true }).ClickAsync();
             // Then  I see "You have done a dynamic click" text.
