@@ -44,6 +44,7 @@ namespace AtataUITests.Tests
             demoQaCheckBoxPage.ScrollDown().
               CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Home")].Toggle.Click().
               CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Documents")].Title.Click().
+               CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Documents")].Toggle.Click().
               CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("WorkSpace")].CheckBox.Should.BeChecked();
         }
 
@@ -63,7 +64,7 @@ namespace AtataUITests.Tests
                CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Home")].Toggle.Click().
                CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Documents")].Toggle.Click().
                CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("WorkSpace")].Toggle.Click().
-               CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("React")].Icon.DomAttributes["class"].Should.Equal("val");
+               CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("React")].Icon.DomAttributes["class"].Should.Equal("rct-icon rct-icon-leaf-close");
         }
 
         [Test, Description("TC8 - Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxex checked")]
