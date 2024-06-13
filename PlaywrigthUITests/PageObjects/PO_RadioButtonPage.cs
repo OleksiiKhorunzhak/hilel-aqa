@@ -21,7 +21,7 @@ namespace PlaywrigthUITests.PageObjects
         public async Task GoToRadioButtonPage()
         {
             await _page.GotoAsync(radioButtonPageUrl);
-            await _page.WaitForURLAsync(radioButtonPageUrl);
+            //await _page.WaitForURLAsync(radioButtonPageUrl);
         }
 
         public async Task CheckYesRadioButton()
