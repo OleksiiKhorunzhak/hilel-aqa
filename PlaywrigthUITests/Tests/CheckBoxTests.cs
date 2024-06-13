@@ -20,10 +20,12 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
-        public async Task VerifyCheckBoxTreeOpen()
+        public async Task VerifyHomeTreeOpen()
         {
-            await _CheckBoxPage.GoToChechBoxPage();
-            await _CheckBoxPage.ClickToggle();
+            await _CheckBoxPage.GoToCheckBoxPage();
+            await _CheckBoxPage.VerifyToggleClicked();
+            await _CheckBoxPage.VerifyHomeChecked();
+            await _CheckBoxPage.VerifyDownloadsUnchecked();
         }
     }
 }
