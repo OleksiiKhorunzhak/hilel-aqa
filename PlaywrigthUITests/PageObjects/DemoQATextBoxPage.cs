@@ -12,7 +12,7 @@ namespace PlaywrigthUITests.PageObjects
     internal class DemoQATextBoxPage
     {
         private IPage _page;
-        private string elementsPageUrl = "https://demoqa.com/elements";
+        //private string elementsPageUrl = "https://demoqa.com/elements";
         private string textBoxPageUrl = "https://demoqa.com/text-box";
         private string fullNamePlaceholder = "Full Name";
         private string submitButtonRole = "button";
@@ -22,23 +22,13 @@ namespace PlaywrigthUITests.PageObjects
         {
             _page = page;
         }
-
-        public async Task GoToElementsPage()
+        public async Task GoToTextBoxPage()
         {
-            await _page.GotoAsync(elementsPageUrl);
-        }
-
-        public async Task ClickTextBoxMenu()
-        {
-            await _page.GetByText("Text Box").ClickAsync();
-        }
-
-        public async Task WaitForTextBoxPage()
-        {
+            await _page.GotoAsync(textBoxPageUrl);
             await _page.WaitForURLAsync(textBoxPageUrl);
         }
 
-        public async Task<bool> IsFullNameTextVisible()
+        public async Task<bool> IsFullNameTextlVisible()
         {
             return await _page.GetByText("Full Name").IsVisibleAsync();
         }
@@ -52,27 +42,28 @@ namespace PlaywrigthUITests.PageObjects
         {
             await _page.GetByPlaceholder(fullNamePlaceholder).FillAsync(fullName);
         }
+
         public async Task isFullNameFocused()
         {
             await _page.GetByPlaceholder(fullNamePlaceholder).ClickAsync();
             await Assertions.Expect(_page.GetByPlaceholder("Full Name")).ToBeFocusedAsync();
-        }
-        
-
-        public async Task ClearFullNameInput()
-        {
-            await _page.GetByPlaceholder(fullNamePlaceholder).ClearAsync();
         }
 
         public async Task ClickSubmitButton()
         {
             await _page.GetByRole(AriaRole.Button, new() { Name = submitButtonName }).ClickAsync();
         }
+
         public async Task isSubmitButtonFocused()
         {
             var submitButton = _page.GetByRole(AriaRole.Button, new() { Name = submitButtonName });
             await submitButton.ClickAsync();
             await Assertions.Expect(submitButton).ToBeFocusedAsync();
+        }
+
+        public async Task ClearFullNameInput()
+        {
+            await _page.GetByPlaceholder(fullNamePlaceholder).ClearAsync();
         }
 
         public async Task<bool> IsNameVisible(string name)
