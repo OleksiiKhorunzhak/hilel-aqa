@@ -13,16 +13,16 @@ namespace PlaywrigthUITests.Tests
         private PO_RadioButtonPage _RadioButtonPage;
 
         [SetUp]
-        public void SetupRadioButtonPage()
+        public async Task SetupRadioButtonPage()
         {
             _RadioButtonPage = new PO_RadioButtonPage(Page);
+            await _RadioButtonPage.GoToRadioButtonPage();
         }
 
         [Test]
         [Description("Check 'Yes' radiobutton")]
         public async Task VerifyYesRadioButtn()
         {
-            await _RadioButtonPage.GoToRadioButtonPage();
             await _RadioButtonPage.CheckYesRadioButton();
             await _RadioButtonPage.VerifyTextYesVisible();
         }
