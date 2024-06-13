@@ -2,7 +2,7 @@
 
 namespace PlaywrigthUITests.Tests
 {
-    internal class RadioButtonsTest : UITestFixture
+    internal class Demo_RadioButtonsTest : UITestFixture
     {
         private DemoQARadioButtonPage _radioButtonPage;
 
