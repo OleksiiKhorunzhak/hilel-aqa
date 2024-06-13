@@ -37,7 +37,7 @@ namespace PlaywrigthUITests.Tests
             foreach (var label in checkboxLabels)
             {
                 await _CheckBoxPage.ClickCheckbox(label);
-                await _CheckBoxPage.VerifyCheckboxVisability(label);
+                await _CheckBoxPage.VerifyCheckboxVisible(label);
                 await _CheckBoxPage.VerifyCheckboxChecked(label);
                 await _CheckBoxPage.UncheckCheckbox(label);
                 await _CheckBoxPage.VerifyCheckboxUnchecked(label);
@@ -71,7 +71,7 @@ namespace PlaywrigthUITests.Tests
             // Iterate through each label and verify the checkbox is checked
             foreach (var childLabel in checkboxChildLabels)
             {
-                await _CheckBoxPage.VerifyCheckboxVisability(childLabel);
+                await _CheckBoxPage.VerifyCheckboxVisible(childLabel);
                 await _CheckBoxPage.VerifyCheckboxChecked(childLabel);
                 await _CheckBoxPage.UncheckCheckbox(childLabel);
                 await _CheckBoxPage.VerifyCheckboxUnchecked(childLabel);
@@ -109,11 +109,40 @@ namespace PlaywrigthUITests.Tests
             // Iterate through each label and verify the checkbox is checked
             foreach (var childLabel in checkboxLabels)
             {
-                await _CheckBoxPage.VerifyCheckboxVisability(childLabel);
+                await _CheckBoxPage.VerifyCheckboxVisible(childLabel);
                 await _CheckBoxPage.VerifyCheckboxChecked(childLabel);
                 await _CheckBoxPage.UncheckCheckbox(childLabel);
                 await _CheckBoxPage.VerifyCheckboxUnchecked(childLabel);
             }
         }
+
+        [Test]
+        [Description("Verify Expand/Collapse All checkbox visability")]
+        public async Task VerifyExpandCollapseAll()
+        {
+            await _CheckBoxPage.GoToPage("https://demoqa.com/checkbox");
+            await _CheckBoxPage.ClickExpandCollapseAll("Expand all");
+
+            List<string> checkboxLabels = new List<string>
+            {
+                "Desktop","Documents","Downloads","Notes","Commands","WorkSpace","Office","Word File.doc",
+                "Excel File.doc","React","Angular","Veu","Public","Private","Classified","General"
+            };
+
+            // The tree is Expanded
+            foreach (var label in checkboxLabels)
+            {
+                await _CheckBoxPage.VerifyCheckboxVisible(label);
+                await _CheckBoxPage.VerifyCheckboxUnchecked(label);
+            }
+
+            await _CheckBoxPage.ClickExpandCollapseAll("Collapse all");
+            // The tree is Collapsed
+            foreach (var label in checkboxLabels)
+            {
+                await _CheckBoxPage.VerifyCheckboxIsNotVisible(label);
+            }
+        }
+
     }
 }

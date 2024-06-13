@@ -31,9 +31,13 @@ namespace PlaywrigthUITests.PageObjects
             await page.GetByLabel("Toggle").First.ClickAsync();
         }
 
-        public async Task VerifyCheckboxVisability(string checkboxName)
+        public async Task VerifyCheckboxVisible(string checkboxName)
         {
             await Assertions.Expect(page.Locator("label").Filter(new() { HasText = checkboxName }).Locator("path").First).ToBeVisibleAsync();
+        }
+        public async Task VerifyCheckboxIsNotVisible(string checkboxName)
+        {
+            await Assertions.Expect(page.Locator("label").Filter(new() { HasText = checkboxName }).Locator("path").First).Not.ToBeVisibleAsync();
         }
 
         public async Task ClickCheckbox(string checkboxName)
@@ -63,6 +67,10 @@ namespace PlaywrigthUITests.PageObjects
         public async Task ClickToggle(string toggleName)
         {
             await page.Locator("li").Filter(new() { HasTextRegex = new Regex($"^{toggleName}$") }).GetByLabel("Toggle").ClickAsync();
+        }
+        public async Task ClickExpandCollapseAll(string todo)
+        {
+            await page.GetByLabel(todo).ClickAsync();
         }
     }
 }
