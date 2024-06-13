@@ -22,116 +22,98 @@ namespace PlaywrigthUITests.Tests
         [Test]
         public async Task VerifyHomeTreeItems()
         {
+            //Preconditions:
             await _CheckBoxPage.GoToPage("https://demoqa.com/checkbox");
             await _CheckBoxPage.VerifyPageTitle("Check Box");
             await _CheckBoxPage.ClickParentToggle();
 
-            await _CheckBoxPage.VerifyCheckboxVisability("Desktop");
-            await _CheckBoxPage.VerifyCheckboxVisability("Documents");
-            await _CheckBoxPage.VerifyCheckboxVisability("Downloads");
+            // Define a list of checkbox labels
+            List<string> checkboxLabels = new List<string>
+            {
+                "Home","Desktop","Documents","Downloads"
+            };
 
-            await _CheckBoxPage.ClickCheckbox("Home");
-            await _CheckBoxPage.VerifyCheckboxChecked("Home");
-            await _CheckBoxPage.VerifyCheckboxChecked("Desktop");
-            await _CheckBoxPage.VerifyCheckboxChecked("Documents");
-            await _CheckBoxPage.VerifyCheckboxChecked("Downloads");
-
-            await _CheckBoxPage.UncheckCheckbox("Desktop");
-            await _CheckBoxPage.UncheckCheckbox("Documents");
-            await _CheckBoxPage.UncheckCheckbox("Downloads");
-
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Desktop");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Documents");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Downloads");
+            // Iterate through each label and verify the checkbox is checked
+            foreach (var label in checkboxLabels)
+            {
+                await _CheckBoxPage.ClickCheckbox(label);
+                await _CheckBoxPage.VerifyCheckboxVisability(label);
+                await _CheckBoxPage.VerifyCheckboxChecked(label);
+                await _CheckBoxPage.UncheckCheckbox(label);
+                await _CheckBoxPage.VerifyCheckboxUnchecked(label);
+            }
         }
 
         [Test]
         [Description("Verify First Child items tree")]
         public async Task VerifyFirstChildItems()
         {
+            //Preconditions:
             await _CheckBoxPage.GoToPage("https://demoqa.com/checkbox");
             await _CheckBoxPage.ClickParentToggle();
-            await _CheckBoxPage.ClickToggle("Desktop");
-            await _CheckBoxPage.ClickToggle("Documents");
-            await _CheckBoxPage.ClickToggle("Downloads");
 
-            await _CheckBoxPage.VerifyCheckboxVisability("Notes");
-            await _CheckBoxPage.VerifyCheckboxVisability("Commands");
-            await _CheckBoxPage.VerifyCheckboxVisability("WorkSpace");
-            await _CheckBoxPage.VerifyCheckboxVisability("Office");
-            await _CheckBoxPage.VerifyCheckboxVisability("Word File.doc");
-            await _CheckBoxPage.VerifyCheckboxVisability("Excel File.doc");
-
-            await _CheckBoxPage.ClickCheckbox("Desktop");
-            await _CheckBoxPage.ClickCheckbox("Documents");
-            await _CheckBoxPage.ClickCheckbox("Downloads");
-
-            await _CheckBoxPage.VerifyCheckboxChecked("Notes");
-            await _CheckBoxPage.VerifyCheckboxChecked("Commands");
-            await _CheckBoxPage.VerifyCheckboxChecked("WorkSpace");
-            await _CheckBoxPage.VerifyCheckboxChecked("Office");
-            await _CheckBoxPage.VerifyCheckboxChecked("Word File.doc");
-            await _CheckBoxPage.VerifyCheckboxChecked("Excel File.doc");
-
-            await _CheckBoxPage.UncheckCheckbox("Notes");
-            await _CheckBoxPage.UncheckCheckbox("Commands");
-            await _CheckBoxPage.UncheckCheckbox("WorkSpace");
-            await _CheckBoxPage.UncheckCheckbox("Office");
-            await _CheckBoxPage.UncheckCheckbox("Word File.doc");
-            await _CheckBoxPage.UncheckCheckbox("Excel File.doc");
-
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Notes");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Commands");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("WorkSpace");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Office");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Word File.doc");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Excel File.doc");
+            // Define a list of Parent checkbox labels
+            List<string> checkboxParentLabels = new List<string>
+            {
+                "Desktop","Documents","Downloads"
+            };
+            // Iterate through each label and verify the checkbox is checked
+            foreach (var parentLabel in checkboxParentLabels)
+            {
+                await _CheckBoxPage.ClickToggle(parentLabel);
+                await _CheckBoxPage.ClickCheckbox(parentLabel);
+            }
+            // Define a list of Child checkbox labels
+            List<string> checkboxChildLabels = new List<string>
+            {
+                "Notes","Commands","WorkSpace","Office","Word File.doc","Excel File.doc"
+            };
+            // Iterate through each label and verify the checkbox is checked
+            foreach (var childLabel in checkboxChildLabels)
+            {
+                await _CheckBoxPage.VerifyCheckboxVisability(childLabel);
+                await _CheckBoxPage.VerifyCheckboxChecked(childLabel);
+                await _CheckBoxPage.UncheckCheckbox(childLabel);
+                await _CheckBoxPage.VerifyCheckboxUnchecked(childLabel);
+            }
         }
 
         [Test]
         [Description("Verify Second Child items tree")]
         public async Task VerifySecondChildItems()
         {
+            //Preconditions:
             await _CheckBoxPage.GoToPage("https://demoqa.com/checkbox");
             await _CheckBoxPage.ClickParentToggle();
             await _CheckBoxPage.ClickToggle("Documents");
-            await _CheckBoxPage.ClickToggle("WorkSpace");
-            await _CheckBoxPage.ClickToggle("Office");
 
-            await _CheckBoxPage.VerifyCheckboxVisability("React");
-            await _CheckBoxPage.VerifyCheckboxVisability("Angular");
-            await _CheckBoxPage.VerifyCheckboxVisability("Veu");
-            await _CheckBoxPage.VerifyCheckboxVisability("Public");
-            await _CheckBoxPage.VerifyCheckboxVisability("Private");
-            await _CheckBoxPage.VerifyCheckboxVisability("Classified");
-            await _CheckBoxPage.VerifyCheckboxVisability("General");
+            // Define a list of Parent checkbox labels
+            List<string> checkboxParentLabels = new List<string>
+            {
+                "WorkSpace","Office"
+            };
 
-            await _CheckBoxPage.ClickCheckbox("WorkSpace");
-            await _CheckBoxPage.ClickCheckbox("Office");
+            // Iterate through each label and verify the checkbox is checked
+            foreach (var parentLabel in checkboxParentLabels)
+            {
+                await _CheckBoxPage.ClickToggle(parentLabel);
+                await _CheckBoxPage.ClickCheckbox(parentLabel);
+            }
 
-            await _CheckBoxPage.VerifyCheckboxChecked("React");
-            await _CheckBoxPage.VerifyCheckboxChecked("Angular");
-            await _CheckBoxPage.VerifyCheckboxChecked("Veu");
-            await _CheckBoxPage.VerifyCheckboxChecked("Public");
-            await _CheckBoxPage.VerifyCheckboxChecked("Private");
-            await _CheckBoxPage.VerifyCheckboxChecked("Classified");
-            await _CheckBoxPage.VerifyCheckboxChecked("General");
+            // Define a list of Child checkbox labels
+            List<string> checkboxLabels = new List<string>
+            {
+                "React","Angular","Veu","Public","Private","Classified","General"
+            };
 
-            await _CheckBoxPage.UncheckCheckbox("React");
-            await _CheckBoxPage.UncheckCheckbox("Angular");
-            await _CheckBoxPage.UncheckCheckbox("Veu");
-            await _CheckBoxPage.UncheckCheckbox("Public");
-            await _CheckBoxPage.UncheckCheckbox("Private");
-            await _CheckBoxPage.UncheckCheckbox("Classified");
-            await _CheckBoxPage.UncheckCheckbox("General");
-
-            await _CheckBoxPage.VerifyCheckboxUnchecked("React");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Angular");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Veu");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Public");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Private");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("Classified");
-            await _CheckBoxPage.VerifyCheckboxUnchecked("General"); ;
+            // Iterate through each label and verify the checkbox is checked
+            foreach (var childLabel in checkboxLabels)
+            {
+                await _CheckBoxPage.VerifyCheckboxVisability(childLabel);
+                await _CheckBoxPage.VerifyCheckboxChecked(childLabel);
+                await _CheckBoxPage.UncheckCheckbox(childLabel);
+                await _CheckBoxPage.VerifyCheckboxUnchecked(childLabel);
+            }
         }
     }
 }
