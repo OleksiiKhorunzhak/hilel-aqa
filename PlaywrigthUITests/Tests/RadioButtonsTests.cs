@@ -10,21 +10,21 @@ namespace PlaywrigthUITests.Tests
 {
     internal class RadioButtonsTests : UITestFixture
     {
-        private PO_RadioButtonPage _radioButtonPage;
+        private PO_RadioButtonPage _RadioButtonPage;
 
         [SetUp]
         public void SetupRadioButtonPage()
         {
-            _radioButtonPage = new PO_RadioButtonPage(Page);
+            _RadioButtonPage = new PO_RadioButtonPage(Page);
         }
 
         [Test]
         [Description("Check 'Yes' radiobutton")]
         public async Task VerifyYesRadioButtn()
         {
-            await _radioButtonPage.GoToRadioButtonPage();
-            await _radioButtonPage.CheckYesRadioButton();
-            await _radioButtonPage.VerifyTextYesVisible();
+            await _RadioButtonPage.GoToRadioButtonPage();
+            await _RadioButtonPage.CheckYesRadioButton();
+            await _RadioButtonPage.VerifyTextYesVisible();
         }
     }
 }

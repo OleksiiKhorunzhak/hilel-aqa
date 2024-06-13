@@ -11,7 +11,6 @@ namespace PlaywrigthUITests.PageObjects
     internal class PO_RadioButtonPage
     {
         private IPage _page;
-        private string elementsPageUrl = "https://demoqa.com/elements";
         private string radioButtonPageUrl = "https://demoqa.com/radio-button";
 
         public PO_RadioButtonPage(IPage page)
@@ -21,9 +20,7 @@ namespace PlaywrigthUITests.PageObjects
 
         public async Task GoToRadioButtonPage()
         {
-            await _page.GotoAsync(elementsPageUrl);
-            await _page.GetByText("Elements").ClickAsync();
-            await _page.GetByText("Radio Button").ClickAsync();
+            await _page.GotoAsync(radioButtonPageUrl);
             await _page.WaitForURLAsync(radioButtonPageUrl);
         }
 
