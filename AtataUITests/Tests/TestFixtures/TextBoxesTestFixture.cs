@@ -1,13 +1,13 @@
 ﻿using AtataUITests.PageObjects;
 
-namespace AtataUITests
+namespace AtataUITests.Tests.Fixtures
 {
     [TestFixture]
     [Parallelizable(ParallelScope.Self)]
     public class TextBoxesTestFixture : UITestFixture
     {
         internal DemoQATextBoxPage demoQaTextBoxPage;
-        
+
         [SetUp]
         public void TextBoxesSetUp()
         {

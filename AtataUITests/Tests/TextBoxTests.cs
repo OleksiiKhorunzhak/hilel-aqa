@@ -1,5 +1,6 @@
 ﻿using Atata;
 using AtataUITests.PageObjects;
+using AtataUITests.Tests.Fixtures;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;

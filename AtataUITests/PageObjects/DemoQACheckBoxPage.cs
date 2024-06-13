@@ -6,8 +6,10 @@ namespace AtataUITests.PageObjects
 {
     [Url("/checkbox")]
     public sealed class DemoQACheckBoxPage : DemoQAPage<_>
-    {
-        //public ReactCheckboxTree<_> reactCheckboxTree { get; private set; }
+    {        
         public CheckBoxTree<_> CheckBoxTree { get; set; }
+
+        [FindById("result")]
+        public Text<_> CheckboxCheckedOutput { get; private set; }
     }
 }

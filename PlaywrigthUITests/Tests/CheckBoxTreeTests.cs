@@ -46,6 +46,7 @@ namespace PlaywrigthUITests.Tests
             Assert.That(desktopCheck, Is.False, "Desktop checkbox is also checked - it should be unvhecked");
         }
 
+        //HW
         [Test, Description ("TC4 - Check Desktop checkbox, verify checked")]
         public async Task VerifyDesktopCheckBoxCanChecked()
         {
