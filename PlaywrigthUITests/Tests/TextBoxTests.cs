@@ -8,7 +8,7 @@ namespace PlaywrigthUITests.Tests
         private PO_TextBoxPage _TextBoxPage;
 
         [SetUp]
-        public void SetupDemoQAPage()
+        public void SetupTextBoxPage()
         {
             _TextBoxPage = new PO_TextBoxPage(Page);
         }
