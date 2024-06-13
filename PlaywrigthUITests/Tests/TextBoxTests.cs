@@ -3,14 +3,14 @@
 namespace PlaywrigthUITests.Tests
 {
     [TestFixture]
-    internal class TextBoxTestsPO : UITestFixture
+    internal class TextBoxTests : UITestFixture
     {
-        private DemoQATextBoxPage _demoQATextBoxPage;
+        private PO_TextBoxPage _demoQATextBoxPage;
 
         [SetUp]
         public void SetupDemoQAPage()
         {
-            _demoQATextBoxPage = new DemoQATextBoxPage(Page);
+            _demoQATextBoxPage = new PO_TextBoxPage(Page);
         }
 
         [Test]

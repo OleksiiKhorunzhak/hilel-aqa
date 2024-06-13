@@ -9,16 +9,16 @@ using TechTalk.SpecFlow.Assist.ValueRetrievers;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class DemoQATextBoxPage
+    internal class PO_TextBoxPage
     {
         private IPage _page;
         //private string elementsPageUrl = "https://demoqa.com/elements";
-        private string textBoxPageUrl = "https://demoqa.com/text-box";
+        public string textBoxPageUrl = "https://demoqa.com/text-box";
         private string fullNamePlaceholder = "Full Name";
         private string submitButtonRole = "button";
         private string submitButtonName = "Submit";
 
-        public DemoQATextBoxPage(IPage page)
+        public PO_TextBoxPage(IPage page)
         {
             _page = page;
         }

@@ -4,13 +4,17 @@ namespace PlaywrigthUITests.Tests
     [Description("Verify text box on buttons page")]
     class NoPO_TextBoxTests : UITestFixture
     {
+        //Test Data:
+        private string textBoxURL = "https://demoqa.com/text-box";
+        private string fullName = "Test Name 123";
+
+
         [SetUp]
-        [Description ("Precondition")]
+        [Description("Precondition GoTo text-box page")]
         public async Task TextBoxPageSetUp()
         {
-            await Page.GotoAsync("https://demoqa.com/elements");
-            await Page.GetByText("Text Box").ClickAsync();
-            await Page.WaitForURLAsync("https://demoqa.com/text-box");
+            await Page.GotoAsync(textBoxURL);
+            await Page.WaitForURLAsync(textBoxURL);
         }
 
         [Test]
@@ -23,23 +27,21 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Order(1)]
-        [Description("Input placeholder Full Name should be visible")]
+        [Description("Input placeholder 'Full Name' should be visible")]
         public async Task VerifyPLaceholderFullName()
         {
             var isVisiblePlaceholder = await Page.GetByPlaceholder("Full Name").IsVisibleAsync();
-            Assert.That(isVisiblePlaceholder, "Input placeholder Full Name is not visible");
+            Assert.That(isVisiblePlaceholder, "Input placeholder 'Full Name' is not visible");
         }
-        //Test Data:
-        string filledData = "Test Name 123";
 
         [Test]
-        [Description("Enter 'Test Name 123' into Full Name text input, press submit btn -> output text Name should be 'Test Name 123'")]
-        public async Task VerifyTextSetFullName()
+        [Description("Enter {fullName} into 'Full Name' text input, press submit btn -> output text should be 'Name:{fullName}'")]
+        public async Task VerifyFilledTextFullName()
         {
-            await Page.GetByPlaceholder("Full Name").FillAsync(filledData);
+            await Page.GetByPlaceholder("Full Name").FillAsync(fullName);
             await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
-            var isVisibleOutput = await Page.GetByText($"Name:{filledData}").IsVisibleAsync();
-            Assert.That(isVisibleOutput, $"Output text Name is not same as {filledData}");
+            var isVisibleOutput = await Page.GetByText($"Name:{fullName}").IsVisibleAsync();
+            Assert.That(isVisibleOutput, $"Output text Name is not same as {fullName}");
         }
 
         [Test]
@@ -49,7 +51,7 @@ namespace PlaywrigthUITests.Tests
         {
             await Page.GetByPlaceholder("Full Name").ClearAsync();
             await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
-            var isVisibleOutput = await Page.GetByText($"Name:{filledData}").IsHiddenAsync();
+            var isVisibleOutput = await Page.GetByText($"Name:{fullName}").IsHiddenAsync();
             Assert.That(isVisibleOutput, "Output text Name is not cleared");
         }
     }

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class DemoQARadioButtonPage
+    internal class PO_RadioButtonPage
     {
         private IPage _page;
         private string elementsPageUrl = "https://demoqa.com/elements";
         private string radioButtonPageUrl = "https://demoqa.com/radio-button";
 
-        public DemoQARadioButtonPage(IPage page)
+        public PO_RadioButtonPage(IPage page)
         {
             _page = page;
         }

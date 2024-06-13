@@ -27,9 +27,9 @@ namespace PlaywrigthUITests
                 }
             });
             var context = await browser.NewContextAsync(new BrowserNewContextOptions
-                {
-                    ViewportSize = new ViewportSize { Width = 1900, Height = 970 },
-                });
+            {
+                ViewportSize = new ViewportSize { Width = 1900, Height = 970 },
+            });
             Page = await context.NewPageAsync();
         }
 
