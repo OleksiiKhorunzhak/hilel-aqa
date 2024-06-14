@@ -1,9 +1,11 @@
 ﻿using Atata;
+using AtataUITests.PageObjects;
+using AtataUITests;
 using _ = AtataUITests.Tests.CheckBoxTests;
 
 namespace AtataUITests.Tests
 {
-    public sealed class CheckBoxTests : UITestFixture
+    internal class CheckBoxTests : UITestFixture
     {
     }
 }
