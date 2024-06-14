@@ -90,5 +90,37 @@ namespace AtataUITests.Tests
             }
         }
 
+        //Verifiing every checkbox
+        [Test]
+        public void VerifyExpandCollapseAll()
+        {
+            Go.To<CheckBoxPage>()
+                .ExpandAll.Click().ScrollDown();
+
+            List<string> checkboxLabels = new List<string>
+                {"Desktop","Documents","Downloads","Notes","Commands","WorkSpace","Office","Word File.doc",
+                 "Excel File.doc","Office","WorkSpace","React","Angular","Veu","Public","Private","Classified","General"};
+
+            foreach (var label in checkboxLabels)
+            {
+                Go.On<CheckBoxPage>()
+                    .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].Title.Should.BePresent()
+                    .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].Title.Should.BeVisible()
+                    .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].CheckBox.Should.BeUnchecked()
+                    .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].Title.Click()
+                    .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].CheckBox.Should.BeChecked()
+                    .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].Title.Click()
+                    .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].CheckBox.Should.BeUnchecked();
+            }
+            Go.On<CheckBoxPage>()
+                .CollapseAll.Click();
+
+            foreach (var label in checkboxLabels)
+            {
+                Go.On<CheckBoxPage>()
+                    .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].Should.Not.BeVisible();
+            }
+        }
+
     }
 }
