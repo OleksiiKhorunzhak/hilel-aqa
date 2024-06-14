@@ -8,5 +8,7 @@ namespace AtataUITests.PageObjects
     public sealed class CheckBoxPage : DemoQAPage<_>
     {
         public CheckBoxTreeControl<_> CheckBoxTree{ get; set; }
+
+        
     }
 }
