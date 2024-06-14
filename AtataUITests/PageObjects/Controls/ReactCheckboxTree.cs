@@ -2,7 +2,7 @@
 
 namespace AtataUITests.PageObjects.Controls
 {
-    [ControlDefinition("div", ContainingClass = "check-box-tree-wrapper", ComponentTypeName = "CheckBoxTree")]
+    [ControlDefinition("div", ContainingClass = "check-box-tree-wrapper", ComponentTypeName = "CheckBoxBranch")]
     public class ReactCheckboxTree<TOwner> : Control<TOwner>
         where TOwner : PageObject<TOwner>
     {
