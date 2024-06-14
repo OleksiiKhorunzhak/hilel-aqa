@@ -7,7 +7,7 @@ namespace AtataUITests.PageObjects.Controls
     public class CheckBoxTreeControl<TOwner> : Control<TOwner>
         where TOwner : PageObject<TOwner>
     {
-        public ControlList<Node, TOwner> CheckBoxBranch { get; set; }
+        public ControlList<Node, TOwner> Branch { get; set; }
 
         [ControlDefinition("span", ContainingClass = "rct-text", ComponentTypeName = "Branch")]
         public class Node : Control<TOwner>
