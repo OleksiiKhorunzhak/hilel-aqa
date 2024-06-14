@@ -30,9 +30,6 @@ namespace AtataUITests.Infrastructure
 
             string artifactsDirectoryPath = context.Artifacts.FullName;
 
-            // Get the artifacts directory path
-            //var artifactsDirectoryPath = context.Artifacts.Directories;
-
             // Output or use the artifacts directory path as needed
             return artifactsDirectoryPath.ToString();
         }
