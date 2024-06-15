@@ -1,12 +1,4 @@
-﻿using NUnitTests.Lessons;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NUnitTests.Objects.Controls
+﻿namespace NUnitTests.Objects.Controls
 {
     internal class Engine : BaseCar
     {
@@ -17,7 +9,7 @@ namespace NUnitTests.Objects.Controls
         //TODO Optimize Accelerate by KISS
         public byte? Accelerate(byte currentAcceleration)
         {
-            if(0 >= currentAcceleration && currentAcceleration <= Power)
+            if (0 >= currentAcceleration && currentAcceleration <= Power)
             {
                 AccelerationInput = currentAcceleration;
                 return AccelerationInput;

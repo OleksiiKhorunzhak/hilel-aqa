@@ -12,7 +12,7 @@ namespace PlaywrigthUITests.PageObjects
     internal class PO_TextBoxPage
     {
         private IPage _page;
-        public string textBoxPageUrl = "https://demoqa.com/text-box";
+        public string TextBoxPageUrl = "https://demoqa.com/text-box";
         private string fullNamePlaceholder = "Full Name";
         private string submitButtonRole = "button";
         private string submitButtonName = "Submit";
@@ -23,8 +23,8 @@ namespace PlaywrigthUITests.PageObjects
         }
         public async Task GoToTextBoxPage()
         {
-            await _page.GotoAsync(textBoxPageUrl);
-            //await _page.WaitForURLAsync(textBoxPageUrl);
+            await _page.GotoAsync(TextBoxPageUrl);
+            //await page.WaitForURLAsync(TextBoxPageUrl);
         }
 
         public async Task<bool> IsFullNameTextlVisible()
