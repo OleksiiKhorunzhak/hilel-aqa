@@ -67,7 +67,7 @@ namespace AtataUITests.Tests
                 CheckBoxTree.Should.BeVisible().
                 CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Home")].Toggle.Click().
                 CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Documents")].Title.Click().
-                Result.Should.Be("documents workspace react angular veu office public private classified general");
+                Result.Should.Be("You have selected :\r\ndocuments\r\nworkspace\r\nreact\r\nangular\r\nveu\r\noffice\r\npublic\r\nprivate\r\nclassified\r\ngeneral");
         }
         //TC7 - Expand Home > Documents > WorkSpace, verify React have rct  icon-leaf-close icon
         [Test]
