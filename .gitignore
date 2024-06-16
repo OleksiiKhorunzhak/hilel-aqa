@@ -18,14 +18,10 @@
 /.idea
 /.vscode
 /HilelTests.sln
-=======
-/NUnitTests/Homework/VariablesTests.cs
-/AtataUITests/Homework/VariablesTests.cs
-/PlaywrigthUITests/Homework/VariablesTests.cs
-/NUnitTests/Lessons/Lesson2Variables.cs
->>>>>>> Ernest_Bukhanevych_Main
-/AtataUITests/Homework/VariablesTests.cs
-/NUnitTests/Homework/VariablesTests.cs
-/NUnitTests/Lessons/Lesson2Variables.cs
-/NUnitTests/Lessons/Lesson3Logic.cs
-/PlaywrigthUITests/Homework/VariablesTests.cs
+/hilel-aqa-Lesson_2/AtataUITests/.vs/HilelTests
+/hilel-aqa-Lesson_2/AtataUITests/obj
+/hilel-aqa-Lesson_2/NUnitTests/obj
+/hilel-aqa-Lesson_2/PlaywrigthUITests/obj/Debug/net8.0
+/hilel-aqa-Lesson_2/PlaywrigthUITests/obj
+/AtataUITests2
+/PlayWrigthMyTest/obj
