@@ -15,13 +15,13 @@ namespace AtataUITests.PageObjects
         [FindById("userName-label")]
         public Label<_> FullNameLabel { get; set; }
 
-        [FindById("userName-label")]
+        [FindById("userEmail-label")]
         public Label<_> EmailLabel { get; set; }
 
-        [FindById("userName-label")]
+        [FindById("currentAddress-label")]
         public Label<_> CurrentAddressLabel { get; set; }
 
-        [FindById("userName-label")]
+        [FindById("permanentAddress-label")]
         public Label<_> PermanentAddressLabel { get; set; }
 
         //Inputs:

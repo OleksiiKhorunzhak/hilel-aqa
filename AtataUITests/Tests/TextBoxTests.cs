@@ -16,77 +16,84 @@ namespace AtataUITests.Tests
         [Description("TextBox Url should be https://demoqa.com/text-box")]
         public void TextBoxUrl()
         {
-            Go.To<TextBoxPage>().
-                PageUrl.Should.Be("https://demoqa.com/text-box");
-            Go.On<TextBoxPage>().
-                PageUrl.Should.EndWith("/text-box");
+            Go.To<TextBoxPage>()
+                .PageUrl.Should.Be("https://demoqa.com/text-box");
+            Go.On<TextBoxPage>()
+                .PageUrl.Should.EndWith("/text-box");
         }
 
-        //TC 1: class="text-center" should have text = "Text Box"
+        //TC 1:
         [Test]
         [Description("TextBoxH1 text should be = Text Box")]
         public void PageTitleH1()
         {
-            Go.To<TextBoxPage>().
-                TextBoxH1.Should.Be("Text Box");
+            Go.To<TextBoxPage>()
+                .TextBoxH1.Should.Be("Text Box");
         }
 
-        //TC 2: label id="userName-label" text should be "Full Name"
+        //TC 2:
         [Test]
         [Description("FullNameLabel text should be = Full Name")]
         public void UserNameLabelText()
         {
-            Go.To<TextBoxPage>().
-                FullNameLabel.Should.Be("Full Name");
+            Go.To<TextBoxPage>()
+                .FullNameLabel.Should.Be("Full Name");
         }
         //TC 3:
-        //TC 4:
         [Test]
         [Description("FullNameInput type should be = text and placeholder = Full Name")]
         public void UserNameInputType()
         {
-            Go.To<TextBoxPage>().
-                FullNameInput.DomAttributes["type"].Should.Equal("text");
+            Go.To<TextBoxPage>()
+                .FullNameInput.DomAttributes["type"].Should.Equal("text");
         }
 
-        //TC 5:
+        //TC 4:
         [Test]
         [Description("FullNameInput should be autocomplete = off")]
         public void UserNameInputAutocomplete()
         {
-            Go.To<TextBoxPage>().
-                FullNameInput.DomAttributes["autocomplete"].Should.Equal("off");
+            Go.To<TextBoxPage>()
+                .FullNameInput.DomAttributes["autocomplete"].Should.Equal("off");
         }
-        //TC 6:
+        //TC 5:
         [Test]
         [Description("FullNameInput style should be display: block")]
         public void UserNameInputStyle()
         {
-            Go.To<TextBoxPage>().
-                FullNameInput.Css["display"].Should.Equal("block");
+            Go.To<TextBoxPage>()
+                .FullNameInput.Css["display"].Should.Equal("block");
         }
 
-        //TC 7: 
+        //TC 6: 
         [Test]
         [Description("FullNameInput enter value FirstName 123")]
         public void UserNameInputEnterValue()
         {
-            Go.To<TextBoxPage>().
-                FullNameInput.Type("FirstName 123")
-                    .Should.Equals("FirstName 123");
+            Go.To<TextBoxPage>()
+                .FullNameInput.Type("FirstName 123")
+                .Should.Equals("FirstName 123");
         }
 
-        //TC 8: 
+        //TC 7: 
         [Test]
         [Description("FullNameInput clear should be empty")]
         public void UserNameInputClear()
         {
-            Go.To<TextBoxPage>().
-                FullNameInput.Clear()
-                    .FullNameInput.Should.BeEmpty();
+            Go.To<TextBoxPage>()
+                .FullNameInput.Clear()
+                .FullNameInput.Should.BeEmpty();
         }
-        //[Email input]: - use EmailInput
-        //TC 8: label id="userEmail-label" text should be "Email"
+        //[Email input]
+        //TC 8: 
+        [Test]
+        [Description("label of User Email label should be Email")]
+        public void VerifyEmailInput()
+        {
+            Go.To<TextBoxPage>()
+                .EmailLabel.Should.Be("Email");
+        }
+        
         //TC 9: input id="userEmail" should be type="email"
         //TC 10: input id="userEmail" should be placeholder="name@example.com"
         //TC 11: input id="userEmail" should be autocomplete = "off"
