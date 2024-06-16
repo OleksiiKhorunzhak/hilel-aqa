@@ -9,5 +9,12 @@ namespace AtataUITests.PageObjects
     {
         //public ReactCheckboxTree<_> reactCheckboxTree { get; private set; }
         public CheckBoxTree<_> CheckBoxTree { get; set; }
+
+
+        [FindByClass("display-result mt-4")]
+        public Text<_> Result { get; set; }
+
     }
+
+
 }
