@@ -38,7 +38,5 @@ namespace AtataUITests.PageObjects
 
         [FindByClass("custom-control-label")]
         public Label<_> NoLabel { get; set; }
-
-
     }
 }

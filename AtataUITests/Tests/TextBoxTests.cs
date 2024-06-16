@@ -24,66 +24,66 @@ namespace AtataUITests.Tests
 
         //TC 1: class="text-center" should have text = "Text Box"
         [Test]
-        [Description("TextBoxPageH1 text should be = Text Box")]
+        [Description("TextBoxH1 text should be = Text Box")]
         public void PageTitleH1()
         {
             Go.To<TextBoxPage>().
-                TextBoxPageH1.Should.Be("Text Box");
+                TextBoxH1.Should.Be("Text Box");
         }
 
         //TC 2: label id="userName-label" text should be "Full Name"
         [Test]
-        [Description("UserNameLable text should be = Full Name")]
+        [Description("FullNameLabel text should be = Full Name")]
         public void UserNameLabelText()
         {
             Go.To<TextBoxPage>().
-                UserNameLable.Should.Be("Full Name");
+                FullNameLabel.Should.Be("Full Name");
         }
         //TC 3:
         //TC 4:
         [Test]
-        [Description("UserNameInput type should be = text and placeholder = Full Name")]
+        [Description("FullNameInput type should be = text and placeholder = Full Name")]
         public void UserNameInputType()
         {
             Go.To<TextBoxPage>().
-                UserNameInput.DomAttributes["type"].Should.Equal("text");
+                FullNameInput.DomAttributes["type"].Should.Equal("text");
         }
 
         //TC 5:
         [Test]
-        [Description("UserNameInput should be autocomplete = off")]
+        [Description("FullNameInput should be autocomplete = off")]
         public void UserNameInputAutocomplete()
         {
             Go.To<TextBoxPage>().
-                UserNameInput.DomAttributes["autocomplete"].Should.Equal("off");
+                FullNameInput.DomAttributes["autocomplete"].Should.Equal("off");
         }
         //TC 6:
         [Test]
-        [Description("UserNameInput style should be display: block")]
+        [Description("FullNameInput style should be display: block")]
         public void UserNameInputStyle()
         {
             Go.To<TextBoxPage>().
-                UserNameInput.Css["display"].Should.Equal("block");
+                FullNameInput.Css["display"].Should.Equal("block");
         }
 
         //TC 7: 
         [Test]
-        [Description("UserNameInput enter value FirstName 123")]
+        [Description("FullNameInput enter value FirstName 123")]
         public void UserNameInputEnterValue()
         {
             Go.To<TextBoxPage>().
-                UserNameInput.Type("FirstName 123")
+                FullNameInput.Type("FirstName 123")
                     .Should.Equals("FirstName 123");
         }
 
         //TC 8: 
         [Test]
-        [Description("UserNameInput clear should be empty")]
+        [Description("FullNameInput clear should be empty")]
         public void UserNameInputClear()
         {
             Go.To<TextBoxPage>().
-                UserNameInput.Clear()
-                    .UserNameInput.Should.BeEmpty();
+                FullNameInput.Clear()
+                    .FullNameInput.Should.BeEmpty();
         }
         //[Email input]: - use EmailInput
         //TC 8: label id="userEmail-label" text should be "Email"

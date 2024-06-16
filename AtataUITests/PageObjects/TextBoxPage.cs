@@ -9,22 +9,40 @@ namespace AtataUITests.PageObjects
     public sealed class TextBoxPage : DemoQAPage<_>
     {
         [FindByClass("text-center")]
-        public Text<_> TextBoxPageH1 { get; set; }
+        public Text<_> TextBoxH1 { get; set; }
+
+        //Label:
+        [FindById("userName-label")]
+        public Label<_> FullNameLabel { get; set; }
 
         [FindById("userName-label")]
-        public Label<_> UserNameLable { get; set; }
+        public Label<_> EmailLabel { get; set; }
 
+        [FindById("userName-label")]
+        public Label<_> CurrentAddressLabel { get; set; }
+
+        [FindById("userName-label")]
+        public Label<_> PermanentAddressLabel { get; set; }
+
+        //Inputs:
         [FindByPlaceholder("Full Name")]
-        public TextInput<_> UserNameInput { get; set; }
+        public TextInput<_> FullNameInput { get; set; }
 
-        
-        //Label to 'Email' input
-  
-        //'Email' input type=email
+        [FindByPlaceholder("name@example.com")]
+        public EmailInput<_> EmailInput { get; set; }
 
-        //Label to 'Current Address' textarea
+        [FindByPlaceholder("Current Address")]
+        public TextArea<_> CurrentAddressInput { get; set; }
 
-        //'Current Address' textarea
+        [FindById("permanentAddress")]
+        public TextInput<_> PermanentAddressInput { get; set; }
+
+        //Button:
+        [FindById("submit")]
+        public Button<_> Submit { get; set; }
+
+        //Output:
+        [FindById("output")]
+        public Text<_> Output { get; set; }
     }
 }
-    
