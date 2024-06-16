@@ -1,4 +1,6 @@
-﻿using Microsoft.Playwright;
+﻿using Atata;
+using Microsoft.Playwright;
+using PlaywrigthUITests.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +36,6 @@ namespace PlaywrigthUITests.PageObjects
                 // Optionally, save the file to a specific location
                 var filePath = Path.Combine("downloads", download.SuggestedFilename);
                 await download.SaveAsAsync(filePath);
-
                 // Verify the file exists at the specified location
                 if (File.Exists(filePath))
                 {
@@ -49,6 +50,13 @@ namespace PlaywrigthUITests.PageObjects
             {
                 Console.WriteLine("Download object is null. File download failed.");
             }
+        }
+        public async Task ClickChooseFileButton()
+        {
+            string uploadFileAddress = HelperMethods.GetPathToProjectFolder() + "\\bin\\Debug\\net8.0\\downloads/sampleFile.jpeg";
+            await page.GetByLabel("Select a file").ClickAsync();
+            await page.GetByLabel("Select a file").SetInputFilesAsync(new[] { uploadFileAddress });
+            await Assertions.Expect(page.GetByText("C:\\fakepath\\sampleFile.jpeg")).ToBeVisibleAsync();
         }
     }
 }

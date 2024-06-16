@@ -25,10 +25,10 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
-        public async Task VerifyDownloadDebug()
+        public async Task VerifyUpload()
         {
             await _UpDownloadPage.GoToUploadDownloadPage();
-            await _UpDownloadPage.ClickDownloadButton();
+            await _UpDownloadPage.ClickChooseFileButton();
         }
     }
 }

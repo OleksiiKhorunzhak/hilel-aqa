@@ -6,11 +6,11 @@
     {
         [SetUp]
         public void SetUp() =>
-            AtataContext
-            .Configure()
-            .UseChrome()
-            .WithArguments("start-maximized")
-            .Build();
+            AtataContext.Configure()
+                .UseChrome()
+                    .WithArguments("start-maximized")
+                    .WithArtifactsAsDownloadDirectory()
+                .Build();
 
         [TearDown]
         public void TearDown() =>
