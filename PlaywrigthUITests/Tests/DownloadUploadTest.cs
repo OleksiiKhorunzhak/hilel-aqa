@@ -9,26 +9,26 @@ namespace PlaywrigthUITests.Tests
 {
     internal class DownloadUploadTest : UITestFixture
     {
-        private DemoQADownloadPage _demoQADownloadPage;
+        private PO_DownloadPage _UpDownloadPage;
 
         [SetUp]
         public void SetupDemoQAPage()
         {
-            _demoQADownloadPage = new DemoQADownloadPage(Page);
+            _UpDownloadPage = new PO_DownloadPage(Page);
         }
 
         [Test]
         public async Task VerifyDownload()
         {
-            await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
-            await _demoQADownloadPage.ClickDownloadButton();
+            await _UpDownloadPage.GoToUploadDownloadPage();
+            await _UpDownloadPage.ClickDownloadButton();
         }
 
         [Test]
         public async Task VerifyDownloadDebug()
         {
-            await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
-            await _demoQADownloadPage.ClickDownloadButton();
+            await _UpDownloadPage.GoToUploadDownloadPage();
+            await _UpDownloadPage.ClickDownloadButton();
         }
     }
 }

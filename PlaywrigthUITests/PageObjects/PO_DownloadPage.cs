@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class DemoQADownloadPage
+    internal class PO_DownloadPage
     {
         private IPage page;
-        private string RadioButtonPageUrl = "https://demoqa.com/upload-download";
+        private string UploadDownloadPageUrl = "https://demoqa.com/upload-download";
 
-        public DemoQADownloadPage(IPage page)
+        public PO_DownloadPage(IPage page)
         {
             this.page = page;
         }
 
-        public async Task GoToDemoQaUploadDownloadPage()
+        public async Task GoToUploadDownloadPage()
         {
-            await page.GotoAsync(RadioButtonPageUrl);
+            await page.GotoAsync(UploadDownloadPageUrl);
         }
 
         public async Task ClickDownloadButton()
