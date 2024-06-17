@@ -4,5 +4,6 @@
     public abstract class DemoQAPage<TOwner> : Page<TOwner>
         where TOwner : DemoQAPage<TOwner>
     {
+
     }
 }
