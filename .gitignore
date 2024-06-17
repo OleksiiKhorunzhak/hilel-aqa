@@ -5,6 +5,7 @@
 /.vs/hilel-aqa/v17
 /.vs/hilel-aqa/FileContentIndex
 /.vs
+/.idea
 /AtataUITests/.vs/
 /AtataUITests/bin/Debug/net8.0
 /AtataUITests/obj
