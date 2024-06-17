@@ -11,9 +11,17 @@ namespace AtataUITests.PageObjects
         [FindById("item-4")]
         public Clickable<DemoQAButtonsPage, _> Buttons { get; private set; }
 
+        [FindById("item-1")]
+        public Clickable<DemoQACheckBoxPage, _> CheckBoxes { get; private set; }
+
         public static DemoQATextBoxPage GoToTextBoxesPage()
         {
             return Go.To<_>().TextBox.ClickAndGo();
+        }
+
+        public static DemoQACheckBoxPage GoToCheckBoxesPage()
+        {
+            return Go.To<_>().CheckBoxes.ClickAndGo();
         }
     }
 }
