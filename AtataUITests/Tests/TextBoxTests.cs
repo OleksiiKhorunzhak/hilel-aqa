@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AtataUITests.PageObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +23,58 @@ namespace AtataUITests.Tests
         //Test Case 7: Min./Max. value.
         //Test Case 8: It’s possible to submit the form with empty Full Name and with filled other fields.
 
+        [Test,Description("test case 2")]
+        public void VerifyTextFullName()
+        {
+            Go.To<DemoQAElementsPage>().
+                TextBox.ClickAndGo().
+            FullNameLabel.Should.BeVisible();
+           
+        }
+
+        [Test, Description("test case 3")]
+        public void VerifyTextFieldFullName()
+        {
+            Go.To<DemoQAElementsPage>().
+                TextBox.ClickAndGo().
+                FullName.Set("John Doe");
+        }
+
+        [Test, Description("test case 1")]
+        public void VerifyTitle()
+        {
+            Go.To<DemoQAElementsPage>().
+                TextBox.ClickAndGo().
+                TextBox.Should.Be("Text Box");
+
+        }
+
+        [Test, Description("test case 4")]
+        public void EnterTheNameAndSubmit()
+        {
+            Go.To<DemoQAElementsPage>().
+                TextBox.ClickAndGo().
+                FullName.Set("John Doe").
+                Submit.Click().
+                NameInput.Should.BeVisible();
+        }
+
+        [Test, Description("test case 5")]
+        public void ClearFullNameAndSubmit()
+        {
+            Go.To<DemoQAElementsPage>().
+                TextBox.ClickAndGo().
+                FullName.Set("John Doe").
+                FullName.Should.BeVisible().
+                FullName.Clear().
+                FullNamePlaceholder.Should.BeVisible().
+                NameInput.Should.Not.BeVisible();
+        }
+
+
+
+
+
         //Email
 
         //Test Case 9: Text Email should be visible.
@@ -33,7 +87,24 @@ namespace AtataUITests.Tests
         //Test Case 16: Min./Max. value.
         //Test Case 17: It’s possible to submit the form with empty Email and with filled other fields.
 
-        //Current Adress
+        [Test, Description("test case 9")]
+        public void EmailShouldBeVisible()
+        {
+            Go.To<DemoQAElementsPage>().
+                TextBox.ClickAndGo().
+                EmailLabel.Should.BeVisible();
+        }
+
+        [Test, Description("test case 13")]
+        public void EnterCorrectEmailAndSubmit()
+        {
+            Go.To<DemoQAElementsPage>().
+                TextBox.ClickAndGo().
+                Email.Set("test@gmail.com").
+                Email.Should.BeVisible().
+                Submit.Click().
+                EmailInput.Should.BeVisible();
+        }
 
         //Test Case 18: Text Current Address should be visible
         //Test Case 19: Current Address input should be visible
