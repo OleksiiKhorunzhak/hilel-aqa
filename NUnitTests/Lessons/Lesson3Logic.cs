@@ -92,10 +92,6 @@
                     Speed++;
                     
                 }
-                else 
-                { 
-                    break; 
-                }
                  else { break; }
             }
         }

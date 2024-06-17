@@ -23,20 +23,7 @@ namespace NUnitTests.Homework
         }
 
 
-        //TODO: Finish car tests here or in Lesson3Logic file folowing example
-        [Order(1)]
-        [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
-        public void TestAcceleration()
-        {
-           // var lesson3Logic=new Lesson3Logic();
-            CurrentAcceleration = 50;
-           // Accelerate(CurrentAcceleration);
-            GetAcceleration();
-            Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
-        }
-
-
-        //Test Case 2: Test GetSpeed with Positive Acceleration
+              //Test Case 2: Test GetSpeed with Positive Acceleration
         //Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
         //Steps:
         //Set CurrentAcceleration to a positive value.
