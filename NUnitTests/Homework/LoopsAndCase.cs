@@ -54,6 +54,18 @@
             // remove ShortCarManufacturerNames by index
             // after loop finishes
             // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
+
+            for(int index=ShortCarManufacturerNames.Count-1;index>=0;index--)
+            {
+                if (ShortCarManufacturerNames[index].Length>=5)
+                {
+                    ShortCarManufacturerNames.RemoveAt(index);
+                }
+            }
+            foreach(string name in ShortCarManufacturerNames)
+            {
+                Assert.That(name.Length, Is.LessThan(5), "Length is more or equal 5");
+            }
         }
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
