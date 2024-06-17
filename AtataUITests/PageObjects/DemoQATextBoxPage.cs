@@ -1,5 +1,4 @@
-﻿using Atata;
-using _ = AtataUITests.PageObjects.DemoQATextBoxPage;
+﻿using _ = AtataUITests.PageObjects.DemoQATextBoxPage;
 
 namespace AtataUITests.PageObjects
 {
@@ -11,9 +10,9 @@ namespace AtataUITests.PageObjects
         [FindById("userName-label")]
         public Label<_> FullNameLabel { get; set; }
 
+        [ScrollTo]
         [WaitSeconds(10, TriggerEvents.BeforeClick)]
         [FindById("submit")]
-        public Button<_> Submit { get; set; }
 
         [FindById("name")]
         public Text<_> FullNameText { get; set; }
