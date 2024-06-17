@@ -14,6 +14,9 @@
             AtataContext.GlobalConfiguration
                 .ApplyJsonConfig<AtataConfig>()
                 .ApplyJsonConfig<AtataConfig>(environmentAlias: testEnvironmentAlias)
+                .UseChrome()
+                .WithArguments("start-maximized")
+                .WithArtifactsAsDownloadDirectory()
                 .UseDriver(driverAlias);
 
             AtataContext.GlobalConfiguration.AutoSetUpDriverToUse();
