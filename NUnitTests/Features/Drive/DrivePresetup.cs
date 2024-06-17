@@ -1,9 +1,4 @@
 ﻿using NUnitTests.Objects.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NUnitTests.Features.Drive
 {
@@ -48,27 +43,27 @@ namespace NUnitTests.Features.Drive
         [SetUp]
         public void DriveFeaturePresetup()
         {
-         //Mocked test data
-         byte AccelerateInput = 255;
-         byte Speed = 68;
-         byte BreaksInput = 18;
+            //Mocked test data
+            byte AccelerateInput = 255;
+            byte Speed = 68;
+            byte BreaksInput = 18;
 
-         GetAcceleration(AccelerateInput);
-         SetGear(Speed);
-         CheckBreaks(BreaksInput);
+            GetAcceleration(AccelerateInput);
+            SetGear(Speed);
+            CheckBreaks(BreaksInput);
         }
 
         [TearDown]
         public void DriveFeatureTeardown()
         {
-         //Mocked test data
-         byte AccelerateInput = 0;
-         byte Speed = 0;
-         byte BreaksInput = 0;
+            //Mocked test data
+            byte AccelerateInput = 0;
+            byte Speed = 0;
+            byte BreaksInput = 0;
 
-         GetAcceleration(AccelerateInput);
-         SetGear(Speed);
-         CheckBreaks(BreaksInput);
+            GetAcceleration(AccelerateInput);
+            SetGear(Speed);
+            CheckBreaks(BreaksInput);
         }
     }
 }

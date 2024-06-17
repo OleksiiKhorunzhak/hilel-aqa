@@ -1,5 +1,4 @@
 ﻿using Atata;
-using OpenQA.Selenium.DevTools.V122.Overlay;
 using _ = AtataUITests.PageObjects.DemoQATextBoxPage;
 
 namespace AtataUITests.PageObjects
@@ -13,6 +12,7 @@ namespace AtataUITests.PageObjects
         public Label<_> FullNameLabel { get; set; }
 
         [FindById("submit")]
+        [ScrollTo]
         public Button<_> Submit { get; set; }
 
         [FindById("name")]
