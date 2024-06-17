@@ -1,7 +1,7 @@
 ﻿namespace NUnitTests.Lessons
 {
     //Lesson Suite Logic
-    internal class Lesson3Logic
+    public class Lesson3Logic
     {
         #region[TestSetup]
         public int Speed { get; private set; }
@@ -77,7 +77,7 @@
 
         public void Accelerate(int acceleratePedalValue)
         {
-            if(Speed <= MaxSpeed + 20)
+            if (Speed <= MaxSpeed + 20)
             {
                 AccelerationAllowed = true;
             }
@@ -96,14 +96,16 @@
                 { 
                     break; 
                 }
+                 else { break; }
             }
         }
 
         /// <summary>
-        /// Activates or deactivates the deceleration charge feature based on the current charge level and a specified threshold.
+        /// Activates or deactivates the deceleration charge based on the current charge level relative to a specified critical overcharge threshold.
         /// </summary>
-        /// <param name="isActive">A boolean flag indicating whether the feature should be activated.</param>
-        /// <param name="criticalOvercharge">The charge level above which activation is considered unsafe and thus prevented.</param>
+        /// <param name="isActive">A boolean value indicating whether the deceleration charge should be attempted to activate.</param>
+        /// <param name="criticalOvercharge">An integer representing the critical overcharge threshold which must not be exceeded for activation.</param>
+        /// <returns>A boolean indicating the activation status of the deceleration charge. Returns true if the charge is activated, otherwise false.</returns>
         public bool DecelerationChargeActivation(bool isActive, int criticalOvercharge)
         {
             if (isActive && Charge < criticalOvercharge)
@@ -132,7 +134,7 @@
             }
             else
             {
-                return 0;
+                return DecelerationCharge = 0;
             }
         }
         #endregion
