@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTests", "NUnitTests\NU
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrigthUITests", "PlaywrigthUITests\PlaywrigthUITests.csproj", "{7EBE0D15-2330-4BFE-A211-A214557320CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayWrigthMyTest", "PlayWrigthMyTest\PlayWrigthMyTest.csproj", "{9953278B-E513-4328-A88B-58751F7B976C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{7EBE0D15-2330-4BFE-A211-A214557320CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EBE0D15-2330-4BFE-A211-A214557320CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EBE0D15-2330-4BFE-A211-A214557320CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9953278B-E513-4328-A88B-58751F7B976C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9953278B-E513-4328-A88B-58751F7B976C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9953278B-E513-4328-A88B-58751F7B976C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9953278B-E513-4328-A88B-58751F7B976C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
