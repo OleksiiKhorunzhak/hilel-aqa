@@ -1,23 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=19cad870_002Dc7c7_002D4d07_002Da8fc_002Dd42208a57a26/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FirstCityTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=febf10cc_002D1511_002D4d27_002Daf43_002D32d573050ce4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestForeach #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::Homework.CollectionsTests.FirstCityTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1f5f8911_002De12f_002D4d3f_002D9bab_002De2ac79ae9bed/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FirstCityTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::Homework.CollectionsTests.FirstCityTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::Homework.CollectionsTests.ArrayLengthTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::Homework.CollectionsTests.SortArrayTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6acafaf5_002D9e8b_002D436c_002D8422_002D8e7170387740/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FirstCityTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::Homework.CollectionsTests.FirstCityTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8659310e_002D16e9_002D45f9_002Da8e5_002D5757521abbea/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SortArrayTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::Homework.CollectionsTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestForeach&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.RadioButtonsTest.VerifyTextFullName&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.RadioButtonsTest.VerifyImpressiveRadioButton&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.RadioButtonsTest.VerifyNoRadioButton&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.RadioButtonsTest.VerifyH1RadioButtonVisible&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.RadioButtonsTest.VerifyImpressiveTextNotVisibleAfterRefresh&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

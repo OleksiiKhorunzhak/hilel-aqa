@@ -143,5 +143,6 @@ namespace PlaywrigthUITests.Tests
             Assert.That(isNotVisibleAfterRefresh,
                 "The element with text 'You have done a dynamic click' should NOT be visible after refreshing the page.");
         }
+
     }
 }
