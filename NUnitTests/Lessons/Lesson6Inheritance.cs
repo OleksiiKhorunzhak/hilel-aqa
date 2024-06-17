@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NUnitTests.Lessons
+﻿namespace NUnitTests.Lessons
 {
-    internal class Lesson6Inheritance 
+    internal class Lesson6Inheritance
     {
         //KISS - Keep It Simple Stupid
         //DRY - Dont Repeat Yourself
@@ -21,6 +15,6 @@ namespace NUnitTests.Lessons
 
         //YAGNI "You aren't gonna need it"
 
-        
+
     }
 }

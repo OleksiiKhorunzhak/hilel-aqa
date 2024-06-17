@@ -1,5 +1,6 @@
 ﻿using Atata;
 using _ = AtataUITests.PageObjects.DemoQATextBoxPage;
+
 namespace AtataUITests.PageObjects
 {
     public sealed class DemoQATextBoxPage : DemoQAPage<_>
@@ -10,6 +11,7 @@ namespace AtataUITests.PageObjects
         public TextInput<_> FullName { get; set; }
 
         [FindById("userName-Label")]
+        [FindById("userName-label")]
         public Label<_> FullNameLabel { get; set; }
 
         [FindByXPath("//h1[@class='text-center' and text()='Text Box']")]

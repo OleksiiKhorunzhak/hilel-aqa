@@ -160,11 +160,18 @@ namespace NUnitTests.Homework
 
         //Test Case 10: Compute Deceleration Charge Power When Inactive
         //Description: Check that GetDecelerationChargePower returns 0 when the feature is not active.
-        //Steps:
-        //Ensure DecelerationChargeMode is true.
-        //Invoke GetDecelerationChargePower with isActive set to false.
-        //Verify that the result is 0.
+        [Test]
+        [Order(10)]
+        public void TestGetDecelerationChargePowerInactive()
+        {
+            //Steps:
+            //Ensure DecelerationChargeMode is true.
+            //Invoke GetDecelerationChargePower with isActive set to false.
+            //Verify that the result is 0.
+            Assert.That(DecelerationChargeMode, Is.EqualTo(true));
+            GetDecelerationChargePower(false);
+            Assert.That(DecelerationCharge, Is.EqualTo(0));
+        }
         #endregion
-
     }
 }
