@@ -25,6 +25,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: PWInstall
-      run: PowerShell -c "./bin/Debug/net8.0/playwright.ps1 install"
+      run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
     - name: Test
       run: dotnet test PlaywrigthUITests/bin/Debug/net8.0/PlaywrigthUITests.dll --filter "Category=UI"
