@@ -21,6 +21,7 @@ namespace AtataUITests.Tests
             // And I NOT see "You have done a double click" text.
             DoubleClickMessage.Should.Not.BeVisible();
 
+        [Category("UI")]
         [Test, Description("Verify Double Click Me button"), Retry(2)]
         public void DoubleClickButtonTest() =>
             // Given I go to DemoQa Elements page 
