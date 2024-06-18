@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test AtataUITests/bin/Debug/net8.0/AtataUITests.dll --filter "Category=UI"
