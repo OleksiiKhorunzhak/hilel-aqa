@@ -24,6 +24,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+    - name: BinLs
+      run: pwsh ls D:\a\hilel-aqa\hilel-aqa\PlaywrigthUITests\bin\Debug
     - name: PWInstall
       run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
     - name: Test
