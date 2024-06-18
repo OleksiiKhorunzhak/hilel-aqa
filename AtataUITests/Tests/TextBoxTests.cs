@@ -26,6 +26,7 @@ namespace AtataUITests.Tests
 
         [Test]
         [Description("Enter 'John Doe' in Text Full Name Input, press submit, text Name should be 'Name:John Doe'")]
+        [Category("UI")]
         public void VerifyTextSetFullName()
         {
             Go.To<DemoQAElementsPage>().
