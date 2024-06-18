@@ -19,7 +19,7 @@ namespace PlaywrigthUITests.Tests
 		{
 			_uploadDownloadPage = new DemoQAUploadAndDownloadPage(Page);
 		}
-
+		[Category ("pipeline")]
 		[Test]
 		[Description("Verify header with 'Upload And Download' text is visible on the page")]
 		public async Task VerifyCheckBoxHeaderVisibility()
