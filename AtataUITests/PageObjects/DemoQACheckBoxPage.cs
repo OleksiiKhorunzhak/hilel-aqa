@@ -9,7 +9,8 @@ namespace AtataUITests.PageObjects
     {
         public CheckBoxTree<_> CheckBoxTree { get; set; }
 
-        [FindByClass("text-success")]
+        //[FindByClass("text-success")]
+        [FindByClass("display-result")]
         public Text<_> DisplayResult { get; set; }
 
     }

@@ -1,11 +1,6 @@
 ﻿using Atata;
 using AtataUITests.PageObjects;
-using AtataUITests.PageObjects.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AtataUITests.Tests
 {
@@ -60,7 +55,7 @@ namespace AtataUITests.Tests
                 CheckBoxTree.Should.BeVisible().
                 CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Home")].Toggle.Click().
                 CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Documents")].Title.Click().
-                DisplayResult.Should.Be("You have selected: documents workspace react angular veu office public private classified general");
+                DisplayResult.Should.Be("You have selected :\r\ndocuments\r\nworkspace\r\nreact\r\nangular\r\nveu\r\noffice\r\npublic\r\nprivate\r\nclassified\r\ngeneral");
         }
 
 
