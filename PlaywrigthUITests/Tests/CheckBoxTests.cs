@@ -11,6 +11,7 @@ namespace PlaywrigthUITests.Tests
 	internal class CheckBoxTests : UITestFixture
 	{
 		private DemoQACheckBoxPage _checkboxPage;
+		[Category("pipeline")]
 
 		[SetUp]
 		public void SetupCheckBoxPage()

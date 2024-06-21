@@ -6,8 +6,9 @@ namespace PlaywrigthUITests.Tests
     internal class RadioButtonsTest : UITestFixture
     {
         private DemoQARadioButtonPage _radioButtonPage;
+		[Category("pipeline")]
 
-        [SetUp]
+		[SetUp]
         public void SetupRadioButtonQAPage()
         {
             _radioButtonPage = new DemoQARadioButtonPage(Page);

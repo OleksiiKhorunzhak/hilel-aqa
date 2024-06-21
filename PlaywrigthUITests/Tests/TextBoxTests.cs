@@ -2,7 +2,9 @@
 namespace PlaywrigthUITests.Tests
 {
     [Description("Verify text box on buttons page")]
-    class TextBoxTests : UITestFixture
+	[Category("pipeline")]
+
+	class TextBoxTests : UITestFixture
     {
         [Test]
         [Description("Text Full Name should be visible")]
