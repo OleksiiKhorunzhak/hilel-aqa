@@ -20,8 +20,13 @@ namespace NUnitTests.Homework
             // if name length less or equal 5
             // increase counter
             // after loop end assert that counter is equal to 4
-
-        }
+            foreach (string name in CarManufacturers)
+            {
+                if (name.Length <= 5)
+                {
+                    counter++;
+                }
+            }
 
             Assert.That(counter, Is.EqualTo(4), "The counter is not equal 4");
         }
@@ -31,10 +36,6 @@ namespace NUnitTests.Homework
         {
             List<string> ShortCarManufacturerNames = new();
             int counter = 0;
-
-
-            string[] emptyArray = [];
-            decimal number = 1.01M;
 
             // apply next logic
 
@@ -51,7 +52,10 @@ namespace NUnitTests.Homework
                     counter++;
                 }
 
-        float number = 1.01F;
+                Assert.That(name.Length, Is.LessThan(5), "The name length isn`t less than 5 characters");
+            }
+
+        }
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestForLoop()
