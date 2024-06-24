@@ -76,7 +76,7 @@ namespace PlaywrigthUITests.PageObjects
             await Page.GetByLabel("Select a file").ClickAsync();
             await Page.GetByLabel("Select a file").SetInputFilesAsync(new[] { inputFile });
             await Assertions.Expect(Page.GetByText("C:\\fakepath\\sampleFile.jpeg")).ToBeVisibleAsync();
-        } 
+        }
     }
 }
 
