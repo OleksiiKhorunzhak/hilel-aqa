@@ -1,7 +1,5 @@
 ﻿using Atata;
 using AtataUITests.PageObjects;
-using NUnit.Framework;
-using System;
 
 namespace AtataUITests.Tests
 {
@@ -11,6 +9,7 @@ namespace AtataUITests.Tests
         public void TableColumnTest()
         {
             Go.To<DemoQAWebTablePage>().
+                WebTable.Should.BeVisible();
         }
     }
 }
