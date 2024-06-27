@@ -13,12 +13,16 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
-        public async Task VerifyCheckBoxChecked()
+        public async Task VerifyTableVisible()
         {
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
-            await DemoQAWebTablesPage.CheckTableVisible();
+            await DemoQAWebTablesPage.VerifyTableRowContent();
         }
 
-               //TODO: automate test cases
+         //TODO: automate test cases
+         //Add new row and verify row added
+         //Edit row and verify row edited
+         //Delete row and verify row deleted
+
     }
 }
