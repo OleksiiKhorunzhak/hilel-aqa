@@ -10,13 +10,16 @@ namespace AtataUITests.Tests
         {
             Go.To<DemoQAWebTablePage>().
                 WebTable.Should.BeVisible().
+                WebTable.Rows.Count.Should.BeGreater(1).
                 WebTable.Rows[0].FirstName.Should.Be("Cierra").
                 WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].FirstName.Should.BeVisible().
                 WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].LastName.Should.Be("Vega").
                 Add.Click().
                     AddPopup.Submit.Should.BeVisible().
+                    AddPopup.FirstName.Set("John").
                     AddPopup.Submit.Click().
-                WebTable.Rows.Count.Should.BeGreater(1);
+                    AddPopup.LastName.Css["border-color"].Should.Be("rgb(220, 53, 69)");
+                
         }
 
         //TODO: automate test cases

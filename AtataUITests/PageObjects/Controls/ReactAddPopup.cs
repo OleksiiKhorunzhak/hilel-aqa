@@ -6,8 +6,11 @@ namespace AtataUITests.PageObjects.Controls
     public class ReactAddPopup<TOwner> : Control<TOwner>
         where TOwner : PageObject<TOwner>
     {
-        [FindByPlaceholder("FirstName")]
+        [FindByPlaceholder("First Name")]
         public TextInput<TOwner> FirstName { get; private set; }
+
+        [FindByPlaceholder("Last Name")]
+        public TextInput<TOwner> LastName { get; private set; }
 
         public Button<TOwner> Submit { get; private set; }
     }
