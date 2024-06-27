@@ -12,7 +12,11 @@ namespace AtataUITests.Tests
                 WebTable.Should.BeVisible().
                 WebTable.Rows[0].FirstName.Should.Be("Cierra").
                 WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].FirstName.Should.BeVisible().
-                WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].LastName.Should.Be("Vega");
+                WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].LastName.Should.Be("Vega").
+                Add.Click().
+                    AddPopup.Submit.Should.BeVisible().
+                    AddPopup.Submit.Click().
+                WebTable.Rows.Count.Should.BeGreater(1);
         }
 
         //TODO: automate test cases

@@ -41,7 +41,7 @@ internal class DemoQAWebTablesPage
         }
     }
 
-    public async Task VerifyTableRowContent(string headerName = "First Name", int columnIndex = 1, string value = "Cierra")
+    public async Task VerifyTableRowContent(string headerName = "First Name", string value = "Cierra")
     {
         var table = Page.Locator(".ReactTable");
 
@@ -86,4 +86,18 @@ internal class DemoQAWebTablesPage
             Assert.Fail($"No cells found in the '{headerName}' column.");
         }
     }
+
+    public async Task VerifyPopupVisible()
+    {
+        var popup = Page.Locator(".modal-content");
+        await Assertions.Expect(popup).ToBeVisibleAsync();
+    }
+
+    public async Task VerifyFirstNameVisible()
+    {
+        var firstName = Page.GetByPlaceholder("First Name");
+        await Assertions.Expect(firstName).ToBeVisibleAsync();
+    }
+    
+
 }

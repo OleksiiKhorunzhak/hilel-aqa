@@ -8,6 +8,10 @@ namespace AtataUITests.PageObjects
     {
         public ReactTable<WebTableRow, _> WebTable { get; private set; }
 
+        public Button<_> Add{ get; private set; }
+
+        public ReactAddPopup<_> AddPopup { get; private set; }
+
         public class WebTableRow : ReactRow<_>
         {
             [FindByXPath("//div[@role='gridcell'][1]")]

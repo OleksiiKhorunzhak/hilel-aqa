@@ -1,4 +1,5 @@
-﻿using PlaywrigthUITests.PageObjects;
+﻿using Microsoft.Playwright;
+using PlaywrigthUITests.PageObjects;
 
 namespace PlaywrigthUITests.Tests
 {
@@ -16,13 +17,18 @@ namespace PlaywrigthUITests.Tests
         public async Task VerifyTableVisible()
         {
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
-            await DemoQAWebTablesPage.VerifyTableRowContent();
+            //await DemoQAWebTablesPage.VerifyTableRowContent();
+            await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Vega");
+
+            await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
+            await DemoQAWebTablesPage.VerifyPopupVisible();
+            await DemoQAWebTablesPage.VerifyFirstNameVisible();
         }
 
-         //TODO: automate test cases
-         //Add new row and verify row added
-         //Edit row and verify row edited
-         //Delete row and verify row deleted
+        //TODO: automate test cases
+        //Add new row and verify row added
+        //Edit row and verify row edited
+        //Delete row and verify row deleted
 
     }
 }
