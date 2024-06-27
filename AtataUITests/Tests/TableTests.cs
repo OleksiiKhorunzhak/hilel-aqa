@@ -10,8 +10,9 @@ namespace AtataUITests.Tests
         {
             Go.To<DemoQAWebTablePage>().
                 WebTable.Should.BeVisible().
-                WebTable.Rows[0].FirstName.Should.BeVisible().
-                WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].FirstName.Should.BeVisible();
+                WebTable.Rows[0].FirstName.Should.Be("Cierra").
+                WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].FirstName.Should.BeVisible().
+                WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].LastName.Should.Be("Vega");
         }
 
         //TODO: automate test cases
