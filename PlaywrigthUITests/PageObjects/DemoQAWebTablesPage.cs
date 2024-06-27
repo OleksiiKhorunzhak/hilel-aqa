@@ -95,7 +95,8 @@ internal class DemoQAWebTablesPage
 
     public async Task VerifyFirstNameVisible()
     {
-        var firstName = Page.GetByPlaceholder("First Name");
+        var popup = Page.Locator(".modal-content");
+        var firstName = popup.GetByPlaceholder("First Name");
         await Assertions.Expect(firstName).ToBeVisibleAsync();
     }
     

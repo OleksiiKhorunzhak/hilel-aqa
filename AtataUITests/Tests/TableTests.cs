@@ -19,12 +19,12 @@ namespace AtataUITests.Tests
                     AddPopup.FirstName.Set("John").
                     AddPopup.Submit.Click().
                     AddPopup.LastName.Css["border-color"].Should.Be("rgb(220, 53, 69)");
-                
         }
 
         //TODO: automate test cases
+        //Check any mandatory field
         //Add new row and verify row added
         //Edit row and verify row edited
-        //Delete row and verify row deleted
+        //Delete row and verify row deleted  
     }
 }

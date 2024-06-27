@@ -26,6 +26,7 @@ namespace PlaywrigthUITests.Tests
         }
 
         //TODO: automate test cases
+        //Check any mandatory field
         //Add new row and verify row added
         //Edit row and verify row edited
         //Delete row and verify row deleted
