@@ -37,6 +37,7 @@ namespace PlaywrigthUITests.PageObjects
 
 		public async Task<bool> CheckTableCellValueByRow(int row, string value)
 		{
+			await _page.WaitForSelectorAsync($"[role='rowgroup']:nth-child({row})");
 			var data = await _page.GetByRole(AriaRole.Row, new() { Level = 0 }).Nth(row).InnerTextAsync();
 			return data.Contains(value);
 		}
@@ -50,6 +51,12 @@ namespace PlaywrigthUITests.PageObjects
 		public async Task CheckRegistrationFormIsVisible()
 		{
 			await _page.GetByText("Registration Form").IsVisibleAsync();
+		}
+
+		public async Task<bool> CheckFormWithValidationErrorVisible()
+		{
+			var form = await _page.WaitForSelectorAsync("//form[@class='was-validated']");
+			return await form.IsVisibleAsync();
 		}
 
 		public async Task CheckRegistrationFormIsNotVisible()
@@ -99,11 +106,27 @@ namespace PlaywrigthUITests.PageObjects
 			await _page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
 		}
 
-		public async Task<int> GetLastFilledRow()
+		public async Task<int> GetFirstEmptyRowIndex()
 		{
-			var rowsinnertextcell = await _page.Locator("role=rowgroup").AllInnerTextsAsync();
+			var rows_innertext = await _page.Locator("role=rowgroup").AllInnerTextsAsync();
+			Array row_string = rows_innertext.ToArray();
+			var index = Array.IndexOf(row_string, " \n \n \n \n \n \n ");
+			return index;
+		}
 
-			return 1;
+		public async Task ClickEditIconWithId(int id)
+		{
+			await _page.Locator($"#edit-record-{id} path").ClickAsync();
+		}
+
+		public async Task ClickDeleteIconWithId(int id)
+		{
+			await _page.Locator($"#delete-record-{id} path").ClickAsync();
+		}
+
+		public async Task InputSearchField(string input_text)
+		{
+			await _page.GetByPlaceholder("Type to search").FillAsync($"{input_text}");
 		}
 		#endregion
 	}

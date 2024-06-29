@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using Newtonsoft.Json.Linq;
 using PlaywrigthUITests.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace PlaywrigthUITests.Tests
 			await _webTablesPage.GoToWebTablesPage();
 			
 			var expected_value = "Cierra";
-			var result = await _webTablesPage.CheckTableCellValueExists("Kierra");
+			var result = await _webTablesPage.CheckTableCellValueExists("Cierra");
 
 			Assert.That(result == true, $"Expected cell value {expected_value} is not exist in the table");
 		}
@@ -64,8 +65,8 @@ namespace PlaywrigthUITests.Tests
 		}
 
 		[Test]
-		[Description("Verify User can add valid data in table")]
-		public async Task CheckAddTableValidData()
+		[Description("Verify User can add valid data and check added row in a table")]
+		public async Task CheckAddTableRowValidData()
 		{
 			await _webTablesPage.GoToWebTablesPage();
 
@@ -76,7 +77,7 @@ namespace PlaywrigthUITests.Tests
 			var salary = "13000";
 			var department = "autotestDepartment";
 
-			var cell = await _webTablesPage.GetLastFilledRow();
+			var empty_row_index = await _webTablesPage.GetFirstEmptyRowIndex();
 			
 			await _webTablesPage.ClickAddButton();
 
@@ -92,12 +93,123 @@ namespace PlaywrigthUITests.Tests
 			await _webTablesPage.CheckRegistrationFormIsNotVisible();
 
 			var row_data = new List<string> { name, last_name, age, email, salary, department };
+			var row_index = ++empty_row_index;
 
 			foreach (string value in row_data)
 			{
-				var result = _webTablesPage.CheckTableCellValueVisible(value);
+				var result = _webTablesPage.CheckTableCellValueByRow(row_index, value);
 				Assert.That(result.Result == true, $"Cell with value {value} not exist in table");
 			}
+		}
+
+		[Test]
+		[Description("Verify User can edit row in the table with correct data")]
+		public async Task CheckEditTableRowDataFunctionality()
+		{
+			await _webTablesPage.GoToWebTablesPage();
+
+			var name = "autotestName";
+			var last_name = "autotestLastName";
+			var age = "42";
+			var email = "autotest@test.com";
+			var salary = "13000";
+			var department = "autotestDepartment";
+
+			var empty_row_index = await _webTablesPage.GetFirstEmptyRowIndex();
+			var last_filled_index = empty_row_index;
+
+			await _webTablesPage.ClickEditIconWithId(last_filled_index);
+
+			await _webTablesPage.CheckRegistrationFormIsVisible();
+			await _webTablesPage.InputFirstNameField(name);
+			await _webTablesPage.InputLastNameField(last_name);
+			await _webTablesPage.InputAgeField(age);
+			await _webTablesPage.InputEmailField(email);
+			await _webTablesPage.InputSalaryField(salary);
+			await _webTablesPage.InputDepartmentField(department);
+			await _webTablesPage.ClickSubmitButton();
+
+			await _webTablesPage.CheckRegistrationFormIsNotVisible();
+			var row_data = new List<string> { name, last_name, age, email, salary, department };
+
+			foreach (string value in row_data)
+			{
+				var result = _webTablesPage.CheckTableCellValueByRow(last_filled_index, value);
+				Assert.That(result.Result == true, $"Cell with value {value} was not updated in table");
+			}
+		}
+
+		[Test]
+		[Description("Verify User can delete row in the table")]
+		public async Task CheckDeleteTableRowDataFunctionality()
+		{
+			await _webTablesPage.GoToWebTablesPage();
+
+			var empty_row_index = await _webTablesPage.GetFirstEmptyRowIndex();
+			var icon_index = empty_row_index;
+
+			await _webTablesPage.ClickDeleteIconWithId(icon_index);
+
+			var updated_empty_row_index = await _webTablesPage.GetFirstEmptyRowIndex();
+			var expected_index = empty_row_index - 1;
+			
+			Assert.That(updated_empty_row_index == expected_index, $"Index of empty row is {updated_empty_row_index} after deletion is != to expected index {expected_index} ");
+		}
+
+		[Test]
+		[Description("Verify User can't submit data row in the table with empty field")]
+		public async Task CheckImpossibleToSubmitDataWithEmptyField()
+		{
+			await _webTablesPage.GoToWebTablesPage();
+			
+			var last_name = "autotestLastName";
+			var age = "42";
+			var email = "autotest@test.com";
+			var salary = "13000";
+			var department = "autotestDepartment";
+
+			await _webTablesPage.ClickAddButton();
+
+			await _webTablesPage.CheckRegistrationFormIsVisible();
+			await _webTablesPage.InputLastNameField(last_name);
+			await _webTablesPage.InputAgeField(age);
+			await _webTablesPage.InputEmailField(email);
+			await _webTablesPage.InputSalaryField(salary);
+			await _webTablesPage.InputDepartmentField(department);
+			await _webTablesPage.ClickSubmitButton();
+
+			await _webTablesPage.CheckRegistrationFormIsVisible();
+			var result = _webTablesPage.CheckFormWithValidationErrorVisible();
+
+			Assert.That(result.Result == true, $"Visibility status for Registration form with error == {result}, expected - true");
+		}
+
+		[Test]
+		[Description("Verify search field functionality by User name")]
+		public async Task CheckSearchFieldFunctionalityByName()
+		{
+			await _webTablesPage.GoToWebTablesPage();
+
+			var name = "Kierra";
+			await _webTablesPage.InputSearchField(name);
+
+			var result = await _webTablesPage.CheckTableCellValueExists(name);
+
+			Assert.That(result == true, $"Searched name value {name} is not visible in the table, visibility status == {result}");
+		}
+
+		[Test]
+		[Description("Verify search field functionality by User email")]
+		public async Task CheckSearchFieldFunctionalityByEmail()
+		{
+			await _webTablesPage.GoToWebTablesPage();
+
+			var email = "alden@example.com";
+			await _webTablesPage.InputSearchField(email);
+
+			var result = await _webTablesPage.CheckTableCellValueExists(email);
+
+			Assert.That(result == true, $"Searched email value {email} is not visible in the table, visibility status == {result}");
 		}
 	}
 }
