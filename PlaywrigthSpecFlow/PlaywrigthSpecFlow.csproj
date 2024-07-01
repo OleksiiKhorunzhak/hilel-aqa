@@ -36,7 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\WebTableSteps.cs">
+    <Compile Update="Features\WebTable\WebTableSteps.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

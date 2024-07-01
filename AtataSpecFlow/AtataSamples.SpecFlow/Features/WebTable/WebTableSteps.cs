@@ -25,7 +25,12 @@ namespace AtataSamples.SpecFlow.Features.WebTable
         [When(@"I set LastName to ""(.*)""")]
         public static void WhenISetLastName(string lastName) =>
             Go.On<DemoQAWebTablePage>().
-            AddPopup.LastName.Set(lastName);
+                AddPopup.LastName.Set(lastName);
+
+        [When(@"I set Email to ""(.*)""")]
+        public static void WhenISetEmail(string email) =>
+            Go.On<DemoQAWebTablePage>().
+                AddPopup.Email.Set(email);
 
         [Then(@"I see FirstName ""(.*)"" in a table")]
         public static void ThenISeeLastName(string firstName) =>

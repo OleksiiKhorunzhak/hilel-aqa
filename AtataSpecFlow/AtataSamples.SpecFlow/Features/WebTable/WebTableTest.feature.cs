@@ -75,14 +75,14 @@ namespace AtataSamples.SpecFlow.Features.WebTable
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("I add item to the table")]
+        [NUnit.Framework.DescriptionAttribute("I see item in the table")]
         [NUnit.Framework.CategoryAttribute("ReusesFeatureDriver")]
         [NUnit.Framework.TestCaseAttribute("John", "Wick", null)]
         [NUnit.Framework.TestCaseAttribute("Alice", "Smith", null)]
         [NUnit.Framework.TestCaseAttribute("Bob", "Johnson", null)]
         [NUnit.Framework.TestCaseAttribute("Cierra", "Vega", null)]
         [NUnit.Framework.TestCaseAttribute("Alden", "Cantrell", null)]
-        public void IAddItemToTheTable(string firstName, string lastName, string[] exampleTags)
+        public void ISeeItemInTheTable(string firstName, string lastName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "ReusesFeatureDriver"};
@@ -94,7 +94,7 @@ namespace AtataSamples.SpecFlow.Features.WebTable
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("FirstName", firstName);
             argumentsOfScenario.Add("LastName", lastName);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I add item to the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I see item in the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,6 +112,56 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I see the WebTable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
+ testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("I add item to the table")]
+        [NUnit.Framework.TestCaseAttribute("John", "Wick", "JohnWick@wick.com", null)]
+        [NUnit.Framework.TestCaseAttribute("Alice", "Smith", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Bob", "Johnson", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Cierra", "Vega", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Alden", "Cantrell", "", null)]
+        public void IAddItemToTheTable(string firstName, string lastName, string email, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("FirstName", firstName);
+            argumentsOfScenario.Add("LastName", lastName);
+            argumentsOfScenario.Add("Email", email);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I add item to the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 23
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 24
+ testRunner.Given("I am on DemoQA WebTable Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 25
+ testRunner.When("I see the WebTable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 26
+ testRunner.And("I click Add Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 27
+ testRunner.And(string.Format("I set FirstName to \"{0}\"", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
+    testRunner.And(string.Format("I set LastName to \"{0}\"", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
+    testRunner.And(string.Format("I set Email to \"{0}\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
  testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
