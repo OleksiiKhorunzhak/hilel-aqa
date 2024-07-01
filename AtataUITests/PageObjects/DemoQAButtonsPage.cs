@@ -11,6 +11,7 @@ namespace AtataUITests.PageObjects
         [FindById("rightClickBtn")]
         public Button<_> RigthClickMe { get; private set; }
 
+        [ScrollTo]
         public Button<_> ClickMe { get; private set; }
 
         [FindById("dynamicClickMessage")]

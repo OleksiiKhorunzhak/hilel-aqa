@@ -1,6 +1,4 @@
-﻿using Atata;
-
-namespace AtataUITests.PageObjects.Controls
+﻿namespace AtataUITests.PageObjects.Controls
 {
     [ControlDefinition("div", ContainingClass = "check-box-tree-wrapper", ComponentTypeName = "Tree")]
     public class CheckBoxTree<TOwner> : Control<TOwner>

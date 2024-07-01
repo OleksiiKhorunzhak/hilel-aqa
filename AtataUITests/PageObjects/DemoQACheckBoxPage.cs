@@ -1,5 +1,4 @@
-﻿using Atata;
-using AtataUITests.PageObjects.Controls;
+﻿using AtataUITests.PageObjects.Controls;
 using _ = AtataUITests.PageObjects.DemoQACheckBoxPage;
 
 namespace AtataUITests.PageObjects
