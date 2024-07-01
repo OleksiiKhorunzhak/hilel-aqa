@@ -22,9 +22,12 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: PlaywrigthUITests
     - name: Build
       run: dotnet build --no-restore
+      working-directory: PlaywrigthUITests
     - name: PWInstall
       run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+      working-directory: PlaywrigthUITests
     - name: Test
-      run: dotnet test PlaywrigthUITests/bin/Debug/net8.0/PlaywrigthUITests.dll --filter "Category=UI"
+      run: dotnet test PlaywrigthUITests/PlaywrigthUITests.csproj --filter "Category=UI"
