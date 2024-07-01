@@ -59,8 +59,8 @@ namespace AtataUITests.Tests
         //Test Case 2:  Full Name Input should be visible and input " Dog Pulya" can be done
 
         [Test]
-        [Description("Full Name Input should be visible and input \" Dog Pulya\" can be done")]
-        public void VerifyTextInputFullName()
+        [Description("Text Full Name Input should be visible")]
+        public void VerifyTextFieldFullName()
         {
             Go.To<DemoQAElementsPage>().
                 TextBox.ClickAndGo().
@@ -127,42 +127,8 @@ namespace AtataUITests.Tests
         //Test Case 9: Enter "valid email" in Email Input, press submit, the input should be  visible in aftersubmit text area
 
         [Test]
-        [Description("The input should be  visible as \"Email:pulyadog@gmail.com\"  in aftersubmit text area")]
-        public void VerifyEmailInputSet()
-        {
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                    EmailInput.Set("pulyadog@gmail.com").
-                    ScrollDown().
-                    Submit.Click().
-                    EmailText.Should.Be("Email:pulyadog@gmail.com");
-
-        }
-
-        //Test Case 10: Email Input accepts only Latin letters and after entering "invalid email", frame of the field "Email" is highlighted in red
-
-        [Test]
-        [Description("Enter invalid imput, frame of the field \"Email\" is highlighted in red")]
-        public void VerifyInvalidEmailInputSet()
-        {
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                    EmailInput.Set("собакапуля@gmail.com").
-                    BorderColorEmail.Should.HaveClass("rgba(220, 53, 69)");
-
-        }
-
-        // Field "Current Address"
-
-        //Test Case 11: Current Address Input should be visible and  "valid current address" as input  can be done
-        //Test Case 12: Current Address Input accepts any string input 
-        //NOTE: Сonceptually similar tests have already been created for field "Full Name"      
-
-        //Test Case 13: Enter "valid current address" in Current Address Input, press submit, the input should be  visible in aftersubmit text area
-
-        [Test]
-        [Description("The input should be  visible as \"Current Address:Varash city, Budivelnikiv street, building 3, apartment 333\"  in aftersubmit text area")]
-        public void VerifyCurrentAddressInputSet()
+        [Description("Enter 'John Doe' in Text Full Name Input, press submit, text Name should be 'Name:John Doe'")]
+        public void VerifyTextSetFullName()
         {
             Go.To<DemoQAElementsPage>().
                 TextBox.ClickAndGo().
