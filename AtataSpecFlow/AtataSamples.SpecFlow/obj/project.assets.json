@@ -5635,9 +5635,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
+      "projectUniqueName": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
       "projectName": "AtataSamples.SpecFlow",
-      "projectPath": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
+      "projectPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
       "packagesPath": "C:\\Users\\yusta\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\obj\\",
       "projectStyle": "PackageReference",
@@ -5718,20 +5718,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
