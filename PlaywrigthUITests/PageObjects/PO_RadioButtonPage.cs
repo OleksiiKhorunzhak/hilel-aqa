@@ -54,7 +54,7 @@ namespace PlaywrigthUITests.PageObjects
             await Assertions.Expect(page.Locator(radioButtonID)).ToBeEnabledAsync();
         }
 
-        public async Task isRadioButtonDisabled(string radioButtonID)
+        public async Task IsRadioButtonDisabled(string radioButtonID)
         {
             await Assertions.Expect(page.Locator(radioButtonID)).ToBeDisabledAsync();
         }
