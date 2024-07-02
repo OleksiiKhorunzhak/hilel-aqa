@@ -11,12 +11,12 @@
   // Other environment specific configuration properties can be added here.
   "culture": "en-US",
   "useAllNUnitFeatures": true,
-  "baseRetryTimeout": 40, // Sets the base retry timeout in seconds.
+  "baseRetryTimeout": 15, // Sets the base retry timeout in seconds.
   "baseRetryInterval": 0.5, // Sets the base retry interval in seconds.
-  "elementFindTimeout": 40, // Sets the element find timeout in seconds.
+  "elementFindTimeout": 15, // Sets the element find timeout in seconds.
   "elementFindRetryInterval": 0.5, // Sets the element find retry interval in seconds.
-  "waitingTimeout": 15, // Sets the waiting timeout in seconds.
+  "waitingTimeout": 10, // Sets the waiting timeout in seconds.
   "waitingRetryInterval": 0.5, // Sets the waiting retry interval in seconds.
-  "verificationTimeout": 15, // Sets the verification timeout in seconds.
+  "verificationTimeout": 10, // Sets the verification timeout in seconds.
   "verificationRetryInterval": 0.5 // Sets the verification retry interval in seconds.
 }

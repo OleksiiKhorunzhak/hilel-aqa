@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace AtataUITests.Tests
 {
+    //[Category("RadioButtonTests")]
     internal class RadioButtonTests : UITestFixture
     {
         [Test]

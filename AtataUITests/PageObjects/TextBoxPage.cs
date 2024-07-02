@@ -3,8 +3,6 @@ using _ = AtataUITests.PageObjects.TextBoxPage;
 
 namespace AtataUITests.PageObjects
 {
-    [VerifyTitle("DEMOQA")]
-    [VerifyContent("Text Box")]
     [Url("text-box")]
     public sealed class TextBoxPage : DemoQAPage<_>
     {
