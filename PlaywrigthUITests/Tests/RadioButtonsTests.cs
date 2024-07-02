@@ -69,7 +69,7 @@ namespace PlaywrigthUITests.Tests
         {
             await _RadioButtonPage.GoToURL(testPageUrl);
             await _RadioButtonPage.IsRadioButtonVisible(noRadioId);
-            await _RadioButtonPage.isRadioButtonDisabled(noRadioId);
+            await _RadioButtonPage.IsRadioButtonDisabled(noRadioId);
             //await _RadioButtonPage.CheckRadioButton("No");
             await _RadioButtonPage.IsRadioButtonNotChecked(noRadioId);
             await _RadioButtonPage.IsSuccessTextNotVisible("You have selected No");
