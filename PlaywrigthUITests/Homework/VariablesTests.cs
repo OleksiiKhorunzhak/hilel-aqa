@@ -1,6 +1,6 @@
 ﻿namespace Homework
 {
-    public sealed class VariablesTests
+    public class VariablesTests
     {
         [Test]
         [Description("TC-21 higth expected to be bigger than low")]

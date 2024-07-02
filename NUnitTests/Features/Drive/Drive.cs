@@ -1,31 +1,31 @@
 ﻿namespace NUnitTests.Features.Drive
 {
-    //[TestFixture]
+    [TestFixture]
     internal class Drive : DrivePresetup
     {
         //Mocked data
-        //TODO Refactor by DRY
-        private static readonly byte ExpectedAccelerateInput = 255;
-        private static readonly byte Speed = 68;
-        private static readonly byte BreaksInput = 18;
+        public byte AccelerateInput = 255;
+        public byte Speed = 68;
+        public byte BreaksInput = 18;
+        public byte ExpectedGear = 4;
 
-        //TODO: Accelerate Test
+        //Accelerate Test
         [Test, Description("Ensure that Acceleration correctly retrieves the current acceleration")]
         public void AccelerateTest()
         {
-            Assert.That(Accelerate, Is.EqualTo(ExpectedAccelerateInput), "Acceleration doest equal ExpectedAccelerateInput");
+            Assert.That(Accelerate, Is.EqualTo(AccelerateInput), "Acceleration doest equal AccelerateInput");
         }
-        //TODO: Gear Test
+        //Gear Test
         [Test]
         public void GearTest()
         {
-            Assert.That(Gear, Is.EqualTo(4), "Gear not equal 4");
+            Assert.That(Gear, Is.EqualTo(ExpectedGear), "Gear not equal 4");
         }
-        //TODO: Breaks Test
+        //Breaks Test
         [Test]
         public void BreaksTest()
         {
-            Assert.That(BreaksPower, Is.EqualTo(18), "Break does not equal value");
+            Assert.That(BreaksPower, Is.EqualTo(BreaksInput), "Break does not equal value");
         }
 
         [Test]

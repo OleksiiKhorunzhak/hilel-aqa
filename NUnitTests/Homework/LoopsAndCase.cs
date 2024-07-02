@@ -28,6 +28,9 @@ namespace NUnitTests.Homework
             Assert.That(counter, Is.EqualTo(expectedNameCount), $"counter is NOT equal to {expectedNameCount}");
         }
 
+        //private float number = 1.01F;
+        private int expectedNameLength = 5;
+
         [Test, Description("TODO use while loop to get a new list of car brands where brand name is less than 5 characters.")]
         public void TestWhileLoop()
         {
@@ -52,14 +55,11 @@ namespace NUnitTests.Homework
             }
         }
 
-        float number = 1.01F;
-        private int expectedNameLength;
-
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
         public void TestForLoop()
         {
             List<string> ShortCarManufacturerNames = new(CarManufacturers);
-            int expectedNameLength = 5;
+            int tresholdNameLength = 5;
             // apply next logic
             // caution - starting loop from last element to avoid modifying a collection while iterating over it
             // for index equal ShortCarManufacturerNames length - 1, while index less or equal 0, increment index
@@ -69,14 +69,14 @@ namespace NUnitTests.Homework
             // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters
             for (int i = ShortCarManufacturerNames.Count - 1; i >= 0; i--)
             {
-                if (ShortCarManufacturerNames[i].Length <= expectedNameLength)
+                if (ShortCarManufacturerNames[i].Length <= tresholdNameLength)
                 {
                     ShortCarManufacturerNames.RemoveAt(i);
                 }
             }
             foreach (string name in ShortCarManufacturerNames)
             {
-                Assert.That(name.Length, Is.GreaterThanOrEqualTo(expectedNameLength), $"Name length is NOT less than {expectedNameLength} craracters");
+                Assert.That(name.Length, Is.GreaterThanOrEqualTo(tresholdNameLength), $"Name length is NOT less than {tresholdNameLength} craracters");
             }
         }
 

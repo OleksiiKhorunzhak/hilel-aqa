@@ -8,7 +8,7 @@ namespace PlaywrigthUITests.PageObjects
         private string elementsPageUrl = "https://demoqa.com/elements";
         private string textBoxPageUrl = "https://demoqa.com/text-box";
         private string fullNamePlaceholder = "Full Name";
-        private string submitButtonRole = "button";
+        //private string submitButtonRole = "button";
         private string submitButtonName = "Submit";
 
         public DemoQATextBoxPage(IPage page)

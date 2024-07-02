@@ -21,7 +21,7 @@ namespace NUnitTests.Features.Drive
         public void GetAcceleration(byte acceletareInput)
         {
             Engine engine = new Engine();
-            Accelerate = (byte)engine.Accelerate(acceletareInput);
+            Accelerate = engine.Accelerate(acceletareInput);
         }
 
         //Transmission sub feature Gear presetup

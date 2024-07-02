@@ -2,7 +2,7 @@
 
 namespace Homework
 {
-    public sealed class VariablesTests : UITestFixture
+    public class VariablesTests : UITestFixture
     {
         protected static string Combine(int higth) => "higth equals " + higth;
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Homework
 {
-    public sealed class VariablesTests
+    public class VariablesTests
     {
         protected static string Combine(int higth) => "higth equals " + higth;
 

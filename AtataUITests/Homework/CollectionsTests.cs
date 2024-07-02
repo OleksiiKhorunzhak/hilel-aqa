@@ -59,7 +59,6 @@ namespace Homework
         [Description("TC-41 first expect to be Kyiv")]
         public void FirstCityTest()
         {
-            //TODO: fix code below
             string expectedCity = "Kyiv";
             Assert.That(UkrainianCitiesArray[0], Is.EqualTo(expectedCity), "First city is not Kyiv");
         }
@@ -68,7 +67,6 @@ namespace Homework
         [Description("TC-41 city quantity expected to be 21")]
         public void ArrayLengthTest()
         {
-            //TODO: fix code below
             int expectedQuantity = 21;
             Assert.That(UkrainianCitiesArray.Length, Is.EqualTo(expectedQuantity), "City quantity is not 21");
         }
@@ -79,27 +77,22 @@ namespace Homework
         {
             // Initialize a new string array of the same length as UkrainianCities
             string[] sortedArray = new string[UkrainianCitiesArray.Length];
-
             // Copy the contents of UkrainianCities into sortedArray
-            //TODO: Uncomment and fix Copy() 
-            //Array.Copy(*, sortedArray, UkrainianCitiesArray.Length);
-
+            Array.Copy(UkrainianCitiesArray, sortedArray, UkrainianCitiesArray.Length);
             // Sort sortedArray in place
-            //TODO: fix test below **
-            //Array.*(sortedArray);
+            Array.Sort(sortedArray);
+            Assert.That(sortedArray, Is.Ordered.Ascending, "sortedArray is ordered DESC");
+            //CollectionAssert.IsOrdered(sortedArray, "The sorted array is not in ascending order."); //2nd variant
+            Assert.That(sortedArray, Is.Ordered, "The sorted array is not in ascending order.");
 
-            // Assert that sortedArray is in ascending order
-            CollectionAssert.IsOrdered(sortedArray, "The sorted array is not in ascending order.");
         }
 
         [Test]
         [Description("TC-42 array should not contain terrorist cities")]
         public void ArrayNotContainTest()
         {
-            string terroristsCity = "Moskow";
-
-            //TODO: Uncomment and put correct assert definition
-            //(UkrainianCitiesArray, terroristsCity, "Terroris city " + terroristsCity + " is not Ukrainian city.");
+            string unexpectedCity = "Some City";
+            Assert.That(UkrainianCitiesArray, Is.Not.Contain(unexpectedCity), $"Unexpected city " + unexpectedCity + " is not Ukrainian city.");
         }
 
         [Test]
@@ -108,8 +101,7 @@ namespace Homework
         {
             string expectedLastCity = "Rivne";
             int lastIndex = UkrainianCitiesArray.Length - 1;
-            //TODO: Uncomment and put correct assert definition
-            //Assert.That();
+            Assert.That(UkrainianCitiesArray[lastIndex], Is.EqualTo(expectedLastCity), "last city is not Rivne");
         }
 
         [Test]
@@ -117,8 +109,7 @@ namespace Homework
         public void ListContains()
         {
             string cityToCheck = "Kyiv";
-            //TODO: Uncomment and put correct assert type and method
-            //(UkrainianCitiesList, cityToCheck, "List does not contain Kyiv");
+            Assert.That(UkrainianCitiesList.Contains(cityToCheck), "List does not contain Kyiv");
         }
 
         [Test]
@@ -126,7 +117,6 @@ namespace Homework
         public void ListCountTest()
         {
             int expectedCount = 21;
-            //TODO: Fix asssertion
             Assert.That(UkrainianCitiesList.Count, Is.EqualTo(expectedCount), "City list count is not 21");
         }
 
@@ -135,8 +125,12 @@ namespace Homework
         public void AddCityIncreasesListSizeTest()
         {
             var initialCount = UkrainianCitiesList.Count;
-            //TODO: use Add() to add new city to cities list
+            var newCity = "Any new City";
+            UkrainianCitiesList.Add(newCity);
             Assert.That(UkrainianCitiesList.Count, Is.EqualTo(initialCount + 1), "Adding a city did not increase the list size as expected");
+            // Cleanup: Remove the added city
+            UkrainianCitiesList.Remove(newCity);
+            Assert.That(UkrainianCitiesList.Count, Is.EqualTo(initialCount), "Removing the city did not restore the list size as expected");
         }
     }
 }

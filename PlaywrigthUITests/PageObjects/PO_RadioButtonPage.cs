@@ -11,45 +11,63 @@ namespace PlaywrigthUITests.PageObjects
     internal class PO_RadioButtonPage
     {
         private IPage page;
-        private string RadioButtonPageUrl = "https://demoqa.com/radio-button";
 
         public PO_RadioButtonPage(IPage page)
         {
             this.page = page;
         }
 
-        public async Task GoToRadioButtonPage()
+        //Page:
+        public async Task GoToURL(string testPageUrl)
         {
-            await page.GotoAsync(RadioButtonPageUrl);
+            await page.GotoAsync(testPageUrl);
         }
 
-        public async Task CheckYesRadioButton()
+        public async Task IsPageH1Visible(string pageH1)
         {
-            await page.GetByText("Yes").CheckAsync();
-        }
-        public async Task VerifySuccessTextYesVisible()
-        {
-            await Assertions.Expect(page.GetByText("You have selected Yes")).ToBeVisibleAsync();
+            await Assertions.Expect(page.GetByRole(AriaRole.Heading, new() { Name = pageH1 })).ToBeVisibleAsync();
         }
 
-        public async Task isImpressiveRadioButtonChecked()
+        //Radiobuttons:
+        public async Task IsRadioButtonVisible(string radioButtonID)
         {
-            await page.GetByText("Impressive").CheckAsync();
+            await Assertions.Expect(page.Locator(radioButtonID)).ToBeVisibleAsync();
         }
 
-        public async Task VerifyTextYesVisible()
+        public async Task CheckRadioButton(string radioButton)
         {
-            await Assertions.Expect(page.GetByText("You have selected Yes")).ToBeVisibleAsync();
+            await page.GetByText(radioButton).CheckAsync(); 
         }
 
-        public async Task VerifyYesRadioChecked()
+        public async Task IsRadioButtonChecked(string radioButtonID)
         {
-            await page.Locator("#yesRadio").IsCheckedAsync();
+            await Assertions.Expect(page.Locator(radioButtonID)).ToBeCheckedAsync();
         }
 
-        public async Task VerifyImpressiveRadioButton()
+        public async Task IsRadioButtonNotChecked(string radioButtonID)
         {
-            await page.Locator("#impressiveRadio").IsCheckedAsync();
+            await Assertions.Expect(page.Locator(radioButtonID)).Not.ToBeCheckedAsync();
+        }
+
+        public async Task IsRadioButtonEnabled(string radioButtonID)
+        {
+            await Assertions.Expect(page.Locator(radioButtonID)).ToBeEnabledAsync();
+        }
+
+        public async Task isRadioButtonDisabled(string radioButtonID)
+        {
+            await Assertions.Expect(page.Locator(radioButtonID)).ToBeDisabledAsync();
+        }
+
+        //Success text:
+        public async Task IsSuccessTextVisible(string successText)  
+        {
+            await Assertions.Expect(page.GetByText(successText)).ToBeVisibleAsync();
+        }
+
+        public async Task IsSuccessTextNotVisible(string successText)
+        {
+            await Assertions.Expect(page.GetByText(successText)).Not.ToBeVisibleAsync();
         }
     }
 }
