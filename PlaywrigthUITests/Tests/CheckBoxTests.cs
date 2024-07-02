@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.Tests
 {
+    //[Category("CheckBoxTests")]
     internal class CheckBoxTests : UITestFixture
     {
         private PO_CheckBoxPage _CheckBoxPage;

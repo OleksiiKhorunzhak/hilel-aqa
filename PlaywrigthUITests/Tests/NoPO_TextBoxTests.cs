@@ -1,6 +1,7 @@
 ﻿using Microsoft.Playwright;
 namespace PlaywrigthUITests.Tests
 {
+    //[Category("NoPO_TextBoxTests")]
     [Description("Verify text box on buttons page")]
     class NoPO_TextBoxTests : UITestFixture
     {

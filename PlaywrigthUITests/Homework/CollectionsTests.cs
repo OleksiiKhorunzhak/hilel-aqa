@@ -81,15 +81,15 @@ namespace Homework
             // Sort sortedArray in place
             Array.Sort(sortedArray);
             Assert.That(sortedArray, Is.Ordered.Ascending, "sortedArray is ordered DESC");
-            CollectionAssert.IsOrdered(sortedArray, "The sorted array is not in ascending order."); //2nd variant
+            //CollectionAssert.IsOrdered(sortedArray, "The sorted array is not in ascending order."); //2nd variant
         }
 
         [Test]
         [Description("TC-42 array should not contain terrorist cities")]
         public void ArrayNotContainTest()
         {
-            string terroristsCity = "Moskow";
-            Assert.That(UkrainianCitiesArray, Is.Not.Contain(terroristsCity), "Terroris city " + terroristsCity + " is not Ukrainian city.");
+            string unexpectedCity = "Some City";
+            Assert.That(UkrainianCitiesArray, Is.Not.Contain(unexpectedCity), $"Unexpected city " + unexpectedCity + " is not Ukrainian city.");
         }
 
         [Test]
