@@ -15,7 +15,7 @@ namespace PlaywrigthUITests.Tests
         public async Task TextBoxPageSetUp()
         {
             await Page.GotoAsync(textBoxURL);
-            //await Page.WaitForURLAsync(textBoxURL);
+            //await page.WaitForURLAsync(textBoxURL);
         }
 
         [Test, Retry(2)]

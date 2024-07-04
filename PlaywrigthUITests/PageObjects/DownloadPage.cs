@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class PO_DownloadPage
+    internal class DownloadPage
     {
         private IPage page;
         private string UploadDownloadPageUrl = "https://demoqa.com/upload-download";
 
-        public PO_DownloadPage(IPage page)
+        public DownloadPage(IPage page)
         {
             this.page = page;
         }

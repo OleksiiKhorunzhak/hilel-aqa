@@ -11,17 +11,17 @@ namespace PlaywrigthUITests.Tests
     //[Category("RadioButtonsTests")]
     internal class RadioButtonsTests : UITestFixture
     {
-        private PO_RadioButtonPage _RadioButtonPage;
+        private RadioButtonPage _RadioButtonPage;
 
         [SetUp]
         public void SetupRadioButtonPage()
         {
-            _RadioButtonPage = new PO_RadioButtonPage(Page);
+            _RadioButtonPage = new RadioButtonPage(Page);
         }
 
         //TEST DATA:_______________________________________
 
-        //Page:
+        //page:
         private readonly string testPageUrl = "https://demoqa.com/radio-button";
         private readonly string testPageH1 = "Radio Button";
         //Labels:
@@ -77,7 +77,7 @@ namespace PlaywrigthUITests.Tests
 
         //Homework Lesson_9
         //TODO need to be finished: 
-        //TC-5 : Verify text 'You have selected Impressive' is not visible after Page refresh
+        //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
 
     }
 }

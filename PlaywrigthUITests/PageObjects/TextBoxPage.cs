@@ -9,10 +9,10 @@ using TechTalk.SpecFlow.Assist.ValueRetrievers;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class PO_TextBoxPage
+    internal class TextBoxPage
     {
         private IPage page;
-        public PO_TextBoxPage(IPage page)
+        public TextBoxPage(IPage page)
         {
             this.page = page;
         }

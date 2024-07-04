@@ -5,12 +5,12 @@ namespace PlaywrigthUITests.Tests
     //[Category("DownloadUploadTests")]
     internal class DownloadUploadTests : UITestFixture
     {
-        private PO_DownloadPage _UpDownloadPage;
+        private DownloadPage _UpDownloadPage;
 
         [SetUp]
         public void SetupDemoQAPage()
         {
-            _UpDownloadPage = new PO_DownloadPage(Page);
+            _UpDownloadPage = new DownloadPage(Page);
         }
 
         [Test, Retry(2), Description("Donwload file verify file updated")]

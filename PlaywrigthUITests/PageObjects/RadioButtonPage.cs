@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class PO_RadioButtonPage
+    internal class RadioButtonPage
     {
         private IPage page;
 
-        public PO_RadioButtonPage(IPage page)
+        public RadioButtonPage(IPage page)
         {
             this.page = page;
         }
 
-        //Page:
+        //page:
         public async Task GoToURL(string testPageUrl)
         {
             await page.GotoAsync(testPageUrl);

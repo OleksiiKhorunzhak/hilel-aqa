@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class PO_CheckBoxPage
+    internal class CheckBoxPage
     {
         private IPage page;
-        public PO_CheckBoxPage(IPage page)
+        public CheckBoxPage(IPage page)
         {
             this.page = page;
         }

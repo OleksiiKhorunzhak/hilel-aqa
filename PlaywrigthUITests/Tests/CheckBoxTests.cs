@@ -12,12 +12,12 @@ namespace PlaywrigthUITests.Tests
     //[Category("CheckBoxTests")]
     internal class CheckBoxTests : UITestFixture
     {
-        private PO_CheckBoxPage _CheckBoxPage;
+        private CheckBoxPage _CheckBoxPage;
 
         [SetUp]
         public void SetupCheckBoxPage()
         {
-            _CheckBoxPage = new PO_CheckBoxPage(Page);
+            _CheckBoxPage = new CheckBoxPage(Page);
         }
 
         [Test, Retry(2)]
