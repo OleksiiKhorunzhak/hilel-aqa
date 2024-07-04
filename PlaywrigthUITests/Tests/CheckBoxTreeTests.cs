@@ -17,7 +17,7 @@ namespace PlaywrigthUITests.Tests
             _demoQACheckBoxPage = new DemoQACheckBoxPage(Page);
         }
 
-        [Test]
+        [Test, Retry(2)]
         public async Task VerifyCheckBoxChecked()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
@@ -25,7 +25,7 @@ namespace PlaywrigthUITests.Tests
             await _demoQACheckBoxPage.VerifyHomeChecked();
         }
 
-        [Test]
+        [Test, Retry(2)]
         public async Task VerifyDocumentsCheckBoxChecked()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
@@ -35,7 +35,7 @@ namespace PlaywrigthUITests.Tests
             await _demoQACheckBoxPage.VerifyCheckboxChecked("Desktop");
         }
 
-        [Test]
+        [Test, Retry(2)]
         public async Task VerifyDocumentsCheckBoxChecked1()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();

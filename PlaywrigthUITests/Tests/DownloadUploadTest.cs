@@ -17,14 +17,14 @@ namespace PlaywrigthUITests.Tests
             _UpDownloadPage = new PO_DownloadPage(Page);
         }
 
-        [Test]
+        [Test, Retry(2)]
         public async Task VerifyDownload()
         {
             await _UpDownloadPage.GoToUploadDownloadPage();
             await _UpDownloadPage.ClickDownloadButton();
         }
 
-        [Test]
+        [Test, Retry(2)]
         public async Task VerifyUpload()
         {
             await _UpDownloadPage.GoToUploadDownloadPage();

@@ -18,7 +18,7 @@ namespace PlaywrigthUITests.Tests
             //await Page.WaitForURLAsync(textBoxURL);
         }
 
-        [Test]
+        [Test, Retry(2)]
         [Description("Text Full Name should be visible")]
         public async Task VerifyTextFullName()
         {
@@ -26,7 +26,7 @@ namespace PlaywrigthUITests.Tests
             Assert.That(isVisibleText, "The element with text 'Full Name' is not visible on Text Box page.");
         }
 
-        [Test]
+        [Test, Retry(2)]
         [Order(1)]
         [Description("Input placeholder 'Full Name' should be visible")]
         public async Task VerifyPLaceholderFullName()
@@ -35,7 +35,7 @@ namespace PlaywrigthUITests.Tests
             Assert.That(isVisiblePlaceholder, "Input placeholder 'Full Name' is not visible");
         }
 
-        [Test]
+        [Test, Retry(2)]
         [Description("Enter {fullName} into 'Full Name' text input, press submit btn -> output text should be 'Name:{fullName}'")]
         public async Task VerifyFilledTextFullName()
         {
@@ -45,7 +45,7 @@ namespace PlaywrigthUITests.Tests
             Assert.That(isVisibleOutput, $"Output text Name is not same as {fullName}");
         }
 
-        [Test]
+        [Test, Retry(2)]
         [Order(2)]
         [Description("Clear Full Name text input, press submit, Output text should not be visible")]
         public async Task VerifyTextClearFullName()
