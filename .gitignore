@@ -25,3 +25,6 @@
 /AtataUITests2
 /PlayWrigthMyTest
 /PlayWrigthMyTest/obj
+/PlaywrigthUITests/PageObjects/DemoQACheckBoxPage.cs
+/PlaywrigthUITests/PageObjects/DemoQARadioButtonPage.cs
+/PlaywrigthUITests/PageObjects/DemoQATextBoxPage.cs

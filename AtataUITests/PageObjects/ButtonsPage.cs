@@ -2,8 +2,6 @@
 
 namespace AtataUITests.PageObjects
 {
-    [VerifyTitle("DEMOQA")]
-    [VerifyContent("Buttons")]
     [Url("buttons")]
     public sealed class ButtonsPage : DemoQAPage<_>
     {

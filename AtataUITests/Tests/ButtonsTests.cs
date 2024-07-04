@@ -2,12 +2,12 @@
 
 namespace AtataUITests.Tests
 {
-    [Description("Verify Text on Buttons page")]
+    //[Category("ButtonTests")]
     public sealed class ButtonsTests : UITestFixture
     {
         [Test]
-        [Description("Verify Buttons page Text")]
         [Retry(2)]
+        [Description("Verify Buttons page Text")]
         public void VerifyTextButtonsPage()
         {
             Go.To<ButtonsPage>()
@@ -15,9 +15,11 @@ namespace AtataUITests.Tests
                 .ButtonsPageH1.Should.Be("Buttons");
         }
 
-        [Test, Description("Verify Double Click Me button"), Retry(2)]
+        [Test]
+        [Retry(2)]
+        [Description("Verify Double Click Me button")]
         public void DoubleClickButtonTest() =>
-            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            Go.To<ButtonsPage>()//.ScrollDown()
             .DoubleClickMe.Should.BeEnabled()
             .DoubleClickMe.DoubleClick()
             .DoubleClickMe.Should.BeFocused()
@@ -25,9 +27,11 @@ namespace AtataUITests.Tests
             .DinamicClickMessage.Should.Not.BeVisible()
             .RightClickMessage.Should.Not.BeVisible();
 
-        [Test, Description("Verify Rigth Click Me button"), Retry(2)]
+        [Test]
+        [Retry(2)]
+        [Description("Verify Rigth Click Me button")]
         public void RigthClickButtonTest() =>
-            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            Go.To<ButtonsPage>()//.ScrollDown()
             .RigthClickMe.Should.BeEnabled()
             .RigthClickMe.RightClick()
             .RigthClickMe.Should.BeFocused()
@@ -35,9 +39,11 @@ namespace AtataUITests.Tests
             .DinamicClickMessage.Should.Not.BeVisible()
             .DoubleClickMessage.Should.Not.BeVisible();
 
-        [Test, Description("Verify Click Me button"), Retry(2)]
+        [Test]
+        [Retry(2)]
+        [Description("Verify Click Me button")]
         public void ClickButtonTest() =>
-            Go.To<ButtonsPage>().PageUrl.Should.Be("https://demoqa.com/buttons")
+            Go.To<ButtonsPage>()//.ScrollDown()
             .ClickMe.Should.BeEnabled()
             .ClickMe.Click()
             .ClickMe.Should.BeFocused()

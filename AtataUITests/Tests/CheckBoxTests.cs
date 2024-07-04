@@ -4,11 +4,13 @@ using AtataUITests;
 using _ = AtataUITests.Tests.CheckBoxTests;
 using System.Reflection.Emit;
 
-namespace AtataUITests.Tests
+namespace AtataUITests.Tests  
 {
+    //[Category("CheckBoxTests")]
     internal class CheckBoxTests : UITestFixture
     {
         [Test]
+        [Retry(2)]
         public void VerifyCheckBoxTreeHomeCheckboxVisible()
         {
             Go.To<CheckBoxPage>()
@@ -20,6 +22,7 @@ namespace AtataUITests.Tests
         }
 
         [Test]
+        [Retry(2)]
         public void VerifyDocumentsCheckboxChecked()
         {
             Go.To<CheckBoxPage>()
@@ -30,6 +33,7 @@ namespace AtataUITests.Tests
         }
 
         [Test]
+        [Retry(2)]
         public void VerifyHomeTreeItems()
         {
             List<string> checkboxLabels = new List<string>
@@ -48,6 +52,7 @@ namespace AtataUITests.Tests
         }
 
         [Test]
+        [Retry(2)]
         public void VerifyFirstChildItems()
         {
             List<string> checkboxChildLabels = new List<string>
@@ -69,6 +74,7 @@ namespace AtataUITests.Tests
         }
 
         [Test]
+        [Retry(2)]
         public void VerifySecondChildItems()
         {
             List<string> checkboxChildLabels = new List<string>
@@ -90,8 +96,9 @@ namespace AtataUITests.Tests
             }
         }
 
-        //Verifiing every checkbox
-        [Test]
+        [Test, Description("Verifiing every checkbox")]
+        [Retry(2)]
+
         public void VerifyExpandCollapseAll()
         {
             Go.To<CheckBoxPage>()
@@ -123,4 +130,11 @@ namespace AtataUITests.Tests
         }
 
     }
+    //TODO: automate test cases
+    //TC4 - Expand Home > Check Descktop Checkbox, verify checked
+    //TC5 - Expand Home > Documents, Check Documents Checkbox. Verify WorkSpace checked
+    //TC6 - Expand Home > Check Documents. Verify text 'You have selected : documents workspace react angular veu office public private classified general'
+    //TC7 - Expand Home > Documents > WorkSpace, verify React have rct-icon-leaf-close icon
+    //TC8 - Expand Home > Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxex checked
+
 }

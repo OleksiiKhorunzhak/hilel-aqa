@@ -16,8 +16,5 @@ namespace AtataUITests.PageObjects
 
         [FindByTitle("Collapse all")]
         public Button<_> CollapseAll { get; set; }
-
-        //[FindByClass("rct-title")]
-        //public Text<_> ItemTitle { get; set; }
     }
 }

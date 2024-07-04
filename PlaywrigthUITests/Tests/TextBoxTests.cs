@@ -6,17 +6,17 @@ namespace PlaywrigthUITests.Tests
     //[Category("TextBoxTests")]
     internal class TextBoxTests : UITestFixture
     {
-        private PO_TextBoxPage _TextBoxPage;
+        private TextBoxPage _TextBoxPage;
 
         [SetUp]
         public void SetupTextBoxPage()
         {
-            _TextBoxPage = new PO_TextBoxPage(Page);
+            _TextBoxPage = new TextBoxPage(Page);
         }
 
         //TEST DATA:_______________________________________
 
-        //Page:
+        //page:
         public string pageUrl = "https://demoqa.com/text-box";
         private string pageH1 = "Text Box";
         //Labels:

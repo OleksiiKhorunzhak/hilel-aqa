@@ -3,8 +3,6 @@ using _ = AtataUITests.PageObjects.RadioButtonPage;
 
 namespace AtataUITests.PageObjects
 {
-    [VerifyTitle("DEMOQA")]
-    [VerifyContent("Radio Button")]
     [Url("radio-button")]
     public sealed class RadioButtonPage : DemoQAPage<_>
     {

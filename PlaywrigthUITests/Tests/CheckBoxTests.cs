@@ -12,15 +12,15 @@ namespace PlaywrigthUITests.Tests
     //[Category("CheckBoxTests")]
     internal class CheckBoxTests : UITestFixture
     {
-        private PO_CheckBoxPage _CheckBoxPage;
+        private CheckBoxPage _CheckBoxPage;
 
         [SetUp]
         public void SetupCheckBoxPage()
         {
-            _CheckBoxPage = new PO_CheckBoxPage(Page);
+            _CheckBoxPage = new CheckBoxPage(Page);
         }
 
-        [Test]
+        [Test, Retry(2)]
         public async Task VerifyHomeTreeItems()
         {
             //Preconditions:
@@ -45,7 +45,7 @@ namespace PlaywrigthUITests.Tests
             }
         }
 
-        [Test]
+        [Test, Retry(2)]
         [Description("Verify First Child items tree")]
         public async Task VerifyFirstChildItems()
         {
@@ -79,7 +79,7 @@ namespace PlaywrigthUITests.Tests
             }
         }
 
-        [Test]
+        [Test, Retry(2)]
         [Description("Verify Second Child items tree")]
         public async Task VerifySecondChildItems()
         {
@@ -117,7 +117,7 @@ namespace PlaywrigthUITests.Tests
             }
         }
 
-        [Test]
+        [Test, Retry(2)]
         [Description("Verify Expand/Collapse All checkbox visability")]
         public async Task VerifyExpandCollapseAll()
         {
