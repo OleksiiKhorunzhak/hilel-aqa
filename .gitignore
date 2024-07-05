@@ -37,3 +37,16 @@
 /PlaywrigthUITests/PageObjects/DemoQAWebTablesPage.cs
 /.github/workflows/PlaywrigthUITests.yml
 /.github/workflows/dotnet.yml
+/AtataSpecFlow/AtataSamples.SpecFlow/bin/Debug/net6.0
+/AtataSpecFlow/AtataSamples.SpecFlow/obj
+/PlaywrigthSpecFlow/bin/Debug/net8.0
+/PlaywrigthSpecFlow/obj
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQAButtonsPage.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQACheckBoxPage.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQADownloadUploadPage.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQADynamicPropertiesPage.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQAElementsPage.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQAPage.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQARadioButtonPage.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQATextBoxPage.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/PageObjects/DemoQAWebTablePage.cs
