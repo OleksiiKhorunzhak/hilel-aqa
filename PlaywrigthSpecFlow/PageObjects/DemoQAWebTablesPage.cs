@@ -1,13 +1,13 @@
 ﻿using Microsoft.Playwright;
 using TechTalk.SpecFlow;
 
-namespace PlaywrightSpecFlow.PageObjects 
+namespace PlaywrightSpecFlow.PageObjects
 {
     [Binding]
     internal class DemoQAWebTablesPage
     {
-        private IPage page;
-        private string WebTablePageUrl = "https://demoqa.com/webtables";
+        private readonly IPage page;
+        private readonly string WebTablePageUrl = "https://demoqa.com/webtables";
 
         public DemoQAWebTablesPage(IPage page)
         {

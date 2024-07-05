@@ -4,12 +4,12 @@ namespace PlaywrigthSpecFlow.PageObjects
 {
     internal class DemoQATextBoxPage
     {
-        private IPage page;
-        private string elementsPageUrl = "https://demoqa.com/elements";
-        private string textBoxPageUrl = "https://demoqa.com/text-box";
-        private string fullNamePlaceholder = "Full Name";
-        //private string submitButtonRole = "button";
-        private string submitButtonName = "Submit";
+        private readonly IPage page;
+        private readonly string elementsPageUrl = "https://demoqa.com/elements";
+        private readonly string textBoxPageUrl = "https://demoqa.com/text-box";
+        private readonly string fullNamePlaceholder = "Full Name";
+        //private readonly string submitButtonRole = "button";
+        private readonly string submitButtonName = "Submit";
 
         public DemoQATextBoxPage(IPage page)
         {

@@ -4,9 +4,9 @@ namespace PlaywrigthSpecFlow.PageObjects
 {
     internal class DemoQARadioButtonPage
     {
-        private IPage page;
-        private string elementsPageUrl = "https://demoqa.com/elements";
-        private string RadioButtonPageUrl = "https://demoqa.com/radio-button";
+        private readonly IPage page;
+        private readonly string elementsPageUrl = "https://demoqa.com/elements";
+        private readonly string RadioButtonPageUrl = "https://demoqa.com/radio-button";
 
         public DemoQARadioButtonPage(IPage page)
         {

@@ -5,24 +5,24 @@ namespace PlaywrigthSpecFlow.PageObjects
 {
     internal class DemoQADownloadPage
     {
-        private IPage Page;
-        private string RadioButtonPageUrl = "https://demoqa.com/upload-download";
+        private readonly IPage page;
+        private readonly string RadioButtonPageUrl = "https://demoqa.com/upload-download";
 
         public DemoQADownloadPage(IPage page)
         {
-            this.Page = page;
+            this.page = page;
         }
 
         public async Task GoToDemoQaUploadDownloadPage()
         {
-            await Page.GotoAsync(RadioButtonPageUrl);
+            await page.GotoAsync(RadioButtonPageUrl);
         }
 
         public async Task ClickDownloadButton()
         {
-            var download = await Page.RunAndWaitForDownloadAsync(async () =>
+            var download = await page.RunAndWaitForDownloadAsync(async () =>
             {
-                await Page.GetByRole(AriaRole.Link, new() { NameString = "Download" }).ClickAsync();
+                await page.GetByRole(AriaRole.Link, new() { NameString = "Download" }).ClickAsync();
             });
 
             if (download != null)
@@ -50,9 +50,9 @@ namespace PlaywrigthSpecFlow.PageObjects
         public async Task VerifyFileDownloaded()
         {
             // Trigger file download
-            var download = await Page.RunAndWaitForDownloadAsync(async () =>
+            var download = await page.RunAndWaitForDownloadAsync(async () =>
             {
-                await Page.GetByRole(AriaRole.Link, new() { NameString = "Download" }).ClickAsync();
+                await page.GetByRole(AriaRole.Link, new() { NameString = "Download" }).ClickAsync();
             });
 
             if (download != null)
@@ -73,9 +73,9 @@ namespace PlaywrigthSpecFlow.PageObjects
         public async Task VerifyDownloadedFileUploadedSucessfully()
         {
             string inputFile = HelperMethods.GetProjectFilePath() + "bin/Debug/net8.0/downloads/sampleFile.jpeg";
-            await Page.GetByLabel("Select a file").ClickAsync();
-            await Page.GetByLabel("Select a file").SetInputFilesAsync(new[] { inputFile });
-            await Assertions.Expect(Page.GetByText("C:\\fakepath\\sampleFile.jpeg")).ToBeVisibleAsync();
+            await page.GetByLabel("Select a file").ClickAsync();
+            await page.GetByLabel("Select a file").SetInputFilesAsync(new[] { inputFile });
+            await Assertions.Expect(page.GetByText("C:\\fakepath\\sampleFile.jpeg")).ToBeVisibleAsync();
         }
     }
 }

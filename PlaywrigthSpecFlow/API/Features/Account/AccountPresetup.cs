@@ -6,8 +6,8 @@ namespace PlaywrigthSpecFlow.API.Features.Account
     {
         internal static string UserName = "Usr" + GetCurrentTimestamp();
         internal static string Password = "Pa$$word1";
-        internal bool AccountCreated;
-        internal string UserId;
+        //internal bool AccountCreated;
+        internal string? UserId;
 
         internal UserModel MainUser = new UserModel()
         {

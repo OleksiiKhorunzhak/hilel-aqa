@@ -25,8 +25,8 @@ namespace PlaywrigthSpecFlow.Bindings
             {
                 ViewportSize = new ViewportSize
                 {
-                    Width = 1920,  // Set the width to a common fullscreen width
-                    Height = 1080 // Set the height to a common fullscreen height
+                    Width = 1890,  // Set the width to a common fullscreen width
+                    Height = 945 // Set the height to a common fullscreen height
                 }
             });
 
@@ -36,8 +36,15 @@ namespace PlaywrigthSpecFlow.Bindings
         [AfterFeature]
         public static async Task Teardown()
         {
-            await page.CloseAsync();
-            await browser.CloseAsync();
+            if (page != null)
+            {
+                await page.CloseAsync();
+            }
+
+            if (browser != null)
+            {
+                await browser.CloseAsync();
+            }
         }
     }
 }
