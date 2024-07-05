@@ -1,12 +1,12 @@
 ﻿using Microsoft.Playwright;
 
 namespace PlaywrightSpecFlow.PageObjects {
-    internal class DemoQAWebTablesPage
+    internal class WebTablesPage
     {
         private IPage Page;
         private string WebTablePageUrl = "https://demoqa.com/webtables";
 
-        public DemoQAWebTablesPage(IPage page)
+        public WebTablesPage(IPage page)
         {
             Page = page;
         }

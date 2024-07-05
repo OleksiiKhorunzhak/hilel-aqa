@@ -8,30 +8,30 @@ namespace PlaywrigthSpecFlow.Features.WebTable
     [Binding]
     internal sealed class WebTableSteps : UITestFixture
     {
-        internal static DemoQAWebTablesPage DemoQAWebTablesPage;
+        internal static WebTablesPage _WebTablesPage;
 
         [BeforeFeature("@WebPageLogin")]
         public static async Task FirstBeforeScenario()
         {
-            DemoQAWebTablesPage = new DemoQAWebTablesPage(page);
+            _WebTablesPage = new WebTablesPage(page);
         }
 
         [Given(@"I am on DemoQA WebTable page")]
-        public async Task WhenIOpenWebTablePage() => await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+        public async Task WhenIOpenWebTablePage() => await _WebTablesPage.GoToDemoQaWebTablesPage();
 
         [When(@"I see the WebTable")]
-        public async Task WhenISeeTheWebTable() => await DemoQAWebTablesPage.VerifyTableVisible();
+        public async Task WhenISeeTheWebTable() => await _WebTablesPage.VerifyTableVisible();
 
         [When(@"I click Add Button")]
-        public async Task WhenIKlickAddButton() => await DemoQAWebTablesPage.IClickAddButton();
+        public async Task WhenIKlickAddButton() => await _WebTablesPage.IClickAddButton();
 
         [When(@"I set FirstName to ""(.*)""")]
         public async Task WhenISetFirstName(string firstName) =>
-           await DemoQAWebTablesPage.IFillFirstName(firstName);
+           await _WebTablesPage.IFillFirstName(firstName);
 
         [When(@"I set LastName to ""(.*)""")]
         public async Task WhenISetLastName(string lastName) =>
-             await DemoQAWebTablesPage.IFillLastName(lastName);
+             await _WebTablesPage.IFillLastName(lastName);
 
         [Then(@"I see FirstName ""(.*)"" in a table")]
         public async Task ThenISeeFirstName(string firstName) =>
