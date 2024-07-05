@@ -159,7 +159,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 28
     testRunner.And(string.Format("I set Email \"{0}\" in a table", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 30
  testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
