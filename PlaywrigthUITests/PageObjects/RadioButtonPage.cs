@@ -8,19 +8,15 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class RadioButtonPage
+    internal class RadioButtonPage(IPage page)
     {
-        private IPage page;
-
-        public RadioButtonPage(IPage page)
-        {
-            this.page = page;
-        }
+        private readonly IPage page = page;
 
         //page:
         public async Task GoToURL(string testPageUrl)
         {
             await page.GotoAsync(testPageUrl);
+            await page.WaitForURLAsync(testPageUrl);
         }
 
         public async Task IsPageH1Visible(string pageH1)

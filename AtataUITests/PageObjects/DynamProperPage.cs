@@ -1,10 +1,10 @@
 ﻿using Atata;
-using _ = AtataUITests.PageObjects.DynamicPropertiesPage;
+using _ = AtataUITests.PageObjects.DynamProperPage;
 
 namespace AtataUITests.PageObjects
 {
     [Url("dynamic-properties")]
-    public sealed class DynamicPropertiesPage : Page<_>
+    public sealed class DynamProperPage : Page<_>
     {
         public Button<_> ColorChange { get; private set; }
 

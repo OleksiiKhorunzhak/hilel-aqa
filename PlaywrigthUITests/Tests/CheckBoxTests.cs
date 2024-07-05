@@ -17,14 +17,14 @@ namespace PlaywrigthUITests.Tests
         [SetUp]
         public void SetupCheckBoxPage()
         {
-            _CheckBoxPage = new CheckBoxPage(Page);
+            _CheckBoxPage = new CheckBoxPage(page);
         }
 
         [Test, Retry(2)]
         public async Task VerifyHomeTreeItems()
         {
             //Preconditions:
-            await _CheckBoxPage.GoToPage("https://demoqa.com/checkbox");
+            await _CheckBoxPage.GoToURL("https://demoqa.com/checkbox");
             await _CheckBoxPage.VerifyPageTitle("Check Box");
             await _CheckBoxPage.ClickParentToggle();
 
@@ -50,7 +50,7 @@ namespace PlaywrigthUITests.Tests
         public async Task VerifyFirstChildItems()
         {
             //Preconditions:
-            await _CheckBoxPage.GoToPage("https://demoqa.com/checkbox");
+            await _CheckBoxPage.GoToURL("https://demoqa.com/checkbox");
             await _CheckBoxPage.ClickParentToggle();
 
             // Define a list of Parent checkbox labels
@@ -84,7 +84,7 @@ namespace PlaywrigthUITests.Tests
         public async Task VerifySecondChildItems()
         {
             //Preconditions:
-            await _CheckBoxPage.GoToPage("https://demoqa.com/checkbox");
+            await _CheckBoxPage.GoToURL("https://demoqa.com/checkbox");
             await _CheckBoxPage.ClickParentToggle();
             await _CheckBoxPage.ClickToggle("Documents");
 
@@ -121,7 +121,7 @@ namespace PlaywrigthUITests.Tests
         [Description("Verify Expand/Collapse All checkbox visability")]
         public async Task VerifyExpandCollapseAll()
         {
-            await _CheckBoxPage.GoToPage("https://demoqa.com/checkbox");
+            await _CheckBoxPage.GoToURL("https://demoqa.com/checkbox");
             await _CheckBoxPage.ClickExpandCollapseAll("Expand all");
 
             List<string> checkboxLabels = new List<string>

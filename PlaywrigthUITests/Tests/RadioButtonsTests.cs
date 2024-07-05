@@ -13,15 +13,8 @@ namespace PlaywrigthUITests.Tests
     {
         private RadioButtonPage _RadioButtonPage;
 
-        [SetUp]
-        public void SetupRadioButtonPage()
-        {
-            _RadioButtonPage = new RadioButtonPage(Page);
-        }
-
         //TEST DATA:_______________________________________
-
-        //page:
+        //Page:
         private readonly string testPageUrl = "https://demoqa.com/radio-button";
         private readonly string testPageH1 = "Radio Button";
         //Labels:
@@ -30,6 +23,13 @@ namespace PlaywrigthUITests.Tests
         private readonly string impressiveRadioId = "#impressiveRadio";
         private readonly string noRadioId = "#noRadio";
         //_________________________________________________
+
+        [SetUp]
+        public void SetupRadioButtonPage()
+        {
+            _RadioButtonPage = new RadioButtonPage(page);
+        }
+
 
         [Test, Retry(2)]
         [Description("H1 'Text Box' should be visible")]

@@ -10,6 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Wiew\**" />
+    <EmbeddedResource Remove="Features\Wiew\**" />
+    <None Remove="Features\Wiew\**" />
+    <SpecFlowFeatureFiles Remove="Features\Wiew\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Wiew\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Atata" Version="3.1.0" />
     <PackageReference Include="Atata.Bootstrap" Version="3.0.0" />
     <PackageReference Include="Atata.Configuration.Json" Version="3.0.0" />
@@ -37,10 +45,6 @@
 
   <ItemGroup>
     <Using Include="NUnit.Framework" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Wiew\" />
   </ItemGroup>
 
 </Project>

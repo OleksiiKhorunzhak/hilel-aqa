@@ -28,3 +28,11 @@
 /PlaywrigthUITests/PageObjects/DemoQACheckBoxPage.cs
 /PlaywrigthUITests/PageObjects/DemoQARadioButtonPage.cs
 /PlaywrigthUITests/PageObjects/DemoQATextBoxPage.cs
+/AtataUITests/PageObjects/Controls/CheckBoxTree.cs
+/AtataUITests/PageObjects/DemoQADownloadUploadPage.cs
+/AtataUITests/PageObjects/DemoQADynamicPropertiesPage.cs
+/AtataUITests/PageObjects/WebTablesPage.cs
+/AtataUITests/Tests/DownloadUploadTests.cs
+/NUnitTests/SampleTests.cs
+/PlaywrigthUITests/PageObjects/DemoQADynamicPropertiesPage.cs
+/PlaywrigthUITests/PageObjects/DemoQAWebTablesPage.cs

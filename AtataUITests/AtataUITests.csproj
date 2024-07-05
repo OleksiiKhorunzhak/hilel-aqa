@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Lessons\**" />
+    <EmbeddedResource Remove="Lessons\**" />
+    <None Remove="Lessons\**" />
+    <SpecFlowFeatureFiles Remove="Lessons\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Lessons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Atata" Version="3.1.0" />
     <PackageReference Include="Atata.Bootstrap" Version="3.0.0" />
     <PackageReference Include="Atata.Configuration.Json" Version="3.0.0" />
@@ -34,10 +42,6 @@
     <None Update="Atata.local.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Lessons\" />
   </ItemGroup>
   
 </Project>

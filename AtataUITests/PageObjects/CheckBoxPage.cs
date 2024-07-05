@@ -8,7 +8,7 @@ namespace AtataUITests.PageObjects
     public sealed class CheckBoxPage : DemoQAPage<_>
     {
         //Custom control:
-        public CheckBoxTreeControl<_> CheckBoxTree{ get; set; }
+        public CheckBoxTree<_> CheckBoxTree{ get; set; }
 
         //Elements:
         [FindByTitle("Expand all")]

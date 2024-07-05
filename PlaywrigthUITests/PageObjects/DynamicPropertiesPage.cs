@@ -2,24 +2,26 @@
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class DynamicPropertiesPage
+    internal class DynamicPropertiesPage(IPage page)
     {
-        private readonly IPage Page;
-        private readonly string testPageUrl = "https://demoqa.com/dynamic-properties";
+        private readonly IPage page = page;
 
-        public DynamicPropertiesPage(IPage page)
+        //page:
+        public async Task GoToURL(string testPageUrl)
         {
-            this.Page = page;
+            await page.GotoAsync(testPageUrl);
+            await page.WaitForURLAsync(testPageUrl);
         }
 
-        public async Task GoToDynamicPropertiesPage()
+        public async Task IsPageH1Visible(string pageH1)
         {
-            await Page.GotoAsync(testPageUrl);
+            await Assertions.Expect(page.GetByRole(AriaRole.Heading, new() { Name = pageH1 })).ToBeVisibleAsync();
         }
+
 
         public async Task GetColorChangeChangeColor(string expectedColor)
         {
-            var colorElement = Page.Locator("#colorChange");
+            var colorElement = page.Locator("#colorChange");
             var color = await colorElement.EvaluateAsync<string>("element => getComputedStyle(element).color");
 
             Assert.That(color, Is.EqualTo(expectedColor));
@@ -27,7 +29,7 @@ namespace PlaywrigthUITests.PageObjects
 
         public async Task EnableAfter5sec()
         {
-            var button = Page.GetByRole(AriaRole.Button, new() { Name = "Will enable 5 seconds" });
+            var button = page.GetByRole(AriaRole.Button, new() { Name = "Will enable 5 seconds" });
             await Assertions.Expect(button).ToBeDisabledAsync();
             //await button.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible, Timeout = 2000 });
             await Task.Delay(5000);
@@ -36,7 +38,7 @@ namespace PlaywrigthUITests.PageObjects
 
         public async Task VisibleAfter5sec()
         {
-            var button = Page.GetByRole(AriaRole.Button, new() { Name = "Visible After 5 Seconds" });
+            var button = page.GetByRole(AriaRole.Button, new() { Name = "Visible After 5 Seconds" });
             await button.ClickAsync();
             await Assertions.Expect(button).ToBeFocusedAsync();
         }
