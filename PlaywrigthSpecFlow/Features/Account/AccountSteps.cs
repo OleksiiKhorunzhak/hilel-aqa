@@ -27,8 +27,10 @@ namespace PlaywrigthSpecFlow.Features.Account
         {
             if (_featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
             {
-                Assert.That(presetup.AccountCreated, Is.True, "Account not created");
+                Assert.That(presetup.AccountCreated,"Account not created");
             }
         }
+
+        //TODO: add cleanup
     }
 }

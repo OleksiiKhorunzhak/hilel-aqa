@@ -4,21 +4,33 @@ namespace PlaywrigthSpecFlow.API.Features.Account
 {
     internal class AccountPresetup
     {
-        internal static string UserName = "userName1";
+        internal static string UserName = "Usr" + GetCurrentTimestamp();
         internal static string Password = "Pa$$word1";
-        public bool AccountCreated;
-        
-        public UserModel MainUser = new UserModel()
+        internal bool AccountCreated;
+
+        internal UserModel MainUser = new UserModel()
         {
-            UserName = UserName,
-            Password = Password
+            userName = UserName,
+            password = Password
         };
 
         #region Setup
-        public void AccountApiPresetup()
+        internal void AccountApiPresetup()
         {
             AccountsApi account = new AccountsApi("https://demoqa.com/");
             AccountCreated = account.AddUser(MainUser).Result;
+        }
+        #endregion
+        #region HelperMethods
+        internal static string GetCurrentTimestamp()
+        {
+            DateTime currentTimestamp = DateTime.UtcNow;
+
+            string timestamp = currentTimestamp.ToString("u");
+
+            timestamp = Regex.Replace(timestamp, @"\D", "");
+
+            return timestamp;
         }
         #endregion
     }
