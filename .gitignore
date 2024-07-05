@@ -38,6 +38,9 @@
 /.github/workflows/PlaywrigthUITests.yml
 /.github/workflows/dotnet.yml
 /AtataSpecFlow/AtataSamples.SpecFlow/bin/Debug/net6.0
+/AtataSpecFlow/AtataSamples.SpecFlow/obj/Debug/net6.0
+/PlaywrigthSpecFlow/bin/Debug
+/AtataSpecFlow/AtataSamples.SpecFlow/bin/Debug/net6.0
 /AtataSpecFlow/AtataSamples.SpecFlow/obj
 /PlaywrigthSpecFlow/bin/Debug/net8.0
 /PlaywrigthSpecFlow/obj
