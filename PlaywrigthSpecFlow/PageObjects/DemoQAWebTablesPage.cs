@@ -4,31 +4,31 @@ using TechTalk.SpecFlow;
 namespace PlaywrightSpecFlow.PageObjects 
 {
     [Binding]
-    internal class WebTablesPage
+    internal class DemoQAWebTablesPage
     {
-        private IPage Page;
+        private IPage page;
         private string WebTablePageUrl = "https://demoqa.com/webtables";
 
-        public WebTablesPage(IPage page)
+        public DemoQAWebTablesPage(IPage page)
         {
-            Page = page;
+            this.page = page;
         }
 
         public async Task GoToDemoQaWebTablesPage()
         {
-            await Page.GotoAsync(WebTablePageUrl);
+            await page.GotoAsync(WebTablePageUrl);
         }
 
         public async Task VerifyTableVisible()
         {
-            var table = Page.Locator(".ReactTable");
+            var table = page.Locator(".ReactTable");
             await Assertions.Expect(table).ToBeVisibleAsync();
         }
 
 
         public async Task VerifyTableRowContent(string headerName = "First Name", string value = "Cierra")
         {
-            var table = Page.Locator(".ReactTable");
+            var table = page.Locator(".ReactTable");
 
             // Locate headers
             var headers = await table.Locator(".rt-th").AllInnerTextsAsync();
@@ -79,31 +79,31 @@ namespace PlaywrightSpecFlow.PageObjects
 
         public async Task IClickAddButton()
         {
-            await Page.GetByRole(AriaRole.Button, new() { NameString = "Add" }).ClickAsync();
+            await page.GetByRole(AriaRole.Button, new() { NameString = "Add" }).ClickAsync();
         }
 
 
         public async Task IFillFirstName(string firstName)
         {
-            await Page.GetByPlaceholder("First Name").FillAsync(firstName);
-            //await Page.GetByPlaceholder("First Name").PressAsync("Enter");
+            await page.GetByPlaceholder("First Name").FillAsync(firstName);
+            //await page.GetByPlaceholder("First Name").PressAsync("Enter");
         }
 
         public async Task IFillLastName(string lastName)
         {
-            await Page.GetByPlaceholder("Last Name").FillAsync(lastName);
-            //await Page.GetByPlaceholder("Last Name").PressAsync("Enter");
+            await page.GetByPlaceholder("Last Name").FillAsync(lastName);
+            //await page.GetByPlaceholder("Last Name").PressAsync("Enter");
         }
 
         public async Task VerifyPopupVisible()
         {
-            var popup = Page.Locator(".modal-content");
+            var popup = page.Locator(".modal-content");
             await Assertions.Expect(popup).ToBeVisibleAsync();
         }
 
         public async Task VerifyFirstNameVisible()
         {
-            var popup = Page.Locator(".modal-content");
+            var popup = page.Locator(".modal-content");
             var firstName = popup.GetByPlaceholder("First Name");
             await Assertions.Expect(firstName).ToBeVisibleAsync();
         }

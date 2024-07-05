@@ -8,12 +8,12 @@ namespace PlaywrigthSpecFlow.Features.WebTable
     [Binding]
     internal sealed class WebTableSteps : UITestFixture
     {
-        internal static WebTablesPage _WebTablesPage;
+        internal static DemoQAWebTablesPage _WebTablesPage;
 
         [BeforeFeature("@WebPageLogin")]
         public static async Task FirstBeforeScenario()
         {
-            _WebTablesPage = new WebTablesPage(page);
+            _WebTablesPage = new DemoQAWebTablesPage(page);
         }
 
         [Given(@"I am on DemoQA WebTable page")]
