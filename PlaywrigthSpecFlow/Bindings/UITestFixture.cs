@@ -8,7 +8,7 @@ namespace PlaywrigthSpecFlow.Bindings
     [Binding]
     internal class UITestFixture
     {
-        public static IPage? Page { get; private set; }
+        public static IPage? page { get; private set; }
         private static IBrowser? browser;
 
         //[SetUp]
@@ -25,19 +25,26 @@ namespace PlaywrigthSpecFlow.Bindings
             {
                 ViewportSize = new ViewportSize
                 {
-                    Width = 1920,  // Set the width to a common fullscreen width
-                    Height = 1080 // Set the height to a common fullscreen height
+                    Width = 1890,  // Set the width to a common fullscreen width
+                    Height = 945 // Set the height to a common fullscreen height
                 }
             });
 
-            Page = await context.NewPageAsync();
+            page = await context.NewPageAsync();
         }
 
         [AfterFeature]
         public static async Task Teardown()
         {
-            await Page.CloseAsync();
-            await browser.CloseAsync();
+            if (page != null)
+            {
+                await page.CloseAsync();
+            }
+
+            if (browser != null)
+            {
+                await browser.CloseAsync();
+            }
         }
     }
 }

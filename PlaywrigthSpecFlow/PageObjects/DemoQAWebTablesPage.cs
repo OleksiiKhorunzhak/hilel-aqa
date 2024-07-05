@@ -85,13 +85,13 @@ namespace PlaywrightSpecFlow.PageObjects {
         public async Task IFillFirstName(string firstName)
         {
             await Page.GetByPlaceholder("First Name").FillAsync(firstName);
-            //await Page.GetByPlaceholder("First Name").PressAsync("Enter");
+            //await page.GetByPlaceholder("First Name").PressAsync("Enter");
         }
 
         public async Task IFillLastName(string lastName)
         {
             await Page.GetByPlaceholder("Last Name").FillAsync(lastName);
-            //await Page.GetByPlaceholder("Last Name").PressAsync("Enter");
+            //await page.GetByPlaceholder("Last Name").PressAsync("Enter");
         }
 
         public async Task VerifyPopupVisible()
