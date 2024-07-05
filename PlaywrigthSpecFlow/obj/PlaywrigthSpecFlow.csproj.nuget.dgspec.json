@@ -52,7 +52,7 @@
             },
             "Microsoft.Playwright.NUnit": {
               "target": "Package",
-              "version": "[1.44.0, )"
+              "version": "[1.45.0, )"
             },
             "NUnit": {
               "target": "Package",
@@ -76,7 +76,15 @@
               "target": "Package",
               "version": "[0.1.285, )"
             },
+            "SpecFlow.Internal.Json": {
+              "target": "Package",
+              "version": "[1.0.8, )"
+            },
             "SpecFlow.NUnit": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "SpecFlow.NUnit.Runners": {
               "target": "Package",
               "version": "[3.9.74, )"
             },
