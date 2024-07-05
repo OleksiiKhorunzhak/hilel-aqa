@@ -13,10 +13,10 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         [BeforeFeature("@WebPageLogin")]
         public static async Task FirstBeforeScenario()
         {
-            DemoQAWebTablesPage = new DemoQAWebTablesPage(Page);
+            DemoQAWebTablesPage = new DemoQAWebTablesPage(page);
         }
 
-        [Given(@"I am on DemoQA WebTable Page")]
+        [Given(@"I am on DemoQA WebTable page")]
         public async Task WhenIOpenWebTablePage() => await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
 
         [When(@"I see the WebTable")]
@@ -35,17 +35,17 @@ namespace PlaywrigthSpecFlow.Features.WebTable
 
         [Then(@"I see FirstName ""(.*)"" in a table")]
         public async Task ThenISeeFirstName(string firstName) =>
-            await Assertions.Expect(Page.GetByRole(AriaRole.Gridcell, new() { Name = firstName, Exact = true })).ToBeVisibleAsync();
+            await Assertions.Expect(page.GetByRole(AriaRole.Gridcell, new() { Name = firstName, Exact = true })).ToBeVisibleAsync();
 
         [When(@"I set Email ""(.*)"" in a table")]
         public async Task ThenISetEmail(string email)
         {
-            await Page.GetByPlaceholder("name@example.com").FillAsync(email);
-            await Page.GetByPlaceholder("name@example.com").PressAsync("Enter");
+            await page.GetByPlaceholder("name@example.com").FillAsync(email);
+            await page.GetByPlaceholder("name@example.com").PressAsync("Enter");
         }
 
         [Then(@"I see LastName ""(.*)"" in a table")]
         public async Task ThenISeeLastName(string lastName) =>
-          await Assertions.Expect(Page.GetByRole(AriaRole.Gridcell, new() { Name = lastName, Exact = true })).ToBeVisibleAsync();
+          await Assertions.Expect(page.GetByRole(AriaRole.Gridcell, new() { Name = lastName, Exact = true })).ToBeVisibleAsync();
     }
 }

@@ -44,12 +44,12 @@ namespace PlaywrigthUITests.Tests
         [Test]
         public async Task VerifyTableVisible2()
         {
-            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
-            await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Cantrell");
+            await _WebTablesPage.GoToURL(testPageUrl);
+            await _WebTablesPage.VerifyTableRowContent("Last Name", "Cantrell");
 
-            await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
-            await DemoQAWebTablesPage.VerifyPopupVisible();
-            await DemoQAWebTablesPage.VerifyFirstNameVisible();
+            await page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
+            await _WebTablesPage.VerifyPopupVisible();
+            await _WebTablesPage.VerifyFirstNameVisible();
         }
 
         //TODO: automate test cases

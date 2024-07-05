@@ -8,7 +8,7 @@ namespace PlaywrigthSpecFlow.Bindings
     [Binding]
     internal class UITestFixture
     {
-        public static IPage? Page { get; private set; }
+        public static IPage? page { get; private set; }
         private static IBrowser? browser;
 
         //[SetUp]
@@ -30,13 +30,13 @@ namespace PlaywrigthSpecFlow.Bindings
                 }
             });
 
-            Page = await context.NewPageAsync();
+            page = await context.NewPageAsync();
         }
 
         [AfterFeature]
         public static async Task Teardown()
         {
-            await Page.CloseAsync();
+            await page.CloseAsync();
             await browser.CloseAsync();
         }
     }
