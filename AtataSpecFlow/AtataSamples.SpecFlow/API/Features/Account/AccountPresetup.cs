@@ -9,7 +9,7 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
     {
         internal static string UserName = "Usr" + GetCurrentTimestamp();
         internal static string Password = "Pa$$word1";
-        internal bool AccountCreated;
+        //internal bool AccountCreated;
         internal string UserId;
 
         internal UserModel MainUser = new UserModel()
@@ -25,11 +25,11 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
             UserId = await account.AddUserGetId(MainUser);
         }
 
-        internal async Task AccountApiCleanup()
-        {
-            AccountsApi account = new AccountsApi("https://demoqa.com/");
-            await account.DeleteAccountByID(UserId);
-        }
+        //internal async Task AccountApiCleanup()
+        //{
+        //    AccountsApi account = new AccountsApi("https://demoqa.com/");
+        //    await account.DeleteAccountByID(UserId);
+        //}
         #endregion
         #region HelperMethods
         internal static string GetCurrentTimestamp()

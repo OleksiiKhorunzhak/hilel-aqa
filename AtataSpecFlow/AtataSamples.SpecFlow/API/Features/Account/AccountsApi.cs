@@ -37,10 +37,10 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
             return createdUser.userID;
         }
 
-        public async Task DeleteAccountByID(string ID)
-        {
-            //TODO: implement
-        }
+        //public async Task DeleteAccountByID(string ID)
+        //{
+        //    //TODO: implement
+        //}
     }
 }
 

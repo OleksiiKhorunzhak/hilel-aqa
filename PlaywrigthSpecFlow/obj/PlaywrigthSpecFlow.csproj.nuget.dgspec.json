@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {}
+    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {
+    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+        "projectUniqueName": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
         "projectName": "PlaywrigthSpecFlow",
-        "projectPath": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+        "projectPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
         "packagesPath": "C:\\Users\\yusta\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\obj\\",
         "projectStyle": "PackageReference",
@@ -18,7 +18,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -26,8 +26,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -43,8 +43,8 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -107,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

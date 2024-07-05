@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vAu9hMTgiBM=",
+  "dgSpecHash": "FvPcK5N+B0g=",
   "success": true,
-  "projectFilePath": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj",
+  "projectFilePath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yusta\\.nuget\\packages\\atata\\3.1.0\\atata.3.1.0.nupkg.sha512",
     "C:\\Users\\yusta\\.nuget\\packages\\atata.cli\\2.2.0\\atata.cli.2.2.0.nupkg.sha512",
