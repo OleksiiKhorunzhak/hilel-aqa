@@ -8,7 +8,7 @@ namespace PlaywrigthSpecFlow.Features.WebTable
     [Binding]
     internal sealed class WebTableSteps : UITestFixture
     {
-        internal static DemoQAWebTablesPage _WebTablesPage;
+        public static DemoQAWebTablesPage _WebTablesPage;
 
         [BeforeFeature("@WebPageLogin")]
         public static async Task FirstBeforeScenario()
@@ -16,7 +16,7 @@ namespace PlaywrigthSpecFlow.Features.WebTable
             _WebTablesPage = new DemoQAWebTablesPage(page);
         }
 
-        [Given(@"I am on DemoQA WebTable page")]
+        [Given(@"I am on DemoQA WebTable Page")]
         public async Task WhenIOpenWebTablePage() => await _WebTablesPage.GoToDemoQaWebTablesPage();
 
         [When(@"I see the WebTable")]
