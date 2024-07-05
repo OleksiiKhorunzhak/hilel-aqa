@@ -4,43 +4,43 @@ namespace PlaywrigthSpecFlow.PageObjects
 {
     internal class DemoQACheckBoxPage
     {
-        private IPage _page;
-        private string RadioButtonPageUrl = "https://demoqa.com/checkbox";
+        private readonly IPage page;
+        private readonly string CheckBoxPageUrl = "https://demoqa.com/checkbox";
 
         public DemoQACheckBoxPage(IPage page)
         {
-            _page = page;
+            this.page = page;
         }
 
         public async Task GoToDemoQaChecboxPage()
         {
-            await _page.GotoAsync(RadioButtonPageUrl);
+            await page.GotoAsync(CheckBoxPageUrl);
         }
 
         public async Task CheckHomeCheckbox()
         {
-            await _page.Locator("#tree-node").GetByRole(AriaRole.Img).Nth(3).ClickAsync();
+            await page.Locator("#tree-node").GetByRole(AriaRole.Img).Nth(3).ClickAsync();
         }
 
         public async Task CheckCheckbox(string branch)
         {
-            await _page.Locator("label").Filter(new() { HasTextString = branch }).GetByRole(AriaRole.Img).First.ClickAsync();
+            await page.Locator("label").Filter(new() { HasTextString = branch }).GetByRole(AriaRole.Img).First.ClickAsync();
         }
 
         public async Task OpenHome()
         {
-            await _page.GetByLabel("Toggle").First.ClickAsync();
+            await page.GetByLabel("Toggle").First.ClickAsync();
         }
 
         public async Task VerifyHomeChecked()
         {
-            await Assertions.Expect(_page.Locator("#tree-node path").Nth(3)).ToBeCheckedAsync();
+            await Assertions.Expect(page.Locator("#tree-node path").Nth(3)).ToBeCheckedAsync();
         }
 
         public async Task<bool> VerifyCheckboxChecked(string branch)
         {
             // Locate `span` element containing the branch title
-            var spanElement = _page.Locator($"span.rct-text:has(span.rct-title:text-is('{branch}'))");
+            var spanElement = page.Locator($"span.rct-text:has(span.rct-title:text-is('{branch}'))");
             // Locate the checkbox in `span` element
             var checkboxLocator = spanElement.Locator(".rct-icon-check");
             // Check if the checkbox is visible
