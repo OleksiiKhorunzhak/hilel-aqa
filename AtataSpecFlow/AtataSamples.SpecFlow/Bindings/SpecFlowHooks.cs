@@ -3,7 +3,7 @@ using Atata;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Infrastructure;
 
-namespace AtataSamples.SpecFlow;
+namespace AtataSpecFlow.Bindings;
 
 [Binding]
 public sealed class SpecFlowHooks

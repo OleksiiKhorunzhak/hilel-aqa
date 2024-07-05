@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace AtataSamples.SpecFlow.Features.WebTable
 {
     [Binding]
-    public sealed class WebTableSteps
+    public sealed class WebTableSteps : Steps
     {
         [When(@"I see the WebTable")]
         public static void WhenISeeTheWebTable() =>

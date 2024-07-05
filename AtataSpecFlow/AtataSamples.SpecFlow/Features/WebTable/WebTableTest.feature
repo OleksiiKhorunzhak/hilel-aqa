@@ -22,6 +22,10 @@ Scenario Outline: I add item to the table
 	And I set FirstName to "<FirstName>"
     And I set LastName to "<LastName>"
     And I set Email to "<Email>"
+    And I set Age to "<Age>"
+    And I set Age to "<Salary>"
+    And I set Age to "<Department>"
+
 	Then I see FirstName "<FirstName>" in a table
 	Examples:
     | FirstName | LastName | Email             |

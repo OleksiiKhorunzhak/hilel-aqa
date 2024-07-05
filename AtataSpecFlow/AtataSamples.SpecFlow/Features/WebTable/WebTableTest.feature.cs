@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace AtataSamples.SpecFlow.Features.WebTable
+namespace AtataSpecFlow.Features.WebTable
 {
     using TechTalk.SpecFlow;
     using System;
@@ -160,6 +160,15 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.And(string.Format("I set Email to \"{0}\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
+    testRunner.And("I set Age to \"<Age>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
+    testRunner.And("I set Age to \"<Salary>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 27
+    testRunner.And("I set Age to \"<Department>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
  testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
