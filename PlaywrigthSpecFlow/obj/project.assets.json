@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
+    "net6.0": {
       "BoDi/1.5.0": {
         "type": "package",
         "compile": {
@@ -284,7 +284,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Playwright/1.44.0": {
+      "Microsoft.Playwright/1.45.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
@@ -305,12 +305,12 @@
           "buildTransitive/Microsoft.Playwright.targets": {}
         }
       },
-      "Microsoft.Playwright.NUnit/1.44.0": {
+      "Microsoft.Playwright.NUnit/1.45.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "16.11.0",
-          "Microsoft.Playwright": "1.44.0",
-          "Microsoft.Playwright.TestAdapter": "1.44.0",
+          "Microsoft.Playwright": "1.45.0",
+          "Microsoft.Playwright.TestAdapter": "1.45.0",
           "NUnit": "3.13.2",
           "NUnit3TestAdapter": "4.0.0"
         },
@@ -325,10 +325,10 @@
           }
         }
       },
-      "Microsoft.Playwright.TestAdapter/1.44.0": {
+      "Microsoft.Playwright.TestAdapter/1.45.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Playwright": "1.44.0",
+          "Microsoft.Playwright": "1.45.0",
           "Microsoft.TestPlatform.ObjectModel": "17.3.0"
         },
         "compile": {
@@ -625,6 +625,35 @@
       "NUnit.Analyzers/4.2.0": {
         "type": "package"
       },
+      "NUnit.Console/3.12.0": {
+        "type": "package",
+        "dependencies": {
+          "NUnit.ConsoleRunner": "3.12.0",
+          "NUnit.Extension.NUnitProjectLoader": "3.6.0",
+          "NUnit.Extension.NUnitV2Driver": "3.8.0",
+          "NUnit.Extension.NUnitV2ResultWriter": "3.6.0",
+          "NUnit.Extension.TeamCityEventListener": "1.0.7",
+          "NUnit.Extension.VSProjectLoader": "3.8.0"
+        }
+      },
+      "NUnit.ConsoleRunner/3.12.0": {
+        "type": "package"
+      },
+      "NUnit.Extension.NUnitProjectLoader/3.6.0": {
+        "type": "package"
+      },
+      "NUnit.Extension.NUnitV2Driver/3.8.0": {
+        "type": "package"
+      },
+      "NUnit.Extension.NUnitV2ResultWriter/3.6.0": {
+        "type": "package"
+      },
+      "NUnit.Extension.TeamCityEventListener/1.0.7": {
+        "type": "package"
+      },
+      "NUnit.Extension.VSProjectLoader/3.8.0": {
+        "type": "package"
+      },
       "NUnit3TestAdapter/4.5.0": {
         "type": "package",
         "build": {
@@ -890,6 +919,14 @@
         "build": {
           "build/SpecFlow.NUnit.props": {},
           "build/SpecFlow.NUnit.targets": {}
+        }
+      },
+      "SpecFlow.NUnit.Runners/3.9.74": {
+        "type": "package",
+        "dependencies": {
+          "NUnit.Console": "3.12.0",
+          "NUnit3TestAdapter": "3.17.0",
+          "SpecFlow.NUnit": "[3.9.74]"
         }
       },
       "SpecFlow.Tools.MsBuild.Generation/3.9.74": {
@@ -2389,10 +2426,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.Playwright/1.44.0": {
-      "sha512": "stag3Jv/FtjqR5/8UcVfyYyktPt9AHxBnNazyytu4cq5W8/J5DQDQEednk/cK2iGy2Y/dC0hUcCdxp9cFDckmA==",
+    "Microsoft.Playwright/1.45.0": {
+      "sha512": "+PJ5NM2KHQJhWiMlyBUpWYbJ5EkXcUwCmm5N91tPwXcwm29GHIO5CTPDsy9TRGwlBpQChvsMCLAWjn4IVd2w8w==",
       "type": "package",
-      "path": "microsoft.playwright/1.44.0",
+      "path": "microsoft.playwright/1.45.0",
       "files": [
         ".nupkg.metadata",
         ".playwright/node/LICENSE",
@@ -2445,6 +2482,7 @@
         ".playwright/package/lib/client/channelOwner.js",
         ".playwright/package/lib/client/clientHelper.js",
         ".playwright/package/lib/client/clientInstrumentation.js",
+        ".playwright/package/lib/client/clock.js",
         ".playwright/package/lib/client/connection.js",
         ".playwright/package/lib/client/consoleMessage.js",
         ".playwright/package/lib/client/coverage.js",
@@ -2478,6 +2516,7 @@
         ".playwright/package/lib/common/socksProxy.js",
         ".playwright/package/lib/common/timeoutSettings.js",
         ".playwright/package/lib/common/types.js",
+        ".playwright/package/lib/generated/clockSource.js",
         ".playwright/package/lib/generated/consoleApiSource.js",
         ".playwright/package/lib/generated/injectedScriptSource.js",
         ".playwright/package/lib/generated/recorderSource.js",
@@ -2521,6 +2560,7 @@
         ".playwright/package/lib/server/chromium/crServiceWorker.js",
         ".playwright/package/lib/server/chromium/defaultFontFamilies.js",
         ".playwright/package/lib/server/chromium/videoRecorder.js",
+        ".playwright/package/lib/server/clock.js",
         ".playwright/package/lib/server/console.js",
         ".playwright/package/lib/server/cookieStore.js",
         ".playwright/package/lib/server/debugController.js",
@@ -2670,27 +2710,27 @@
         ".playwright/package/lib/utilsBundleImpl/index.js",
         ".playwright/package/lib/utilsBundleImpl/xdg-open",
         ".playwright/package/lib/vite/htmlReport/index.html",
-        ".playwright/package/lib/vite/recorder/assets/codeMirrorModule-COR5vrxk.js",
+        ".playwright/package/lib/vite/recorder/assets/codeMirrorModule-Bzggq412.js",
         ".playwright/package/lib/vite/recorder/assets/codeMirrorModule-ez37Vkbh.css",
         ".playwright/package/lib/vite/recorder/assets/codicon-DMa5iZz2.ttf",
+        ".playwright/package/lib/vite/recorder/assets/index-5SSs4-n_.js",
         ".playwright/package/lib/vite/recorder/assets/index-B5iDPo7P.css",
-        ".playwright/package/lib/vite/recorder/assets/index-ByO2Mfgr.js",
         ".playwright/package/lib/vite/recorder/index.html",
         ".playwright/package/lib/vite/recorder/playwright-logo.svg",
-        ".playwright/package/lib/vite/traceViewer/assets/codeMirrorModule-D-hINnYb.js",
-        ".playwright/package/lib/vite/traceViewer/assets/testServerConnection-CpiRu-AA.js",
+        ".playwright/package/lib/vite/traceViewer/assets/codeMirrorModule-BfR9u_dG.js",
+        ".playwright/package/lib/vite/traceViewer/assets/testServerConnection-CLJOcN3M.js",
         ".playwright/package/lib/vite/traceViewer/assets/xtermModule-BeNbaIVa.js",
         ".playwright/package/lib/vite/traceViewer/codeMirrorModule.ez37Vkbh.css",
         ".playwright/package/lib/vite/traceViewer/codicon.DMa5iZz2.ttf",
-        ".playwright/package/lib/vite/traceViewer/index.9xqViRZD.js",
         ".playwright/package/lib/vite/traceViewer/index.CrbWWHbf.css",
+        ".playwright/package/lib/vite/traceViewer/index.D7JIa5vL.js",
         ".playwright/package/lib/vite/traceViewer/index.html",
         ".playwright/package/lib/vite/traceViewer/playwright-logo.svg",
         ".playwright/package/lib/vite/traceViewer/snapshot.html",
         ".playwright/package/lib/vite/traceViewer/sw.bundle.js",
         ".playwright/package/lib/vite/traceViewer/testServerConnection.0WapKERv.css",
         ".playwright/package/lib/vite/traceViewer/uiMode.Btn2TM9w.css",
-        ".playwright/package/lib/vite/traceViewer/uiMode.CdMTT2Sp.js",
+        ".playwright/package/lib/vite/traceViewer/uiMode.DGx1ltIi.js",
         ".playwright/package/lib/vite/traceViewer/uiMode.html",
         ".playwright/package/lib/vite/traceViewer/xtermModule.DSXBckUd.css",
         ".playwright/package/lib/zipBundle.js",
@@ -2708,14 +2748,14 @@
         "icon.png",
         "lib/netstandard2.0/Microsoft.Playwright.dll",
         "lib/netstandard2.0/Microsoft.Playwright.xml",
-        "microsoft.playwright.1.44.0.nupkg.sha512",
+        "microsoft.playwright.1.45.0.nupkg.sha512",
         "microsoft.playwright.nuspec"
       ]
     },
-    "Microsoft.Playwright.NUnit/1.44.0": {
-      "sha512": "pl0jS/dV6eeuApAKb3SxIyCkYUVMb/Ll7aWDOHtzs78Yg3cny52sL2il96WUUBtimUaOVg6Mx0i5Y9MJyZS1cQ==",
+    "Microsoft.Playwright.NUnit/1.45.0": {
+      "sha512": "2mH+/+YirBOqJXq4LnEDfm6ZdYic4rLq9z3fYWc08DQ9ZyChZzU19PdfboZcBCr4dO+Zfk8EYG8M0Deu/O7FkA==",
       "type": "package",
-      "path": "microsoft.playwright.nunit/1.44.0",
+      "path": "microsoft.playwright.nunit/1.45.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2723,20 +2763,20 @@
         "lib/net462/Microsoft.Playwright.NUnit.dll",
         "lib/netcoreapp3.1/Microsoft.Playwright.NUnit.dll",
         "lib/netcoreapp3.1/Microsoft.Playwright.NUnit.runtimeconfig.json",
-        "microsoft.playwright.nunit.1.44.0.nupkg.sha512",
+        "microsoft.playwright.nunit.1.45.0.nupkg.sha512",
         "microsoft.playwright.nunit.nuspec"
       ]
     },
-    "Microsoft.Playwright.TestAdapter/1.44.0": {
-      "sha512": "4SS5oYSivAqCXdj16d1hyGesk2eRwwP9DAPNwojRxLsU30DLW1GIVA5T/AVeD1ETENrIBN01Hjz6XaWyr9SgHA==",
+    "Microsoft.Playwright.TestAdapter/1.45.0": {
+      "sha512": "PDyqkd/tyb5+46ldAkM68UBRnJT6rtBSECiTuCAvebM2ImBUYxvNK1pQuLGxgzjpLlfHbBisI3TeEdD5Skvj3g==",
       "type": "package",
-      "path": "microsoft.playwright.testadapter/1.44.0",
+      "path": "microsoft.playwright.testadapter/1.45.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "icon.png",
         "lib/netstandard2.0/Microsoft.Playwright.TestAdapter.dll",
-        "microsoft.playwright.testadapter.1.44.0.nupkg.sha512",
+        "microsoft.playwright.testadapter.1.45.0.nupkg.sha512",
         "microsoft.playwright.testadapter.nuspec"
       ]
     },
@@ -2977,6 +3017,139 @@
         "nunit.analyzers.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "NUnit.Console/3.12.0": {
+      "sha512": "9KXFnViEIKQjz4vqiYFpLV9sntfHxixQomLCJzDMXC6WDo9DP2GhDQiBND6we6MRStMSNzoAWgourbLKwo7utQ==",
+      "type": "package",
+      "path": "nunit.console/3.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "images/nunit_256.png",
+        "nunit.console.3.12.0.nupkg.sha512",
+        "nunit.console.nuspec"
+      ]
+    },
+    "NUnit.ConsoleRunner/3.12.0": {
+      "sha512": "ZUtI8leU9ozCjLy4ZZ2X6ClU0hxfQtb95VOdmMA4SxIUvf62rIPxoHXS+jghvo5QxgRihGGcEp8xT3vCfgDdsA==",
+      "type": "package",
+      "path": "nunit.consolerunner/3.12.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "images/nunit_256.png",
+        "nunit.consolerunner.3.12.0.nupkg.sha512",
+        "nunit.consolerunner.nuspec",
+        "tools/agents/net20/nunit-agent-x86.exe",
+        "tools/agents/net20/nunit-agent-x86.exe.config",
+        "tools/agents/net20/nunit-agent.exe",
+        "tools/agents/net20/nunit-agent.exe.config",
+        "tools/agents/net20/nunit.agent.addins",
+        "tools/agents/net20/nunit.engine.api.dll",
+        "tools/agents/net20/nunit.engine.api.xml",
+        "tools/agents/net20/nunit.engine.core.dll",
+        "tools/agents/net20/testcentric.engine.metadata.dll",
+        "tools/agents/net40/nunit-agent-x86.exe",
+        "tools/agents/net40/nunit-agent-x86.exe.config",
+        "tools/agents/net40/nunit-agent.exe",
+        "tools/agents/net40/nunit-agent.exe.config",
+        "tools/agents/net40/nunit.agent.addins",
+        "tools/agents/net40/nunit.engine.api.dll",
+        "tools/agents/net40/nunit.engine.api.xml",
+        "tools/agents/net40/nunit.engine.core.dll",
+        "tools/agents/net40/testcentric.engine.metadata.dll",
+        "tools/nunit.console.nuget.addins",
+        "tools/nunit.engine.api.dll",
+        "tools/nunit.engine.api.xml",
+        "tools/nunit.engine.core.dll",
+        "tools/nunit.engine.dll",
+        "tools/nunit3-console.exe",
+        "tools/nunit3-console.exe.config",
+        "tools/testcentric.engine.metadata.dll"
+      ]
+    },
+    "NUnit.Extension.NUnitProjectLoader/3.6.0": {
+      "sha512": "ev2+dCJShMNIATkYNm/vHEuieBfbismr9DcUfBvafJZf5vNyugXPuMXO/MaOFcJaoW9j6/zjMmXKG7R5umWzXA==",
+      "type": "package",
+      "path": "nunit.extension.nunitprojectloader/3.6.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.nunitprojectloader.3.6.0.nupkg.sha512",
+        "nunit.extension.nunitprojectloader.nuspec",
+        "tools/nunit-project-loader.dll"
+      ]
+    },
+    "NUnit.Extension.NUnitV2Driver/3.8.0": {
+      "sha512": "l6MgFJPTnrlDaMXWfbUZ82h1uvtj0C1ExPpqm6HrYOBa5Z4MBwmFLqj85rnv9JMhu/Ju7jQB/FIaMbfoXInI2A==",
+      "type": "package",
+      "path": "nunit.extension.nunitv2driver/3.8.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.nunitv2driver.3.8.0.nupkg.sha512",
+        "nunit.extension.nunitv2driver.nuspec",
+        "tools/nunit.core.dll",
+        "tools/nunit.core.interfaces.dll",
+        "tools/nunit.v2.driver.addins",
+        "tools/nunit.v2.driver.dll"
+      ]
+    },
+    "NUnit.Extension.NUnitV2ResultWriter/3.6.0": {
+      "sha512": "P/Nc+wgFRe3dT59/VjhiIT0SWfLMbb/Vc9AtBU3L71VOCs8zQnuNjCOEFLQL/Mq6XSaZeB2Sug9tUgTfCnQk9w==",
+      "type": "package",
+      "path": "nunit.extension.nunitv2resultwriter/3.6.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.nunitv2resultwriter.3.6.0.nupkg.sha512",
+        "nunit.extension.nunitv2resultwriter.nuspec",
+        "tools/nunit-v2-result-writer.dll"
+      ]
+    },
+    "NUnit.Extension.TeamCityEventListener/1.0.7": {
+      "sha512": "bw+ZwHsUmxqb9leo91qLEF7ggtdpawY2V6wNqHI6+ATa2SHxHxoxiV5UV07ZWDRpf/qlQJELNlZu7wIB3+w2qQ==",
+      "type": "package",
+      "path": "nunit.extension.teamcityeventlistener/1.0.7",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.teamcityeventlistener.1.0.7.nupkg.sha512",
+        "nunit.extension.teamcityeventlistener.nuspec",
+        "tools/teamcity-event-listener.dll"
+      ]
+    },
+    "NUnit.Extension.VSProjectLoader/3.8.0": {
+      "sha512": "CIScV9a7+wUu6Ylb+WO0q/WGWQVoB05TUj3XZHa1CO+2BInDdfIVkqtlrSguhy6D/AGIMaLVrCZpQkQ2m0bbzQ==",
+      "type": "package",
+      "path": "nunit.extension.vsprojectloader/3.8.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.vsprojectloader.3.8.0.nupkg.sha512",
+        "nunit.extension.vsprojectloader.nuspec",
+        "tools/vs-project-loader.dll"
       ]
     },
     "NUnit3TestAdapter/4.5.0": {
@@ -3337,6 +3510,19 @@
         "lib/netstandard2.0/TechTalk.SpecFlow.NUnit.SpecFlowPlugin.pdb",
         "specflow.nunit.3.9.74.nupkg.sha512",
         "specflow.nunit.nuspec"
+      ]
+    },
+    "SpecFlow.NUnit.Runners/3.9.74": {
+      "sha512": "m595x3GM7CYco+KsXo96irQ2jcjC6+1+41bKdmnTdl3RAvnC4jUZ9f5B5FhGuaVK4+j4GwWi8MZtGMrT//zHLA==",
+      "type": "package",
+      "path": "specflow.nunit.runners/3.9.74",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "images/specflow-icon.png",
+        "specflow.nunit.runners.3.9.74.nupkg.sha512",
+        "specflow.nunit.runners.nuspec"
       ]
     },
     "SpecFlow.Tools.MsBuild.Generation/3.9.74": {
@@ -6340,15 +6526,17 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
+    "net6.0": [
       "Microsoft.NET.Test.Sdk >= 17.10.0",
-      "Microsoft.Playwright.NUnit >= 1.44.0",
+      "Microsoft.Playwright.NUnit >= 1.45.0",
       "NUnit >= 4.1.0",
       "NUnit.Analyzers >= 4.2.0",
       "NUnit3TestAdapter >= 4.5.0",
       "SpecFlow >= 3.9.74",
       "SpecFlow.Actions.Playwright >= 0.1.285",
+      "SpecFlow.Internal.Json >= 1.0.8",
       "SpecFlow.NUnit >= 3.9.74",
+      "SpecFlow.NUnit.Runners >= 3.9.74",
       "SpecFlow.Tools.MsBuild.Generation >= 3.9.74",
       "coverlet.collector >= 6.0.2"
     ]
@@ -6370,7 +6558,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -6378,8 +6566,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "projectReferences": {}
         }
       },
@@ -6395,8 +6583,8 @@
       }
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net6.0": {
+        "targetAlias": "net6.0",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -6404,7 +6592,7 @@
           },
           "Microsoft.Playwright.NUnit": {
             "target": "Package",
-            "version": "[1.44.0, )"
+            "version": "[1.45.0, )"
           },
           "NUnit": {
             "target": "Package",
@@ -6428,7 +6616,15 @@
             "target": "Package",
             "version": "[0.1.285, )"
           },
+          "SpecFlow.Internal.Json": {
+            "target": "Package",
+            "version": "[1.0.8, )"
+          },
           "SpecFlow.NUnit": {
+            "target": "Package",
+            "version": "[3.9.74, )"
+          },
+          "SpecFlow.NUnit.Runners": {
             "target": "Package",
             "version": "[3.9.74, )"
           },
@@ -6459,7 +6655,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

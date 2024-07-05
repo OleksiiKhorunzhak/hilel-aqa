@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {}
+    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {
+    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
-        "projectName": "PlaywrigthSpecFlow",
-        "projectPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+        "projectUniqueName": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj",
+        "projectName": "AtataSpecFlow",
+        "projectPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj",
         "packagesPath": "C:\\Users\\yusta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\obj\\",
+        "outputPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,23 +46,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Atata": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Atata.WebDriverSetup": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.10.0, )"
             },
-            "Microsoft.Playwright.NUnit": {
-              "target": "Package",
-              "version": "[1.45.0, )"
-            },
             "NUnit": {
               "target": "Package",
               "version": "[4.1.0, )"
-            },
-            "NUnit.Analyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[4.2.0, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
@@ -71,10 +69,6 @@
             "SpecFlow": {
               "target": "Package",
               "version": "[3.9.74, )"
-            },
-            "SpecFlow.Actions.Playwright": {
-              "target": "Package",
-              "version": "[0.1.285, )"
             },
             "SpecFlow.Internal.Json": {
               "target": "Package",
@@ -91,12 +85,6 @@
             "SpecFlow.Tools.MsBuild.Generation": {
               "target": "Package",
               "version": "[3.9.74, )"
-            },
-            "coverlet.collector": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.2, )"
             }
           },
           "imports": [
