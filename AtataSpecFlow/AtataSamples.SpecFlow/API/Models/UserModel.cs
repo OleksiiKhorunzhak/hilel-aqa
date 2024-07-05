@@ -1,4 +1,4 @@
-﻿namespace PlaywrigthSpecFlow.API.Models
+﻿namespace AtataSamples.SpecFlow.Api.Models
 {
     internal class UserModel
     {

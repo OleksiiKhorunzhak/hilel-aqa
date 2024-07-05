@@ -1,9 +1,12 @@
 ﻿using Newtonsoft.Json;
-using PlaywrigthSpecFlow.API.Models;
+using AtataSamples.SpecFlow.Api.Models;
 using System.Net;
 using System.Text;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System;
 
-namespace PlaywrigthSpecFlow.API.Features.Account
+namespace AtataSamples.SpecFlow.Api.Features.Account
 {
     internal class AccountsApi
     {

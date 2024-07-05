@@ -1,7 +1,8 @@
-using PlaywrigthSpecFlow.API.Features.Account;
+using NUnit.Framework;
+using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
-namespace PlaywrigthSpecFlow.Features.Account
+namespace AtataSamples.SpecFlow.Api.Features.Account
 {
     [Binding]
     public class AccountSteps
@@ -38,6 +39,7 @@ namespace PlaywrigthSpecFlow.Features.Account
             {
 
                 //presetup.
+
             }
         }
     }

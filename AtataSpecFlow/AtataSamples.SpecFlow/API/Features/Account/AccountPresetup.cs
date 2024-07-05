@@ -1,6 +1,9 @@
-﻿using PlaywrigthSpecFlow.API.Models;
+﻿using AtataSamples.SpecFlow.Api.Models;
+using System;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
-namespace PlaywrigthSpecFlow.API.Features.Account
+namespace AtataSamples.SpecFlow.Api.Features.Account
 {
     internal class AccountPresetup
     {
