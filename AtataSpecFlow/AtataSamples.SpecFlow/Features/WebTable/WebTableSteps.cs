@@ -13,7 +13,7 @@ namespace AtataSamples.SpecFlow.Features.WebTable
             WebTable.Should.BeVisible();
 
         [When(@"I click Add Button")]
-        public static void WhenIKlickAddButton() =>
+        public static void WhenIClickAddButton() =>
             Go.On<WebTablePage>().
             Add.Click();
 
