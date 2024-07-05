@@ -36,3 +36,5 @@
 /NUnitTests/SampleTests.cs
 /PlaywrigthUITests/PageObjects/DemoQADynamicPropertiesPage.cs
 /PlaywrigthUITests/PageObjects/DemoQAWebTablesPage.cs
+/.github/workflows/PlaywrigthUITests.yml
+/.github/workflows/dotnet.yml
