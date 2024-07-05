@@ -3,12 +3,12 @@ using AtataUITests.PageObjects;
 
 namespace AtataUITests.Tests
 {
-    public sealed class TableTests : UITestFixture
+    public sealed class WebTableTests : UITestFixture
     {
         [Test]
         public void TableColumnTest()
         {
-            Go.To<DemoQAWebTablePage>().
+            Go.To<WebTablePage>().
                 WebTable.Should.BeVisible().
                 WebTable.Rows.Count.Should.BeGreater(1).
                 WebTable.Rows[0].FirstName.Should.Be("Cierra").

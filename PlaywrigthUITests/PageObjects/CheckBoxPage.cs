@@ -8,17 +8,11 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class CheckBoxPage
+    internal class CheckBoxPage(IPage page)
     {
-        private IPage page;
-        public CheckBoxPage(IPage page)
+        public async Task GoToURL(string testPageUrl)
         {
-            this.page = page;
-        }
-
-        public async Task GoToPage(string pageURL)
-        {
-            await page.GotoAsync(pageURL);
+            await page.GotoAsync(testPageUrl);
         }
 
         public async Task VerifyPageTitle(string pageTitle)

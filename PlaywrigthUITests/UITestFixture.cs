@@ -6,7 +6,7 @@ namespace PlaywrigthUITests
     [TestFixture]
     internal class UITestFixture
     {
-        public IPage Page { get; private set; }
+        public IPage page { get; private set; }
         private IBrowser browser;
 
         [SetUp]
@@ -30,13 +30,13 @@ namespace PlaywrigthUITests
             {
                 ViewportSize = new ViewportSize { Width = 1900, Height = 970 },
             });
-            Page = await context.NewPageAsync();
+            page = await context.NewPageAsync();
         }
 
         [TearDown]
         public async Task Teardown()
         {
-            await Page.CloseAsync();
+            await page.CloseAsync();
             await browser.CloseAsync();
         }
     }

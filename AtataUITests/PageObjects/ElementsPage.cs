@@ -17,7 +17,7 @@ namespace AtataUITests.PageObjects
         public Clickable<RadioButtonPage, _> RadioButton { get; private set; }
 
         [FindById("item-3")]
-        public Clickable<WebTablesPage, _> WebTables { get; private set; }
+        public Clickable<WebTablePage, _> WebTables { get; private set; }
 
         [FindById("item-4")]
         public Clickable<ButtonsPage, _> Buttons { get; private set; }
@@ -29,9 +29,9 @@ namespace AtataUITests.PageObjects
         public Clickable<BrokenLinksPage, _> BrokenLinks { get; private set; }
 
         [FindById("item-7")]
-        public Clickable<UploadDownloadPage, _> UploadAndDownload { get; private set; }
+        public Clickable<UpDownloadPage, _> UploadAndDownload { get; private set; }
 
         [FindById("item-8")]
-        public Clickable<DynamicPropertiesPage, _> DynamicProperties { get; private set; }
+        public Clickable<DynamProperPage, _> DynamicProperties { get; private set; }
     }
 }

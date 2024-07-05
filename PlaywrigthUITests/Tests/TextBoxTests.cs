@@ -2,23 +2,15 @@
 
 namespace PlaywrigthUITests.Tests
 {
-    [TestFixture]
     //[Category("TextBoxTests")]
     internal class TextBoxTests : UITestFixture
     {
         private TextBoxPage _TextBoxPage;
 
-        [SetUp]
-        public void SetupTextBoxPage()
-        {
-            _TextBoxPage = new TextBoxPage(Page);
-        }
-
-        //TEST DATA:_______________________________________
-
-        //page:
-        public string pageUrl = "https://demoqa.com/text-box";
-        private string pageH1 = "Text Box";
+        #region TEST DATA:
+        //Page:
+        public string testPageUrl = "https://demoqa.com/text-box";
+        private string testPageH1 = "Text Box";
         //Labels:
         private string fullNamePlaceholder = "Full Name";
         private string fullNameLabel = "Full Name";
@@ -28,16 +20,21 @@ namespace PlaywrigthUITests.Tests
         //private string CurrentAddress = "Test Current Adress 123";
         //private string PermanentAddress = "Test Permanent Address 123";
         private string submitBtn = "Submit";
+        #endregion
 
-        //_________________________________________________
+        [SetUp]
+        public void SetupTextBoxPage()
+        {
+            _TextBoxPage = new TextBoxPage(page);
+        }
 
         [Test]
         [Retry(2)]
         [Description("H1 'Text Box' should be visible")]
-        public async Task VerifyTextBoxPageH1()
+        public async Task VerifyTestPageH1()
         {
-            await _TextBoxPage.GoToURL(pageUrl);
-            await _TextBoxPage.IsPageH1Visible(pageH1);
+            await _TextBoxPage.GoToURL(testPageUrl);
+            await _TextBoxPage.IsPageH1Visible(testPageH1);
         }
 
         [Test]
@@ -45,7 +42,7 @@ namespace PlaywrigthUITests.Tests
         [Description("Label 'Full Name' should be visible")]
         public async Task VerifyFullNameLabel()
         {
-            await _TextBoxPage.GoToURL(pageUrl);
+            await _TextBoxPage.GoToURL(testPageUrl);
             await _TextBoxPage.IsInputLabelVisible(fullNameLabel);
         }
 
@@ -54,7 +51,7 @@ namespace PlaywrigthUITests.Tests
         [Description("Enter {fullName} in 'Full Name' input, press 'Submit' btn, text should be 'Name:{fullName}'")]
         public async Task VerifyFullNameInput()
         {
-            await _TextBoxPage.GoToURL(pageUrl);
+            await _TextBoxPage.GoToURL(testPageUrl);
             await _TextBoxPage.FillInput(fullName, fullNamePlaceholder);
             await _TextBoxPage.IsInputFocused(fullNamePlaceholder);
             await _TextBoxPage.ClickButton(submitBtn);
@@ -67,7 +64,7 @@ namespace PlaywrigthUITests.Tests
         [Description("Clear 'Full Name' input, click Submit, output should be cleared")]
         public async Task VerifyFullNameOutput()
         {
-            await _TextBoxPage.GoToURL(pageUrl);
+            await _TextBoxPage.GoToURL(testPageUrl);
             await _TextBoxPage.FillInput(fullName, fullNamePlaceholder);
             await _TextBoxPage.IsInputFocused(fullNamePlaceholder);
             await _TextBoxPage.ClickButton(submitBtn);

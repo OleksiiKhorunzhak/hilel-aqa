@@ -14,14 +14,14 @@ namespace AtataUITests.Tests
         [Test, Retry(2)]
         public void VerifyPageH1()
         {
-            Go.To<UploadDownloadPage>()
-                .Find<H1<UploadDownloadPage>>().Should.Equal("Upload and Download");
+            Go.To<UpDownloadPage>()
+                .Find<H1<UpDownloadPage>>().Should.Equal("Upload and Download");
         }
 
         [Test, Retry(2)]
         public void VerifFileUpload()
         {
-            Go.To<UploadDownloadPage>()
+            Go.To<UpDownloadPage>()
                 .Download.Click();
 
             AtataContext.Current.Artifacts.Should.WithinSeconds(10).ContainFile("sampleFile.jpeg");
@@ -30,14 +30,14 @@ namespace AtataUITests.Tests
         [Test, Retry(2)]
         public void VerifFileDownload()
         {
-            Go.To<UploadDownloadPage>()
+            Go.To<UpDownloadPage>()
                 .Download.Click();
             AtataContext.Current.Artifacts.Should.WithinSeconds(10).ContainFile("sampleFile.jpeg");
 
-            Go.To<UploadDownloadPage>()
+            Go.To<UpDownloadPage>()
                 .Upload.Set(HelperMethods.GetArtifactsDirectoryPath() + "\\sampleFile.jpeg")
-                .uploadedFilePath.Should.BeVisible()
-                .uploadedFilePath.Should.Contain("sampleFile.jpeg");
+                .UploadedFilePath.Should.BeVisible()
+                .UploadedFilePath.Should.Contain("sampleFile.jpeg");
                
             AtataContext.Current.Artifacts.Should.WithinSeconds(10).ContainFile("sampleFile.jpeg");
         }

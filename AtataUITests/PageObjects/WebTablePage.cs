@@ -37,8 +37,6 @@ namespace AtataUITests.PageObjects
 
             [FindByXPath("//span[@title='Edit']")]
             public Button<_> EditButton { get; private set; }
-
-
         }
 
     }

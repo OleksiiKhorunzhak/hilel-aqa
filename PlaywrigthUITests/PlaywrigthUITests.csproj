@@ -10,6 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Lessons\**" />
+    <EmbeddedResource Remove="Lessons\**" />
+    <None Remove="Lessons\**" />
+    <SpecFlowFeatureFiles Remove="Lessons\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Lessons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Atata" Version="3.1.0" />
     <PackageReference Include="Atata.Bootstrap" Version="3.0.0" />
     <PackageReference Include="Atata.Configuration.Json" Version="3.0.0" />
@@ -40,10 +48,6 @@
     <Using Include="NUnit.Framework" />
     <Using Include="System.Text.RegularExpressions" />
     <Using Include="System.Threading.Tasks" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Lessons\" />
   </ItemGroup>
 
   <ItemGroup>

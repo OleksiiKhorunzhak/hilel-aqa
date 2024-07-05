@@ -9,19 +9,12 @@ using System.Threading.Tasks;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class DownloadPage
+    internal class UpDownloadPage(IPage page)
     {
-        private IPage page;
-        private string UploadDownloadPageUrl = "https://demoqa.com/upload-download";
-
-        public DownloadPage(IPage page)
+        public async Task GoToURL(string testPageUrl)
         {
-            this.page = page;
-        }
-
-        public async Task GoToUploadDownloadPage()
-        {
-            await page.GotoAsync(UploadDownloadPageUrl);
+            await page.GotoAsync(testPageUrl);
+            await page.WaitForURLAsync(testPageUrl);
         }
 
         public async Task ClickDownloadButton()

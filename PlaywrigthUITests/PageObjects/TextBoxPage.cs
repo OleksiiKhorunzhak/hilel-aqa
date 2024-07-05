@@ -9,14 +9,11 @@ using TechTalk.SpecFlow.Assist.ValueRetrievers;
 
 namespace PlaywrigthUITests.PageObjects
 {
-    internal class TextBoxPage
+    internal class TextBoxPage(IPage page)
     {
-        private IPage page;
-        public TextBoxPage(IPage page)
-        {
-            this.page = page;
-        }
+        private readonly IPage page = page;
 
+        #region Page:
         public async Task GoToURL(string testPageUrl)
         {
             await page.GotoAsync(testPageUrl);
@@ -27,7 +24,9 @@ namespace PlaywrigthUITests.PageObjects
         {
             await Assertions.Expect(page.GetByRole(AriaRole.Heading, new() { Name = pageH1 })).ToBeVisibleAsync();
         }
+        #endregion
 
+        # region Inputs:
         public async Task IsInputLabelVisible(string fullNameLabel)
         {
             await Assertions.Expect(page.Locator("#userName-wrapper div").Filter(new() { HasText = fullNameLabel })).ToBeVisibleAsync();
@@ -44,6 +43,8 @@ namespace PlaywrigthUITests.PageObjects
             await page.GetByPlaceholder(fullNamePlaceholder).ClickAsync();
             await Assertions.Expect(page.GetByPlaceholder(fullNamePlaceholder)).ToBeFocusedAsync();
         }
+        #endregion
+
 
         public async Task ClickButton(string btnName)
         {
