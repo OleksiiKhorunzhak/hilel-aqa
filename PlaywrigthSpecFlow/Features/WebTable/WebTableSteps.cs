@@ -20,10 +20,12 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         public async Task WhenIOpenWebTablePage() => await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
 
         [When(@"I see the WebTable")]
-        public async Task WhenISeeTheWebTable() => await DemoQAWebTablesPage.VerifyTableVisible();
+        public async Task WhenISeeTheWebTable() => 
+            await DemoQAWebTablesPage.VerifyTableVisible();
 
         [When(@"I click Add Button")]
-        public async Task WhenIKlickAddButton() => await DemoQAWebTablesPage.IClickAddButton();
+        public async Task WhenIKlickAddButton() => 
+            await DemoQAWebTablesPage.IClickAddButton();
 
         [When(@"I set FirstName to ""(.*)""")]
         public async Task WhenISetFirstName(string firstName) =>
