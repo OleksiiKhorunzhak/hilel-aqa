@@ -4,7 +4,7 @@ using _ = AtataSamples.SpecFlow.PageObjects.UpDownloadPage;
 namespace AtataSamples.SpecFlow.PageObjects
 {
     [Url("upload-download")]
-    public sealed class UpDownloadPage : _DemoQAPage<_>
+    public sealed class UpDownloadPage : DemoQAPage<_>
     {
         [FindById("downloadButton")]
         public Link<_> Download { get; private set; }

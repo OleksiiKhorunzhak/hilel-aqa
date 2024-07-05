@@ -5,7 +5,7 @@ using _ = AtataSamples.SpecFlow.PageObjects.WebTablePage;
 namespace AtataSamples.SpecFlow.PageObjects
 {
     [Url("webtables")]
-    public sealed class WebTablePage : _DemoQAPage<_>
+    public sealed class WebTablePage : DemoQAPage<_>
     {
         public ReactTable<WebTableRow, _> WebTable { get; private set; }
 

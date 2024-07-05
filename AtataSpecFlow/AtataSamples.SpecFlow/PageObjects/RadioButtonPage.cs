@@ -4,7 +4,7 @@ using _ = AtataSamples.SpecFlow.PageObjects.RadioButtonPage;
 namespace AtataSamples.SpecFlow.PageObjects
 {
     [Url("radio-button")]
-    public sealed class RadioButtonPage : _DemoQAPage<_>
+    public sealed class RadioButtonPage : DemoQAPage<_>
     {
         public ControlList<CustomRadioButton, _> RadioButtons { get; set; }
 

@@ -3,8 +3,8 @@ using _ = AtataSamples.SpecFlow.PageObjects.DynamProperPage;
 
 namespace AtataSamples.SpecFlow.PageObjects
 {
-    [Url("/dynamic-properties")]
-    public sealed class DynamProperPage : Page<_>
+    [Url("dynamic-properties")]
+    public sealed class DynamProperPage : DemoQAPage<_>
     {
         public Button<_> ColorChange { get; set; }
 

@@ -3,7 +3,7 @@ using _ = AtataSamples.SpecFlow.PageObjects.TextBoxPage;
 
 namespace AtataSamples.SpecFlow.PageObjects
 {
-    public sealed class TextBoxPage : _DemoQAPage<_>
+    public sealed class TextBoxPage : DemoQAPage<_>
     {
         [FindByPlaceholder("Full Name")]
         public TextInput<_> FullName { get; set; }

@@ -4,7 +4,7 @@ using _ = AtataSamples.SpecFlow.PageObjects.ButtonsPage;
 namespace AtataSamples.SpecFlow.PageObjects
 {
     [Url("/buttons")]
-    public sealed class ButtonsPage : _DemoQAPage<_>
+    public sealed class ButtonsPage : DemoQAPage<_>
     {
         [FindById("doubleClickBtn")]
         public Button<_> DoubleClickMe { get; private set; }

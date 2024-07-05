@@ -4,7 +4,7 @@ using _ = AtataSamples.SpecFlow.PageObjects.ElementsPage;
 namespace AtataSamples.SpecFlow.PageObjects
 {
     [Url("/elements")]
-    public sealed class ElementsPage : _DemoQAPage<_>
+    public sealed class ElementsPage : DemoQAPage<_>
     {
         [FindById("item-0")]
         public Clickable<TextBoxPage, _> TextBox { get; private set; }
