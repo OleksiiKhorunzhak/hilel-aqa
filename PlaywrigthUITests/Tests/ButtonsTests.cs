@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using NUnit.Framework.Internal;
 using NUnitTests.Features.Drive;
 namespace PlaywrigthUITests.Tests
 {
@@ -71,10 +72,66 @@ namespace PlaywrigthUITests.Tests
 
         //Homework Lesson_9
         //TODO : 
-        //TC-4 : Verify Click Me button should be enabled
-        //TC-5 : Verify Click Rigth Click Me button verify button focused
-        //TC-6 : Verify H1 Buttons is visible
-        //TC-7 : Verify text 'You have done a dynamic click' is not visible after Page refresh
 
+        [Test, Description("Verify that 'Click Me' button is enabled")]
+        public async Task ClickMeButtonIsEnabled()
+        {
+            await Page.GotoAsync("https://demoqa.com/elements");
+            await Page.Locator("li:has-text('Buttons')").ClickAsync();
+            await Page.WaitForURLAsync("https://demoqa.com/buttons");
+            await Page.GetByRole(AriaRole.Button, new() { Name = "Click Me", Exact = true }).ClickAsync();
+
+            // Assert that the "Click Me" button is enabled
+            var isEnabled = await Page.GetByRole(AriaRole.Button, new() { Name = "Click Me", Exact = true }).IsEnabledAsync();
+            Assert.That(isEnabled, Is.True, "'Click Me' button should be enabled");
+        }
+
+        [Test, Description("Verify Click Rigth Click Me button verify button focused")]
+        public async Task VerifyClickOfRightClickButtonIsFocused()
+        {
+            await Page.GotoAsync("https://demoqa.com/elements");
+            await Page.Locator("li:has-text('Buttons')").ClickAsync();
+            await Page.WaitForURLAsync("https://demoqa.com/buttons");
+            await Page.GetByRole(AriaRole.Button, new() { Name = "Right Click Me" }).ClickAsync(new LocatorClickOptions
+            {
+                Button = MouseButton.Right,
+            });
+
+            var isFocused = await Page.GetByRole(AriaRole.Button, new() { Name = "Right Click Me" }).IsVisibleAsync();
+            Assert.That(isFocused, Is.True, "Right-click should have focused the button");
+
+        }
+
+        [Test, Description("Verify H1 Buttons is visible")]
+        public async Task VerifyTitleOfButtonsPage()
+        {
+            await Page.GotoAsync("https://demoqa.com/elements");
+            await Page.Locator("li:has-text('Buttons')").ClickAsync();
+            await Page.WaitForURLAsync("https://demoqa.com/buttons");
+            await Page.GetByRole(AriaRole.Heading, new() { Name = "Buttons" }).IsEnabledAsync();
+
+            var isVisible = await Page.GetByRole(AriaRole.Heading, new() { Name = "Buttons" }).IsVisibleAsync();
+            Assert.That(isVisible, Is.True, "H1 Buttons is visible");
+
+        }
+
+        [Test, Description("Verify text 'You have done a dynamic click' is not visible after page refresh")]
+
+        public async Task VerifyThatTextIsNotVisibleAfterPafeRefreshwhenClickOnClickMeButton()
+        {
+            await Page.GotoAsync("https://demoqa.com/elements");
+            await Page.Locator("li:has-text('Buttons')").ClickAsync();
+            await Page.WaitForURLAsync("https://demoqa.com/buttons");
+            await Page.GetByRole(AriaRole.Button, new() { Name = "Click Me", Exact = true }).ClickAsync();
+
+            var isVisible = await Page.GetByText("You have done a dynamic click").IsVisibleAsync();
+            Assert.That(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");
+
+            await Page.ReloadAsync();
+
+            var isNotVisibleAfterRefresh = await Page.GetByText("You have done a dynamic click").IsVisibleAsync();
+            Assert.That(isNotVisibleAfterRefresh, Is.False, "The element with text 'You have done a dynamic click' should not be visible after the page refresh.");
+
+        }
     }
 }

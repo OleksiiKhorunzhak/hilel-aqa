@@ -15,9 +15,13 @@ namespace AtataUITests.PageObjects
 
             [FindByClass("custom-control-input")]
             public RadioButton<_> RadioButton { get; set; }
+
         }
 
         [FindByClass("mt-3")]
         public Text<_> Text { get; set; }
+
+        [FindByXPath("//h1[@class='text-center' and text()='Radio Button']")]
+        public H1<_> RadioButtonsTitle { get; set; }
     }
 }
