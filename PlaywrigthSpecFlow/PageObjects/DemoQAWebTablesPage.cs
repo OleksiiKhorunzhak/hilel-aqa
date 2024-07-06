@@ -1,6 +1,7 @@
 ﻿using Microsoft.Playwright;
 
-namespace PlaywrightSpecFlow.PageObjects {
+namespace PlaywrightSpecFlow.PageObjects
+{
     internal class DemoQAWebTablesPage
     {
         private IPage Page;
@@ -83,13 +84,13 @@ namespace PlaywrightSpecFlow.PageObjects {
         public async Task IFillFirstName(string firstName)
         {
             await Page.GetByPlaceholder("First Name").FillAsync(firstName);
-            await Page.GetByPlaceholder("First Name").PressAsync("Enter");
+            //await Page.GetByPlaceholder("First Name").PressAsync("Enter");
         }
 
         public async Task IFillLastName(string lastName)
         {
             await Page.GetByPlaceholder("Last Name").FillAsync(lastName);
-            await Page.GetByPlaceholder("Last Name").PressAsync("Enter");
+            //await Page.GetByPlaceholder("Last Name").PressAsync("Enter");
         }
 
         public async Task VerifyPopupVisible()
@@ -104,6 +105,5 @@ namespace PlaywrightSpecFlow.PageObjects {
             var firstName = popup.GetByPlaceholder("First Name");
             await Assertions.Expect(firstName).ToBeVisibleAsync();
         }
-
     }
 }
