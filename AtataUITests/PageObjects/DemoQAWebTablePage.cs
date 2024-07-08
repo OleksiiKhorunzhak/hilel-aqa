@@ -1,4 +1,5 @@
 ﻿using AtataUITests.PageObjects.Controls;
+using System.Threading.Tasks.Dataflow;
 using _ = AtataUITests.PageObjects.DemoQAWebTablePage;
 
 namespace AtataUITests.PageObjects
@@ -35,10 +36,14 @@ namespace AtataUITests.PageObjects
             [FindByXPath("//span[@title='Delete']")]
             public Button<_> DeleteButton { get; private set; }
 
-            [FindByXPath("//span[@title='Edit']")]
+            //[FindByXPath("//span[@title='Edit']")]
+
+            //[FindById("edit-record-3")]
+            
+            [FindByXPath("//div[@class='action-buttons']/span[@title='Edit']/svg")]
             public Button<_> EditButton { get; private set; }
 
-
+            
         }
 
     }
