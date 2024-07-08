@@ -1,5 +1,6 @@
 ﻿using Atata;
 using AtataUITests.PageObjects;
+using NUnit.Framework.Internal;
 
 namespace AtataUITests.Tests
 {
