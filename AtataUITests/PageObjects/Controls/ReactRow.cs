@@ -26,8 +26,8 @@ namespace AtataUITests.PageObjects.Controls
         [FindByXPath("//div[@role='gridcell'][6]")]
         public Text<TOwner> Department { get; private set; }
 
-        [FindByXPath("//div[@role='gridcell'][7]")]
-        public Text<TOwner> Action { get; private set; }
+        //[FindByXPath("//div[@role='gridcell'][7]")]
+        //public Text<TOwner> Action { get; private set; }
 
         [FindByXPath("//span[@title='Delete']")]
         public Svg<TOwner> Delete { get; private set; }

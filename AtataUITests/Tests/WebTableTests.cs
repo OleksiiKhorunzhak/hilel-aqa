@@ -87,7 +87,7 @@ namespace AtataUITests.Tests
 
             foreach (var cellValue in valueList)
                 Go.On<WebTablePage>()
-                .Table.Rows.Contents.Value.Contains(cellValue);
+                    .Table.Rows.Contents.Value.Contains(cellValue);
         }
 
         [Test]
@@ -124,14 +124,21 @@ namespace AtataUITests.Tests
         {
             Go.To<WebTablePage>()
                 .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Edit.Click()
-                .AddPopup.Should.BeVisible()
-                .AddPopup.Department.Set("TestDept")
-                .AddPopup.Submit.Click()
+                    .AddPopup.Should.BeVisible()
+                    .AddPopup.Department.Set("TestDept")
+                    .AddPopup.Submit.Click()
                 .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Department.Should.Be("TestDept");
         }
 
-        //TODO: automate test cases
-        //Edit row and verify row edited
-        //Delete row and verify row deleted  
+        [Test]
+        public void VerifyDeleteRow()
+        {
+            Go.To<WebTablePage>()
+                .Search.Set("Cierra")
+                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Should.BePresent()
+                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Delete.Click()
+                .Search.Set("Cierra")
+                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Should.Not.BePresent();
+        }  
     }
 }
