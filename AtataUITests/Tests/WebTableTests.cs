@@ -84,7 +84,7 @@ namespace AtataUITests.Tests
                 .Add.Click()
                     .AddPopup.Should.BeVisible()
                     .AddPopup.LastName.Css["border-color"].Should.Be(passedColor)
-                    .AddPopup.LastName.Css["border-color"].Should.Be(passedColor)
+                    .AddPopup.LastName.Css["border-color"].Should.Be(failedColor)
                     .AddPopup.Submit.Click();
                     /////////////////
         }
