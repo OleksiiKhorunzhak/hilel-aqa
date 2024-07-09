@@ -41,6 +41,17 @@ namespace PlaywrigthUITests.Tests
             await _WebTablesPage.VerifyFirstNameVisible();
         }
 
+        [Test]
+        public async Task VerifyTableVisible2()
+        {
+            await _WebTablesPage.GoToURL(testPageUrl);
+            await _WebTablesPage.VerifyTableRowContent("Last Name", "Cantrell");
+
+            await page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
+            await _WebTablesPage.VerifyPopupVisible();
+            await _WebTablesPage.VerifyFirstNameVisible();
+        }
+
         //TODO: automate test cases
         //Check any mandatory field
         //Add new row and verify row added

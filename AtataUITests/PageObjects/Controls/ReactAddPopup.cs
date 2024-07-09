@@ -1,5 +1,4 @@
 ﻿using Atata;
-
 namespace AtataUITests.PageObjects.Controls
 {
     [ControlDefinition("div", ContainingClass = "modal-content", ComponentTypeName = "popup")]
@@ -11,6 +10,18 @@ namespace AtataUITests.PageObjects.Controls
 
         [FindByPlaceholder("Last Name")]
         public TextInput<TOwner> LastName { get; private set; }
+
+        [FindByPlaceholder("name@example.com")]
+        public TextInput<TOwner> Email { get; private set; }
+
+        [FindByPlaceholder("Age")]
+        public TextInput<TOwner> Age { get; private set; }
+
+        [FindByPlaceholder("Salary")]
+        public TextInput<TOwner> Salary { get; private set; }
+
+        [FindByPlaceholder("Department")]
+        public TextInput<TOwner> Department { get; private set; }
 
         public Button<TOwner> Submit { get; private set; }
     }
