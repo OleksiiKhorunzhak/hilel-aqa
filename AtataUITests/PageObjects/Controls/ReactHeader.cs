@@ -6,6 +6,5 @@ namespace AtataUITests.PageObjects.Controls
     public class ReactHeader<TOwner> : TableHeader<TOwner>
         where TOwner : PageObject<TOwner>
     {
-
     }
 }

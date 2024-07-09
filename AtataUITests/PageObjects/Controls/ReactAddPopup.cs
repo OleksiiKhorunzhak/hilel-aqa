@@ -1,5 +1,4 @@
 ﻿using Atata;
-
 namespace AtataUITests.PageObjects.Controls
 {
     [ControlDefinition("div", ContainingClass = "modal-content", ComponentTypeName = "popup")]

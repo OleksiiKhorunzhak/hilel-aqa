@@ -9,9 +9,9 @@ namespace AtataUITests.PageObjects
     {
         public ReactTable<ReactHeader<_>, ReactRow<_>, _> Table { get; private set; }
 
-        public ReactHeader<_> Header { get; private set; }
+        //public ReactHeader<_> Header { get; private set; }
 
-        public ReactRow<_> Row { get; private set; }
+        //public ReactRow<_> Row { get; private set; }
 
         public ReactAddPopup<_> AddPopup { get; private set; }
 
@@ -19,5 +19,6 @@ namespace AtataUITests.PageObjects
 
         [FindByPlaceholder("Type to search")]
         public TextInput<_> Search { get; private set; }
+
     }
 }

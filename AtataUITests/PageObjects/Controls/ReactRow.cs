@@ -1,4 +1,5 @@
 ﻿using Atata;
+using System.Buffers;
 
 namespace AtataUITests.PageObjects.Controls
 {
@@ -25,10 +26,15 @@ namespace AtataUITests.PageObjects.Controls
         [FindByXPath("//div[@role='gridcell'][6]")]
         public Text<TOwner> Department { get; private set; }
 
+        [FindByXPath("//div[@role='gridcell'][7]")]
+        public Text<TOwner> Action { get; private set; }
+
         [FindByXPath("//span[@title='Delete']")]
-        public Button<TOwner> DeleteButton { get; private set; }
+        public Svg<TOwner> Delete { get; private set; }
 
         [FindByXPath("//span[@title='Edit']")]
-        public Button<TOwner> EditButton { get; private set; }
+        public Svg<TOwner> Edit { get; private set; }
+
+
     }
 }

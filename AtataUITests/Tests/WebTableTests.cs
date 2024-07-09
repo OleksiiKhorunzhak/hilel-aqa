@@ -79,7 +79,8 @@ namespace AtataUITests.Tests
                     .AddPopup.Submit.Should.BeVisible()
                     .AddPopup.Submit.Click();
             Go.On<WebTablePage>()
-                .Table.Should.BeVisible();
+                .Table.Should.BeVisible()
+                .Search.Set(firstName);
 
             List<string> valueList = new List<string>
             { firstName, lastName, email, age, salary, department };
@@ -116,6 +117,17 @@ namespace AtataUITests.Tests
                     .AddPopup.Age.Css["border-color"].Should.Be(passedColor)
                     .AddPopup.Salary.Css["border-color"].Should.Be(passedColor)
                     .AddPopup.Department.Css["border-color"].Should.Be(passedColor);
+        }
+
+        [Test]
+        public void VerifyEditRow()
+        {
+            Go.To<WebTablePage>()
+                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Edit.Click()
+                .AddPopup.Should.BeVisible()
+                .AddPopup.Department.Set("TestDept")
+                .AddPopup.Submit.Click()
+                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Department.Should.Be("TestDept");
         }
 
         //TODO: automate test cases
