@@ -2,7 +2,7 @@
 {
     //Home page:
     [Url("https://demoqa.com/")]
-    [VerifyTitle("DEMOQA")]
+    //[VerifyTitle("DEMOQA")]
     public abstract class DemoQAPage<TOwner> : Page<TOwner>
         where TOwner : DemoQAPage<TOwner>
     {

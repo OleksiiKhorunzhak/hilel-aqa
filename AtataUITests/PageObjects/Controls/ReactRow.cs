@@ -34,7 +34,5 @@ namespace AtataUITests.PageObjects.Controls
 
         [FindByXPath("//span[@title='Edit']")]
         public Svg<TOwner> Edit { get; private set; }
-
-
     }
 }
