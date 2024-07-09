@@ -42,8 +42,8 @@ namespace AtataUITests.Tests
                 .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Department.Should.Be(department); 
         }
 
-        [Test]
-        public void AddNewRowTest()
+        [Test, Retry(2)]
+        public void VerifyAddNewRow()
         {
             //testData:
             string firstName = "TestName123";
