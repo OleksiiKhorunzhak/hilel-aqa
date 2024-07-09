@@ -118,18 +118,24 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I add item to the table")]
-        [NUnit.Framework.TestCaseAttribute("John", "Wick", "JohnWick@wick.com", null)]
-        [NUnit.Framework.TestCaseAttribute("Alice", "Smith", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Bob", "Johnson", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Cierra", "Vega", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Alden", "Cantrell", "", null)]
-        public void IAddItemToTheTable(string firstName, string lastName, string email, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Zack", "Hock", "Zack@Hock.com", "42", "12100", "QA", null)]
+        [NUnit.Framework.TestCaseAttribute("Alice", "Smith", "Alice@smith.com", "40", "10500", "Dev", null)]
+        [NUnit.Framework.TestCaseAttribute("Bob", "Johnson", "Bob@johnson.com", "20", "9000", "Dev", null)]
+        [NUnit.Framework.TestCaseAttribute("Petro", "Petrenko", "Petro@Petro.com", "16", "9200", "BA", null)]
+        [NUnit.Framework.TestCaseAttribute("Ivan", "Ivanenko", "Ivan@Ivanenko.com", "59", "13400", "BA", null)]
+        [NUnit.Framework.TestCaseAttribute("Alex", "Alexo", "Alex@Alexo.com", "30", "8900", "Dev", null)]
+        [NUnit.Framework.TestCaseAttribute("Tanya", "Vertigo", "Tanya@vertigo.com", "25", "11100", "Dev", null)]
+        [NUnit.Framework.TestCaseAttribute("Deb", "Darts", "deb@darts.com", "55", "12800", "QA", null)]
+        public void IAddItemToTheTable(string firstName, string lastName, string email, string age, string salary, string department, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("FirstName", firstName);
             argumentsOfScenario.Add("LastName", lastName);
             argumentsOfScenario.Add("Email", email);
+            argumentsOfScenario.Add("Age", age);
+            argumentsOfScenario.Add("Salary", salary);
+            argumentsOfScenario.Add("Department", department);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I add item to the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 22
     this.ScenarioInitialize(scenarioInfo);
@@ -159,8 +165,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 28
     testRunner.And(string.Format("I set Email \"{0}\" in a table", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 29
+    testRunner.And(string.Format("I set Age {0} in a table", age), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 30
+    testRunner.And(string.Format("I set Salary {0} in a table", salary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 31
+    testRunner.And(string.Format("I set Department {0} in a table", department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
+    testRunner.And("I click Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 34
  testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 35
+ testRunner.Then(string.Format("I see LastName \"{0}\" in a table", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 36
+ testRunner.Then(string.Format("I see Email \"{0}\" in a table", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 37
+ testRunner.Then(string.Format("I see Age \"{0}\" in a table", age), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 38
+ testRunner.Then(string.Format("I see Salary \"{0}\" in a table", salary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 39
+ testRunner.Then(string.Format("I see Department \"{0}\" in a table", department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

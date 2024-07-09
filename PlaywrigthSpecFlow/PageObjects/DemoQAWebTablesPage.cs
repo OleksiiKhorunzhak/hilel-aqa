@@ -94,7 +94,33 @@ namespace PlaywrightSpecFlow.PageObjects {
             //await Page.GetByPlaceholder("Last Name").PressAsync("Enter");
         }
 
-        public async Task VerifyPopupVisible()
+		public async Task IFillEmail(string email)
+		{
+			await Page.GetByPlaceholder("name@example.com").FillAsync(email);
+			//await Page.GetByPlaceholder("First Name").PressAsync("Enter");
+		}
+
+		public async Task IFillAge(int age)
+		{
+			await Page.GetByPlaceholder("Age").FillAsync(age.ToString());
+		}
+
+		public async Task IFillDepartment(string department)
+		{
+			await Page.GetByPlaceholder("Department").FillAsync(department);
+		}
+
+		public async Task IFillSalary(int salary)
+        {
+			await Page.GetByPlaceholder("Salary").FillAsync(salary.ToString());
+		}
+
+		public async Task IClickSubmitButton()
+		{
+			await Page.GetByRole(AriaRole.Button, new() { NameString = "Submit" }).ClickAsync();
+		}
+
+		public async Task VerifyPopupVisible()
         {
             var popup = Page.Locator(".modal-content");
             await Assertions.Expect(popup).ToBeVisibleAsync();

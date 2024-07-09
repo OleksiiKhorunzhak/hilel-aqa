@@ -34,11 +34,10 @@ namespace PlaywrigthSpecFlow.Features.Account
         [AfterFeature(@"ICreateAccountByAPI")]
         public static void WhenICleanupAccountByAPI(FeatureContext featureContext)
         {
-            if (featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
-            {
-
-                //presetup.
-            }
-        }
+			if (featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
+			{
+                presetup.AccountApiCleanup();
+			}
+		}
     }
 }
