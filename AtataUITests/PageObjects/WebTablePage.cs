@@ -15,6 +15,5 @@ namespace AtataUITests.PageObjects
 
         [FindByPlaceholder("Type to search")]
         public TextInput<_> Search { get; private set; }
-
     }
 }

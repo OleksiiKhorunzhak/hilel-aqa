@@ -139,6 +139,6 @@ namespace AtataUITests.Tests
                 .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Delete.Click()
                 .Search.Set("Cierra")
                 .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Should.Not.BePresent();
-        }  
+        }
     }
 }
