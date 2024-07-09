@@ -8,9 +8,6 @@ namespace AtataUITests.Tests
 {
     public sealed class WebTableTests : UITestFixture
     {
-        readonly string failedColor = "rgb(220, 53, 69)";
-        readonly string passedColor = "rgb(40, 167, 69)";
-
         [Test, Retry(2)]
         public void VerifyTableHeaders()
         {
@@ -25,45 +22,64 @@ namespace AtataUITests.Tests
         [Test, Retry(2)]
         public void VerifyTableRow()
         {
+                //testData:
+                string firstName = "Cierra";
+                string lastName = "Vega";
+                string age = "39";
+                string email = "cierra@example.com";
+                string salary = "10000";
+                string department = "Insurance";
+                //--------------------------------
             Go.To<WebTablePage>()
                 .Table.Should.BeVisible()
                 .Table.Rows[0].Should.BePresent()
-                .Table.Rows[0].FirstName.Should.Be("Cierra")
-                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Should.BeVisible()
-                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].LastName.Should.Be("Vega")
-                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Age.Should.Be("39")
-                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Email.Should.Be("cierra@example.com")
-                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Salary.Should.Be("10000")
-                .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Department.Should.Be("Insurance"); 
+                .Table.Rows[0].FirstName.Should.Be(firstName)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Should.BeVisible()
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].LastName.Should.Be(lastName)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Age.Should.Be(age)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Email.Should.Be(email)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Salary.Should.Be(salary)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Department.Should.Be(department); 
         }
 
         [Test]
         public void AddNewRowTest()
         {
+            //testData:
+            string firstName = "TestName123";
+            string lastName = "LastName 321";
+            string email = "test123@email.com";
+            string age = "99";
+            string salary = "7890";
+            string department = "testDep";
+            //--------------------------------
             Go.To<WebTablePage>()
                 .Table.Should.BeVisible()
                 .Add.Click()
-                    .AddPopup.FirstName.Set("TestName123")
-                    .AddPopup.LastName.Set("LastName 321")
-                    .AddPopup.Email.Set("test123@email.com")
-                    .AddPopup.Age.Set("99")
-                    .AddPopup.Salary.Set("7890")
-                    .AddPopup.Department.Set("testDep")
+                    .AddPopup.FirstName.Set(firstName)
+                    .AddPopup.LastName.Set(lastName)
+                    .AddPopup.Email.Set(email)
+                    .AddPopup.Age.Set(age)
+                    .AddPopup.Salary.Set(salary)
+                    .AddPopup.Department.Set(department)
                     .AddPopup.Submit.Should.BeVisible()
-                    .AddPopup.Submit.Click()
+                    .AddPopup.Submit.Click();
+            Go.On<WebTablePage>()
                 .Table.Should.BeVisible()
-                .Table.Rows[0].Should.BePresent();          
-                //.Table.Rows[row => row.FirstName.Content.Value.Equals("TestName123")].Should.BeVisible()
-                //.Table.Rows[row => row.FirstName.Content.Value.Equals("TestName123")].LastName.Should.Be("LastName 321")
-                //.Table.Rows[row => row.FirstName.Content.Value.Equals("TestName123")].Email.Should.Be("testMail123@email.com")
-                //.Table.Rows[row => row.FirstName.Content.Value.Equals("TestName123")].Age.Should.Be("99")
-                //.Table.Rows[row => row.FirstName.Content.Value.Equals("TestName123")].Salary.Should.Be("7890")
-                //.Table.Rows[row => row.FirstName.Content.Value.Equals("TestName123")].Department.Should.Be("testDep");
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Should.BeVisible()
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].LastName.Should.Be(lastName)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Age.Should.Be(age)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Email.Should.Be(email)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Salary.Should.Be(salary)
+                .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Department.Should.Be(department);
         }
 
         [Test, Retry(2)]
         public void VerifyAddPopupRequiredFields()
         {
+            string failedColor = "rgb(220, 53, 69)";
+            string passedColor = "rgb(40, 167, 69)";
+
             Go.To<WebTablePage>()
                 .Add.Click()
                     .AddPopup.Should.BeVisible()

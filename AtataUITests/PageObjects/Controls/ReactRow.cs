@@ -3,7 +3,7 @@
 namespace AtataUITests.PageObjects.Controls
 {
     //[ControlDefinition("div", ContainingClass = "rt-tr", ComponentTypeName = "row")]
-    [ControlDefinition("div", ContainingClass = "rt-tbody", ComponentTypeName = "Row")]
+    [ControlDefinition("div", ContainingClass = "rt-tr-group", ComponentTypeName = "rowgroup")]
     public class ReactRow<TOwner> : TableRow<TOwner>
         where TOwner : PageObject<TOwner>
     {
