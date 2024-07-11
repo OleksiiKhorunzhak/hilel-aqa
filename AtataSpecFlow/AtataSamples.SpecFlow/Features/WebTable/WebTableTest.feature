@@ -26,7 +26,7 @@ Scenario Outline: I add item to the table
 	And I set FirstName to "<FirstName>"
     And I set LastName to "<LastName>"
     And I set Email to "<Email>"
-	Then I see FirstName "<FirstName>" in a table
+	Then I see newFirstName "<FirstName>" in a table
 	Examples:
     | FirstName | LastName | Email             |
     | John      | Wick     | JohnWick@wick.com |

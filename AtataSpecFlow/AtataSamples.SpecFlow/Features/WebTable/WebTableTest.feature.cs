@@ -85,6 +85,8 @@ namespace AtataSpecFlow.Features.WebTable
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I see item in the table")]
         [NUnit.Framework.TestCaseAttribute("Cierra", "Vega", null)]
+        [NUnit.Framework.TestCaseAttribute("Alden", "Cantrell", null)]
+        [NUnit.Framework.TestCaseAttribute("Kierra", "Gentry", null)]
         public void ISeeItemInTheTable(string firstName, string lastName, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -159,7 +161,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.And(string.Format("I set Email to \"{0}\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
- testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("I see newFirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
