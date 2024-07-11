@@ -1,5 +1,7 @@
 ﻿@ReusesFeatureDriver
+@WebPagePresetup
 @WebPageLogin
+@RefreshPage
 
 Feature: WebTableTest
 

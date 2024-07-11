@@ -26,16 +26,13 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         public async Task WhenIKlickAddButton() => await _WebTablesPage.IClickAddButton();
 
         [When(@"I set FirstName to ""(.*)""")]
-        public async Task WhenISetFirstName(string firstName) =>
-           await _WebTablesPage.IFillFirstName(firstName);
+        public async Task WhenISetFirstName(string firstName) => await _WebTablesPage.IFillFirstName(firstName);
 
         [When(@"I set LastName to ""(.*)""")]
-        public async Task WhenISetLastName(string lastName) =>
-             await _WebTablesPage.IFillLastName(lastName);
+        public async Task WhenISetLastName(string lastName) => await _WebTablesPage.IFillLastName(lastName);
 
         [Then(@"I see FirstName ""(.*)"" in a table")]
-        public async Task ThenISeeFirstName(string firstName) =>
-            await Assertions.Expect(page.GetByRole(AriaRole.Gridcell, new() { Name = firstName, Exact = true })).ToBeVisibleAsync();
+        public async Task ThenISeeFirstName(string firstName) => await Assertions.Expect(page.GetByRole(AriaRole.Gridcell, new() { Name = firstName, Exact = true })).ToBeVisibleAsync();
 
         [When(@"I set Email ""(.*)"" in a table")]
         public async Task ThenISetEmail(string email)
@@ -45,7 +42,6 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         }
 
         [Then(@"I see LastName ""(.*)"" in a table")]
-        public async Task ThenISeeLastName(string lastName) =>
-          await Assertions.Expect(page.GetByRole(AriaRole.Gridcell, new() { Name = lastName, Exact = true })).ToBeVisibleAsync();
+        public async Task ThenISeeLastName(string lastName) => await Assertions.Expect(page.GetByRole(AriaRole.Gridcell, new() { Name = lastName, Exact = true })).ToBeVisibleAsync();
     }
 }

@@ -5,5 +5,8 @@
     <Compile Update="Bindings\SpecFlowHooks.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Features\test feature\testSteps1.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
