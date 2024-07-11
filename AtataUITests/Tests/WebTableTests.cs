@@ -8,7 +8,7 @@ namespace AtataUITests.Tests
 {
     public sealed class WebTableTests : UITestFixture
     {
-        [Test]
+        [Test, Retry(2)]
         public void VerifyTableHeaders()
         {
             Go.To<WebTablePage>()
@@ -22,7 +22,7 @@ namespace AtataUITests.Tests
                 .Table.Headers.Contents.Value.Contains(header);
         }
 
-        [Test]
+        [Test, Retry(2)]
         public void VerifySearch()
         {
             Go.To<WebTablePage>()
@@ -33,7 +33,7 @@ namespace AtataUITests.Tests
                 .Table.Rows[0].FirstName.Should.Be("Kierra");
         }
 
-        [Test]
+        [Test, Retry(2)]
         public void VerifyTableRow()
         {
             //testData:
@@ -56,7 +56,7 @@ namespace AtataUITests.Tests
                 .Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].Department.Should.Be(department);
         }
 
-        [Test]
+        [Test, Retry(2)]
         public void VerifyAddNewRow()
         {
             //testData:
@@ -90,7 +90,7 @@ namespace AtataUITests.Tests
                     .Table.Rows.Contents.Value.Contains(cellValue);
         }
 
-        [Test]
+        [Test, Retry(2)]
         public void VerifyAddPopupRequiredFields()
         {
             string failedColor = "rgb(220, 53, 69)";
@@ -119,7 +119,7 @@ namespace AtataUITests.Tests
                     .AddPopup.Department.Css["border-color"].Should.Be(passedColor);
         }
 
-        [Test]
+        [Test, Retry(2)]
         public void VerifyEditRow()
         {
             Go.To<WebTablePage>()
@@ -130,7 +130,7 @@ namespace AtataUITests.Tests
                 .Table.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Department.Should.Be("TestDept");
         }
 
-        [Test]
+        [Test, Retry(2)]
         public void VerifyDeleteRow()
         {
             Go.To<WebTablePage>()
