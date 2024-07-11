@@ -33,7 +33,6 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\" />
-    <Folder Include="Lessons\" />
   </ItemGroup>
 
   <ItemGroup>
