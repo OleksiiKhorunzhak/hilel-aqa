@@ -16,7 +16,6 @@
 /NUnitTests/obj
 /.idea
 /.vscode
-/HilelTests.sln
 /hilel-aqa-Lesson_2/AtataUITests/.vs/HilelTests
 /hilel-aqa-Lesson_2/AtataUITests/obj
 /hilel-aqa-Lesson_2/NUnitTests/obj
@@ -24,3 +23,5 @@
 /hilel-aqa-Lesson_2/PlaywrigthUITests/obj
 /AtataUITests2
 /PlayWrigthMyTest/obj
+/bin
+/obj
