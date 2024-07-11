@@ -10,7 +10,7 @@ namespace AtataSamples.SpecFlow.Features.WebTable
         [When(@"I see the WebTable")]
         public static void WhenISeeTheWebTable() =>
             Go.On<WebTablePage>().
-            WebTable.Should.BeVisible();
+            Table.Should.BeVisible();
 
         [When(@"I click Add Button")]
         public static void WhenIClickAddButton() =>
@@ -33,8 +33,8 @@ namespace AtataSamples.SpecFlow.Features.WebTable
                 AddPopup.Email.Set(email);
 
         [Then(@"I see FirstName ""(.*)"" in a table")]
-        public static void ThenISeeLastName(string firstName) =>
+        public static void ThenISeeFirstName(string firstName) =>
             Go.On<WebTablePage>().
-            WebTable.Rows[row => row.FirstName.Content.Value.Equals(firstName)].FirstName.Should.Equal(firstName);
+            Table.Rows[row => row.FirstName.Content.Value.Equals(firstName)].FirstName.Should.Equal(firstName);
     }
 }
