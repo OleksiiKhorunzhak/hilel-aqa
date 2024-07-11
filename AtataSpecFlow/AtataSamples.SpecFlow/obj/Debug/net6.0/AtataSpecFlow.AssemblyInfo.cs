@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AtataSpecFlow")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99586879c9538fd8df2429456bffd119f5fb2dfd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cc33d46f3163a40c2474f321c32ebeb31c40238")]
 [assembly: System.Reflection.AssemblyProductAttribute("AtataSpecFlow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AtataSpecFlow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
