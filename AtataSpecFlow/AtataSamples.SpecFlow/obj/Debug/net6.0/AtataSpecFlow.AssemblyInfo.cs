@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AtataSpecFlow")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< Updated upstream
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62950616244b63326b8b1c8d1e283fa277089b0e")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c428b11d6d2bf4be38d6ac0b4da283daecc91743")]
->>>>>>> Stashed changes
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc1edb4a99510c086125cb49229f7064fd4d02d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AtataSpecFlow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AtataSpecFlow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
