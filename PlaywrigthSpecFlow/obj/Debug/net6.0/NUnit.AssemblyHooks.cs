@@ -9,13 +9,13 @@ using global::System.Runtime.CompilerServices;
 
 [GeneratedCode("SpecFlow", "3.9.74")]
 [SetUpFixture]
-public class SpecFlow_Playwrigth_NUnitAssemblyHooks
+public class PlaywrigthSpecFlow_NUnitAssemblyHooks
 {
     [OneTimeSetUp]
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void AssemblyInitialize()
     {
-        var currentAssembly = typeof(SpecFlow_Playwrigth_NUnitAssemblyHooks).Assembly;
+        var currentAssembly = typeof(PlaywrigthSpecFlow_NUnitAssemblyHooks).Assembly;
 
         TestRunnerManager.OnTestRunStart(currentAssembly);
     }
@@ -24,7 +24,7 @@ public class SpecFlow_Playwrigth_NUnitAssemblyHooks
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void AssemblyCleanup()
     {
-        var currentAssembly = typeof(SpecFlow_Playwrigth_NUnitAssemblyHooks).Assembly;
+        var currentAssembly = typeof(PlaywrigthSpecFlow_NUnitAssemblyHooks).Assembly;
 
         TestRunnerManager.OnTestRunEnd(currentAssembly);
     }

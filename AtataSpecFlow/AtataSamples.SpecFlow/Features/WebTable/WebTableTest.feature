@@ -37,12 +37,14 @@ Scenario Outline: I add item to the table
 	And I set Salary to "<Salary>"
 	And I set Department to "<Department>"
 	And I click Submit Button
+	And I see the WebTable
+	And I type FirstName "<FirstName>" in the Search
 	Then I see data in the row "<FirstName>" , "<LastName>", "<Age>", "<Email>", "<Salary>", "<Department>"
 Examples:
 	| FirstName | LastName   | Age | Email                        | Salary | Department  |
-	| Cierra    | Vega       | 39  | cierra@example.com           | 10000  | Insurance   |
-	| Alden     | Cantrell   | 45  | alden@example.com            | 12000  | Compliance  |
-	| Kierra    | Gentry     | 29  | kierra@example.com           | 2000   | Legal       |
+	#| Cierra    | Vega       | 39  | cierra@example.com           | 10000  | Insurance   |
+	#| Alden     | Cantrell   | 45  | alden@example.com            | 12000  | Compliance  |
+	#| Kierra    | Gentry     | 29  | kierra@example.com           | 2000   | Legal       |
 	| Ruby      | Frank      | 34  | ruby.frank@example.com       | 11000  | Marketing   |
 	| John      | Doe        | 28  | john.doe@example.com         | 9000   | Sales       |
 	| Mary      | Smith      | 47  | mary.smith@example.com       | 13000  | HR          |

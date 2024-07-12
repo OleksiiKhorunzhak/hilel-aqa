@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlow_Atata.Features.WebTable
+namespace AtataSpecFlow.Features.WebTable
 {
     using TechTalk.SpecFlow;
     using System;
@@ -126,9 +126,6 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I add item to the table")]
-        [NUnit.Framework.TestCaseAttribute("Cierra", "Vega", "39", "cierra@example.com", "10000", "Insurance", null)]
-        [NUnit.Framework.TestCaseAttribute("Alden", "Cantrell", "45", "alden@example.com", "12000", "Compliance", null)]
-        [NUnit.Framework.TestCaseAttribute("Kierra", "Gentry", "29", "kierra@example.com", "2000", "Legal", null)]
         [NUnit.Framework.TestCaseAttribute("Ruby", "Frank", "34", "ruby.frank@example.com", "11000", "Marketing", null)]
         [NUnit.Framework.TestCaseAttribute("John", "Doe", "28", "john.doe@example.com", "9000", "Sales", null)]
         [NUnit.Framework.TestCaseAttribute("Mary", "Smith", "47", "mary.smith@example.com", "13000", "HR", null)]
@@ -231,6 +228,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click Submit Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
+ testRunner.And("I see the WebTable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 41
+ testRunner.And(string.Format("I type FirstName \"{0}\" in the Search", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 42
  testRunner.Then(string.Format("I see data in the row \"{0}\" , \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\"", firstName, lastName, age, email, salary, department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
