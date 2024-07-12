@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace AtataSpecFlow.Features.Account
+namespace SpecFlow_Atata.Features.Account
 {
     using TechTalk.SpecFlow;
     using System;

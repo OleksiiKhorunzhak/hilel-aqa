@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTests", "NUnitTests\NU
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrigthUITests", "PlaywrigthUITests\PlaywrigthUITests.csproj", "{7EBE0D15-2330-4BFE-A211-A214557320CE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtataSpecFlow", "AtataSpecFlow\AtataSamples.SpecFlow\AtataSpecFlow.csproj", "{EC2FF457-C92B-4A41-B4ED-EB8CD07B1D2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlow_Atata", "AtataSpecFlow\AtataSamples.SpecFlow\SpecFlow_Atata.csproj", "{EC2FF457-C92B-4A41-B4ED-EB8CD07B1D2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrigthSpecFlow", "PlaywrigthSpecFlow\PlaywrigthSpecFlow.csproj", "{0E7EA8EC-A5D0-4038-854F-D0EFC8F8DE74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlow_Playwrigth", "PlaywrigthSpecFlow\SpecFlow_Playwrigth.csproj", "{0E7EA8EC-A5D0-4038-854F-D0EFC8F8DE74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

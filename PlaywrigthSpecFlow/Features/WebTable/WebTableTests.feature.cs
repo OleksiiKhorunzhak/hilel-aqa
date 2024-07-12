@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace PlaywrigthSpecFlow.Features.WebTable
+namespace SpecFlow_Playwrigth.Features.WebTable
 {
     using TechTalk.SpecFlow;
     using System;

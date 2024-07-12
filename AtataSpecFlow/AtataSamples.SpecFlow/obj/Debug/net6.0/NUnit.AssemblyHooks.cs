@@ -9,13 +9,13 @@ using global::System.Runtime.CompilerServices;
 
 [GeneratedCode("SpecFlow", "3.9.74")]
 [SetUpFixture]
-public class AtataSpecFlow_NUnitAssemblyHooks
+public class SpecFlow_Atata_NUnitAssemblyHooks
 {
     [OneTimeSetUp]
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void AssemblyInitialize()
     {
-        var currentAssembly = typeof(AtataSpecFlow_NUnitAssemblyHooks).Assembly;
+        var currentAssembly = typeof(SpecFlow_Atata_NUnitAssemblyHooks).Assembly;
 
         TestRunnerManager.OnTestRunStart(currentAssembly);
     }
@@ -24,7 +24,7 @@ public class AtataSpecFlow_NUnitAssemblyHooks
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void AssemblyCleanup()
     {
-        var currentAssembly = typeof(AtataSpecFlow_NUnitAssemblyHooks).Assembly;
+        var currentAssembly = typeof(SpecFlow_Atata_NUnitAssemblyHooks).Assembly;
 
         TestRunnerManager.OnTestRunEnd(currentAssembly);
     }
