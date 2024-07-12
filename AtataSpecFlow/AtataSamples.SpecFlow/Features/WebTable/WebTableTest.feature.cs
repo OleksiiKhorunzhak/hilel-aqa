@@ -126,9 +126,6 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I add item to the table")]
-        [NUnit.Framework.TestCaseAttribute("Cierra", "Vega", "39", "cierra@example.com", "10000", "Insurance", null)]
-        [NUnit.Framework.TestCaseAttribute("Alden", "Cantrell", "45", "alden@example.com", "12000", "Compliance", null)]
-        [NUnit.Framework.TestCaseAttribute("Kierra", "Gentry", "29", "kierra@example.com", "2000", "Legal", null)]
         [NUnit.Framework.TestCaseAttribute("Ruby", "Frank", "34", "ruby.frank@example.com", "11000", "Marketing", null)]
         [NUnit.Framework.TestCaseAttribute("John", "Doe", "28", "john.doe@example.com", "9000", "Sales", null)]
         [NUnit.Framework.TestCaseAttribute("Mary", "Smith", "47", "mary.smith@example.com", "13000", "HR", null)]
