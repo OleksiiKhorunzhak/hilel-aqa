@@ -37,6 +37,8 @@ Scenario Outline: I add item to the table
 	And I set Salary to "<Salary>"
 	And I set Department to "<Department>"
 	And I click Submit Button
+	And I see the WebTable
+	And I type FirstName "<FirstName>" in the Search
 	Then I see data in the row "<FirstName>" , "<LastName>", "<Age>", "<Email>", "<Salary>", "<Department>"
 Examples:
 	| FirstName | LastName   | Age | Email                        | Salary | Department  |

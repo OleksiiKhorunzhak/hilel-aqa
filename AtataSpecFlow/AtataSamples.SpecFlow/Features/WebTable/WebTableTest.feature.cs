@@ -231,6 +231,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click Submit Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
+ testRunner.And("I see the WebTable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 41
+ testRunner.And(string.Format("I type FirstName \"{0}\" in the Search", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 42
  testRunner.Then(string.Format("I see data in the row \"{0}\" , \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\"", firstName, lastName, age, email, salary, department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
