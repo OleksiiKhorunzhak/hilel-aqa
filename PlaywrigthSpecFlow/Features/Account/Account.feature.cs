@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlow_Playwrigth.Features.Account
+namespace PlaywrigthSpecFlow.Features.Account
 {
     using TechTalk.SpecFlow;
     using System;

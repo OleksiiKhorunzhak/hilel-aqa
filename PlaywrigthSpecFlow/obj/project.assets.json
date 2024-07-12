@@ -6547,9 +6547,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\SpecFlow_Playwrigth.csproj",
-      "projectName": "SpecFlow_Playwrigth",
-      "projectPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\SpecFlow_Playwrigth.csproj",
+      "projectUniqueName": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+      "projectName": "PlaywrigthSpecFlow",
+      "projectPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
       "packagesPath": "C:\\Users\\yusta\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\obj\\",
       "projectStyle": "PackageReference",

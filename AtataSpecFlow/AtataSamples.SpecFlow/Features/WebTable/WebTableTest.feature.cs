@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlow_Atata.Features.WebTable
+namespace AtataSpecFlow.Features.WebTable
 {
     using TechTalk.SpecFlow;
     using System;
