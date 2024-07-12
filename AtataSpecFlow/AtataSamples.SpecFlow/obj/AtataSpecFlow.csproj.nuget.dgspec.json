@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj": {}
+    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj": {
+    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj",
+        "projectUniqueName": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj",
         "projectName": "AtataSpecFlow",
-        "projectPath": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj",
+        "projectPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSpecFlow.csproj",
         "packagesPath": "C:\\Users\\yusta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\obj\\",
+        "outputPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\AtataSpecFlow\\AtataSamples.SpecFlow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yusta\\AppData\\Roaming\\NuGet\\NuGet.Config",

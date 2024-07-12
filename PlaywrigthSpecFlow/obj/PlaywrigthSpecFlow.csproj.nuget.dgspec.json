@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {}
+    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {
+    "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+        "projectUniqueName": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
         "projectName": "PlaywrigthSpecFlow",
-        "projectPath": "C:\\Users\\yusta\\Source\\Repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+        "projectPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
         "packagesPath": "C:\\Users\\yusta\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\yusta\\source\\repos\\hilel-aqa\\PlaywrigthSpecFlow\\obj\\",
         "projectStyle": "PackageReference",
