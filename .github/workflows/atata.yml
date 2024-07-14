@@ -1,0 +1,33 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    # List directory contents for debugging
+    - name: List directory contents
+      run: ls -R
+
+    # Restore dependencies by specifying the project file directly
+    - name: Restore dependencies
+      run: dotnet restore AtataUITests/AtataUITests.csproj
+
+    - name: Build
+      run: dotnet build AtataUITests/AtataUITests.csproj --no-restore
+
+    - name: Test
+      run: dotnet test AtataUITests/bin/Debug/net8.0/AtataUITests.dll --no-build --verbosity normal --filter "RadioButtonTest"

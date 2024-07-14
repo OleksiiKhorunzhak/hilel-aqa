@@ -1,0 +1,39 @@
+name: .NET Playwright
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    # List directory contents for debugging
+    - name: List directory contents
+      run: ls -R
+
+    # Restore dependencies by specifying the project file directly
+    - name: Restore dependencies
+      run: dotnet restore PlaywrigthUITests/PlaywrigthUITests.csproj
+
+    - name: Build
+      run: dotnet build PlaywrigthUITests/PlaywrigthUITests.csproj --no-restore
+
+    # Install Playwright browsers
+    - name: Install Playwright Browsers
+      run: npx playwright install
+
+    # Run Playwright tests
+    - name: Test
+      run: dotnet test PlaywrigthUITests/bin/Debug/net8.0/PlaywrigthUITests.dll --no-build --verbosity normal 
