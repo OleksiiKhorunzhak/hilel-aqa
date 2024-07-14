@@ -4,7 +4,8 @@ namespace AtataUITests.Tests
 {
     internal class RadioButtonTests : UITestFixture
     {
-        [Test]
+        [Test, Retry(2)]
+        [Category("RadioButtonTest")]
         public void VerifyYesRadioButtonVisible()
         {
             Go.To<DemoQARadioButtonPage>().
@@ -17,9 +18,10 @@ namespace AtataUITests.Tests
         //TODO : 
 
         //TC-2 : Verify Impressive radio Button can be checked and display text 'You have selected Impressive'
-        [Test]
+        [Test, Retry(2)]
         [Description("Verify Impressive radio Button can be checked and display " +
             "text 'You have selected Impressive'")]
+        [Category("RadioButtonTest")]
         public void VerifyImpressiveRadioButton()
         {
             Go.To<DemoQARadioButtonPage>().
@@ -29,8 +31,9 @@ namespace AtataUITests.Tests
         }
 
         //TC-3 : Verify No radio Button disabled and not show text 'You have selected'
-        [Test]
+        [Test, Retry(2)]
         [Description("Verify No radio Button disabled and not show text 'You have selected'")]
+        [Category("RadioButtonTest")]
         public void VerifyNoRadioButtonDisabled()
         {
             Go.To<DemoQARadioButtonPage>().
@@ -38,16 +41,18 @@ namespace AtataUITests.Tests
                  Text.Should.Not.BeVisible();
         }
         //TC-4 : Verify H1 Radio Button is visible
-        [Test]
+        [Test, Retry(2)]
         [Description("Verify H1 Radio Button is visible")]
+        [Category("RadioButtonTest")]
         public void VerifyH1RadioButtonIsVisible()
         {
             Go.To<DemoQARadioButtonPage>().
                  RadioButtonsH1.Should.BeVisible();
         }
         //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
-        [Test]
+        [Test, Retry(2)]
         [Description("Verify text 'You have selected Impressive' is not visible after page refresh")]
+        [Category("RadioButtonTest")]
         public void VerifyImpressiveRadioButtonIsNotVisibleAfterRefresh()
         {
             Go.To<DemoQARadioButtonPage>().

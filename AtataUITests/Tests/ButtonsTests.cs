@@ -6,6 +6,7 @@ namespace AtataUITests.Tests
     public sealed class ButtonsTests : UITestFixture
     {
         [Test, Description("Verify Click Me button"), Retry(2)]
+        [Category("UI")]
         public void ClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
@@ -21,6 +22,7 @@ namespace AtataUITests.Tests
             DoubleClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
+        [Category("UI")]
         public void DoubleClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
@@ -36,6 +38,7 @@ namespace AtataUITests.Tests
             DinamicClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Rigth Click Me button"), Retry(2)]
+        [Category("UI")]
         public void RigthClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
@@ -55,6 +58,7 @@ namespace AtataUITests.Tests
         //TODO : 
         //TC-4 : Verify Click Me button should be enabled
         [Test, Description("Verify Click Me button should be enabled"), Retry(2)]
+        [Category("UI")]
         public void VerifyClickMeEnabled()
         {
             Go.To<DemoQAElementsPage>().
@@ -63,6 +67,7 @@ namespace AtataUITests.Tests
         }
         //TC-5 : Verify Click Rigth Click Me button verify button focused
         [Test, Description("Verify Click Rigth Click Me button verify button focused"), Retry(2)]
+        [Category("UI")]
         public void VerifyClickRigthClickEnabled()
         {
             Go.To<DemoQAElementsPage>().
@@ -72,6 +77,7 @@ namespace AtataUITests.Tests
         }
         //TC-6 : Verify H1 Buttons is visible
         [Test, Description("Verify H1 Buttons is visible"), Retry(2)]
+        [Category("UI")]
         public void VerifyLabelButtnsIsVisible()
         {
             Go.To<DemoQAElementsPage>().
@@ -81,6 +87,7 @@ namespace AtataUITests.Tests
         //TC-7 : Verify text You have done a dynamic click is not visible after page refresh
         [Test, Description("Verify text You have done a dynamic click is not" +
             " visible after page refresh"), Retry(2)]
+        [Category("UI")]
         public void VerifyDynamicClickTextIsNotVisibleAfterRefresh()
         {
             Go.To<DemoQAElementsPage>().

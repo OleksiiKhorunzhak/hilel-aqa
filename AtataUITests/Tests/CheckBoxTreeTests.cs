@@ -11,7 +11,9 @@ namespace AtataUITests.Tests
 {
     internal class CheckBoxTreeTests : UITestFixture
     {
-        [Test]
+
+        [Test, Retry(2)]
+        [Category("UI")] 
         public void VerifyCheckBoxTreeeHomeCheckboxVisible()
         {
             Go.To<DemoQACheckBoxPage>().
@@ -22,7 +24,8 @@ namespace AtataUITests.Tests
                 CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Home")].CheckBox.Should.BeChecked();
         }
 
-        [Test]
+        [Test, Retry(2)]
+        [Category("UI")]
         public void VerifyDocumentsCheckBoxChecked()
         {
             Go.To<DemoQACheckBoxPage>().
@@ -34,8 +37,9 @@ namespace AtataUITests.Tests
 
         //TODO: automate test cases
         //TC4 - Expand Home > Check Desktop Checkbox, verify checked
-        [Test]
+        [Test, Retry(2)]
         [Description("Expand Home > Check Desktop Checkbox, verify checked")]
+        [Category("UI")]
         public void VerifyDesktopCheckboxChecked()
         {
             Go.To<DemoQACheckBoxPage>().
@@ -45,8 +49,9 @@ namespace AtataUITests.Tests
                 CheckBoxTree.Branch[x => x.Title.Content.Value.Equals("Desktop")].CheckBox.Should.BeChecked();
         }
         //TC5 - Expand Home > Documents, Check Documents Checkbox. Verify WorkSpace checked
-        [Test]
+        [Test, Retry(2)]
         [Description("Expand Home > Documents, Check Documents Checkbox. Verify WorkSpace checked")]
+        [Category("UI")]
         public void VerifyWorkSpaceCheckboxChecked()
         {
             Go.To<DemoQACheckBoxPage>().
@@ -58,9 +63,10 @@ namespace AtataUITests.Tests
         }
         //TC6 - Expand Home > Check Documents. Verify text 'You have selected : documents workspace react angular veu
         //office public private classified general'
-        [Test]
+        [Test, Retry(2)]
         [Description("Expand Home > Check Documents. Verify text 'You have selected :" +
             " documents workspace react angular veu office public private classified general")]
+        [Category("UI")]
         public void VerifyTextAFterDocumentsCheckboxChecked()
         {
             Go.To<DemoQACheckBoxPage>().
@@ -70,8 +76,9 @@ namespace AtataUITests.Tests
                 Result.Should.Be("You have selected :\r\ndocuments\r\nworkspace\r\nreact\r\nangular\r\nveu\r\noffice\r\npublic\r\nprivate\r\nclassified\r\ngeneral");
         }
         //TC7 - Expand Home > Documents > WorkSpace, verify React have rct  icon-leaf-close icon
-        [Test]
+        [Test, Retry(2)]
         [Description("Expand Home > Documents > WorkSpace, verify React have rct  icon-leaf-close icon")]
+        [Category("UI")]
         public void VerifyReactChIcon()
         {
             Go.To<DemoQACheckBoxPage>().
@@ -85,8 +92,9 @@ namespace AtataUITests.Tests
 
         //TC8 - Expand Home > Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxex checked
 
-        [Test]
+        [Test, Retry(2)]
         [Description("Expand Home > Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxex checked")]
+        [Category("UI")]
         public void VerifyDesktopDocumentsDownloadsCheckboxChecked()
         {
             Go.To<DemoQACheckBoxPage>().

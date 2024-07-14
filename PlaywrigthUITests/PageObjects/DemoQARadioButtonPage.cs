@@ -19,6 +19,8 @@ namespace PlaywrigthUITests.PageObjects
             await _page.GetByText("Radio Button").ClickAsync();
             await _page.WaitForURLAsync(RadioButtonPageUrl);
         }
+        public async Task ReloadRadiButtonsPage()
+        { await _page.ReloadAsync(); }
 
         public async Task ClickYesRadioButton()
         {
@@ -35,14 +37,30 @@ namespace PlaywrigthUITests.PageObjects
             await Assertions.Expect(_page.GetByText("You have selected Yes")).ToBeVisibleAsync();
         }
 
+        public async Task VerifyTextImpressiveVisible()
+        {
+            await Assertions.Expect(_page.GetByText("You have selected Impressive")).ToBeVisibleAsync();
+        }
+        public async Task VerifyTextImpressiveHidden()
+        {
+            await Assertions.Expect(_page.GetByText("You have selected Impressive")).ToBeHiddenAsync();
+        }
         public async Task CheckYesRadioChecked()
         {
             await _page.Locator("#yesRadio").IsCheckedAsync();
         }
-
+        
         public async Task CheckImpressiveRadioButton()
         {
             await _page.Locator("#impressiveRadio").IsCheckedAsync();
+        }
+        public async Task CheckNoRadioDisabled()
+        {
+            await _page.Locator("#noRadio").IsDisabledAsync();
+        }
+        public async Task H1Visible()
+        {
+            await Assertions.Expect(_page.Locator(".text-center")).ToBeVisibleAsync();
         }
     }
 }

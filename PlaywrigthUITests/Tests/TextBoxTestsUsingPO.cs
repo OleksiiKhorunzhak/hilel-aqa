@@ -64,5 +64,78 @@ namespace PlaywrigthUITests.Tests
             var isVisible = await _demoQATextBoxPage.IsNameHidden("John Doe");
             Assert.That(isVisible, Is.True, "The element with text 'Name:John Doe' should not be visible.");
         }
+        [Test, Retry(2)]
+        [Description("Text Email Name should be visible")]
+        [Category("UI")]
+        public async Task VerifyEmailLabelVisible()
+        {
+            await _demoQATextBoxPage.GoToElementsPage();
+            await _demoQATextBoxPage.ClickTextBoxMenu();
+            await _demoQATextBoxPage.WaitForTextBoxPage();
+
+            var isVisible = await _demoQATextBoxPage.IsEmailTextVisible();
+            Assert.That(isVisible, Is.True, "The element with text 'Full Name' should be visible.");
+
+        }
+        [Test, Retry(2)]
+        [Description("Text Email Name should be visible")]
+        [Category("UI")]
+        public async Task VerifyEmailFieldVisible()
+        {
+            await _demoQATextBoxPage.GoToElementsPage();
+            await _demoQATextBoxPage.ClickTextBoxMenu();
+            await _demoQATextBoxPage.WaitForTextBoxPage();
+            var isVisible = await _demoQATextBoxPage.IsEmailInputVisible();
+            Assert.That(isVisible, Is.True, "The element with text 'Full Name' should be visible.");
+
+        }
+        [Test, Retry(2)]
+        [Description("Enter invalid email data like \"John Doe\" in name@example.com Input, press submit, bar should become red")]
+        [Category("UI")]
+        public async Task TestIncorrectInputInEmailField()
+        {
+            await _demoQATextBoxPage.GoToElementsPage();
+            await _demoQATextBoxPage.ClickTextBoxMenu();
+            await _demoQATextBoxPage.WaitForTextBoxPage();
+            await _demoQATextBoxPage.FillFullEmail("John Doe");
+            await _demoQATextBoxPage.ClickSubmitButton();
+            var isVisible = await _demoQATextBoxPage.IsEmailVisible("John Doe");
+            Assert.That(isVisible, Is.False, "The element with text 'John Doe' should not be visible.");
+        }
+
+        [Test, Retry(2)]
+        [Description(" Enter valid email data like \"ABC@gmail.com\" in " +
+          "name@example.com Input, press submit, text Name should be ABC@gmail.com")]
+        [Category("UI")]
+        public async Task TestEmailFieldInput()
+        {
+            await _demoQATextBoxPage.GoToElementsPage();
+            await _demoQATextBoxPage.ClickTextBoxMenu();
+            await _demoQATextBoxPage.WaitForTextBoxPage();
+            await _demoQATextBoxPage.FillFullEmail("ABC@gmail.com");
+            await _demoQATextBoxPage.ClickSubmitButton();
+            var isVisible = await _demoQATextBoxPage.IsEmailVisible("ABC@gmail.com");
+            Assert.That(isVisible, Is.True, "The element with text 'ABC@gmail.com' should be visible.");
+
+        }
+        [Test, Retry(2)]
+        [Description("Clear name@example.com Input, press submit, text email " +
+         "should not be visible")]
+        [Category("UI")]
+        public async Task TestEmailFieldClearence()
+        {
+            await _demoQATextBoxPage.GoToElementsPage();
+            await _demoQATextBoxPage.ClickTextBoxMenu();
+            await _demoQATextBoxPage.WaitForTextBoxPage();
+            await _demoQATextBoxPage.FillFullEmail("ABC@gmail.com");
+            await _demoQATextBoxPage.ClickSubmitButton();
+            var isVisible = await _demoQATextBoxPage.IsEmailVisible("ABC@gmail.com");
+            Assert.That(isVisible, Is.True, "The element with text 'ABC@gmail.com' should be visible.");
+            await _demoQATextBoxPage.FillFullEmail("");
+            await _demoQATextBoxPage.ClickSubmitButton();
+            isVisible = await _demoQATextBoxPage.IsEmailVisible("");
+            Assert.That(isVisible, Is.False, "The element with text 'ABC@gmail.com' should be visible.");
+
+        }
     }
 }

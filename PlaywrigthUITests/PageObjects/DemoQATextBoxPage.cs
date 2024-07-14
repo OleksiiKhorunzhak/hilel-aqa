@@ -10,6 +10,10 @@ namespace PlaywrigthUITests.PageObjects
         private string fullNamePlaceholder = "Full Name";
         private string submitButtonRole = "button";
         private string submitButtonName = "Submit";
+        private string EmailPlaceholder = "name@example.com";
+
+
+
 
         public DemoQATextBoxPage(IPage page)
         {
@@ -33,7 +37,7 @@ namespace PlaywrigthUITests.PageObjects
 
         public async Task<bool> IsFullNameTextVisible()
         {
-            return await _page.GetByText("Full Name").IsVisibleAsync();
+            return await _page.GetByText(fullNamePlaceholder).IsVisibleAsync();
         }
 
         public async Task<bool> IsFullNameInputVisible()
@@ -60,5 +64,24 @@ namespace PlaywrigthUITests.PageObjects
         {
             return await _page.GetByText($"Name:{name}").IsHiddenAsync();
         }
+        public async Task<bool> IsEmailTextVisible()
+        {
+            return await _page.GetByText("email").IsVisibleAsync();
+
+        }
+        public async Task<bool> IsEmailInputVisible()
+        {
+            return await _page.GetByPlaceholder(EmailPlaceholder).IsVisibleAsync();
+        }
+        public async Task<bool> IsEmailVisible(string name)
+        {
+            return await _page.GetByText($"Email:{name}").IsVisibleAsync();
+        }
+        public async Task FillFullEmail(string email)
+        {
+            await _page.GetByPlaceholder(EmailPlaceholder).FillAsync(email);
+        }
+
     }
 }
+

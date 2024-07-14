@@ -10,5 +10,5 @@ namespace AtataUITests.PageObjects
         [FindById("item-4")]
         public Clickable<DemoQAButtonsPage, _> Buttons { get; private set; }
 
-    }
+    }   
 }
