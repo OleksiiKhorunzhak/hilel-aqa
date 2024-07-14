@@ -29,6 +29,7 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Text Full Name Input should be visible")]
+        [Category("UI")]
         public async Task VerifyTextFieldFullName()
         {
            
@@ -38,6 +39,7 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Enter 'John Doe' in Text Full Name Input, press submit, text Name should be 'Name:John Doe'")]
+        [Category("UI")]
         public async Task VerifyTextSetFullName()
         {
            
@@ -51,6 +53,7 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Clear Text Full Name Input, press submit, text Name should not be visible")]
+        [Category("UI")]
         public async Task VerifyTextClearFullName()
         {
            await Page.GetByPlaceholder("Full Name").FillAsync("");
