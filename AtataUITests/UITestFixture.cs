@@ -1,7 +1,7 @@
 ﻿namespace AtataUITests
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.Self)]
+    [Parallelizable(ParallelScope.All)]
     public class UITestFixture
     {
         [SetUp]

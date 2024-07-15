@@ -1,66 +1,52 @@
-﻿using AtataUITests.PageObjects;
+﻿using Atata;
+using AtataUITests.PageObjects;
 
 namespace AtataUITests.Tests
 {
     internal class RadioButtonTests : UITestFixture
-    {
+    {        
         [Test]
-        public void VerifyYesRadioButtonVisible()
+        [Description("Verify Yes radio Button can be checked and result text is 'You have selected Yes'")]
+        public void VerifyYesRadioButton()
         {
-            Go.To<DemoQARadioButtonPage>().
-                RadioButtons[x => x.Label.Content.Value.Equals("Yes")].Label.Click().
-                RadioButtons[x => x.Label.Content.Value.Equals("Yes")].RadioButton.Should.BeChecked().
-                Text.Should.Be("You have selected Yes");
+            Go.To<DemoQARadioButtonPage>().ScrollDown().
+                YesButton.Click().
+                ResultText.Should.Be("You have selected Yes");                              
         }
 
-        //Homework Lesson_9
-        //TODO : 
-        //TC-2 : Verify Impressive radio Button can be checked and display text 'You have selected Impressive'
-       
-        [Test, Description("verify impressive radio button can be checked and display text 'you have selected impressive'")]
-        public void VerifyImpressiveRadioButton()
+        [Test]
+        [Description("Verify Impressive radio Button can be checked and result text is 'You have selected Impressive'")]
+        public void VerifyImpressiveRadioButtonClick()
         {
-            Go.To<DemoQARadioButtonPage>().
-                RadioButtons[x => x.Label.Content.Value.Equals("Impressive")].Label.Click().
-                RadioButtons[x => x.Label.Content.Value.Equals("Impressive")].RadioButton.Should.BeChecked().
-                Text.Should.Be("You have selected Impressive");
+            Go.To<DemoQARadioButtonPage>().ScrollDown().
+               ImpressiveButton.Click().
+               ResultText.Should.Be("You have selected Impressive");
         }
 
-        //TC-3 : Verify No radio Button disabled and not show text 'You have selected'
-
-        [Test, Description("No radio Button disabled and not show text 'You have selected'")]
-        public void NoRadioButtonDisabled() 
+        [Test]
+        [Description("Verify No button is disabled")]
+        public void VerifyNoButton()
         {
-            Go.To<DemoQARadioButtonPage>().
-                RadioButtons[x => x.Label.Content.Value.Equals("No")].Label.Click().
-                RadioButtons[x => x.Label.Content.Value.Equals("No")].RadioButton.Should.BeDisabled().
-                Text.Should.Not.BeVisible();
- 
-        }
-       
-        //TC-4 : Verify H1 Radio Button is visible
-
-        [Test, Description("Verify H1 Radio Button is visible")]
-        public void VerifyH1TitleTextRadioButtonVisible() 
-        {
-            Go.To<DemoQARadioButtonPage>().
-                    H1TitleRadioButton.Should.Be("Radio Button");
+            Go.To<DemoQARadioButtonPage>().ScrollDown().
+               NoButton.Should.BeDisabled();
         }
 
-        //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
-
-        [Test, Description("Verify text 'You have selected Impressive' is not visible after page refresh")]
-        public void VerifyTextImpressiveRadioNotVisibleafterPageRefresh() 
+        [Test]
+        [Description("Verify H1 Radio Button is visible")]
+        public void VerifyPageHeader()
         {
             Go.To<DemoQARadioButtonPage>().
-                    RadioButtons[x => x.Label.Content.Value.Equals("Impressive")].Label.Click().
-                    Text.Should.Be("You have selected Impressive").
-                    RefreshPage().
-                    Text.Should.Not.BeVisible();
-
-
+                Header.Should.Be("Radio Button");
         }
 
+        [Test]
+        [Description("Verify Radio Buttons page is back to default state after page refresh")]
+        public void VerifyRadioButtonPageStateAfterRefresh()
+        {
+            var page = Go.To<DemoQARadioButtonPage>().ScrollDown().
+                SelectRandomRadio().RefreshPage();
 
+            Assert.That(page.PageInDefaultState, Is.True);                       
+        }      
     }
 }

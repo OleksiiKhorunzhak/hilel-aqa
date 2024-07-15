@@ -21,10 +21,8 @@ namespace AtataUITests.PageObjects.Controls
             [FindByClass("rct-title")]
             public Text<TOwner> Title { get; set; }
 
-            [FindByClass("rct-icon rct-icon-leaf-close")]
-            //public Button<TOwner> Icon { get; set; }
-            public Control<TOwner> Icon { get; set; }
-
+            [FindByXPath(".//span[@class='rct-node-icon']//*")]
+            public Control<TOwner> Icon { get; private set; }
         }
     }
 }

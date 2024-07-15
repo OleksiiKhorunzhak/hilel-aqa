@@ -12,6 +12,6 @@ namespace AtataUITests.PageObjects
         public FileInput<_> Upload { get; private set; }
 
         [FindById("uploadedFilePath")]
-        public Text<_> UploadedFile { get; private set; }
+        public Text<_> UploadedFileText { get; private set; }
     }
 }

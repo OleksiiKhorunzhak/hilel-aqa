@@ -1,187 +1,203 @@
-﻿using AtataUITests.PageObjects;
+﻿using Atata;
+using AtataUITests.PageObjects;
+using AtataUITests.Tests.Fixtures;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace AtataUITests.Tests
 {
-    public class TextBoxTests : UITestFixture
+    internal class TextBoxTests : TextBoxesTestFixture
     {
-        //[Test]
-        //[Description("Text Full Name should be visible")]
-        //public void VerifyTextFullName()
-        //{
-        //    Go.To<DemoQAElementsPage>().
-        //        TextBox.ClickAndGo().
-        //        FullNameLabel.Should.BeVisible();
-        //}
+        #region "Full Name" input field
 
-        //[Test]
-        //[Description("Text Full Name Input should be visible")]
-        //public void VerifyTextFieldFullName()
-        //{
-        //    Go.To<DemoQAElementsPage>().
-        //        TextBox.ClickAndGo().
-        //        FullName.Should.BeVisible();
-        //}
-
-        //[Test]
-        //[Description("Enter 'John Doe' in Text Full Name Input, press submit, text Name should be 'Name:John Doe'")]
-        //public void VerifyTextSetFullName()
-        //{
-        //    Go.To<DemoQAElementsPage>().
-        //        TextBox.ClickAndGo().
-        //            FullName.Set("John Doe").
-        //            Submit.Click().
-        //            FullNameText.Should.Be("Name:John Doe");
-        //}
-
-        //[Test]
-        //[Description("Clear Text Full Name Input, press submit, text Name should not be visible")]
-        //public void VerifyTextClearFullName()
-        //{
-        //    Go.To<DemoQAElementsPage>().
-        //        TextBox.ClickAndGo().
-        //            FullName.Clear().
-        //            Submit.Click().
-        //            FullNameText.Should.Not.BeVisible();
-        //}
-
-        //Field "Full Name" 
-
-        //Test Case 1: Mark "Full Name" should be visible
+        //TC1: Label "Full Name" should be visible
         [Test]
-        [Description("Mark \"Full Name\" should be visible")]
-        public void VerifyTextFullNameLable() 
-        { 
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                FullNameLabel.Should.BeVisible();    
-        }
-
-        //Test Case 2:  Full Name Input should be visible and input " Dog Pulya" can be done
-
-        [Test]
-        [Description("Text Full Name Input should be visible")]
-        public void VerifyTextFieldFullName()
+        public void VerifyFullNameFieldLabelVisible()
         {
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                FullName.Should.BeVisible();
+            demoQaTextBoxPage.FullNameLabel.Should.BeVisible();
         }
 
-        //Test Case 3: Enter " Dog Pulya" in  Full Name Input, press submit, the input should be  visible as "Full Name:Dog Pulya"  in aftersubmit text area
+        //TC2: Full Name input should be visible
+        [Test]
+        public void VerifyFullNameInputFieldVisible()
+        {
+            demoQaTextBoxPage.FullNameInput.Should.BeVisible();
+        }
+
+        //TC3: Enter "John Doe" in Full Name input, press Submit, text should be "Name:John Doe" in afterSubmit area
+        [Test]
+        public void VerifyFullNameCanBeSubmitted()
+        {
+            demoQaTextBoxPage
+                .FullNameInput.Set("John Doe").
+                ScrollDown().Submit.Click()
+                    .NameOutput.Should.Contain("Name:John Doe");
+        }
+
+        //TC4: Clear Full Name input, press Submit, label "Name:" should not be visible in afterSubmit area
+        //TC7: Do not fill in Full Name field, fill in any other(s) field(s), press Submit - it's possible to submit the form with empty Full Name
+        //Note: TC4 covers TC7 idea.
 
         [Test]
-        [Description("The input should be  visible as \"Full Name:Dog Pulya\"  in aftersubmit text area")]
-        public void VerifyTexFullNameSet()
+        public void VerifyFullNameFieldCanBeCleared()
         {
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                    FullName.Set("Dog Pulya").
-                    ScrollDown().
-                    Submit.Click().
-                    FullNameText.Should.Be("Name:Dog Pulya");
+            demoQaTextBoxPage
+                .FullNameInput.Set("John Doe")
+                .ScrollDown().Submit.Click()
+                    .FullNameInput.Clear()
+                    .ScrollDown().Submit.Click()
+                        .NameOutput.Should.Not.BeVisible();
         }
 
-        // Test Case 4 :Full Name Input doesn`t accept any number or special symbol and after entering invalid imput, frame of the field "Full Name" is highlighted in red
-       
+        //TC5: Full Name accepts any string input
         [Test]
-        [Description("Enter invalid imput, frame of the field \"Full Name\" is highlighted in red")]
-        public void VerifyInvalidFullNameSet()
+        public void VerifyFullNameFieldAcceptsAnyStringValue()
         {
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                    FullName.Set("456!!").
-                    BorderColorFullName.Should.HaveClass("rgba(220, 53, 69)");
+            demoQaTextBoxPage
+                .FullNameInput.Set("John Doe 1234 !@#$%^&*() привіт!");
 
-            //        var borderColor = Go.To<DemoQAElementsPage>().
-            //                    TextBox.ClickAndGo().
-            //                    FullName.GetCssValue("border-color");
-         
-            //Assert.That(borderColor, Is.EqualTo("rgba(220, 53, 69)"), "The border color is not red, indicating an error in the Full Name field.");
+            Assert.That(demoQaTextBoxPage.FullNameInput.Value, Is.EqualTo("John Doe 1234 !@#$%^&*() привіт!"));
         }
 
-        // Test Case 5: Max and Min input validation of the field "Full Name" 
-        //Note: There aren`t requirements for Test Case 5, that is why Tests are not added
+        //TC6: Min/Max validation - no such requirements
 
-        // Test Case 6: Checking that empty field "Full Name" can`t be submmited and after pressing submit an appropriate alert appears
+        #endregion
 
-        [Test]
-        [Description("Checking that empty field \"Full Name\" can`t be submmited and after pressing submit an appropriate alert appears")]
-        public void VerifyEmptyFullNameInputSetAllert()
-        {
-            string expectedAlertText = "The field Full Name must be fill in";
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                    FullName.Set("  ").
-                    ScrollDown().
-                    Submit.Click(). 
-                    AlertMessage.Should.Be(expectedAlertText);
+        #region "Email" input field
 
-        }
+        //TC1: Label Email should be visible
+        //TC2: Email input should be visible
+        //Note: the same logic as for the "Full Name" input - that's why TCs are not added
 
-        //Field "Email" 
-
-        //Test Case 7: Mark "Email" should be visible  
-        //Test Case 8: Email Input should be visible and  "valid email" as input  can be done
-        //NOTE: Сonceptually similar tests have already been created for field "Full Name"      
-
-        //Test Case 9: Enter "valid email" in Email Input, press submit, the input should be  visible in aftersubmit text area
+        //TC3_1: Email accepts only correct email format - RegExp: ([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+), incorrect email can not be submitted
+        string emailPattern = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
 
         [Test]
-        [Description("Enter 'John Doe' in Text Full Name Input, press submit, text Name should be 'Name:John Doe'")]
-        public void VerifyTextSetFullName()
+        public void VerifyEmailFieldComplianceWithRegExp_CorrectValue()
         {
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                    CurrentAddressInput.Set("Varash city, Budivelnikiv street, building 3, apartment 333").
-                    ScrollDown().
-                    Submit.Click().
-                    CurrentAddressText.Should.Be("Current Address:Varash city, Budivelnikiv street, building 3, apartment 333");
+            demoQaTextBoxPage
+                .EmailInput.Set("correct@test.com");
+
+            DemoQATextBoxPage.ShouldMatchRegex(demoQaTextBoxPage.EmailInput, emailPattern);
         }
 
+        //TC3_2
+        [Test]
+        public void VerifyEmailFieldComplianceWithRegExp_IncorrectValue()
+        {
+            demoQaTextBoxPage
+                .EmailInput.Set("incorrect@test")
+                .ScrollDown().Submit.Click()
+                .EmailOutput.Should.Not.BeVisible();
+        }
+        //TC4: Enter @correct_email into Email input, press Submit, text should be "Email:@correct_email" in afterSubmit area
+        //TC5: Clear Email input, press Submit, label "Email:" should not be visible in afterSubmit area
+        //TC7: Do not fill in Email field, fill in any other(s) field(s), press Submit - it's possible to submit the form with empty Email
+        //Note: the same logic as for the "Full Name" input - that's why TCs are not added
 
-        //Test Case 14: Max input validation of the field "Current Address"
-        //NOTE: No such requirements
+        //TC6: Min/Max validation  - no such requirements
 
-        //Test Case 15: Enter invalid input in Current Address Input, frame of the field  is highlighted in red
+        #endregion
+
+        #region "Current address" input field
+        //TC1: Label "Current Address" should be visible
+        //TC2: Current Address input should be visible
+        //Note: the same logic as for the "Full Name" input - that's why TCs are not added
+
+        //TC3: Current Address input accepts multiline text ("Enter" button is correctly handled)
+        [Test]
+        public void VerifyCurrentAddressIsMultilineInput()
+        {
+            demoQaTextBoxPage
+                .CurrentAddressInput.Set(
+                "Line 1\n" +
+                "Line 2\n" +
+                "Line 3");
+
+            Assert.That(demoQaTextBoxPage.CurrentAddressInput.Value, Is.EqualTo(
+                "Line 1" + Environment.NewLine +
+                "Line 2" + Environment.NewLine +
+                "Line 3"));
+        }
+
+        //TC4: Enter @current_address in Current Address input, press Submit, text should be "Current Address:@current_address" in afterSubmit area, multiline should be correctly shown
+        //This TC fails because the multiline is not handled in the output area.
+        [Test]
+        public void VerifyCurrentAddressOutputIsMultiline()
+        {
+            demoQaTextBoxPage
+                .CurrentAddressInput.Set(
+                    "Line 1\n" +
+                    "Line 2\n" +
+                    "Line 3")
+                .ScrollDown().Submit.Click()
+                .CurrentAddressOutput.Content.Should.Contain(
+            "Line 1" + Environment.NewLine +
+            "Line 2" + Environment.NewLine +
+            "Line 3");
+        }
+
+        //TC5: Clear Current Address input, press Submit, label "Current Address:" should not be visible in afterSubmit area
+        //TC7: Do not fill in Current Address field, fill in any other(s) field(s), press Submit - it's possible to submit the form with empty Current Address
+        //Note: the same logic as for the "Full Name" input - that's why TCs are not added
+
+        //TC6: Min/Max validation  - no such requirements
+
+        //TC8: It's possible to change input field size by drag-n-dropping the corresponding text area control
+        [Test]
+        public void VerifyCurrentAddressInputIsResizeable()
+        {
+            string resizeProperty = demoQaTextBoxPage.Script.Execute<string>(
+                "return window.getComputedStyle(arguments[0]).resize;",
+                demoQaTextBoxPage.CurrentAddressInput.Scope);
+
+            Assert.That(resizeProperty, Is.Not.EqualTo("none"));
+        }
+
+        #endregion
+
+        #region "Permanent Address"  input field
+
+        //The same as for the "Current Address" input field
+
+        #endregion
+
+        #region Form TCs
+
+        //TC1: It's possible to submit all empty fields - no error messages are shown - covered by VerifyFullNameFieldCanBeCleared TC
+
+        //TC2: Submitted values are shown in the grey frame
+        //Note: topBorder only is checked just as an example
 
         [Test]
-        [Description("Enter invalid imput, frame of the field \"Current Address\" is highlighted in red")]
-        public void VerifyInvalidCurrentAddressInputSet()
+        public void VerifyTopBorderForOutput()
         {
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                    CurrentAddressInput.Set("12378%%#!!strett#city**").
-                    BorderColorCurrentAddress.Should.HaveClass("rgba(220, 53, 69)");
+            demoQaTextBoxPage
+                .FullNameInput.Set("John Doe").ScrollDown().Submit.Click();
 
+            string borderTopColor = demoQaTextBoxPage.Script.Execute<string>(
+                "return window.getComputedStyle(arguments[0]).borderTopColor;",
+                demoQaTextBoxPage.OutputBorder.Scope);
+
+            Assert.That(borderTopColor, Is.EqualTo("rgb(222, 226, 230)"));
+
+            string borderTopWidth = demoQaTextBoxPage.Script.Execute<string>(
+                "return window.getComputedStyle(arguments[0]).borderTopWidth;",
+                demoQaTextBoxPage.OutputBorder.Scope);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(borderTopColor, Is.EqualTo("rgb(222, 226, 230)"));
+                Assert.That(borderTopWidth, Is.EqualTo("0.8px"));
+
+            });
         }
 
-        // Field "Permanent Address" -  NOTE: There are the same tests for field "Current Address"
-
-        //Test Case 16: Permanent Address Input should be visible and  "valid permanent address" as input  can be done
-        //Test Case 17: Permanent Address Input accepts any string input 
-        //Test Case 18: Enter "valid permanent address" in Permanent Address Input, press submit, the input should be  visible in aftersubmit text area
-        //Test Case 19: Max input validation of the field "Permanent Address"
-        //Test Case 20: Enter "invalid permanent address" in Permanent Address Input, frame of the field  is highlighted in red
-
-        //General Form "TextBox"
-
-        // Enter character "!" in Full Name Input leaving other fields of the TextBox Form empty and after pressing submit an appropriate alert appears
-
-        [Test]
-        [Description("Enter character \"!\" in Full Name Input leaving other fields of the TextBox Form empty and after pressing submit an appropriate alert appears")]
-        public void VerifyEmptyFieldsOfTextBoxFormSetAllert()
-        {
-            string expectedAlertTextBoxForm = "The fields of the TextBox Form must be fill in";
-            Go.To<DemoQAElementsPage>().
-                TextBox.ClickAndGo().
-                    FullName.Set("!").EmailInput.Set("  ").CurrentAddressInput.Set("  ").PermanentAddressInput.Set("  ").
-                    ScrollDown().
-                    Submit.Click().
-                    AlertMessage.Should.Be(expectedAlertTextBoxForm);
-
-
-        }
-
+        #endregion
     }
 }
-

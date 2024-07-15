@@ -19,17 +19,7 @@ namespace PlaywrigthUITests.PageObjects
 
         public async Task CheckHomeCheckbox()
         {
-            await _page.Locator("#tree-node").GetByRole(AriaRole.Img).Nth(3).ClickAsync();
-        }
-
-        public async Task CheckCheckbox(string branch)
-        {
-            await _page.Locator("label").Filter(new() { HasText = branch }).GetByRole(AriaRole.Img).First.ClickAsync();
-        }
-
-        public async Task OpenHome()
-        {
-            await _page.GetByLabel("Toggle").First.ClickAsync();
+            await _page.Locator("#tree-node").Locator(".rct-checkbox").Locator(":scope > :first-child").ClickAsync();
         }
 
         public async Task VerifyHomeChecked()
@@ -37,15 +27,44 @@ namespace PlaywrigthUITests.PageObjects
             await Assertions.Expect(_page.Locator("#tree-node path").Nth(3)).ToBeCheckedAsync();
         }
 
-        public async Task<bool> VerifyCheckboxChecked(string branch)
+        public async Task OpenNode(string nodeName)
+        {
+            await _page.Locator("label").Filter(new() { HasText = nodeName }).Locator("xpath=preceding-sibling::*[1]").ClickAsync();
+        }
+
+        public async Task OpenHomeNode()
+        {
+            await _page.GetByLabel("Toggle").First.ClickAsync();
+        }
+        public async Task CheckCheckbox(string branch)
+        {
+            await _page.Locator("label").Filter(new() { HasText = branch }).Locator(".rct-checkbox").Locator(":scope > :first-child").ClickAsync();
+        }
+
+        public async Task<bool> IsCheckboxChecked(string branch)
         {
             // Locate `span` element containing the branch title
             var spanElement = _page.Locator($"span.rct-text:has(span.rct-title:text-is('{branch}'))");
+
             // Locate the checkbox in `span` element
             var checkboxLocator = spanElement.Locator(".rct-icon-check");
+
             // Check if the checkbox is visible
-            var checkboxVisible = await checkboxLocator.IsVisibleAsync();
-            return checkboxVisible;
+            return await checkboxLocator.IsVisibleAsync();
+        }
+
+        public async Task<bool> IsFileIconShown(string branch)
+        {            
+            var fileIcon = _page.Locator($"span.rct-text:has(span.rct-title:text-is('{branch}'))").Locator(".rct-icon-leaf-close"); ;
+                       
+            return await fileIcon.IsVisibleAsync();
+        }
+
+        public async Task<bool> DocumentsCheckedTextIsShown()
+        {
+            string? documentsCheckedResult = await _page.Locator("#result").TextContentAsync();
+
+            return documentsCheckedResult == "You have selected :documentsworkspacereactangularveuofficepublicprivateclassifiedgeneral" ? true : false;
         }
     }
 }
