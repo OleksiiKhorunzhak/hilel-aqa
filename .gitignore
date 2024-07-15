@@ -1,12 +1,6 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-.vs/
+﻿.vs/
 .idea/
 .vscode/
-.bin/
-.obj/
 
-/AtataUITests2
-
+bin/
+obj/

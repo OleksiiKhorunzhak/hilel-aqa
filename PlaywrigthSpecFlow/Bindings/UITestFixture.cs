@@ -1,16 +1,19 @@
 ﻿using Microsoft.Playwright;
+using TechTalk.SpecFlow;
 
-namespace PlaywrigthUITests
+namespace PlaywrigthSpecFlow.Bindings
 {
     [Parallelizable(ParallelScope.Self)]
-    [TestFixture]
+    //[TestFixture]
+    [Binding]
     internal class UITestFixture
     {
-        public IPage Page { get; private set; }
-        private IBrowser browser;
+        public static IPage? Page { get; private set; }
+        private static IBrowser? browser;
 
-        [SetUp]
-        public async Task Setup()
+        //[SetUp]
+        [BeforeFeature(Order = 1)]
+        public static async Task Setup()
         {
             var playwrightDriver = await Playwright.CreateAsync();
             browser = await playwrightDriver.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
@@ -30,10 +33,8 @@ namespace PlaywrigthUITests
             Page = await context.NewPageAsync();
         }
 
-        [OneTimeSetUp]
-
-        [TearDown]
-        public async Task Teardown()
+        [AfterFeature]
+        public static async Task Teardown()
         {
             await Page.CloseAsync();
             await browser.CloseAsync();
