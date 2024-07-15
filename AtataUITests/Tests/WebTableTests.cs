@@ -3,10 +3,10 @@ using AtataUITests.PageObjects;
 
 namespace AtataUITests.Tests
 {
-    public sealed class TableTests : UITestFixture
+    public sealed class WebTableTests : UITestFixture
     {
         [Test]
-        public void TableColumnTest()
+        public void VerifyTableDefaultState()
         {
             Go.To<DemoQAWebTablePage>().
                 WebTable.Should.BeVisible().
@@ -21,10 +21,21 @@ namespace AtataUITests.Tests
                     AddPopup.LastName.Css["border-color"].Should.Be("rgb(220, 53, 69)");
         }
 
-        //TODO: automate test cases
-        //Check any mandatory field
+        [Test]
+        public void VerifyAddPopupAllFieldsAreMandatory()
+        {
+            Go.To<DemoQAWebTablePage>().
+                Add.Click();
+                   
+            
+            foreach (var field in this.AddPopup.TextFields)
+            {                
+                    field.Css["border-color"].Should.Be("rgb(220, 53, 69)");
+            }
+        }
+
+    }     
         //Add new row and verify row added
         //Edit row and verify row edited
-        //Delete row and verify row deleted  
-    }
+        //Delete row and verify row deleted     
 }
