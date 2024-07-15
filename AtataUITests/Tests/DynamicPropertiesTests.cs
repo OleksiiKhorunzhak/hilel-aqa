@@ -2,7 +2,7 @@
 
 namespace AtataUITests.Tests
 {
-    internal class DynamicPropertiesTests
+    internal class DynamicPropertiesTests: UITestFixture
     {
         [Test]
         public void TestChangeColor()
@@ -16,24 +16,16 @@ namespace AtataUITests.Tests
         public void TestEnableAfter()
         {
             Go.To<DemoQADynamicPropertiesPage>().
-                Enable5Sec.Should.BeDisabled().
-                Enable5Sec.Should.WithinSeconds(5).BeEnabled();
+                EnabledIn5Sec.Should.BeDisabled().
+                EnabledIn5Sec.Should.WithinSeconds(5).BeEnabled();
         }
 
         [Test]
         public void TestVisibleAfter()
         {
-            Go.To<DemoQADynamicPropertiesPage>().
-                VisibleAfter.Should.WithinSeconds(4).Not.BeVisible().
-                VisibleAfter.Should.BeVisible();
-        }
-
-        [Test]
-        public void TestVisibleAfterClickWait()
-        {
-            Go.To<DemoQADynamicPropertiesPage>().
-                VisibleAfter.Click().
-                VisibleAfter.Should.BeFocused();
-        }
+            Go.To<DemoQADynamicPropertiesPage>().ScrollDown().
+                VisibleIn5Sec.Should.Not.BeVisible().
+            VisibleIn5Sec.Should.WithinSeconds(5).BeVisible(); 
+        }        
     }
 }

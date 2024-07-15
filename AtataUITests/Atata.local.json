@@ -17,6 +17,6 @@
   "elementFindRetryInterval": 0.5, // Sets the element find retry interval in seconds.
   "waitingTimeout": 15, // Sets the waiting timeout in seconds.
   "waitingRetryInterval": 0.5, // Sets the waiting retry interval in seconds.
-  "verificationTimeout": 15, // Sets the verification timeout in seconds.
+  "verificationTimeout": 3, // Sets the verification timeout in seconds.
   "verificationRetryInterval": 0.5 // Sets the verification retry interval in seconds.
 }
