@@ -25,16 +25,16 @@ namespace AtataSamples.SpecFlow.PageObjects
             [FindByCss(".rt-td:nth-of-type(2)")]
             public Text<_> LastName { get; private set; }
 
-            [FindByXPath("//div[@role='gridcell'][3]")]
+            [FindByXPath(".rt-td:nth-of-type(3)")]
             public Text<_> Age { get; private set; }
 
-            [FindByXPath("//div[@role='gridcell'][4]")]
+            [FindByXPath(".rt-td:nth-of-type(4)")]
             public Text<_> Email { get; private set; }
 
-            [FindByXPath("//div[@role='gridcell'][5]")]
+            [FindByXPath(".rt-td:nth-of-type(5)")]
             public Text<_> Salary { get; private set; }
 
-            [FindByXPath("//div[@role='gridcell'][6]")]
+            [FindByXPath(".rt-td:nth-of-type(6)")]
             public Text<_> Department { get; private set; }
 
             [FindByXPath("//span[@title='Delete']")]
