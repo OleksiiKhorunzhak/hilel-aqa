@@ -1,5 +1,4 @@
-﻿using Atata;
-using _ = AtataUITests.PageObjects.DemoQADownloadUploadPage;
+﻿using _ = AtataUITests.PageObjects.DemoQADownloadUploadPage;
 
 namespace AtataUITests.PageObjects
 {

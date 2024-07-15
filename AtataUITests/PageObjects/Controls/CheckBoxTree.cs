@@ -1,4 +1,5 @@
 ﻿using Atata;
+using System.ComponentModel;
 
 namespace AtataUITests.PageObjects.Controls
 {
