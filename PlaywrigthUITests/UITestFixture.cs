@@ -30,8 +30,6 @@ namespace PlaywrigthUITests
             Page = await context.NewPageAsync();
         }
 
-        [OneTimeSetUp]
-
         [TearDown]
         public async Task Teardown()
         {
