@@ -20,6 +20,10 @@ namespace PlaywrigthSpecFlow.API.Features.Account
         {
             AccountsApi account = new AccountsApi("https://demoqa.com/");
             UserId = await account.AddUserGetId(MainUser);
+            var token = await account.GenerateToken(MainUser);
+            var user = await account.GetUserById(UserId, token);
+            var body = await user.Content.ReadAsStringAsync();
+            Console.WriteLine("user info: " + body);
         }
 
         internal async Task AccountApiCleanup()
