@@ -14,7 +14,7 @@ internal class WebTablesPage(IPage page)
     public async Task GoToURL(string testPageUrl)
     {
         await page.GotoAsync(testPageUrl);
-        await page.WaitForURLAsync(testPageUrl);
+        //await page.WaitForURLAsync(testPageUrl);
     }
 
     public async Task IsPageH1Visible(string pageH1)

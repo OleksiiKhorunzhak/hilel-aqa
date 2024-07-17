@@ -3,7 +3,7 @@ using PlaywrigthUITests.PageObjects;
 
 namespace PlaywrigthUITests.Tests
 {
-    //[Category("DynamicPropertiesTests")]
+    //[Category("WebTable)]
     internal class WebTableTests : UITestFixture
     {
         private WebTablesPage _WebTablesPage;
@@ -17,10 +17,7 @@ namespace PlaywrigthUITests.Tests
         #endregion
 
         [SetUp]
-        public void SetupDemoQAPage()
-        {
-            _WebTablesPage = new WebTablesPage(page);
-        }
+        public void SetupDemoQAPage() => _WebTablesPage = new WebTablesPage(page);
 
         [Test, Retry(2)]
         [Description("H1 'Web Tables' should be visible")]

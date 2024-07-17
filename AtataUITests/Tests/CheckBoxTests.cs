@@ -4,7 +4,7 @@ using AtataUITests;
 using _ = AtataUITests.Tests.CheckBoxTests;
 using System.Reflection.Emit;
 
-namespace AtataUITests.Tests  
+namespace AtataUITests.Tests
 {
     //[Category("CheckBoxTests")]
     internal class CheckBoxTests : UITestFixture
@@ -128,13 +128,5 @@ namespace AtataUITests.Tests
                     .CheckBoxTree.Branch[x => x.Title.Content.Value.Equals(label)].Should.Not.BeVisible();
             }
         }
-
     }
-    //TODO: automate test cases
-    //TC4 - Expand Home > Check Descktop Checkbox, verify checked
-    //TC5 - Expand Home > Documents, Check Documents Checkbox. Verify WorkSpace checked
-    //TC6 - Expand Home > Check Documents. Verify text 'You have selected : documents workspace react angular veu office public private classified general'
-    //TC7 - Expand Home > Documents > WorkSpace, verify React have rct-icon-leaf-close icon
-    //TC8 - Expand Home > Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxex checked
-
 }
