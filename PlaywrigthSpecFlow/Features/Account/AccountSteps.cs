@@ -24,21 +24,16 @@ namespace PlaywrigthSpecFlow.Features.Account
         [Then(@"I get success status code from API")]
         public void ThenISeeSuccessStatusCode()
         {
-            if (_featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
-            {
-                Assert.That(presetup.UserId, Is.Not.Null, "Account not created");
-            }
+            var presetup = _featureContext.Get<AccountPresetup>("AccountApiPresetup");
+            Assert.That(presetup.UserId, Is.Not.Null, "Account not created");
         }
 
         //TODO: add cleanup
         [AfterFeature(@"ICreateAccountByAPI")]
-        public static void WhenICleanupAccountByAPI(FeatureContext featureContext)
+        public static async Task WhenICleanupAccountByAPI(FeatureContext featureContext)
         {
-            if (featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
-            {
-
-                //presetup.
-            }
+            var presetup = featureContext.Get<AccountPresetup>("AccountApiPresetup");
+            // presetup.
         }
     }
 }

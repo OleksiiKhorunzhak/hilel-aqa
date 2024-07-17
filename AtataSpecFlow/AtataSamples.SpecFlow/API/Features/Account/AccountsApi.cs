@@ -5,6 +5,7 @@ using System.Text;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System;
+using System.Net.Http.Headers;
 
 namespace AtataSamples.SpecFlow.Api.Features.Account
 {
@@ -35,6 +36,37 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
 
             Console.WriteLine("User created successfully.");
             return createdUser.userID;
+        }
+        public async Task<string> GenerateToken(UserModel model)
+        {
+            var json = JsonConvert.SerializeObject(model);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response;
+
+            response = await Client.PostAsync("Account/v1/GenerateToken", content);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+                return null;
+            }
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var responseToken = JsonConvert.DeserializeObject<UserToken>(responseContent);
+
+            return responseToken.token;
+        }
+
+        public async Task<HttpResponseMessage> GetUserById(string userId, string token)
+        {
+            using (var requestMessage =
+            new HttpRequestMessage(HttpMethod.Get, Client.BaseAddress + "Account/v1/User/" + userId))
+            {
+                requestMessage.Headers.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
+
+                return await Client.SendAsync(requestMessage);
+            }
         }
 
         //public async Task DeleteAccountByID(string ID)
