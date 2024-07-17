@@ -1,32 +1,6 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿.vs/
+.idea/
+.vscode/
 
-/.vs/hilel-aqa/v17
-/.vs/hilel-aqa/FileContentIndex
-/.vs
-/AtataUITests/.vs/
-/AtataUITests/bin/Debug/net8.0
-/AtataUITests/obj
-/PlaywrigthUITests/.vs
-/PlaywrigthUITests/bin/Debug/net8.0
-/PlaywrigthUITests/obj
-/NUnitTests/.vs
-/NUnitTests/bin/Debug/net8.0
-/NUnitTests/obj
-/.idea
-/.vscode
-/HilelTests.sln
-/hilel-aqa-Lesson_2/AtataUITests/.vs/HilelTests
-/hilel-aqa-Lesson_2/AtataUITests/obj
-/hilel-aqa-Lesson_2/NUnitTests/obj
-/hilel-aqa-Lesson_2/PlaywrigthUITests/obj/Debug/net8.0
-/hilel-aqa-Lesson_2/PlaywrigthUITests/obj
-/AtataUITests2
-/PlayWrigthMyTest/obj
-/AtataSpecFlow/AtataSamples.SpecFlow/bin/Debug/net6.0
-/AtataSpecFlow/AtataSamples.SpecFlow/obj
-/PlaywrigthSpecFlow/bin/Debug/net8.0
-/PlaywrigthSpecFlow/obj
-/AtataSpecFlow/AtataSamples.SpecFlow/bin/Debug/net8.0
-/PlaywrigthSpecFlow/bin/Debug/net6.0
+bin/
+obj/
