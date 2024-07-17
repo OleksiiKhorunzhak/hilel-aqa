@@ -61,24 +61,16 @@ namespace PlaywrigthSpecFlow.API.Features.Account
 			//deleteMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 			//HttpResponseMessage response = await Client.SendAsync(deleteMessage);
 			Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-			try
+			HttpResponseMessage response = await Client.DeleteAsync($"/Account/v1/User/{ID}");
+			if (response.StatusCode != HttpStatusCode.OK)
 			{
-				var response = await Client.DeleteAsync($"/Account/v1/User/{ID}");
-				if (response.StatusCode != HttpStatusCode.OK)
-				{
-					Console.WriteLine($"Error: {response.StatusCode}");
-				}
-
-				else
-				{
-					Console.WriteLine($"User with id = {ID} was deleted sucessfully");
-				}
-			}
-			catch (HttpRequestException ex)
-			{
-				Console.WriteLine($"HTTP request error: {ex.Message}");
+				Console.WriteLine($"Error: {response.StatusCode}");
 			}
 
+			else
+			{
+				Console.WriteLine($"User with id = {ID} was deleted sucessfully");
+			}
 		}
     }
 }
