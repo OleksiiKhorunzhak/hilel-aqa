@@ -8,6 +8,7 @@ namespace PlaywrigthSpecFlow.API.Features.Account
         internal static string Password = "Pa$$word1";
         internal bool AccountCreated;
         internal string UserId;
+        internal string Token;
 
         internal UserModel MainUser = new UserModel()
         {
@@ -20,12 +21,13 @@ namespace PlaywrigthSpecFlow.API.Features.Account
         {
             AccountsApi account = new AccountsApi("https://demoqa.com/");
             UserId = await account.AddUserGetId(MainUser);
+            Token = await account.GetToken(MainUser);
         }
 
-        internal async Task AccountApiCleanup()
+		internal async Task AccountApiCleanup()
         {
             AccountsApi account = new AccountsApi("https://demoqa.com/");
-            await account.DeleteAccountByID(UserId);
+            await account.DeleteAccountByID(UserId, Token);
         }
         #endregion
         #region HelperMethods

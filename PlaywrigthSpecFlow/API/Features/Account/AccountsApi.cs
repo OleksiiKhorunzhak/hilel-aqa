@@ -34,17 +34,42 @@ namespace PlaywrigthSpecFlow.API.Features.Account
             return createdUser.userID;
         }
 
-        public async Task DeleteAccountByID(string ID)
+
+		public async Task<string> GetToken(UserModel model)
+		{
+			var json = JsonConvert.SerializeObject(model);
+			var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+			var response = await Client.PostAsync("/Account/v1/GenerateToken", content);
+
+			if (response.StatusCode != HttpStatusCode.OK)
+			{
+				Console.WriteLine($"Error: {response.StatusCode}");
+				return null;
+			}
+
+			var responseContent = await response.Content.ReadAsStringAsync();
+			var generatedToken = JsonConvert.DeserializeObject<Token>(responseContent);
+
+			Console.WriteLine("Token generated successfully.");
+			return generatedToken.token;
+		}
+
+		public async Task DeleteAccountByID(string ID, string token)
         {
-			var response = await Client.DeleteAsync($"Account/v1/User/{ID}");
+			//HttpRequestMessage deleteMessage = new HttpRequestMessage(HttpMethod.Delete, $"https://demoqa.com/Account/v1/User/{ID}");
+			//deleteMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+			//HttpResponseMessage response = await Client.SendAsync(deleteMessage);
+			Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+			HttpResponseMessage response = await Client.DeleteAsync($"/Account/v1/User/{ID}");
 
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
-                Console.WriteLine($"Error: {response.StatusCode}");
-            }
+			if (response.StatusCode != HttpStatusCode.OK)
+			{
+				Console.WriteLine($"Error: {response.StatusCode}");
+			}
 
-            else
-            {
+			else
+			{
 				Console.WriteLine($"User with id = {ID} was deleted sucessfuly");
 			}
 		}

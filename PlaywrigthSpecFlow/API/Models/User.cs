@@ -34,4 +34,15 @@
 
         public string website { get; set; }
     }
+
+    public class Token
+    {
+        public string token { get; set; }
+
+        public string expires { get; set; }
+
+		public string status { get; set; }
+		
+        public string result { get; set; }
+	}
 }
