@@ -32,12 +32,11 @@ namespace PlaywrigthSpecFlow.Features.Account
 
         //TODO: add cleanup
         [AfterFeature(@"ICreateAccountByAPI")]
-        public static void WhenICleanupAccountByAPI(FeatureContext featureContext)
+        public static async Task<bool> WhenICleanupAccountByAPI(FeatureContext featureContext)
         {
-			if (featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
-			{
-                presetup.AccountApiCleanup();
-			}
+			var presetup = featureContext.Get<AccountPresetup>("AccountApiPresetup");
+			presetup.AccountApiCleanup();
+            return true;
 		}
     }
 }
