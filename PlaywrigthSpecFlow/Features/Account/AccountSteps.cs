@@ -30,13 +30,14 @@ namespace PlaywrigthSpecFlow.Features.Account
             }
         }
 
-        //TODO: add cleanup
-        [AfterFeature(@"ICreateAccountByAPI")]
-        public static async Task<bool> WhenICleanupAccountByAPI(FeatureContext featureContext)
-        {
-			var presetup = featureContext.Get<AccountPresetup>("AccountApiPresetup");
-			presetup.AccountApiCleanup();
-            return true;
+		//TODO: add cleanup
+		[AfterFeature(@"ICreateAccountByAPI")]
+		public static async Task WhenICleanupAccountByAPI(FeatureContext featureContext)
+		{
+			if (featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
+			{
+				await presetup.AccountApiCleanup();
+			}
 		}
-    }
+	}
 }

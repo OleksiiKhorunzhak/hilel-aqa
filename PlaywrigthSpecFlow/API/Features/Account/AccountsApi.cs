@@ -57,9 +57,6 @@ namespace PlaywrigthSpecFlow.API.Features.Account
 
 		public async Task DeleteAccountByID(string ID, string token)
         {
-			//HttpRequestMessage deleteMessage = new HttpRequestMessage(HttpMethod.Delete, $"https://demoqa.com/Account/v1/User/{ID}");
-			//deleteMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-			//HttpResponseMessage response = await Client.SendAsync(deleteMessage);
 			Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 			HttpResponseMessage response = await Client.DeleteAsync($"/Account/v1/User/{ID}");
 			if (response.StatusCode != HttpStatusCode.OK)
