@@ -8,3 +8,7 @@ obj/
 AtataSpecFlow/AtataSamples.SpecFlow/obj/
 AtataSpecFlow/AtataSamples.SpecFlow/bin/
 PlaywrigthSpecFlow/bin/
+/AtataSpecFlow/AtataSamples.SpecFlow/obj/Debug/net6.0/AtataSpecFlow.AssemblyInfo.cs
+/AtataSpecFlow/AtataSamples.SpecFlow/obj/Debug/net6.0/AtataSpecFlow.AssemblyInfoInputs.cache
+/PlaywrigthSpecFlow/obj/Debug/net6.0/PlaywrigthSpecFlow.AssemblyInfo.cs
+/PlaywrigthSpecFlow/obj/Debug/net6.0/PlaywrigthSpecFlow.AssemblyInfoInputs.cache
