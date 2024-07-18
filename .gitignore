@@ -4,5 +4,6 @@
 
 bin/
 obj/
-
-/AtataUITests2
+AtataSpecFlow/AtataSamples.SpecFlow/obj/
+AtataSpecFlow/AtataSamples.SpecFlow/bin/
+PlaywrigthSpecFlow/bin/
