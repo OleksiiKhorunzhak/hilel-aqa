@@ -4,3 +4,7 @@
 
 bin/
 obj/
+
+AtataSpecFlow/AtataSamples.SpecFlow/obj/
+AtataSpecFlow/AtataSamples.SpecFlow/bin/
+PlaywrigthSpecFlow/bin/
