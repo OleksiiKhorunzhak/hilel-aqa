@@ -1,8 +1,8 @@
 ﻿using Microsoft.Playwright;
 using TechTalk.SpecFlow;
 
-namespace PlaywrightSpecFlow.PageObjects {
-    [Binding]
+namespace PlaywrightSpecFlow.PageObjects
+{
     internal class DemoQAWebTablesPage
     {
         private IPage Page;
