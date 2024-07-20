@@ -6,22 +6,38 @@ namespace AtataUITests.PageObjects.Controls
     public class ReactAddPopup<TOwner> : Control<TOwner>
         where TOwner : PageObject<TOwner>
     {
-        public List<TextInput<TOwner>> TextFields { get; private set; }
-       
+        public List <TextInput<TOwner>> TextFields { get; set; }
+
+        public ReactAddPopup() => TextFields = new List<TextInput<TOwner>>();
+            
         [FindByPlaceholder("First Name")]
-        public TextInput<TOwner> FirstName { get; private set; }
+        public TextInput<TOwner> FirstName { get; set; }
 
         [FindByPlaceholder("Last Name")]
-        public TextInput<TOwner> LastName { get; private set; }
-        public ReactAddPopup()
-        {
-            TextFields = new List<TextInput<TOwner>>
-        {
-            this.FirstName,
-            this.LastName
-            };
-    }
+        public TextInput<TOwner> LastName { get; set; }
 
-    public Button<TOwner> Submit { get; private set; }
+        [FindById("userEmail")]
+        public TextInput<TOwner> Email { get; set; }
+
+        [FindByPlaceholder("Salary")]
+        public TextInput<TOwner> Salary { get; set; }
+
+        [FindByPlaceholder("Age")]
+        public TextInput<TOwner> Age { get; set; }
+
+        [FindByPlaceholder("Department")]
+        public TextInput<TOwner> Department { get; set; }
+
+        public Button<TOwner> Submit { get; set; }
+
+        protected override void OnInit()
+        {           
+            TextFields.Add(FirstName);
+            TextFields.Add(LastName);
+            TextFields.Add(Email);
+            TextFields.Add(Salary);
+            TextFields.Add(Age);
+            TextFields.Add(Department);
+        }
     }
 }
