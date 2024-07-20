@@ -74,9 +74,18 @@ namespace PlaywrigthSpecFlow.API.Features.Account
             }
         }
 
-        public async Task DeleteAccountByID(string ID)
+        public async Task DeleteAccountByID(string userId, string token)
         {
-            //TODO: implement
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Barer", token);
+            HttpResponseMessage response = await Client.DeleteAsync($"/Account/v1/User/{userId}");
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+
+            Console.WriteLine($"User with id = {userId} was deleted succesfull");
+
         }
     }
 }

@@ -22,13 +22,15 @@ namespace PlaywrigthSpecFlow.Features.Account
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Account")]
     [NUnit.Framework.CategoryAttribute("ICreateAccountByAPI")]
+    [NUnit.Framework.CategoryAttribute("IDeleteAccountByAPI")]
     public partial class AccountFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "ICreateAccountByAPI"};
+                "ICreateAccountByAPI",
+                "IDeleteAccountByAPI"};
         
 #line 1 "Account.feature"
 #line hidden
@@ -82,7 +84,7 @@ namespace PlaywrigthSpecFlow.Features.Account
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a new account", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -92,8 +94,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
  testRunner.Then("I get success status code from API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 8
+ testRunner.Then("I get message that account deleted after cleanup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

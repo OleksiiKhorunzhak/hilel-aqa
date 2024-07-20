@@ -1,4 +1,5 @@
-﻿using PlaywrigthSpecFlow.API.Models;
+﻿using Gherkin;
+using PlaywrigthSpecFlow.API.Models;
 
 namespace PlaywrigthSpecFlow.API.Features.Account
 {
@@ -8,6 +9,7 @@ namespace PlaywrigthSpecFlow.API.Features.Account
         internal static string Password = "Pa$$word1";
         internal bool AccountCreated;
         internal string UserId;
+        internal string Token;
 
         internal UserModel MainUser = new UserModel()
         {
@@ -29,7 +31,7 @@ namespace PlaywrigthSpecFlow.API.Features.Account
         internal async Task AccountApiCleanup()
         {
             AccountsApi account = new AccountsApi("https://demoqa.com/");
-            await account.DeleteAccountByID(UserId);
+            await account.DeleteAccountByID(UserId, Token);
         }
         #endregion
         #region HelperMethods
