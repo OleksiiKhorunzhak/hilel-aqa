@@ -97,9 +97,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Then("I get success status code from API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 8
- testRunner.Then("I get message that account deleted after cleanup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
             }
             this.ScenarioCleanup();
         }

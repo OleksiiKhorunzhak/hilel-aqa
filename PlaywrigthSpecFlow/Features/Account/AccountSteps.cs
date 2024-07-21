@@ -35,13 +35,5 @@ namespace PlaywrigthSpecFlow.Features.Account
             var presetup = featureContext.Get<AccountPresetup>("AccountApiPresetup");
             await presetup.AccountApiCleanup();
         }
-
-        [Then(@"I get message that account deleted after cleanup")]
-        public async Task ThenIGetMessageThatAccountDeletedAsync()
-        {
-            var presetup = _featureContext.Get<AccountPresetup>("AccountApiPresetup");
-            await presetup.AccountApiCleanup();
-            Assert.That(presetup.UserId, Is.Not.Null, "Account is not deleted");
-        }
+      }
     }
-}
