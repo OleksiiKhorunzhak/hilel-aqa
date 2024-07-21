@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using TechTalk.SpecFlow;
 
 namespace PlaywrightSpecFlow.PageObjects
 {
