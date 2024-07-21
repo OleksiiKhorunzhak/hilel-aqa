@@ -32,11 +32,11 @@ namespace AtataUITests.PageObjects
             [FindByXPath("//div[@role='gridcell'][6]")]
             public Text<_> Department { get; private set; }
 
+            [FindByXPath("//div[@class='action-buttons']/span[@title='Edit']/svg")]
+            public Button<_> EditButton { get; private set; }
             [FindByXPath("//span[@title='Delete']")]
             public Button<_> DeleteButton { get; private set; }
 
-            [FindByXPath("//span[@title='Edit']")]
-            public Button<_> EditButton { get; private set; }
 
 
         }

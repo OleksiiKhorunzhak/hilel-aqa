@@ -99,6 +99,44 @@ internal class DemoQAWebTablesPage
         var firstName = popup.GetByPlaceholder("First Name");
         await Assertions.Expect(firstName).ToBeVisibleAsync();
     }
-    
+    public async Task AddFistname(string firstname)
+    {
+        await Page.GetByPlaceholder("First Name").FillAsync(firstname);
+    }
+    public async Task AddLastname(string lastname)
+    {
+        await Page.GetByPlaceholder("Last Name").FillAsync(lastname);
+    }
+    public async Task AddEmail(string email)
+    {
+        await Page.GetByPlaceholder("name@example.com").FillAsync(email);
+    }
+    public async Task AddAge(string age)
+    {
+        await Page.GetByPlaceholder("Age").FillAsync(age);
 
+    }
+    public async Task AddSalary(string salary)
+    {
+        await Page.GetByPlaceholder("Salary").FillAsync(salary);
+
+    }
+    public async Task AddDepartment(string department)
+    {
+        await Page.GetByPlaceholder("Department").FillAsync(department);
+
+    }
+    public async Task ClickButtonAdd()
+    {
+        await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
+    }
+    public async Task ClickButtonSubmit()
+    {
+        await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
+    }
+
+    public async Task VerifyBorderColorIsRed(string selector)
+    {
+        await Assertions.Expect(Page.Locator(selector)).ToHaveCSSAsync("border-color", "rgb(220, 53, 69)");
+    }
 }

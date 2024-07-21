@@ -19,8 +19,7 @@ namespace PlaywrigthUITests.Tests
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
             //await DemoQAWebTablesPage.VerifyTableRowContent();
             await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Vega");
-
-            await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
+            await DemoQAWebTablesPage.ClickButtonAdd();
             await DemoQAWebTablesPage.VerifyPopupVisible();
             await DemoQAWebTablesPage.VerifyFirstNameVisible();
         }
@@ -30,16 +29,46 @@ namespace PlaywrigthUITests.Tests
         {
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
             await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Cantrell");
-
-            await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
+            await DemoQAWebTablesPage.ClickButtonAdd();
             await DemoQAWebTablesPage.VerifyPopupVisible();
             await DemoQAWebTablesPage.VerifyFirstNameVisible();
         }
 
         //TODO: automate test cases
         //Check any mandatory field
+        [Test, Description("Check any mandatory field"), Retry(2)]
+        public async Task CheckMandatoryField()
+        {
+            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+            await DemoQAWebTablesPage.ClickButtonAdd();
+            await DemoQAWebTablesPage.AddFistname("John");
+            await DemoQAWebTablesPage.AddLastname("Doe");
+            await DemoQAWebTablesPage.AddEmail("ABC@gmail.com");
+            await DemoQAWebTablesPage.AddAge("qwe");
+            await DemoQAWebTablesPage.AddSalary("2400");
+            await DemoQAWebTablesPage.AddDepartment("Sales");
+            await DemoQAWebTablesPage.ClickButtonSubmit();
+            await DemoQAWebTablesPage.VerifyBorderColorIsRed("input[placeholder = 'Age']");
+
+        }
         //Add new row and verify row added
+        [Test, Description("Add new row and verify row added")]
+        public async Task AddNewRowAndVerify()
+        {
+            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+            await DemoQAWebTablesPage.ClickButtonAdd();
+            await DemoQAWebTablesPage.AddFistname("John");
+            await DemoQAWebTablesPage.AddLastname("Doe");
+            await DemoQAWebTablesPage.AddEmail("ABC@gmail.com");
+            await DemoQAWebTablesPage.AddAge("33");
+            await DemoQAWebTablesPage.AddSalary("2400");
+            await DemoQAWebTablesPage.AddDepartment("Sales");
+            await DemoQAWebTablesPage.ClickButtonSubmit();
+            await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Doe");
+
+        }
         //Edit row and verify row edited
+
         //Delete row and verify row deleted
 
     }

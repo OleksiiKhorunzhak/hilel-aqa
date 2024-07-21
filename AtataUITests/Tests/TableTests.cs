@@ -40,7 +40,7 @@ namespace AtataUITests.Tests
 
 
         //Add new row and verify row added
-        [Test, Description("Check any mandatory field")]
+        [Test, Description("Add new row and verify row added")]
         public void AddNewRowAndVerify()
         {
             Go.To<DemoQAWebTablePage>().
@@ -52,13 +52,31 @@ namespace AtataUITests.Tests
                  AddPopup.Salary.Set("2400").
                  AddPopup.Department.Set("Sales").
                  AddPopup.Submit.Click().
-                 //Fails on this step
-                 //
-                 WebTable.Rows[row => row.FirstName.Content.Value.Equals("John")].FirstName.Should.BeVisible();
+                  WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].FirstName.Should.BeVisible();
 
         }
 
         //Edit row and verify row edited
+        [Test, Description("Edit row and verify row edited")]
+        public void EditRowAndVerify()
+        {
+            Go.To<DemoQAWebTablePage>().
+            WebTable.Should.BeVisible().
+            WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].EditButton.Click().
+            AddPopup.FirstName.Set("John").
+            AddPopup.Submit.Click().
+            WebTable.Rows[row => row.FirstName.Content.Value.Equals("John")].FirstName.Should.BeVisible();
+
+
+        }
         //Delete row and verify row deleted 
+        [Test, Description("Edit row and verify row edited")]
+        public void DeleteRowAndVerify()
+        {
+            Go.To<DemoQAWebTablePage>().
+            WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].DeleteButton.Click().
+            WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].FirstName.Should.Not.BeVisible();
+
+        }
     }
 }
