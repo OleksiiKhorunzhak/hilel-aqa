@@ -17,7 +17,6 @@ namespace PlaywrigthUITests.Tests
         public async Task VerifyTableVisible()
         {
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
-            //await DemoQAWebTablesPage.VerifyTableRowContent();
             await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Vega");
             await DemoQAWebTablesPage.ClickButtonAdd();
             await DemoQAWebTablesPage.VerifyPopupVisible();
@@ -68,8 +67,25 @@ namespace PlaywrigthUITests.Tests
 
         }
         //Edit row and verify row edited
+        [Test, Description("Edit row and verify row edited")]
+        public async Task EditRowAndVerify()
+        {
+            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+            await DemoQAWebTablesPage.ClickEditButton("#edit-record-1");
+            await DemoQAWebTablesPage.AddLastname("Doe");
+            await DemoQAWebTablesPage.ClickButtonSubmit();
+            await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Doe");
 
+        }
         //Delete row and verify row deleted
+        [Test, Description("Edit row and verify row edited")]
+        public async Task DeleteRowAndVerify()
+        {
+            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+            // number is an index for element we want to delete
+            await DemoQAWebTablesPage.ClickDeleteButton("#delete-record-1 path");
+            await DemoQAWebTablesPage.VerifyRowIsNotVisible(1);
+        }
 
     }
 }

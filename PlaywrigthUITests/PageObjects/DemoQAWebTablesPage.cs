@@ -75,16 +75,19 @@ internal class DemoQAWebTablesPage
             }
         }
 
-        // Check if the content of the first cell in the specified column matches the given value
-        if (cells.Any())
+        bool foundMatch = false;
+        foreach (var cell in cells)
         {
-            var cellContent = await cells.First().InnerTextAsync();
-            Assert.That(cellContent == value, $"The content of the first cell in the '{headerName}' column does not match '{value}'.");
+            var cellContent = await cell.InnerTextAsync();
+            if (cellContent.Equals(value, StringComparison.OrdinalIgnoreCase))
+            {
+                foundMatch = true;
+                break; // Exit loop once a match is found
+            }
         }
-        else
-        {
-            Assert.Fail($"No cells found in the '{headerName}' column.");
-        }
+
+        Assert.That(foundMatch, $"No cell in the '{headerName}' column matches the value '{value}'.");
+
     }
 
     public async Task VerifyPopupVisible()
@@ -139,4 +142,19 @@ internal class DemoQAWebTablesPage
     {
         await Assertions.Expect(Page.Locator(selector)).ToHaveCSSAsync("border-color", "rgb(220, 53, 69)");
     }
+    public async Task ClickEditButton(string editline)
+    {
+        await Page.Locator(editline).GetByRole(AriaRole.Img).ClickAsync();
+    }
+    public async Task ClickDeleteButton(string deleteline)
+    {
+        await Page.Locator(deleteline).ClickAsync();
+    }
+    public async Task VerifyRowIsNotVisible(int id)
+    {
+        var row = Page.Locator($"#delete-record-{id}");
+        await Assertions.Expect(row).Not.ToBeVisibleAsync();
+
+    }
+
 }

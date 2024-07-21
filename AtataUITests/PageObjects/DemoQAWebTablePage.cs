@@ -8,7 +8,7 @@ namespace AtataUITests.PageObjects
     {
         public ReactTable<WebTableRow, _> WebTable { get; private set; }
 
-        public Button<_> Add{ get; private set; }
+        public Button<_> Add { get; private set; }
 
         public ReactAddPopup<_> AddPopup { get; private set; }
 
@@ -32,14 +32,15 @@ namespace AtataUITests.PageObjects
             [FindByXPath("//div[@role='gridcell'][6]")]
             public Text<_> Department { get; private set; }
 
-            [FindByXPath("//div[@class='action-buttons']/span[@title='Edit']/svg")]
-            public Button<_> EditButton { get; private set; }
-            [FindByXPath("//span[@title='Delete']")]
-            public Button<_> DeleteButton { get; private set; }
+            [FindByXPath("//span[@title='Edit']")]
+            public Svg<_> EditButton { get; private set; }
 
+            [FindByXPath("//span[@title='Delete']")]
+            public Svg<_> DeleteButton { get; private set; }
 
 
         }
-
     }
+
 }
+
