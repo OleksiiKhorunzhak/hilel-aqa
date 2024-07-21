@@ -2,12 +2,15 @@
 {
     internal class GenericHomework
     {
-        /* TODO: Uncomment and implement GetParameterType so that test pass
-        public string GetParameterType 
-
+        // TODO: Uncomment and implement GetParameterType so that test pass
+        public string GetParameterType<T>(T input_value)
+        {
+            var result = input_value.GetType().ToString();
+            return ($"Data type: {result}");
+		}
 
         [Test]
-        public void GenericFunction()
+		public void GenericFunction()
         {
             var intType = GetParameterType(123);
             Assert.That(intType, Is.EqualTo("Data type: System.Int32"));
@@ -18,6 +21,6 @@
             var doubleType = GetParameterType(new List<double>() { 1.23 });
             Assert.That(doubleType, Is.EqualTo("Data type: System.Collections.Generic.List`1[System.Double]"));
         }
-        */
+        
     }
 }
