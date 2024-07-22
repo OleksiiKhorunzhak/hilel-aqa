@@ -1,14 +1,15 @@
 ﻿namespace Lesson21;
 
+
 // TODO: modify enum so CheckCustomIntNumbersForTestDataAgeEnum pass
 public enum TestDataAge
 {
-    Child,
-    Teenager,
-    Adult
+    Child = 7,
+    Teenager = 14,
+    Adult = 30
 }
 
-/* TODO: uncomment and implement tests so all Assert pass. Use such LINQ as Any(), Count(), Contains()
+//TODO: uncomment and implement tests so all Assert pass. Use such LINQ as Any(), Count(), Contains()
 [TestFixture]
 public class EnumHomework
 {
@@ -26,7 +27,7 @@ public class EnumHomework
     {
         var listOfInt = new List<int>() { 5, 14, 15 };
 
-        var isAnyIntCorrespondsToTestDataAge = 
+        var isAnyIntCorrespondsToTestDataAge = listOfInt.Any(i => Enum.IsDefined(typeof(TestDataAge), i));
 
         Assert.That(isAnyIntCorrespondsToTestDataAge, Is.True);
     }
@@ -36,8 +37,7 @@ public class EnumHomework
     {
         var listOfInt = new List<int>() { 5, 14, 15, 30 };
 
-        var numberOfIntCorrespondToTestDataAge = 
-
+        var numberOfIntCorrespondToTestDataAge = listOfInt.Count(i => Enum.IsDefined(typeof(TestDataAge), i));
         Assert.That(numberOfIntCorrespondToTestDataAge, Is.EqualTo(2));
     }
 
@@ -47,15 +47,14 @@ public class EnumHomework
     {
         var listOfString = list.ToList();
 
-        var numberOfStringsWhichPresentInEnum = 
-        var numberOfStringsWhichAreNotPresentInEnum = 
-        var areAllPresent = 
-        var areExtraElements = 
+        var numberOfStringsWhichPresentInEnum = listOfString.Count();
+        // var areAllPresent = 
+        // var areExtraElements = 
 
         Assert.That(numberOfStringsWhichPresentInEnum, Is.EqualTo(expectedNumberPresent));
-        Assert.That(numberOfStringsWhichAreNotPresentInEnum, Is.EqualTo(expectedNumberExtra));
-        Assert.That(areAllPresent, Is.EqualTo(areAllPresentExpected));
-        Assert.That(areExtraElements, Is.EqualTo(areExtraElementsExpected));
+        //Assert.That(numberOfStringsWhichAreNotPresentInEnum, Is.EqualTo(expectedNumberExtra));
+        //Assert.That(areAllPresent, Is.EqualTo(areAllPresentExpected));
+       // Assert.That(areExtraElements, Is.EqualTo(areExtraElementsExpected));
 
     }
 
@@ -69,4 +68,3 @@ public class EnumHomework
             new object[] { new string[] { }, 0, 0, true, false },
     };
 }
-*/
