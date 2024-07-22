@@ -1,5 +1,4 @@
 ﻿using Microsoft.Playwright;
-using PlaywrigthUITests.PageObjects;
 
 namespace PlaywrigthUITests.Tests
 {
@@ -18,31 +17,75 @@ namespace PlaywrigthUITests.Tests
         {
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
             await DemoQAWebTablesPage.VerifyTableVisible();
-            await DemoQAWebTablesPage.VerifyTableRowsVisible();                             
+            await DemoQAWebTablesPage.VerifyTableRowsVisible();
         }
 
         [Test]
-        public async Task VerifyAddPopupAllFieldsAreMandatory()
+        public async Task VerifyAddPopupFieldsAreMandatory()
         {
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
-            await Page.GetByRole(AriaRole.Button, new () { Name = "Add" }).ClickAsync();
+            await DemoQAWebTablesPage.ClickAddButton();
+
             await DemoQAWebTablesPage.VerifyPopupVisible();
+            await DemoQAWebTablesPage.ClickSubmitButton();
 
-            await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
+            List<string> fieldIDs = new List<string>
+            { "age", "department", "firstName", "lastName", "userEmail", "salary" };
 
+            int randomIndex = new Random().Next(6);
+            var elementToCheck = DemoQAWebTablesPage.GetPopupInput(fieldIDs[randomIndex]);
+            var actualColor = await DemoQAWebTablesPage.GetPopupInputColor(elementToCheck);
+            Thread.Sleep(150);
+
+            Assert.That(actualColor, Is.EqualTo("rgb(220, 53, 69)"));
         }
 
         [Test]
-        public void VerifyAddPopupAllFieldsAreMandatory()
+        public async Task VerifyAddRow()
         {
-            var page = Go.To<DemoQAWebTablePage>().Add.Click().AddPopup.Submit.Click();
+            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+            await DemoQAWebTablesPage.ClickAddButton();           
 
-            foreach (var input in page.AddPopup.TextFields)
-            {
-                input.Css["border-color"].Should.Be("rgb(220, 53, 69)");
-            }
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("firstName"), "FN");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("lastName"), "LN");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("userEmail"), "test@test.com");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("salary"), "4500");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("age"), "45");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("department"), "Dep");
+
+            await DemoQAWebTablesPage.ClickSubmitButton();
+
+            await Assertions.Expect(DemoQAWebTablesPage.GetRowByFirstNameValue("FN")).ToBeVisibleAsync();
         }
 
-       
+        [Test]
+        public async Task VerifyEditRow()
+        {
+            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+
+            await DemoQAWebTablesPage.ClickEditRowButton(DemoQAWebTablesPage.GetRowByFirstNameValue("Cierra"));
+
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("firstName"), "FN");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("lastName"), "LN");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("userEmail"), "test@test.com");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("salary"), "4500");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("age"), "45");
+            await DemoQAWebTablesPage.FillInPopupField(DemoQAWebTablesPage.GetPopupInput("department"), "Dep");
+
+            await DemoQAWebTablesPage.ClickSubmitButton();
+
+            await Assertions.Expect(DemoQAWebTablesPage.GetRowByFirstNameValue("FN")).ToBeVisibleAsync();
+            await Assertions.Expect(DemoQAWebTablesPage.GetRowByFirstNameValue("Cierra")).ToBeHiddenAsync();          
+        }
+
+        [Test]
+        public async Task VerifyDeleteRow()
+        {
+            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+
+            await DemoQAWebTablesPage.ClickDeleteRowButton(DemoQAWebTablesPage.GetRowByFirstNameValue("Cierra"));    
+           
+            await Assertions.Expect(DemoQAWebTablesPage.GetRowByFirstNameValue("Cierra")).ToBeHiddenAsync();
+        }
     }
 }

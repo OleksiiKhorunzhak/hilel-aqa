@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
+using static System.Net.Mime.MediaTypeNames;
 
 internal class DemoQAWebTablesPage
 {
@@ -41,54 +42,64 @@ internal class DemoQAWebTablesPage
         }
     }
 
-    public async Task GetTableRowContent(string headerName = "First Name", string value = "Cierra")
+    public async Task ClickAddButton()
     {
-        var table = Page.Locator(".ReactTable");
-
-        #region Unclear_realization
-        //// Locate headers
-        //var headers = await table.Locator(".rt-th").AllInnerTextsAsync();
-        //var headersList = headers.ToList();
-
-        //// Find the index of the specified header
-        //int headerIndex = headersList.IndexOf(headerName);
-
-        //if (headerIndex == -1)
-        //{
-        //    Assert.Fail($"Header '{headerName}' not found.");
-        //}
-
-        //// Locate all rows
-        //var rows = await table.Locator(".rt-tr-group").AllAsync();
-
-        //// Locate the cells in the specified column for each row
-        //var cells = new List<ILocator>();
-        //foreach (var row in rows)
-        //{
-        //    var rowCells = await row.Locator(".rt-td").AllAsync();
-        //    if (rowCells.Count > headerIndex)
-        //    {
-        //        cells.Add(rowCells[headerIndex]);
-        //    }
-        //    else
-        //    {
-        //        Assert.Fail("Row does not contain enough cells.");
-        //    }
-        //}
-
-        //// Check if the content of the first cell in the specified column matches the given value
-        //if (cells.Any())
-        //{
-        //    var cellContent = await cells.First().InnerTextAsync();
-        //    Assert.That(cellContent == value, $"The content of the first cell in the '{headerName}' column does not match '{value}'.");
-        //}
-        //else
-        //{
-        //    Assert.Fail($"No cells found in the '{headerName}' column.");
-        //}
-        #endregion
-
+        await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
     }
+
+    public async Task ClickSubmitButton()
+    {
+        await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
+    }
+
+    //public async Task GetTableRowContent(string headerName = "First Name", string value = "Cierra")
+    //{
+    //    var table = Page.Locator(".ReactTable");
+
+    //    #region Unclear_realization
+    //    //// Locate headers
+    //    //var headers = await table.Locator(".rt-th").AllInnerTextsAsync();
+    //    //var headersList = headers.ToList();
+
+    //    //// Find the index of the specified header
+    //    //int headerIndex = headersList.IndexOf(headerName);
+
+    //    //if (headerIndex == -1)
+    //    //{
+    //    //    Assert.Fail($"Header '{headerName}' not found.");
+    //    //}
+
+    //    //// Locate all rows
+    //    //var rows = await table.Locator(".rt-tr-group").AllAsync();
+
+    //    //// Locate the cells in the specified column for each row
+    //    //var cells = new List<ILocator>();
+    //    //foreach (var row in rows)
+    //    //{
+    //    //    var rowCells = await row.Locator(".rt-td").AllAsync();
+    //    //    if (rowCells.Count > headerIndex)
+    //    //    {
+    //    //        cells.Add(rowCells[headerIndex]);
+    //    //    }
+    //    //    else
+    //    //    {
+    //    //        Assert.Fail("Row does not contain enough cells.");
+    //    //    }
+    //    //}
+
+    //    //// Check if the content of the first cell in the specified column matches the given value
+    //    //if (cells.Any())
+    //    //{
+    //    //    var cellContent = await cells.First().InnerTextAsync();
+    //    //    Assert.That(cellContent == value, $"The content of the first cell in the '{headerName}' column does not match '{value}'.");
+    //    //}
+    //    //else
+    //    //{
+    //    //    Assert.Fail($"No cells found in the '{headerName}' column.");
+    //    //}
+    //    #endregion
+
+    //}
 
     public async Task VerifyPopupVisible()
     {
@@ -103,14 +114,34 @@ internal class DemoQAWebTablesPage
         await Assertions.Expect(firstName).ToBeVisibleAsync();
     }
 
-    public async Task GetPopupInputs()
+    public ILocator GetPopupInput(string fieldID)
     {
-        var popup = Page.Locator(".modal-content");
+        return Page.Locator("#" + fieldID + " ");
+    }
+    public async Task<string> GetPopupInputColor(ILocator field)
+    {
+        return await field.EvaluateAsync<string>("element => getComputedStyle(element).getPropertyValue('border-left-color')");
+    }
 
-        List<object> popUpFields = new List<object>();
-        popUpFields.Add(popup.Locator("#age"));
-        var color = await colorElement.EvaluateAsync<string>("element => getComputedStyle(element).color");
+    public async Task FillInPopupField(ILocator field, string value)
+    {
+        await field.FillAsync(value);
+    }
 
-        Assert.That(color, Is.EqualTo(expectedColor));
+    public ILocator GetRowByFirstNameValue(string firstName)
+    {
+        return Page.Locator($"//div[contains(@class, 'rt-tr-group')]//div[1][text()='{firstName}']/ancestor::div[contains(@class, 'rt-tr-group')]");
+    }
+
+    public async Task ClickEditRowButton(ILocator row)
+    {
+        await row.Locator("//span[@title='Edit']").ClickAsync();
+
+    }
+
+    public async Task ClickDeleteRowButton(ILocator row)
+    {
+        await row.Locator("//span[@title='Delete']").ClickAsync();
+
     }
 }
