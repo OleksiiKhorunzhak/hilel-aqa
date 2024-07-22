@@ -18,8 +18,8 @@ public class AsyncHomework
     public async Task TestGetStringAsync()
     {
         // TODO: Uncomment and implement test so it pass
-        //var result = 
-        //Assert.AreEqual("Hello, World!", result);
+        // var result = 
+        // Assert.That(result, Is.EqualTo("Hello, World!"));
     }
 
     [Test]
