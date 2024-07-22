@@ -17,19 +17,32 @@ namespace PlaywrigthUITests.Tests
         public async Task VerifyTableVisible()
         {
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
-            //await DemoQAWebTablesPage.VerifyTableRowContent();
-            await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Vega");
-
-            await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
-            await DemoQAWebTablesPage.VerifyPopupVisible();
-            await DemoQAWebTablesPage.VerifyFirstNameVisible();
+            await DemoQAWebTablesPage.VerifyTableVisible();
+            await DemoQAWebTablesPage.VerifyTableRowsVisible();                             
         }
 
-        //TODO: automate test cases
-        //Check any mandatory field
-        //Add new row and verify row added
-        //Edit row and verify row edited
-        //Delete row and verify row deleted
+        [Test]
+        public async Task VerifyAddPopupAllFieldsAreMandatory()
+        {
+            await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
+            await Page.GetByRole(AriaRole.Button, new () { Name = "Add" }).ClickAsync();
+            await DemoQAWebTablesPage.VerifyPopupVisible();
 
+            await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
+
+        }
+
+        [Test]
+        public void VerifyAddPopupAllFieldsAreMandatory()
+        {
+            var page = Go.To<DemoQAWebTablePage>().Add.Click().AddPopup.Submit.Click();
+
+            foreach (var input in page.AddPopup.TextFields)
+            {
+                input.Css["border-color"].Should.Be("rgb(220, 53, 69)");
+            }
+        }
+
+       
     }
 }
