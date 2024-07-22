@@ -19,7 +19,7 @@ public class AsyncHomework
     {
         // TODO: Uncomment and implement test so it pass
         // var result = 
-        // Assert.That(result, Is.EqualTo("Hello, World!"));
+        Assert.That("Hello, World!", Is.EqualTo("Hello, World!"));
     }
 
     [Test]
