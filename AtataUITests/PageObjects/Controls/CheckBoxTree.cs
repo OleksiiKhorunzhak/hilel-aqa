@@ -1,4 +1,7 @@
-﻿namespace AtataUITests.PageObjects.Controls
+﻿using Atata;
+using System.ComponentModel;
+
+namespace AtataUITests.PageObjects.Controls
 {
     [ControlDefinition("div", ContainingClass = "check-box-tree-wrapper", ComponentTypeName = "Tree")]
     public class CheckBoxTree<TOwner> : Control<TOwner>
@@ -17,6 +20,9 @@
 
             [FindByClass("rct-title")]
             public Text<TOwner> Title { get; set; }
+
+            [FindByXPath(".//span[@class='rct-node-icon']//*")]
+            public Control<TOwner> Icon { get; private set; }
         }
     }
 }

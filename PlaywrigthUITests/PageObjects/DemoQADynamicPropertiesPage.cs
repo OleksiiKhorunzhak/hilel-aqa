@@ -17,7 +17,7 @@ namespace PlaywrigthUITests.PageObjects
             await Page.GotoAsync(DynamicPropertiesPageUrl);
         }
 
-        public async Task GetColorChangeChangeColor(string expectedColor)
+        public async Task GetColorChange(string expectedColor)
         {
             var colorElement = Page.Locator("#colorChange");
             var color = await colorElement.EvaluateAsync<string>("element => getComputedStyle(element).color");
@@ -25,20 +25,22 @@ namespace PlaywrigthUITests.PageObjects
             Assert.That(color, Is.EqualTo(expectedColor));
         }
 
-        public async Task EnableAfter5sec()
+        public async Task ShoudBeEnabledAfter5sec()
         {
-            var button = Page.GetByRole(AriaRole.Button, new() { Name = "Will enable 5 seconds" });
+            var button = Page.Locator("#enableAfter");
             await Assertions.Expect(button).ToBeDisabledAsync();
-            //await button.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible, Timeout = 2000 });
+           
             await Task.Delay(5000);
             await Assertions.Expect(button).ToBeEnabledAsync();
         }
 
-        public async Task VisibleAfter5sec()
+        public async Task ShouldBeVisibleAfter5sec()
         {
-            var button = Page.GetByRole(AriaRole.Button, new() { Name = "Visible After 5 Seconds" });
-            await button.ClickAsync();
-            await Assertions.Expect(button).ToBeFocusedAsync();
+            var button = Page.Locator("#visibleAfter");
+            //var button = Page.GetByRole(AriaRole.Button, new() { Name = "Visible After 5 Seconds" });
+            await Assertions.Expect(button).ToBeHiddenAsync();
+
+            await Assertions.Expect(button).ToBeEnabledAsync();
         }
     }
 }

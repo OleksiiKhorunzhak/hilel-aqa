@@ -7,22 +7,21 @@ namespace PlaywrigthUITests.Tests
         private DemoQADownloadPage _demoQADownloadPage;
 
         [SetUp]
-        public void SetupDemoQAPage()
+        public async Task SetupDemoQAPage()
         {
             _demoQADownloadPage = new DemoQADownloadPage(Page);
+            await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
         }
 
-        [Test, Description("Donwload file verify file updated")]
+        [Test, Description("Download file, verify file exists")]
         public async Task VerifyDownload()
-        {
-            await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
-            await _demoQADownloadPage.ClickDownloadButton();
+        {           
+            await _demoQADownloadPage.VerifyFileDownloaded();
         }
 
-        [Test, Description("Donwload file then upload same file")]
-        public async Task VerifyDownloadDebug()
-        {
-            await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
+        [Test, Description("Upload the downloaded file")]
+        public async Task VerifyUpload()
+        {           
             await _demoQADownloadPage.VerifyFileDownloaded();
             await _demoQADownloadPage.VerifyDownloadedFileUploadedSucessfully();
         }
