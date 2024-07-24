@@ -26,6 +26,8 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         public async Task WhenISeeTheWebTable() =>
             await DemoQAWebTablesPage.VerifyTableVisible();
 
+        #region Buttons
+
         [When(@"I click Add Button")]
         public async Task WhenIClickAddButton() =>
             await DemoQAWebTablesPage.IClickAddButton();
@@ -43,6 +45,11 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         [When(@"I click Delete Button ""(.*)""")]
         public async Task WhenIDeleteRow(string deleterow) =>
            await DemoQAWebTablesPage.IClickDeleteButton($"#delete-record-{deleterow} path");
+
+        #endregion
+
+        #region Set Rows
+
         [When(@"I set FirstName to ""(.*)""")]
         public async Task WhenISetFirstName(string firstName) =>
            await DemoQAWebTablesPage.IFillFirstName(firstName);
@@ -66,6 +73,9 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         [When(@"I set Department ""(.*)""")]
         public async Task WhenISetDepartment(string departmentvalue) =>
             await DemoQAWebTablesPage.IFillDepartment(departmentvalue);
+        #endregion
+
+        #region Visibility
 
         [Then(@"I see FirstName ""(.*)"" in a table")]
         public async Task ThenISeeFirstName(string firstName) =>
@@ -97,7 +107,7 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         public async Task ThenIDontSeeRow(string deletedrow) =>
                     await DemoQAWebTablesPage.VerifyRowIsNotVisible(deletedrow);
 
-
+        #endregion
 
 
         [AfterFeature]
