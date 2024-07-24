@@ -81,6 +81,10 @@ namespace PlaywrightSpecFlow.PageObjects {
             await Page.GetByRole(AriaRole.Button, new() { NameString = "Add" }).ClickAsync();
         }
 
+        public async Task IClickSubmitButton()
+        {
+            await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
+        }
 
         public async Task IFillFirstName(string firstName)
         {
@@ -93,7 +97,25 @@ namespace PlaywrightSpecFlow.PageObjects {
             await Page.GetByPlaceholder("Last Name").FillAsync(lastName);
             //await Page.GetByPlaceholder("Last Name").PressAsync("Enter");
         }
+        public async Task IFillEmail(string email)
+        {
+            await Page.GetByPlaceholder("name@example.com").FillAsync(email);
+        }
+        public async Task IFillAge(string age)
+        {
+            await Page.GetByPlaceholder("Age").FillAsync(age);
 
+        }
+        public async Task IFillSalary(string salary)
+        {
+            await Page.GetByPlaceholder("Salary").FillAsync(salary);
+
+        }
+        public async Task IFillDepartment(string department)
+        {
+            await Page.GetByPlaceholder("Department").FillAsync(department);
+
+        }
         public async Task VerifyPopupVisible()
         {
             var popup = Page.Locator(".modal-content");
@@ -105,6 +127,20 @@ namespace PlaywrightSpecFlow.PageObjects {
             var popup = Page.Locator(".modal-content");
             var firstName = popup.GetByPlaceholder("First Name");
             await Assertions.Expect(firstName).ToBeVisibleAsync();
+        }
+        public async Task IClickEditButton(string editline)
+        {
+            await Page.Locator(editline).GetByRole(AriaRole.Img).ClickAsync();
+        }
+        public async Task IClickDeleteButton(string deleteline)
+        {
+            await Page.Locator(deleteline).ClickAsync();
+        }
+        public async Task VerifyRowIsNotVisible(string id)
+        {
+            var row = Page.Locator($"#delete-record-{id}");
+            await Assertions.Expect(row).Not.ToBeVisibleAsync();
+
         }
     }
 }
