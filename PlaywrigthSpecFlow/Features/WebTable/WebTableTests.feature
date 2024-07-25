@@ -10,6 +10,7 @@ Feature: WebTableTest
 	Given I am on DemoQA WebTable Page
 	When I see the WebTable
 	Then I see FirstName "<FirstName>" in a table
+    And I see LastName "<LastName>" in a table
 	Examples:
     | FirstName | LastName |
     | Cierra    | Vega     |
@@ -17,7 +18,7 @@ Feature: WebTableTest
     | Kierra    | Gentry   |
 
  
-   Scenario Outline: I add 50 new rows to the table
+   Scenario Outline: I add item to the table
 	Given I am on DemoQA WebTable Page
 	When I see the WebTable
 	And I click Add Button
@@ -102,14 +103,14 @@ Feature: WebTableTest
     And I click Submit Button
     Then I see FirstName "<FirstName>" in a table
     
-    When I click Edit Button "4"
-    And I set Salary "25000" 
+    When I am editing row number "4"
+    And I set Salary "<New Salary>" 
     And I click Submit Button
-    Then I see Salary "25000" in a table
+    Then I see Salary "<New Salary>" in a table
 
      Examples:
-    | FirstName | LastName | Email              | Age | Salary | Department    |
-    | Astolfo   | Rider    | astolfo.rider@e.com| 24  | 13800  | Fate/GO       |
+    | FirstName | LastName | Email               | Age | Salary | Department | New Salary |
+    | Astolfo   | Rider    | astolfo.rider@e.com | 24  | 13800  | Fate/GO    | 25000      |
 
      Scenario Outline: I delete row in the table
 	Given I am on DemoQA WebTable Page
@@ -125,7 +126,7 @@ Feature: WebTableTest
     And I click Submit Button
     Then I see FirstName "<FirstName>" in a table
     
-    When I click Delete Button "4"
+    When I am deleting row number "4"
     Then I dont see Row "<FirstName>" in a table
 
      Examples:

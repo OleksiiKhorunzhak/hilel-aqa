@@ -109,12 +109,15 @@ namespace PlaywrigthSpecFlow.Features.WebTable
 #line 12
  testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 13
+    testRunner.And(string.Format("I see LastName \"{0}\" in a table", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("I add 50 new rows to the table")]
+        [NUnit.Framework.DescriptionAttribute("I add item to the table")]
         [NUnit.Framework.TestCaseAttribute("Astolfo", "Rider", "astolfo.rider@e.com", "24", "13800", "Fate/GO", null)]
         [NUnit.Framework.TestCaseAttribute("Felix", "Argyle", "felix.argyle@e.com", "27", "10600", "Re: Life", null)]
         [NUnit.Framework.TestCaseAttribute("Hideyoshi", "Kinoshita", "hideyoshi.k@e.com", "17", "7600", "Baka&Test", null)]
@@ -165,7 +168,7 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         [NUnit.Framework.TestCaseAttribute("Daichi", "Akimoto", "daichi.akim@e.com", "27", "12100", "OtomeTeikou", null)]
         [NUnit.Framework.TestCaseAttribute("Tsubasa", "Hanazawa", "tsubasa.hanaz@e.com", "26", "10600", "Junjou", null)]
         [NUnit.Framework.TestCaseAttribute("Keiji", "Kuroda", "keiji.kurod@e.com", "23", "14800", "PrinceTennis", null)]
-        public void IAdd50NewRowsToTheTable(string firstName, string lastName, string email, string age, string salary, string department, string[] exampleTags)
+        public void IAddItemToTheTable(string firstName, string lastName, string email, string age, string salary, string department, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -175,8 +178,8 @@ namespace PlaywrigthSpecFlow.Features.WebTable
             argumentsOfScenario.Add("Age", age);
             argumentsOfScenario.Add("Salary", salary);
             argumentsOfScenario.Add("Department", department);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I add 50 new rows to the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 20
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I add item to the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 21
    this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -186,52 +189,52 @@ namespace PlaywrigthSpecFlow.Features.WebTable
             else
             {
                 this.ScenarioStart();
-#line 21
+#line 22
  testRunner.Given("I am on DemoQA WebTable Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 22
+#line 23
  testRunner.When("I see the WebTable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 24
  testRunner.And("I click Add Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 25
  testRunner.And(string.Format("I set FirstName to \"{0}\"", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 26
     testRunner.And(string.Format("I set LastName to \"{0}\"", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 27
     testRunner.And(string.Format("I set Email \"{0}\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
+#line 28
     testRunner.And(string.Format("I set Age \"{0}\"", age), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 28
+#line 29
     testRunner.And(string.Format("I set Salary \"{0}\"", salary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 30
     testRunner.And(string.Format("I set Department \"{0}\"", department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 30
+#line 31
     testRunner.And("I click Submit Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 32
      testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 32
+#line 33
      testRunner.And(string.Format("I see LastName \"{0}\" in a table", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 33
+#line 34
      testRunner.And(string.Format("I see Email \"{0}\" in a table", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 34
+#line 35
      testRunner.And(string.Format("I see Age \"{0}\" in a table", age), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 35
+#line 36
      testRunner.And(string.Format("I see Salary \"{0}\" in a table", salary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 37
      testRunner.And(string.Format("I see Department \"{0}\" in a table", department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -240,8 +243,8 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I edit item in the table")]
-        [NUnit.Framework.TestCaseAttribute("Astolfo", "Rider", "astolfo.rider@e.com", "24", "13800", "Fate/GO", null)]
-        public void IEditItemInTheTable(string firstName, string lastName, string email, string age, string salary, string department, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Astolfo", "Rider", "astolfo.rider@e.com", "24", "13800", "Fate/GO", "25000", null)]
+        public void IEditItemInTheTable(string firstName, string lastName, string email, string age, string salary, string department, string newSalary, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -251,8 +254,9 @@ namespace PlaywrigthSpecFlow.Features.WebTable
             argumentsOfScenario.Add("Age", age);
             argumentsOfScenario.Add("Salary", salary);
             argumentsOfScenario.Add("Department", department);
+            argumentsOfScenario.Add("New Salary", newSalary);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I edit item in the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 92
+#line 93
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -262,50 +266,50 @@ namespace PlaywrigthSpecFlow.Features.WebTable
             else
             {
                 this.ScenarioStart();
-#line 93
+#line 94
  testRunner.Given("I am on DemoQA WebTable Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 94
+#line 95
     testRunner.When("I see the WebTable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 95
+#line 96
  testRunner.And("I click Add Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 96
+#line 97
  testRunner.And(string.Format("I set FirstName to \"{0}\"", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 97
+#line 98
     testRunner.And(string.Format("I set LastName to \"{0}\"", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 98
+#line 99
     testRunner.And(string.Format("I set Email \"{0}\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 99
+#line 100
     testRunner.And(string.Format("I set Age \"{0}\"", age), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 100
+#line 101
     testRunner.And(string.Format("I set Salary \"{0}\"", salary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 101
+#line 102
     testRunner.And(string.Format("I set Department \"{0}\"", department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 102
+#line 103
     testRunner.And("I click Submit Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 103
+#line 104
     testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 105
-    testRunner.When("I click Edit Button \"4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 106
-    testRunner.And("I set Salary \"25000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When("I am editing row number \"4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 107
-    testRunner.And("I click Submit Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I set Salary \"{0}\"", newSalary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 108
-    testRunner.Then("I see Salary \"25000\" in a table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("I click Submit Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 109
+    testRunner.Then(string.Format("I see Salary \"{0}\" in a table", newSalary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -325,7 +329,7 @@ namespace PlaywrigthSpecFlow.Features.WebTable
             argumentsOfScenario.Add("Salary", salary);
             argumentsOfScenario.Add("Department", department);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I delete row in the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 114
+#line 115
      this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -335,43 +339,43 @@ namespace PlaywrigthSpecFlow.Features.WebTable
             else
             {
                 this.ScenarioStart();
-#line 115
+#line 116
  testRunner.Given("I am on DemoQA WebTable Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 117
+#line 118
     testRunner.When("I see the WebTable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 118
+#line 119
  testRunner.And("I click Add Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 119
+#line 120
  testRunner.And(string.Format("I set FirstName to \"{0}\"", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 120
+#line 121
     testRunner.And(string.Format("I set LastName to \"{0}\"", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 121
+#line 122
     testRunner.And(string.Format("I set Email \"{0}\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 122
+#line 123
     testRunner.And(string.Format("I set Age \"{0}\"", age), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 123
+#line 124
     testRunner.And(string.Format("I set Salary \"{0}\"", salary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 124
+#line 125
     testRunner.And(string.Format("I set Department \"{0}\"", department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 125
+#line 126
     testRunner.And("I click Submit Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 126
+#line 127
     testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 128
-    testRunner.When("I click Delete Button \"4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 129
+    testRunner.When("I am deleting row number \"4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 130
     testRunner.Then(string.Format("I dont see Row \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

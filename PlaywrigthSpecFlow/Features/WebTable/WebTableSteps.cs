@@ -38,13 +38,13 @@ namespace PlaywrigthSpecFlow.Features.WebTable
            await DemoQAWebTablesPage.IClickSubmitButton();
 
       
-        [When(@"I click Edit Button ""(.*)""")]
+        [When(@"I am editing row number ""(.*)""")]
         public async Task WhenIEditRow(string editrow) =>
-     await DemoQAWebTablesPage.IClickEditButton($"#edit-record-{editrow}");
+     await DemoQAWebTablesPage.IClickEditButton(editrow);
 
-        [When(@"I click Delete Button ""(.*)""")]
+        [When(@"I am deleting row number ""(.*)""")]
         public async Task WhenIDeleteRow(string deleterow) =>
-           await DemoQAWebTablesPage.IClickDeleteButton($"#delete-record-{deleterow} path");
+           await DemoQAWebTablesPage.IClickDeleteButton(deleterow);
 
         #endregion
 

@@ -130,16 +130,16 @@ namespace PlaywrightSpecFlow.PageObjects {
         }
         public async Task IClickEditButton(string editline)
         {
-            await Page.Locator(editline).GetByRole(AriaRole.Img).ClickAsync();
+            await Page.Locator($"#edit-record-{editline}").GetByRole(AriaRole.Img).ClickAsync();
         }
         public async Task IClickDeleteButton(string deleteline)
         {
-            await Page.Locator(deleteline).ClickAsync();
+            await Page.Locator($"#delete-record-{deleteline} path").ClickAsync();
         }
-        public async Task VerifyRowIsNotVisible(string id)
-        {
-            var row = Page.Locator($"#delete-record-{id}");
-            await Assertions.Expect(row).Not.ToBeVisibleAsync();
+            public async Task VerifyRowIsNotVisible(string id)
+            {
+                var row = Page.Locator($"#delete-record-{id}");
+                await Assertions.Expect(row).Not.ToBeVisibleAsync();
 
         }
     }
