@@ -6,13 +6,14 @@ namespace PlaywrigthUITests.Tests
     {
         [Test]
         [Description("Text Full Name should be visible")]
+        [Category("UI")]
         public async Task VerifyTextFullName()
         {
-            // Given I go to DemoQa Elements page 
+            // Given I go to DemoQa Elements Page 
             await Page.GotoAsync("https://demoqa.com/elements");
             // When I Click the Buttons button in menu
             await Page.GetByText("Text Box").ClickAsync();
-            // And I see 'buttons page
+            // And I see 'buttons Page
             await Page.WaitForURLAsync("https://demoqa.com/text-box");
             var isVisible = await Page.GetByText("Full Name").IsVisibleAsync();
             Assert.That(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");
@@ -20,13 +21,14 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Text Full Name Input should be visible")]
+        [Category("UI")]
         public async Task VerifyTextFieldFullName()
         {
-            // Given I go to DemoQa Elements page 
+            // Given I go to DemoQa Elements Page 
             await Page.GotoAsync("https://demoqa.com/elements");
             // When I Click the Buttons button in menu
             await Page.GetByText("Text Box").ClickAsync();
-            // And I see 'buttons page
+            // And I see 'buttons Page
             await Page.WaitForURLAsync("https://demoqa.com/text-box");
 
             var isVisible = await Page.GetByPlaceholder("Full Name").IsVisibleAsync();
@@ -35,13 +37,14 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Enter 'John Doe' in Text Full Name Input, press submit, text Name should be 'Name:John Doe'")]
+        [Category("UI")]
         public async Task VerifyTextSetFullName()
         {
-            // Given I go to DemoQa Elements page 
+            // Given I go to DemoQa Elements Page 
             await Page.GotoAsync("https://demoqa.com/elements");
             // When I Click the Buttons button in menu
             await Page.GetByText("Text Box").ClickAsync();
-            // And I see 'buttons page
+            // And I see 'buttons Page
             await Page.WaitForURLAsync("https://demoqa.com/text-box");
             // And I fill the 'Full Name' text input
             await Page.GetByPlaceholder("Full Name").FillAsync("John Doe");
@@ -54,13 +57,14 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Clear Text Full Name Input, press submit, text Name should not be visible")]
+        [Category("UI")]
         public async Task VerifyTextClearFullName()
         {
-            // Given I go to DemoQa Elements page 
+            // Given I go to DemoQa Elements Page 
             await Page.GotoAsync("https://demoqa.com/elements");
             // When I Click the Buttons button in menu
             await Page.GetByText("Text Box").ClickAsync();
-            // And I see 'buttons page
+            // And I see 'buttons Page
             await Page.WaitForURLAsync("https://demoqa.com/text-box");
             // And I fill the 'Full Name' text input
             await Page.GetByPlaceholder("Full Name").FillAsync("");

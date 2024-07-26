@@ -5,7 +5,10 @@ namespace NUnitTests.Homework
     public class CarTests : Lesson3Logic
     {
 
-        #region[TestCases] 
+
+
+ 
+ OlenaHr_main
         //TODO: TestCases
         //Test Case 1: Test Acceleration
         //Description: Ensure that the method GetAcceleration correctly retrieves the current acceleration value.
