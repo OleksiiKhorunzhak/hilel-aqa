@@ -19,5 +19,8 @@ namespace AtataUITests.PageObjects
 
         [FindByClass("mt-3")]
         public Text<_> Text { get; set; }
+
+        [FindByXPath("//h1[@class='text-center' and text()='Radio Button']")]
+        public H1<_> RadioButtonsTitle { get; set; }
     }
 }
