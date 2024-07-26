@@ -2,6 +2,8 @@
 using TechTalk.SpecFlow;
 using PlaywrightSpecFlow.PageObjects;
 using PlaywrigthSpecFlow.Bindings;
+using static System.Net.Mime.MediaTypeNames;
+using System.Runtime.CompilerServices;
 
 namespace PlaywrigthSpecFlow.Features.WebTable
 {
@@ -25,6 +27,9 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         [When(@"I click Add Button")]
         public async Task WhenIKlickAddButton() => await DemoQAWebTablesPage.IClickAddButton();
 
+        [When(@"I click Submit Button")]
+        public async Task WhenIClickSubmitButton() => await Page.GetByRole(AriaRole.Button, new() { Name = "Submit" }).ClickAsync();
+
         [When(@"I set FirstName to ""(.*)""")]
         public async Task WhenISetFirstName(string firstName) =>
            await DemoQAWebTablesPage.IFillFirstName(firstName);
@@ -37,15 +42,35 @@ namespace PlaywrigthSpecFlow.Features.WebTable
         public async Task ThenISeeFirstName(string firstName) =>
             await Assertions.Expect(Page.GetByRole(AriaRole.Gridcell, new() { Name = firstName, Exact = true })).ToBeVisibleAsync();
 
-        [When(@"I set Email ""(.*)"" in a table")]
+        [When(@"I set Email ""(.*)""")]
         public async Task ThenISetEmail(string email)
         {
             await Page.GetByPlaceholder("name@example.com").FillAsync(email);
             await Page.GetByPlaceholder("name@example.com").PressAsync("Enter");
         }
 
+        [When(@"I set Age ""(.*)""")]
+        public async Task ThenISetAge(int age)
+        {
+            await Page.GetByPlaceholder("Age").FillAsync(age.ToString());
+        }
+
+        [When(@"I set Salary ""(.*)""")]
+        public async Task ThenISetSalary(int salary)
+        {
+            await Page.GetByPlaceholder("Salary").FillAsync(salary.ToString());
+        }
+
+        [When(@"I set Department ""(.*)""")]
+        public async Task ThenISetDepartment(string department)
+        {
+            await Page.GetByPlaceholder("Department").FillAsync(department);
+        }
+
         [Then(@"I see LastName ""(.*)"" in a table")]
         public async Task ThenISeeLastName(string lastName) =>
           await Assertions.Expect(Page.GetByRole(AriaRole.Gridcell, new() { Name = lastName, Exact = true })).ToBeVisibleAsync();
+
+
     }
 }
