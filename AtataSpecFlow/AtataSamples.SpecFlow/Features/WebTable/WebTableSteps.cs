@@ -47,7 +47,7 @@ namespace AtataSamples.SpecFlow.Features.WebTable
             Go.On<DemoQAWebTablePage>().
                 AddPopup.Department.Set(department);
 
-        [When(@"I click the submit button")]
+        [When(@"I click Submit button")]
         public void WhenIClickSubmitButton() =>
             Go.On<DemoQAWebTablePage>().
                 AddPopup.Submit.Click();
