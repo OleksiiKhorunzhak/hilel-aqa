@@ -5,12 +5,12 @@
     public class Lesson3Logic
     {
         #region[TestSetup]
-        public int Speed { get; set; }
-        public int Acceleration { get; set; }
-        public string? Alert { get; set; }
-        public bool IsDecelerationChargeActive { get; set; }
-        public int Deceleration { get; set; }
-        public int DecelerationCharge { get; set; }
+        public int Speed { get; private set; }
+        public int Acceleration { get; private set; }
+        public string? Alert { get; private set; }
+        public bool IsDecelerationChargeActive { get; private set; }
+        public int Deceleration { get; private set; }
+        public int DecelerationCharge { get; private set; }
         public int Charge { get; set; }
         
         //Mock values - change at will
@@ -39,7 +39,7 @@
         public void GetSpeed()
         {
             //TODO if acceleration is more than 0 set speed as current speed
-            if (Acceleration > 0)
+            if (Acceleration>0)
             {
                 Speed = CurrentSpeed;
             }
@@ -48,7 +48,7 @@
         public void GetDeceleration()
         {
             //TODO if acceleration is more than 0 set deceleration as CurrentSpeed - CurrentDeceleration
-            if (Acceleration > 0)
+            if (Acceleration>0)
             {
                 Deceleration = CurrentSpeed - CurrentDeceleration;
             }
@@ -57,7 +57,7 @@
         public void SetSpeedAlert(int speed, int maxSpeed)
         {
             //TODO if current speed EXCEEDS maxsspeed AND acceleration is more than 0 show speed alert
-            if (CurrentSpeed >= maxSpeed && Acceleration > 0)
+            if (CurrentSpeed > MaxSpeed && Acceleration>0)
             {
                 Alert = "Take caution! Speed limit overdue " + (speed - maxSpeed) + "!";
             }
@@ -65,12 +65,12 @@
 
         public void SetChargeAlert()
         {   //TODO if Charge lower or equal critical charge show alert
-            if (Charge <= CriticalCharge)
+            if (Charge<=CriticalCharge)
             {
                 Alert = "Take caution! Charge Low at " + Charge + "%!";
             }
-            //TODO if Charge higher or equal CriticalOvercharge show alert
-            if (Charge >= CriticalOvercharge)
+            //TODO if Chargehigher or equal CriticalOvercharge show alert
+            if (Charge>=CriticalOvercharge)
             {
                 Alert = "Charge Full! Deceleration charging disabled.";
             }
@@ -91,6 +91,7 @@
                 if (Speed <= MaxSpeed + 20)
                 {
                     Speed++;
+                    
                 }
                 else { break; }
             }
