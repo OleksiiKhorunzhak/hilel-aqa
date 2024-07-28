@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CksmYQxh1lsS8+uw27XWBCJs7W+uSpbeH20/kNPhK6TpeshHanZaDrmjBawsPQ71ah7FvicIxfRmDbYe6Xw7JQ==",
+  "dgSpecHash": "TCtwcc6fSXTxCgI1BPmZ0sWcnqlPOS+978tHwx5EUE5Qr3kzncqNZMy2iXiTuICbHzHJ8E1fIHflY6X8nbNrCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
   "expectedPackageFiles": [
@@ -94,10 +94,7 @@
     "C:\\Users\\deler\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\deler\\.nuget\\packages\\system.text.json\\7.0.3\\system.text.json.7.0.3.nupkg.sha512",
     "C:\\Users\\deler\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
-    "C:\\Users\\deler\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\deler\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\deler\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\deler\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512"
+    "C:\\Users\\deler\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
