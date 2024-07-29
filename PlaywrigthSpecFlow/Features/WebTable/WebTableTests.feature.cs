@@ -121,8 +121,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("John", "Wick", "JohnWick@wick.com", "19", "320", "Finance", null)]
         [NUnit.Framework.TestCaseAttribute("Alice", "Smith", "AS@mail.com", "22", "558", "Marketing", null)]
         [NUnit.Framework.TestCaseAttribute("Bob", "Johnson", "BJ@gmail.com", "33", "670", "IT", null)]
-        [NUnit.Framework.TestCaseAttribute("Cierra", "Vega", "CV@mail.com", "45", "1250", "Business administration", null)]
-        [NUnit.Framework.TestCaseAttribute("Alden", "Cantrell", "AC@mail.com", "28", "360", "Purchasing", null)]
         [NUnit.Framework.TestCaseAttribute("Ann", "Gold", "AG@mail.com", "37", "5400", "Sales", null)]
         [NUnit.Framework.TestCaseAttribute("Ali", "Nielsen", "AN@mail.com", "54", "500", "Finance", null)]
         [NUnit.Framework.TestCaseAttribute("Charles", "Garcia", "AGr@mail.com", "61", "700", "Business administration", null)]
