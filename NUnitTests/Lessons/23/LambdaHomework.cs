@@ -24,6 +24,7 @@
                     evenNumbers.Add(number);
                 }
             }
+
             return evenNumbers;
         }
 
@@ -52,33 +53,33 @@
 
 
         // TODO: Uncomment and implement lambda functions instead of regular functions
-        /*
+
         [Test]
         public void Test_Add_Function_To_Lambda()
         {
-            var lambda = 
+            var lambda = (int x, int y) => x + y;
             var result = lambda(3, 4);
-            Assert.That(result, Is.EqualTo(7));
+            Assert.That(result, Is.EqualTo(7), "Add function result is incorrect");
         }
 
         [Test]
         public void Test_Multiply_Function_To_Lambda()
         {
-            var lambda = 
+            var lambda = (int x, int y) => x * y;
             var result = lambda(3, 4);
-            Assert.That(result, Is.EqualTo(12));
+            Assert.That(result, Is.EqualTo(12), "Multiply function result is incorrect");
         }
 
         [Test]
         public void Test_FilterEvenNumbers_Function_To_Lambda()
         {
-            var lambda =
+            Func<List<int>, List<int>> lambda = numbers => numbers.Where(n => n % 2 == 0).ToList();
             var input = new List<int> { 1, 2, 3, 4 };
             var expected = new List<int> { 2, 4 };
             var result = lambda(input);
-            Assert.That(result, Is.EqualTo(expected).AsCollection);
+            Assert.That(result, Is.EqualTo(expected).AsCollection, "FilterEvenNumbers function is incorrect");
         }
-        */
+
         [Test]
         public void Test_Where_Lambda()
         {
@@ -86,19 +87,25 @@
             var filterredList = myList.Where(e => e.Contains('t'));
             Assert.That(filterredList.Count, Is.EqualTo(2));
         }
+
         // TODO: Uncomment and implement without lambda functions
-        /*
+        
         [Test]
         public void Test_Where_NoLambda()
         {
             var myList = new List<string> { "one", "two", "three", "four" };
             var filterredList = new List<string>();
 
-            ...
-
-            Assert.That(filterredList.Count, Is.EqualTo(2));
+            foreach (var item in myList)
+            {
+                if (item.Contains("t"))
+                {
+                    filterredList.Add(item);
+                }
+            }
+            Assert.That(filterredList.Count, Is.EqualTo(2), $"{filterredList}");
         }
-        */
+        
         [Test]
         public void Test_All_Lambda()
         {
@@ -107,18 +114,16 @@
             Assert.That(notEmpty, Is.True);
         }
         // TODO: Uncomment and implement without lambda functions
-        /*
+
         [Test]
         public void Test_All_NoLambda()
         {
             var myList = new List<string> { "one", "two", "three", "four" };
-            bool result
-
-            ...
-
-            Assert.That(result, Is.True);
+            foreach (var item in myList)
+            {
+                bool result = item.Length > 0;
+                Assert.That(result, Is.True, $"The myList contains empty strings");
+            }
         }
-        */
     }
-
 }
