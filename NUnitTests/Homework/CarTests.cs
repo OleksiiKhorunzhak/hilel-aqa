@@ -27,7 +27,8 @@ namespace NUnitTests.Homework
             Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
         }
 
-        //Test Case 2: Test GetSpeed with Positive Acceleration
+
+              //Test Case 2: Test GetSpeed with Positive Acceleration
         //Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
         //Steps:
         [Test]
@@ -88,6 +89,19 @@ namespace NUnitTests.Homework
             Charge = CriticalCharge - 1;
             SetChargeAlert();
             Assert.That(Alert, Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"));
+        }
+
+        [Test]
+        [Order(5)]
+        public void LowChargeAlert()
+        {
+            int charge = 8;
+            Charge = charge;
+            if (charge <= CriticalCharge)
+            {
+                SetChargeAlert();
+            }
+            Assert.That(Alert,Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"));
         }
 
         //Test Case 6: Full Charge Alert

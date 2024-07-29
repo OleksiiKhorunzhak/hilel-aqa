@@ -1,4 +1,5 @@
-﻿using AtataUITests.PageObjects;
+﻿using Atata;
+using AtataUITests.PageObjects;
 using System.Security.Cryptography.X509Certificates;
 
 namespace AtataUITests.Tests
@@ -90,5 +91,13 @@ namespace AtataUITests.Tests
               RefreshPage().
               DinamicClickMessage.Should.Not.BeVisible();
 
+        [Test, Description("Verify text 'You have done a dynamic click' is not visible after page refresh")]
+        public void VerifyMessageOfClickButtonIsNotVisibleAfrePageRefresh() =>
+          Go.To<DemoQAElementsPage>().
+          Buttons.ClickAndGo().
+          ClickMe.Click().
+          DinamicClickMessage.Should.Be("You have done a dynamic click").
+          RefreshPage().
+          DinamicClickMessage.Should.Not.BeVisible();
     }
 }

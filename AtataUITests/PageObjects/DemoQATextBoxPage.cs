@@ -58,5 +58,6 @@ namespace AtataUITests.PageObjects
         public Text<_> PermanentAddressInputField { get; set; }
 
     }
+
 }
 
