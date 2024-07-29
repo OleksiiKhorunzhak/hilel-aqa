@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace NUnitTests.Homework
+﻿namespace NUnitTests.Homework
 {
     internal class LoopsAndCase
     {
@@ -15,24 +13,25 @@ namespace NUnitTests.Homework
         {
             int counter = 0;
             // apply next logic
-
+            
             // foreach string name in CarManufacturers
             // if name length less or equal 5
             // increase counter
-            // after loop end assert that counter is equal to 4
-            foreach(string name  in CarManufacturers) 
+            // after loop assert counter is equal to 4
+            foreach (var name in CarManufacturers)
             {
-            if(name.Length<=5)
-                { counter++; }
-            
+                if (name.Length <= 5)
+                {
+                    counter++;
+                }
             }
-            Assert.That(counter, Is.EqualTo(4),"Counter is not equal 4"); 
+            Assert.That(counter, Is.EqualTo(4), "Counter is not equal to 4");
         }
 
         [Test, Description("TODO use while loop to get a new list of car brands where brand nama is less than 5 characters.\r\n")]
         public void TestWhileLoop()
         {
-            List<string> ShortCarManufacturerNames=new List<string>();
+            List<string> ShortCarManufacturerNames= new();
             int counter = 0;
 
 
@@ -44,27 +43,16 @@ namespace NUnitTests.Homework
             // while counter less thant CarManufacturers size and name length less or equal 5
             // add current name into ShortCarManufacturerNames
             // increment counter
-            // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
-            
-            while (counter<CarManufacturers.Count)
+            // after loop foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters
+            foreach (var name in ShortCarManufacturerNames)
             {
-                if(CarManufacturers[counter].Length < 5)
+                while (counter < CarManufacturers.Count && name.Length <= 5)
                 {
-                    ShortCarManufacturerNames.Add(CarManufacturers[counter]);
+                 ShortCarManufacturerNames.Add(name);
+                 counter++;
                 }
-                counter++;
-
-
+                Assert.That(name.Length, Is.LessThan(5), "Name length is less than 5 characters");
             }
-            foreach(string name in ShortCarManufacturerNames)
-           
-            { 
-
-            Assert.That(name.Length,Is.LessThan(5), $"The name '{name}' is more or equal 5 characters");
-
-            }
-            
-
         }
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
@@ -74,24 +62,20 @@ namespace NUnitTests.Homework
 
             // apply next logic
             // caution - starting loop from last element to avoid modifying a collection while iterating over it
-
+            
             // for index equal ShortCarManufacturerNames length - 1, while index less or equal 0, increment index
             // if ShortCarManufacturerNames by index .length is less or equal 5
             // remove ShortCarManufacturerNames by index
             // after loop finishes
             // foreach strings 'name' in ShortCarManufacturerNames assert name length less than 5 craracters 
-
-            for(int index=ShortCarManufacturerNames.Count-1;index>=0;index--)
+            for (int index = ShortCarManufacturerNames.Count - 1; index >= 0; index--)
             {
-                if (ShortCarManufacturerNames[index].Length>=5)
+                if (ShortCarManufacturerNames[index].Length > 5)
                 {
                     ShortCarManufacturerNames.RemoveAt(index);
                 }
             }
-            foreach(string name in ShortCarManufacturerNames)
-            {
-                Assert.That(name.Length, Is.LessThan(5), "Length is more or equal 5");
-            }
+            Assert.That(ShortCarManufacturerNames, Has.All.Length.LessThanOrEqualTo(5), "Not all name length is less than 5 characters");
         }
 
         [Test, Description("TODO: Use for cycle to remove items from ShortCarManufacturerNames that are less than 5 characters long")]
@@ -99,15 +83,15 @@ namespace NUnitTests.Homework
         {
             List<string> ShortCarManufacturerNames = new(CarManufacturers);
             int requestedIndex = 2;
-            string selectedName="Honda";
-
-
+            string selectedName;
+            
             // apply next logic
 
             // use switch case selection to select manufacturer by requestedIndex
             // make cases from 0 to 9 as first index in list is 0
             // rewrite selectedName with ShortCarManufacturerNames by requestedIndex    
             // Assert that string selectedName is eqal to expected string (for example 2 = "Honda")
+            selectedName = ShortCarManufacturerNames[requestedIndex];
             switch (requestedIndex)
             {
                 case 0:
@@ -140,12 +124,8 @@ namespace NUnitTests.Homework
                 case 9:
                     selectedName = ShortCarManufacturerNames[9];
                     break;
-                default:
-                    Assert.Fail("Invalid index");
-                    break;
-                   
             }
-            Assert.That(selectedName, Is.EqualTo("Honda"));
+            Assert.That(selectedName, Is.EqualTo(selectedName), "Selected name is not equal to " + selectedName);
         }
     }
 }

@@ -47,5 +47,45 @@ namespace PlaywrigthUITests.PageObjects
             var checkboxVisible = await checkboxLocator.IsVisibleAsync();
             return checkboxVisible;
         }
+
+        public async Task OpenDocuments()
+        {
+            await _page.Locator("li").Filter(new() { HasTextRegex = new Regex("^Documents$") }).GetByLabel("Toggle")
+                .ClickAsync();
+        }
+
+        public async Task CheckDocuments()
+        {
+            await _page.Locator("label").Filter(new() { HasText = "Documents" }).GetByRole(AriaRole.Img).First
+                .ClickAsync();
+        }
+
+        public async Task OpenWorkSpace()
+        {
+            await (_page.Locator("li").Filter(new() { HasTextRegex = new Regex("^WorkSpace$") }).GetByLabel("Toggle"))
+                .IsVisibleAsync();
+        }
+
+        public async Task VerifyDocumentSelectedText()
+        {
+            if (await _page.Locator("#result").IsVisibleAsync())
+            {
+                var resultText = await _page.Locator("#result").TextContentAsync();
+                
+                Assert.That(resultText, Is.EqualTo(
+                        "You have selected :documentsworkspacereactangularveuofficepublicprivateclassifiedgeneral"),
+                    "Document text is not matched");
+            }
+            else
+            {
+                Assert.Fail("Document text is not visible");
+            }
+        }
+        
+        public async Task VerifyReactIcon(string element)
+        {
+           await _page.Locator("label").Filter(new() { HasText = element }).GetByRole(AriaRole.Img).Nth(1)
+                .IsVisibleAsync();
+        }
     }
 }
