@@ -119,11 +119,15 @@
         public void Test_All_NoLambda()
         {
             var myList = new List<string> { "one", "two", "three", "four" };
+            bool result = true;
             foreach (var item in myList)
             {
-                bool result = item.Length > 0;
-                Assert.That(result, Is.True, $"The myList contains empty strings");
+                if (item.Length == 0)
+                {
+                    result = false;
+                }
             }
+            Assert.That(result, Is.True, "The List contains empty strings");
         }
     }
 }
