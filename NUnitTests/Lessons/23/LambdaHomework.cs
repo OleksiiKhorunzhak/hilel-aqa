@@ -101,7 +101,7 @@
 
             foreach (var item in myList)
             {
-                if (item.Length == 3)
+                if (item.Contains('t'))
                 {
                     filterredList.Add(item);
                 }
@@ -126,7 +126,7 @@
 
              foreach (var item in myList)
             {
-                if (item.Length <= 2)
+                if (item.Length == 0) //i have chenges on item.Length == 0 from item.Length <= 0
                 {
                     result = false;
                     break;
