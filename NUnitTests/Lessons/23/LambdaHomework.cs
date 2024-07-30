@@ -126,7 +126,7 @@
 
              foreach (var item in myList)
             {
-                if (item.Length == 0) //i have chenges on item.Length == 0 from item.Length <= 0
+                if (item.Length == 0) //i have chenged on item.Length == 0 from item.Length <= 0
                 {
                     result = false;
                     break;
