@@ -32,6 +32,9 @@ namespace AtataUITests.PageObjects
             [FindByXPath("//div[@role='gridcell'][6]")]
             public Text<_> Department { get; private set; }
 
+            [FindByXPath("//div[@role='gridcell'][7]")]
+            public Text<_> Action { get; private set; }
+
             [FindByXPath("//span[@title='Delete']")]
             public Button<_> DeleteButton { get; private set; }
 
