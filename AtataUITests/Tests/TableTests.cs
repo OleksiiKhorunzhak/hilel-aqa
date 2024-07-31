@@ -21,6 +21,45 @@ namespace AtataUITests.Tests
                     AddPopup.LastName.Css["border-color"].Should.Be("rgb(220, 53, 69)");
         }
 
+        [Test]
+        public void CheckMandatoryField()
+        {
+            Go.To<DemoQAWebTablePage>().
+                WebTable.Should.BeVisible().
+                WebTable.Rows.Count.Should.BeGreater(1).
+                Add.Click().
+                   AddPopup.FirstName.Set("Helen").
+                   AddPopup.LastName.Set("Vick").
+                   AddPopup.Email.Set("hv@mail.com").
+                   AddPopup.Submit.Click().                 
+                   AddPopup.Age.Css["border-color"].Should.Be("rgb(220, 53, 69)").
+                   AddPopup.Salary.Css["border-color"].Should.Be("rgb(220, 53, 69)").
+                   AddPopup.Department.Css["border-color"].Should.Be("rgb(220, 53, 69)");
+
+        }
+
+        [Test]
+
+        public void AddNewRow()
+        {
+            Go.To<DemoQAWebTablePage>().
+              WebTable.Should.BeVisible().
+                  Add.Click().
+                  AddPopup.FirstName.Set("Helen").
+                  AddPopup.LastName.Set("Vick").
+                  AddPopup.Email.Set("hv@mail.com").
+                  AddPopup.Age.Set("29").
+                  AddPopup.Salary.Set("17500").
+                  AddPopup.Department.Set("Finance").
+                  AddPopup.Submit.Click().
+          WebTable.Rows[row => row.FirstName.Content.Value.Equals("Helen")].FirstName.Should.BeVisible().
+          WebTable.Rows[row => row.FirstName.Content.Value.Equals("Helen")].LastName.Should.Be("Vick").
+          WebTable.Rows[row => row.FirstName.Content.Value.Equals("Helen")].Age.Should.Be("29").
+          WebTable.Rows[row => row.FirstName.Content.Value.Equals("Helen")].Email.Should.Be("hv@mail.com").
+          WebTable.Rows[row => row.FirstName.Content.Value.Equals("Helen")].Salary.Should.Be("17500").
+          WebTable.Rows[row => row.FirstName.Content.Value.Equals("Helen")].Department.Should.Be("Finance");
+
+        }
         //TODO: automate test cases
         //Check any mandatory field
         //Add new row and verify row added
