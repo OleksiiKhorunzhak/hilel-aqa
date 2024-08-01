@@ -76,7 +76,14 @@ namespace PlaywrigthSpecFlow.API.Features.Account
 
         public async Task DeleteAccountByID(string ID)
         {
-            //TODO: implement
+            var response = await Client.DeleteAsync($"Account/v1/User/{ID}");
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                Console.WriteLine("User deleted successfully.");
+            }
+
+            Console.WriteLine($"Error: {response.StatusCode}");
         }
     }
 }
