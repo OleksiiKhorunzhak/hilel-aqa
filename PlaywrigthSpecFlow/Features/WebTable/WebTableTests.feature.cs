@@ -107,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I see the WebTable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see FirstNe>\"ame \"<FirstNam in a table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 14
     testRunner.Then(string.Format("I see LastName \"{0}\" in a table", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -118,18 +118,25 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I add item to the table")]
-        [NUnit.Framework.TestCaseAttribute("John", "Wick", "JohnWick@wick.com", null)]
-        [NUnit.Framework.TestCaseAttribute("Alice", "Smith", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Bob", "Johnson", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Cierra", "Vega", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Alden", "Cantrell", "", null)]
-        public void IAddItemToTheTable(string firstName, string lastName, string email, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("John", "Wick", "JohnWick@wick.com", "19", "320", "Finance", null)]
+        [NUnit.Framework.TestCaseAttribute("Alice", "Smith", "AS@mail.com", "22", "558", "Marketing", null)]
+        [NUnit.Framework.TestCaseAttribute("Bob", "Johnson", "BJ@gmail.com", "33", "670", "IT", null)]
+        [NUnit.Framework.TestCaseAttribute("Ann", "Gold", "AG@mail.com", "37", "5400", "Sales", null)]
+        [NUnit.Framework.TestCaseAttribute("Ali", "Nielsen", "AN@mail.com", "54", "500", "Finance", null)]
+        [NUnit.Framework.TestCaseAttribute("Charles", "Garcia", "AGr@mail.com", "61", "700", "Business administration", null)]
+        [NUnit.Framework.TestCaseAttribute("Hanna", "Perry", "HP@mail.com", "46", "460", "IT", null)]
+        [NUnit.Framework.TestCaseAttribute("Gabriel", "Bartlett", "GB@mail.com", "59", "995", "Purchasing", null)]
+        [NUnit.Framework.TestCaseAttribute("Eric", "Holder", "EH@mail.com", "40", "3300", "Marketing", null)]
+        public void IAddItemToTheTable(string firstName, string lastName, string email, string age, string salary, string department, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("FirstName", firstName);
             argumentsOfScenario.Add("LastName", lastName);
             argumentsOfScenario.Add("Email", email);
+            argumentsOfScenario.Add("Age", age);
+            argumentsOfScenario.Add("Salary", salary);
+            argumentsOfScenario.Add("Department", department);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I add item to the table", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 22
     this.ScenarioInitialize(scenarioInfo);
@@ -157,10 +164,13 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.And(string.Format("I set LastName to \"{0}\"", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
-    testRunner.And(string.Format("I set Email \"{0}\" in a table", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I set Email \"{0}\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 30
  testRunner.Then(string.Format("I see FirstName \"{0}\" in a table", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 34
+    testRunner.Then(string.Format("I see LastName \"{0}\" in a table", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
