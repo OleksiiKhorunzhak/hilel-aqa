@@ -60,6 +60,28 @@ namespace AtataUITests.Tests
           WebTable.Rows[row => row.FirstName.Content.Value.Equals("Helen")].Department.Should.Be("Finance");
 
         }
+
+        [Test]
+
+        public void VerifyRowAdited()
+        {
+            Go.To<DemoQAWebTablePage>().
+                WebTable.Should.BeVisible().
+                WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].EditButton.Click().
+                AddPopup.Salary.Set("36000").
+                AddPopup.Submit.Click().
+                 WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].Salary.Should.Be("36000");
+        }
+
+       [Test]
+
+       public void VerifyRowDeleted()
+        {
+            Go.To<DemoQAWebTablePage>().
+              WebTable.Should.BeVisible().
+              WebTable.Rows[row => row.FirstName.Content.Value.Equals("Cierra")].DeleteButton.Click();
+
+        }
         //TODO: automate test cases
         //Check any mandatory field
         //Add new row and verify row added
