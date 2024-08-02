@@ -33,7 +33,7 @@ namespace AtataUITests.Tests
                 TextBox.ClickAndGo().
                     FullName.Set("John Doe").
                     Submit.Click().
-                    FullNameText.Should.Be("Name:John Doe");
+                    FullName.Should.Be("Name:John Doe");
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace AtataUITests.Tests
                 TextBox.ClickAndGo().
                     FullName.Clear().
                     Submit.Click().
-                    FullNameText.Should.Not.BeVisible();
+                    FullName.Should.Not.BeVisible();
         }
     }
 }
