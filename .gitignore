@@ -1,18 +1,5 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs/hilel-aqa/v17
-/.vs/hilel-aqa/FileContentIndex
-/.vs
-/AtataUITests/.vs/
-/AtataUITests/bin/Debug/net8.0
-/AtataUITests/obj
-/PlaywrigthUITests/.vs
-/PlaywrigthUITests/bin/Debug/net8.0
-/PlaywrigthUITests/obj
-/NUnitTests/.vs
-/NUnitTests/bin/Debug/net8.0
-/NUnitTests/obj
-/PlayWrigthMyTest/bin
-/PlayWrigthMyTest/obj
+﻿.vs/
+.idea/
+.vscode/
+bin/
+obj/

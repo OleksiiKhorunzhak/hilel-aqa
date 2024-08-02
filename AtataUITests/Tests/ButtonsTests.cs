@@ -1,4 +1,6 @@
-﻿using AtataUITests.PageObjects;
+﻿using Atata;
+using AtataUITests.PageObjects;
+using Microsoft.Playwright;
 
 namespace AtataUITests.Tests
 {
@@ -6,6 +8,7 @@ namespace AtataUITests.Tests
     public sealed class ButtonsTests : UITestFixture
     {
         [Test, Description("Verify Click Me button"), Retry(2)]
+        [Category("UI")]
         public void ClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
@@ -21,6 +24,7 @@ namespace AtataUITests.Tests
             DoubleClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
+        [Category("UI")]
         public void DoubleClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
@@ -49,5 +53,48 @@ namespace AtataUITests.Tests
             RightClickMessage.Should.Be("You have done a right click").
             // And I NOT see "You have done a double click" text.
             DoubleClickMessage.Should.Not.BeVisible();
+
+
+        //Homework Lesson_9
+        //TODO : 
+        //TC-4 : Verify Click Me button should be enabled
+
+        [Test, Description("Verify that 'Click Me' button is enabled")]
+        public void VerifyClickButtonIsEnabled() =>
+
+            Go.To<DemoQAElementsPage>().
+            Buttons.ClickAndGo().
+            ClickMe.Should.BeEnabled();
+
+
+        //TC-5 : Verify Click Rigth Click Me button verify button focused
+
+        [Test, Description("Verify Right Click button "), Retry(2)]
+        public void VerifyClickOfRightClickButton() =>
+
+           Go.To<DemoQAElementsPage>().
+           Buttons.ClickAndGo().
+           RigthClickMe.RightClick().
+           RigthClickMe.Should.BeFocused();
+
+        //TC-6 : Verify H1 Buttons is visible
+
+        [Test, Description("Verify H1 Buttons is visible")]
+        public void VerifyTitleOfButtonsPage() =>
+          Go.To<DemoQAElementsPage>().
+          Buttons.ClickAndGo().
+          ButtonsTitle.Should.Be("Buttons");
+
+
+        //TC-7 : Verify text You have done a dynamic click is not visible after page refresh
+
+        [Test, Description("Verify text 'You have done a dynamic click' is not visible after page refresh")]
+        public void VerifyMessageOfClickButtonIsNotVisibleAfrePageRefresh() =>
+          Go.To<DemoQAElementsPage>().
+          Buttons.ClickAndGo().
+          ClickMe.Click().
+          DinamicClickMessage.Should.Be("You have done a dynamic click").
+          RefreshPage().
+          DinamicClickMessage.Should.Not.BeVisible();
     }
 }
