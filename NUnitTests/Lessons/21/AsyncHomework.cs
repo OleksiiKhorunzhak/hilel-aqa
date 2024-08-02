@@ -1,3 +1,5 @@
+using NUnit.Framework;
+
 namespace Lesson21;
 
 public class AsyncHomework
@@ -18,8 +20,9 @@ public class AsyncHomework
     public async Task TestGetStringAsync()
     {
         // TODO: Uncomment and implement test so it pass
-        //var result = 
-       //Assert.AreEqual("Hello, World!", result);
+       
+        var result = await GetStringAsync();
+        Assert.AreEqual("Hello, World!", result);
     }
 
     [Test]
@@ -27,8 +30,8 @@ public class AsyncHomework
     {
         // TODO: Verify that GetNumberWithExceptionAsync() throws InvalidOperationException
         // and that exception message is "An error occurred while fetching the number."
+        var exception = Assert.ThrowsAsync<InvalidOperationException>(async () => await GetNumberWithExceptionAsync());
         Assert.ThrowsAsync<InvalidOperationException>(() => GetNumberWithExceptionAsync());
-        
     }
 
 }
