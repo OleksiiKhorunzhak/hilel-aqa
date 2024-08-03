@@ -22,7 +22,7 @@ public class AsyncHomework
         // TODO: Uncomment and implement test so it pass
        
         var result = await GetStringAsync();
-        Assert.AreEqual("Hello, World!", result);
+        Assert.That(result, Is.EqualTo("Hello, World!"));
     }
 
     [Test]
