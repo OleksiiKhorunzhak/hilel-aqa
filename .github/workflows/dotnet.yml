@@ -12,7 +12,11 @@ on:
 jobs:
   build:
 
+<<<<<<< HEAD
     runs-on: ubuntu-latest
+=======
+    runs-on: windows-latest
+>>>>>>> andriyMykytenkohomework20
 
     steps:
     - uses: actions/checkout@v4
@@ -25,4 +29,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
+<<<<<<< HEAD
       run: dotnet test --no-build --verbosity normal
+=======
+      run: dotnet test --no-build --verbosity normal AtataUITests\bin\Debug\net8.0\AtataUITests.dll --filter "Category=UI"
+>>>>>>> andriyMykytenkohomework20

@@ -37,6 +37,7 @@ namespace PlaywrigthUITests.Tests
 			await _radioButtonPage.VerifySelectedImpressiveButtonTextRow();
         }
 
+<<<<<<< HEAD
 		//TC-3 : Verify No radio Button disabled and not show text 'You have selected'
 		[Test]
 		[Description("Verify No radio Button disabled and not show text 'You have selected'")]
@@ -47,6 +48,11 @@ namespace PlaywrigthUITests.Tests
 			//await _radioButtonPage.ClickNoRadioButton(); - Impossible to click disabled button?!
 			await _radioButtonPage.VerifySelectedTextRowNotExists();
 		}
+=======
+        //TC-3 : Verify No radio Button disabled and not show text 'You have selected'
+        //TC-4 : Verify H1 Radio Button is visible
+        //TC-5 : Verify text 'You have selected Impressive' is not visible after Page refresh
+>>>>>>> andriyMykytenkohomework20
 
 		//TC-4 : Verify H1 Radio Button is visible
 		[Test]
