@@ -1,14 +1,17 @@
-﻿namespace Lesson21;
+﻿using System;
+using System.Linq;
+
+namespace Lesson21;
 
 // TODO: modify enum so CheckCustomIntNumbersForTestDataAgeEnum pass
 public enum TestDataAge
 {
-    Child,
-    Teenager,
-    Adult
+    Child = 7 ,
+    Teenager = 14,
+    Adult = 30
 }
 
-/* TODO: uncomment and implement tests so all Assert pass. Use such LINQ as Any(), Count(), Contains()
+// TODO: uncomment and implement tests so all Assert pass. Use such LINQ as Any(), Count(), Contains()
 [TestFixture]
 public class EnumHomework
 {
@@ -25,9 +28,8 @@ public class EnumHomework
     public void SomeIntCorrespondsToSomeTestDataAgeValue()
     {
         var listOfInt = new List<int>() { 5, 14, 15 };
-
-        var isAnyIntCorrespondsToTestDataAge = 
-
+        List<int> enumValues = Enum.GetValues(typeof(TestDataAge)).Cast<int>().ToList();
+        var isAnyIntCorrespondsToTestDataAge = enumValues.Any(value => listOfInt.Contains(value));
         Assert.That(isAnyIntCorrespondsToTestDataAge, Is.True);
     }
 
@@ -36,7 +38,9 @@ public class EnumHomework
     {
         var listOfInt = new List<int>() { 5, 14, 15, 30 };
 
-        var numberOfIntCorrespondToTestDataAge = 
+        List<int> enumValues = Enum.GetValues(typeof(TestDataAge)).Cast<int>().ToList();
+    
+        int numberOfIntCorrespondToTestDataAge = enumValues.Count(value => listOfInt.Contains(value));
 
         Assert.That(numberOfIntCorrespondToTestDataAge, Is.EqualTo(2));
     }
@@ -49,13 +53,19 @@ public class EnumHomework
 
         // for the first test case { "Child", "Baby", "Teenager", "Eldery", "Adult" } there are only 3 (out of 5) strings "Child", "Teenager", "Adult" are present in TestDataAge
         // so for the first case numberOfStringsWhichPresentInEnum is 3
-        var numberOfStringsWhichPresentInEnum =
+        List<string> enumValues = Enum.GetValues(typeof(TestDataAge))
+                                      .Cast<TestDataAge>()
+                                      .Select(e => e.ToString())
+                                      .ToList();
+        var numberOfStringsWhichPresentInEnum = enumValues.Count(value => listOfString.Contains(value));
+
+
         // "Baby" and "Eldery" are not present in TestDataAge, so numberOfStringsWhichAreNotPresentInEnum is 2
-        var numberOfStringsWhichAreNotPresentInEnum =
+        var numberOfStringsWhichAreNotPresentInEnum = listOfString.Except(enumValues).Count();
         // for the first case not all strings are present in TestDataAge (only 3 out of 5 are present)), so expression result should be false
-        bool areAllPresent =
+        bool areAllPresent = listOfString.All(value => enumValues.Contains(value));
         // for the first case, yes, there are 2 extra elements "Baby" and "Eldery", so result is true
-        bool areExtraElements = 
+        bool areExtraElements = listOfString.Any(value => !enumValues.Contains(value));
 
         Assert.That(numberOfStringsWhichPresentInEnum, Is.EqualTo(expectedNumberPresent));
         Assert.That(numberOfStringsWhichAreNotPresentInEnum, Is.EqualTo(expectedNumberExtra));
@@ -74,4 +84,3 @@ public class EnumHomework
             new object[] { new string[] { }, 0, 0, true, false },
     };
 }
-*/

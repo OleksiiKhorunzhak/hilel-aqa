@@ -30,4 +30,4 @@ jobs:
       run: dotnet build AtataUITests/AtataUITests.csproj --no-restore
 
     - name: Test
-      run: dotnet test AtataUITests/bin/Debug/net8.0/AtataUITests.dll --no-build --verbosity normal --filter "RadioButtonTest"
+      run: dotnet test AtataUITests/bin/Debug/net8.0/AtataUITests.dll --no-build --verbosity normal --filter "UI"

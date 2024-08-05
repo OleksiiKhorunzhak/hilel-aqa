@@ -1,0 +1,9 @@
+<RunSettings>
+    <Playwright>
+      <BrowserName>chromium</BrowserName>
+      <LaunchOptions>
+        <Headless>false</Headless>
+        <Channel>msedge</Channel>
+      </LaunchOptions>
+    </Playwright>
+  </RunSettings>

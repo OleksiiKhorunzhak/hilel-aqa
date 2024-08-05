@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AtataUITests2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f6669bbd7130edcb274802dabd9310b5ad9783e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb87cab4aa9cc7c5d7eb1b5318f839a928898fec")]
 [assembly: System.Reflection.AssemblyProductAttribute("AtataUITests2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AtataUITests2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

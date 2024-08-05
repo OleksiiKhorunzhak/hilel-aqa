@@ -32,8 +32,8 @@ jobs:
 
     # Install Playwright browsers
     - name: Install Playwright Browsers
-      run: npx playwright install
+      run: pwsh PlaywrigthUITests/bin/Debug/net8.0/playwright.ps1 install
 
     # Run Playwright tests
     - name: Test
-      run: dotnet test PlaywrigthUITests/bin/Debug/net8.0/PlaywrigthUITests.dll --no-build --verbosity normal 
+      run: dotnet test PlaywrigthUITests/bin/Debug/net8.0/PlaywrigthUITests.dll --no-build --verbosity normal
