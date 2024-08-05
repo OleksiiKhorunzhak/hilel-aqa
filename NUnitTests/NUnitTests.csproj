@@ -26,9 +26,4 @@
   <ItemGroup>
     <Using Include="NUnit.Framework" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Wiew\" />
-  </ItemGroup>
-
 </Project>
