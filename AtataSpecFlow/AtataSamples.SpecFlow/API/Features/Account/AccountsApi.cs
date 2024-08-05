@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System;
 using System.Net.Http.Headers;
+using Gherkin;
 
 namespace AtataSamples.SpecFlow.Api.Features.Account
 {
@@ -69,9 +70,18 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
             }
         }
 
-        public async Task DeleteAccountByID(string ID)
+        public async Task<HttpResponseMessage> DeleteAccountByID(string userId, string token)
         {
-            //TODO: implement
+
+            using (var requestMessage =
+            new HttpRequestMessage(HttpMethod.Delete, Client.BaseAddress + "Account/v1/User/" + userId))
+            {
+                requestMessage.Headers.Authorization =
+                    new AuthenticationHeaderValue("Bearer",  token);
+
+                return await Client.SendAsync(requestMessage);
+            }
+
         }
     }
 }
