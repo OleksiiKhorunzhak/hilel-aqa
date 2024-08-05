@@ -3,15 +3,15 @@
 
     public interface IMyWebDriver
     {
-        public static readonly string DriverName;
+
         public void Open(string url);
-        public void Close();
+		public void FindElement(string locator);
+		public void Close();
 	}
 
     public interface IMyWindowsWebDriver
     {
-        public void FindElement(string locator);
-        public bool IsIOpenedOnWindows();
+        public string GetWindowsVersion();
 	}
 
     public class CromeDriver : IMyWebDriver, IMyWindowsWebDriver
@@ -38,7 +38,7 @@
         }
     }
 
-    public class SafariDriver : IMyWebDriver, IMyWindowsWebDriver
+    public class SafariDriver : IMyWebDriver
 	{
         public static readonly string DriverName = "Safari";
         public void Open(string url)
