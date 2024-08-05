@@ -1,5 +1,6 @@
 ﻿namespace NUnitTests.Lessons._25
 {
+
     public interface IMyWebDriver
     {
         public static readonly string DriverName;
@@ -31,9 +32,9 @@
             Console.WriteLine($"Closing {DriverName}");
         }
 
-        public bool IsIOpenedOnWindows()
+        public string GetWindowsVersion()
         {
-            throw new NotImplementedException();
+            return "Windows 10";
         }
     }
 
@@ -48,19 +49,6 @@
         public void Close()
         {
             Console.WriteLine($"Closing {DriverName}");
-        }
-
-        public bool IsIOpenedOnWindows()
-        {
-            try
-            {
-                // run some system call
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
         }
 
         public void FindElement(string locator)
@@ -84,24 +72,14 @@
             Console.WriteLine($"Opening {DriverName}");
         }
 
-        public bool IsIOpenedOnWindows()
+        public string GetWindowsVersion()
         {
-            try
-            {
-                // run some system call
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return "Windows 11";
         }
+
         public void Close()
         {
             Console.WriteLine($"Closing {DriverName}");
         }
-
-
     }
-
 }
