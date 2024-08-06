@@ -1,19 +1,19 @@
 ﻿namespace NUnitTests.Lessons._25
 {
 
-    public interface IMyWebDriver
+    public interface IMyWebDriver // was impelented
     {
         void Open(string url);
         void FindElement(string locator);
         void Close();
     }
 
-    public interface IMyWindowsWebDriver
+    public interface IMyWindowsWebDriver // was impelented 
     {
         string GetWindowsVersion();
     }
 
-    public class CromeDriver : IMyWebDriver, IMyWindowsWebDriver
+    public class CromeDriver : IMyWebDriver, IMyWindowsWebDriver //were added
     {
         public static readonly string DriverName = "Chrome";
         public void Open(string url)
@@ -37,7 +37,7 @@
         }
     }
 
-    public class SafariDriver : IMyWebDriver
+    public class SafariDriver : IMyWebDriver //were added
     {
         public static readonly string DriverName = "Safari";
         public void Open(string url)
@@ -57,7 +57,7 @@
 
     }
 
-    public class FirefoxDriver : IMyWebDriver, IMyWindowsWebDriver
+    public class FirefoxDriver : IMyWebDriver, IMyWindowsWebDriver //were added
     {
         public static readonly string DriverName = "Firefox";
 
