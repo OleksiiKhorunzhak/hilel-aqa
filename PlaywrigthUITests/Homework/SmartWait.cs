@@ -17,10 +17,11 @@ namespace PlaywrigthUITests.Homework
             await Page.GetByRole(AriaRole.Button, new() { Name = "Color", Exact = true }).ClickAsync();
             var titelsBefore = await Page.Locator(".product-card__title").AllInnerTextsAsync();
             await Page.GetByLabel("Filter for Blue").ClickAsync();
-            
-            await Page.WaitForTimeoutAsync(5000); // Replace this line with smart waiting
 
-            var titelsAfter = await Page.Locator(".product-card__title").AllInnerTextsAsync();
+            //await Page.WaitForTimeoutAsync(5000); // Replace this line with smart waiting
+            await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+
+			var titelsAfter = await Page.Locator(".product-card__title").AllInnerTextsAsync();
 
             //Assert
             Assert.That(titelsAfter.First(), Is.Not.EqualTo(titelsBefore.First()));
@@ -36,9 +37,10 @@ namespace PlaywrigthUITests.Homework
             var titelsBefore = await Page.Locator(".item_name").AllInnerTextsAsync();
             await Page.Locator("li").Filter(new() { HasText = "Кросівки" }).Locator("label").ClickAsync();
 
-            await Page.WaitForTimeoutAsync(5000); // Replace this line with smart waiting
+            //await Page.WaitForTimeoutAsync(5000); // Replace this line with smart waiting
+            await Page.WaitForSelectorAsync(".grid");
 
-            var titelsAfter = await Page.Locator(".item_name").AllInnerTextsAsync();
+			var titelsAfter = await Page.Locator(".item_name").AllInnerTextsAsync();
 
             //Assert
             Assert.That(titelsBefore.First().ToLower(), Does.Not.Contain("кросівки"));
