@@ -15,15 +15,16 @@ namespace PlaywrigthUITests.Homework
 
             //Act
             await Page.GetByRole(AriaRole.Button, new() { Name = "Color", Exact = true }).ClickAsync();
-            var titelsBefore = await Page.Locator(".product-card__title").AllInnerTextsAsync();
+            var titlesBefore = await Page.Locator(".product-card__title").AllInnerTextsAsync();
             await Page.GetByLabel("Filter for Blue").ClickAsync();
             
-            await Page.WaitForTimeoutAsync(5000); // Replace this line with smart waiting
+            var loader = Page.Locator("//div/div[contains(@class, 'loader-overlay is--visible')]");
+            await loader.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Hidden });
 
-            var titelsAfter = await Page.Locator(".product-card__title").AllInnerTextsAsync();
-
+            var titlesAfter = await Page.Locator(".product-card__title").AllInnerTextsAsync();
+            
             //Assert
-            Assert.That(titelsAfter.First(), Is.Not.EqualTo(titelsBefore.First()));
+            Assert.That(titlesAfter.First(), Is.Not.EqualTo(titlesBefore.First()));
 
         }
         [Test]
@@ -33,16 +34,17 @@ namespace PlaywrigthUITests.Homework
             await Page.GotoAsync("https://deltasport.ua/ua/store/women/");
 
             //Act
-            var titelsBefore = await Page.Locator(".item_name").AllInnerTextsAsync();
+            var titlesBefore = await Page.Locator(".item_name").AllInnerTextsAsync();
             await Page.Locator("li").Filter(new() { HasText = "Кросівки" }).Locator("label").ClickAsync();
+            
+            var filterSelected = Page.Locator("//div[@class=\"filter-sort\"]/ul/li[contains(text(), 'Кросівки')]");
+            await filterSelected.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible });
 
-            await Page.WaitForTimeoutAsync(5000); // Replace this line with smart waiting
-
-            var titelsAfter = await Page.Locator(".item_name").AllInnerTextsAsync();
-
+            var titlesAfter = await Page.Locator(".item_name").AllInnerTextsAsync();
+            
             //Assert
-            Assert.That(titelsBefore.First().ToLower(), Does.Not.Contain("кросівки"));
-            Assert.That(titelsAfter.First().ToLower(), Does.Contain("кросівки"));
+            Assert.That(titlesBefore.First().ToLower(), Does.Not.Contain("кросівки"));
+            Assert.That(titlesAfter.First().ToLower(), Does.Contain("кросівки"));
         }
     }
 }
