@@ -14,19 +14,21 @@ public class AsyncHomework
         throw new InvalidOperationException("An error occurred while fetching the number.");
     }
 
+    // TODO: Uncomment and implement test so it pass
     [Test]
     public async Task TestGetStringAsync()
     {
-        // TODO: Uncomment and implement test so it pass
-        // var result = 
-        // Assert.That(result, Is.EqualTo("Hello, World!"));
+        var result = await GetStringAsync(); 
+         Assert.That(result, Is.EqualTo("Hello, World!"));
     }
 
+    // TODO: Verify that GetNumberWithExceptionAsync() throws InvalidOperationException
+    // and that exception message is "An error occurred while fetching the number."
     [Test]
     public void TestGetNumberWithExceptionAsync()
     {
-        // TODO: Verify that GetNumberWithExceptionAsync() throws InvalidOperationException
-        // and that exception message is "An error occurred while fetching the number."
+        var exception = Assert.ThrowsAsync<InvalidOperationException>(GetNumberWithExceptionAsync);
+        Assert.That(exception.Message, Is.EqualTo("An error occurred while fetching the number."));
     }
 
 }
