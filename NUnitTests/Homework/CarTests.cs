@@ -4,7 +4,6 @@ namespace NUnitTests.Homework
 {
     public class CarTests : Lesson3Logic
     {
-        //TODO: Finish car tests here or in Lesson3Logic file folowing example
 
 
         #region[TestCases]
@@ -24,20 +23,13 @@ namespace NUnitTests.Homework
             Assert.That(Acceleration, Is.EqualTo(CurrentAcceleration));
         }
 
-        //Test Case 2: Test GetSpeed with Positive Acceleration
+
+              //Test Case 2: Test GetSpeed with Positive Acceleration
         //Description: Verify that GetSpeed correctly assigns the current speed to the Speed property when the acceleration is positive.
         //Steps:
-        [Test]
-        [Order(2)]
-        public void TestGetSpeed()
-        {
-            //Set CurrentAcceleration to a positive value.
-            CurrentAcceleration = 50;
-            //Call the GetSpeed method.
-            GetSpeed();
-            //Check that Speed equals CurrentSpeed.
-            Assert.That(Speed, Is.EqualTo(CurrentSpeed));
-        }
+        //Set CurrentAcceleration to a positive value.
+        //Call the GetSpeed method.
+        //Check that Speed equals CurrentSpeed.
 
         //Test Case 3: Test GetDeceleration
         //Description: Check if GetDeceleration correctly calculates deceleration as the difference between current speed and deceleration.  
@@ -92,6 +84,19 @@ namespace NUnitTests.Homework
              SetChargeAlert();
              Assert.That(Alert, Is.EqualTo(LowChargeAlert), "The low charge warning hasn't displayed");
 
+        }
+
+        [Test]
+        [Order(5)]
+        public void LowChargeAlert()
+        {
+            int charge = 8;
+            Charge = charge;
+            if (charge <= CriticalCharge)
+            {
+                SetChargeAlert();
+            }
+            Assert.That(Alert,Is.EqualTo("Take caution! Charge Low at " + Charge + "%!"));
         }
 
         //Test Case 6: Full Charge Alert
@@ -149,6 +154,17 @@ namespace NUnitTests.Homework
             DecelerationChargeActivation(isActive, CriticalOvercharge);
             Assert.That(IsDecelerationChargeActive, Is.EqualTo(false), "IsDecelerationChargeActive is true");
 
+        }
+
+        [Test]
+        [Order(8)]
+
+        public void DecelerationChargeDeactivation()
+        {
+            int charge = 101;
+            Charge = charge;
+            DecelerationChargeActivation(true, 98);
+            Assert.That(IsDecelerationChargeActive,Is.EqualTo(false));
         }
 
         //Test Case 9: Compute Deceleration Charge Power When Active

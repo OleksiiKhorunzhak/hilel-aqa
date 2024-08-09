@@ -24,9 +24,7 @@ namespace AtataUITests.PageObjects
         [FindById("doubleClickMessage")]
         public Text<_> DoubleClickMessage { get; private set; }
 
-        [FindByClass("text-center")]
-        public Text<_> H1TitleButtons { get; private set; }
-
-            
+        [FindByXPath("//h1[@class='text-center' and text()='Buttons']")]
+        public H1<_> ButtonsTitle { get; set; }
     }
 }

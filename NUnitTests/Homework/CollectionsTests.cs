@@ -5,7 +5,7 @@ namespace Homework
     public sealed class CollectionsTests
     {
         public string[] UkrainianCitiesArray =
-        {
+        [
             "Kyiv",
             "Kharkiv",
             "Odesa",
@@ -27,7 +27,7 @@ namespace Homework
             "Zhytomyr",
             "Sumy",
             "Rivne"
-        };
+        ];
 
         public List<string> UkrainianCitiesList = new List<string>
         {

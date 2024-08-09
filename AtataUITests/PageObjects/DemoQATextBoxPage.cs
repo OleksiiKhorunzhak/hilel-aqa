@@ -5,9 +5,12 @@ namespace AtataUITests.PageObjects
 {
     public sealed class DemoQATextBoxPage : DemoQAPage<_>
     {
+
+
         [FindByPlaceholder("Full Name")]
         public TextInput<_> FullName { get; set; }
 
+        [FindById("userName-Label")]
         [FindById("userName-label")]
         public Label<_> FullNameLabel { get; set; }
 
@@ -46,4 +49,5 @@ namespace AtataUITests.PageObjects
         public TextArea<_> PermanentAddressInput { get; set; }
 
     }
+
 }
