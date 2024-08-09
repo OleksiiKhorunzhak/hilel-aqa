@@ -3,12 +3,12 @@
 // TODO: modify enum so CheckCustomIntNumbersForTestDataAgeEnum pass
 public enum TestDataAge
 {
-    Child,
-    Teenager,
-    Adult
+    Child = 7,
+    Teenager = 14,
+    Adult = 30
 }
 
-/* TODO: uncomment and implement tests so all Assert pass. Use such LINQ as Any(), Count(), Contains()
+//TODO: uncomment and implement tests so all Assert pass. Use such LINQ as Any(), Count(), Contains()
 [TestFixture]
 public class EnumHomework
 {
@@ -26,7 +26,7 @@ public class EnumHomework
     {
         var listOfInt = new List<int>() { 5, 14, 15 };
 
-        var isAnyIntCorrespondsToTestDataAge = 
+        var isAnyIntCorrespondsToTestDataAge = listOfInt.Any(i => Enum.IsDefined(typeof(TestDataAge), i));
 
         Assert.That(isAnyIntCorrespondsToTestDataAge, Is.True);
     }
@@ -36,12 +36,11 @@ public class EnumHomework
     {
         var listOfInt = new List<int>() { 5, 14, 15, 30 };
 
-        var numberOfIntCorrespondToTestDataAge = 
+        var numberOfIntCorrespondToTestDataAge = (int)listOfInt.Count(i => Enum.IsDefined(typeof(TestDataAge), i));
 
         Assert.That(numberOfIntCorrespondToTestDataAge, Is.EqualTo(2));
     }
-
-
+   
     [TestCaseSource(nameof(StringElmentsArePresentInEnumCases))]
     public void StringElmentsArePresentInEnum(string[] list, int expectedNumberPresent, int expectedNumberExtra, bool areAllPresentExpected, bool areExtraElementsExpected)
     {
@@ -49,13 +48,14 @@ public class EnumHomework
 
         // for the first test case { "Child", "Baby", "Teenager", "Eldery", "Adult" } there are only 3 (out of 5) strings "Child", "Teenager", "Adult" are present in TestDataAge
         // so for the first case numberOfStringsWhichPresentInEnum is 3
-        var numberOfStringsWhichPresentInEnum =
+        var numberOfStringsWhichPresentInEnum = listOfString.Count( i => Enum.IsDefined(typeof(TestDataAge), i));
         // "Baby" and "Eldery" are not present in TestDataAge, so numberOfStringsWhichAreNotPresentInEnum is 2
-        var numberOfStringsWhichAreNotPresentInEnum =
+        var numberOfStringsWhichAreNotPresentInEnum = listOfString.Count(i => !Enum.IsDefined(typeof(TestDataAge), i));
         // for the first case not all strings are present in TestDataAge (only 3 out of 5 are present)), so expression result should be false
-        bool areAllPresent =
+        bool areAllPresent = listOfString.All(i => Enum.IsDefined(typeof(TestDataAge), i));
+
         // for the first case, yes, there are 2 extra elements "Baby" and "Eldery", so result is true
-        bool areExtraElements = 
+        bool areExtraElements = listOfString.Any(i => !Enum.IsDefined(typeof(TestDataAge), i));
 
         Assert.That(numberOfStringsWhichPresentInEnum, Is.EqualTo(expectedNumberPresent));
         Assert.That(numberOfStringsWhichAreNotPresentInEnum, Is.EqualTo(expectedNumberExtra));
@@ -66,12 +66,18 @@ public class EnumHomework
 
     public static object[] StringElmentsArePresentInEnumCases =
     {
-            new object[] { new string[] { "Child", "Baby", "Teenager", "Eldery", "Adult" }, 3, 2, false, true },
-            new object[] { new string[] { "Child", "Teenager", "Adult" }, 3, 0, true, false },
-            new object[] { new string[] { "Baby", "Teenager", "Eldery" }, 1, 2, false, true },
-            new object[] { new string[] { "Adult", "Child" }, 2, 0, true, false },
-            new object[] { new string[] { "Eldery", "Baby" }, 0, 2, false, true },
-            new object[] { new string[] { }, 0, 0, true, false },
+       new object[] { new string[] { "Child", "Baby", "Teenager", "Eldery", "Adult" }, 3, 2, false, true },
+       new object[] { new string[] { "Child", "Teenager", "Adult" }, 3, 0, true, false },
+       new object[] { new string[] { "Baby", "Teenager", "Eldery" }, 1, 2, false, true },
+       new object[] { new string[] { "Adult", "Child" }, 2, 0, true, false },
+       new object[] { new string[] { "Eldery", "Baby" }, 0, 2, false, true },
+       new object[] { new string[] { }, 0, 0, true, false },
     };
+
 }
-*/
+    
+   
+
+
+
+
