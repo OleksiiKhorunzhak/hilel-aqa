@@ -9,6 +9,7 @@
     &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.VerifyDepartmentIsMandatoryField&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.DeleteRow("Alden","Cantrell","alden@example.com","45","12000","Compliance")&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.DeleteRow&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.AddAndDeleteRow("John","Doe","jon@doe.com","30","10000","IT")&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=febf10cc_002D1511_002D4d27_002Daf43_002D32d573050ce4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestForeach #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

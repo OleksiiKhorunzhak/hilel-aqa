@@ -93,10 +93,10 @@ internal class DemoQaWebTablesPage
         }
     }
 
-    public async Task<bool> VerifyPopupVisible(bool result)
+    public async Task VerifyPopupVisible()
     {
         var isPopupOpened = await RegistrationPopup.IsVisibleAsync();
-        return isPopupOpened;
+        Assert.That(isPopupOpened, "The 'Add' popup is not visible.");
     }
 
     public async Task VerifyFirstNameVisible()
@@ -113,42 +113,42 @@ internal class DemoQaWebTablesPage
     
     public async Task FillFirstName (string firstName)
     {
-        if(firstName == null) throw new ArgumentException("First Name field should not be null.");
+        if(firstName == null) throw new Exception("First Name field should not be null.");
         await FirstNameField.FillAsync(firstName);
         Assert.That(await FirstNameField.GetAttributeAsync("value") == firstName, $"The First Name field was not filled with: '{firstName}'.");
     }
     
     public async Task FillLastName (string lastName)
     {
-        if(lastName == null) throw new ArgumentException("Last Name field should not be null.");
+        if(lastName == null) throw new Exception("Last Name field should not be null.");
         await LastNameField.FillAsync(lastName);
         Assert.That(await LastNameField.GetAttributeAsync("value") == lastName, $"The Last Name field was not filled with: '{lastName}'.");
     } 
     
     public async Task FillEmail (string email)
     {
-        if(email == null) throw new ArgumentException("Email field should not be null.");
+        if(email == null) throw new Exception("Email field should not be null.");
         await EmailField.FillAsync(email);
         Assert.That(await EmailField.GetAttributeAsync("value") == email, $"The Email field was not filled with: '{email}'.");
     }
     
     public async Task FillAge (string age)
     {
-        if(age == null) throw new ArgumentException("Age field should not be null.");
+        if(age == null) throw new Exception("Age field should not be null.");
         await AgeField.FillAsync(age);
         Assert.That(await AgeField.GetAttributeAsync("value") == age, $"The Age field was not filled with: '{age}'.");
     }
     
     public async Task FillSalary (string salary)
     {
-        if(salary == null) throw new ArgumentException("Salary field should not be null.");
+        if(salary == null) throw new Exception("Salary field should not be null.");
         await SalaryField.FillAsync(salary);
         Assert.That(await SalaryField.GetAttributeAsync("value") == salary, $"The Salary field was not filled with: '{salary}'.");
     }
     
     public async Task FillDepartment (string department)
     {
-        if(department == null) throw new ArgumentException("Department field should not be null.");
+        if(department == null) throw new Exception("Department field should not be null.");
         await DepartmentField.FillAsync(department);
         Assert.That(await DepartmentField.GetAttributeAsync("value") == department, $"The Department field was not filled with: '{department}'.");
     }
@@ -158,25 +158,14 @@ internal class DemoQaWebTablesPage
         var submit = Page.GetByRole(AriaRole.Button, new() { Name = "Submit" });
         await submit.ClickAsync();
     }
-
-    public async Task<bool> FindRowInTable(string firstName, string lastName, string email, string age, string salary, string department)
+    
+    public async Task<bool> FindRowByEmail(string email)
     {
-        if (string.IsNullOrWhiteSpace(firstName) ||
-            string.IsNullOrWhiteSpace(lastName) ||
-            string.IsNullOrWhiteSpace(email) ||
-            string.IsNullOrWhiteSpace(age) ||
-            string.IsNullOrWhiteSpace(salary) ||
-            string.IsNullOrWhiteSpace(department))
-        {
-            throw new ArgumentException("One or more fields are empty.");
-        }
+
+        if (string.IsNullOrWhiteSpace(email)) throw new Exception("Email field is empty.");
 
         var rows = await Page.Locator("//div[@class=\"rt-tr-group\"]").AllAsync();
-
-        if (rows == null || rows.Count == 0)
-        {
-            throw new ArgumentException("No rows found in the table.");
-        }
+        if (rows == null || rows.Count == 0) throw new Exception("No rows found in the table.");
 
         bool rowFound = false;
 
@@ -184,33 +173,48 @@ internal class DemoQaWebTablesPage
         {
             var rowText = await row.InnerTextAsync();
 
-            if (rowText.Contains(firstName) &&
-                rowText.Contains(lastName) &&
-                rowText.Contains(email) &&
-                rowText.Contains(age) &&
-                rowText.Contains(salary) &&
-                rowText.Contains(department))
+            if (rowText.Contains(email))
             {
                 rowFound = true;
                 break;
             }
         }
-        return rowFound;
+        return rowFound; 
+    }
+    
+    public async Task<string> FindRowContentByEmail(string email, string rowContent = "")
+    {
+        if (string.IsNullOrWhiteSpace(email)) throw new Exception("Email field is empty.");
+
+        var rows = await Page.Locator("//div[@class=\"rt-tr-group\"]").AllAsync();
+        if (rows == null || rows.Count == 0) throw new Exception("No rows found in the table.");
+
+       foreach (var row in rows)
+        {
+            var rowText = await row.InnerTextAsync();
+
+            if (rowText.Contains(email))
+            {
+                rowContent = rowText.Replace("\n", "").Replace(" ", "").Trim();
+                break;
+            }
+        }
+        return rowContent;
     }
     
     public async Task ClickEditButton(string email)
     {
-        if(string.IsNullOrWhiteSpace(email)) throw new ArgumentException("Email field is empty.");
+        if(string.IsNullOrEmpty(email)) throw new Exception("Email field is empty.");
         var removeRowButton =
-            Page.Locator($"//*[@class=\"rt-tr-group\"]//*[contains(text(),'{email}')]/following-sibling::div/*/span[@title=\"Edit\"]");
+            Page.Locator($"//*[@class=\"rt-tr-group\"]//*[contains(text(),'{email}')]/following-sibling::div//span[@title=\"Edit\"]");
         await removeRowButton.ClickAsync();
     }
 
     public async Task ClickDeleteButton(string email)
     {
-        if(string.IsNullOrWhiteSpace(email)) throw new ArgumentException("Email field is empty.");
+        if(string.IsNullOrEmpty(email)) throw new Exception("Email field is empty.");
         var removeRowButton =
-            Page.Locator($"//*[@class=\"rt-tr-group\"]//*[contains(text(),'{email}')]/following-sibling::div/*/span[@title=\"Delete\"]");
+            Page.Locator($"//*[@class=\"rt-tr-group\"]//*[contains(text(),'{email}')]/following-sibling::div//span[@title=\"Delete\"]");
         await removeRowButton.ClickAsync();
     }
 }

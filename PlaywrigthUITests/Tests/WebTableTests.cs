@@ -22,7 +22,7 @@ namespace PlaywrigthUITests.Tests
             await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Vega");
 
             await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
-            await DemoQAWebTablesPage.VerifyPopupVisible(true);
+            await DemoQAWebTablesPage.VerifyPopupVisible();
             await DemoQAWebTablesPage.VerifyFirstNameVisible();
         }
 
@@ -33,20 +33,20 @@ namespace PlaywrigthUITests.Tests
             await DemoQAWebTablesPage.VerifyTableRowContent("Last Name", "Cantrell");
 
             await Page.GetByRole(AriaRole.Button, new() { Name = "Add" }).ClickAsync();
-            await DemoQAWebTablesPage.VerifyPopupVisible(true);
+            await DemoQAWebTablesPage.VerifyPopupVisible();
             await DemoQAWebTablesPage.VerifyFirstNameVisible();
         }
 
         //TODO: automate test cases
         //Check any mandatory field
         [Test]
-        [Description("Verify mandatory fields")]
+        [Description("Verify Department is mandatory field")]
         public async Task VerifyDepartmentIsMandatoryField()
         {
             //Arrange
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
             await DemoQAWebTablesPage.OpenAddPopup();
-            await DemoQAWebTablesPage.VerifyPopupVisible(true);
+            await DemoQAWebTablesPage.RegistrationPopup.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible });
             //Act
             await DemoQAWebTablesPage.FillFirstName("John");
             await DemoQAWebTablesPage.FillLastName("Doe");
@@ -55,8 +55,8 @@ namespace PlaywrigthUITests.Tests
             await DemoQAWebTablesPage.FillSalary("555");
             await DemoQAWebTablesPage.FillDepartment("");
             await DemoQAWebTablesPage.ClickSubmit();
+            await DemoQAWebTablesPage.RegistrationPopup.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible });
             //Assert
-            Assert.That(await DemoQAWebTablesPage.VerifyPopupVisible(false), "The 'Add' popup is still visible.");
             await Assertions.Expect(DemoQAWebTablesPage.FirstNameField).ToHaveCSSAsync("border-color", "rgb(40, 167, 69)");
             await Assertions.Expect(DemoQAWebTablesPage.LastNameField).ToHaveCSSAsync("border-color", "rgb(40, 167, 69)");
             await Assertions.Expect(DemoQAWebTablesPage.EmailField).ToHaveCSSAsync("border-color", "rgb(40, 167, 69)");
@@ -74,6 +74,7 @@ namespace PlaywrigthUITests.Tests
             //Arrange
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
             await DemoQAWebTablesPage.OpenAddPopup();
+            await DemoQAWebTablesPage.RegistrationPopup.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible });
             //Act
             await DemoQAWebTablesPage.FillFirstName(firstName);
             await DemoQAWebTablesPage.FillLastName(lastName);
@@ -82,10 +83,12 @@ namespace PlaywrigthUITests.Tests
             await DemoQAWebTablesPage.FillSalary(salary);
             await DemoQAWebTablesPage.FillDepartment(department);
             await DemoQAWebTablesPage.ClickSubmit();
+            await DemoQAWebTablesPage.RegistrationPopup.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Hidden });
             //Assert
-            Assert.That(await DemoQAWebTablesPage.VerifyPopupVisible(false), "The 'Add' popup is still visible.");
-            var rowAdded = await DemoQAWebTablesPage.FindRowInTable(firstName, lastName, email, age, salary, department);
-            Assert.That(rowAdded, Is.True, "The row was not found in the table.");
+            var rowContent = await DemoQAWebTablesPage.FindRowContentByEmail(email);
+            Assert.That(rowContent, Is.Not.Null.And.Not.Empty, "The row was not found in the table.");
+            string expectedContent = $"{firstName}{lastName}{age}{email}{salary}{department}";
+            Assert.That(rowContent, Is.EqualTo(expectedContent), $"Row does not contain expected content. Current content: {rowContent}, Expected content: {expectedContent}");
         }
         
         //Edit row and verify row edited
@@ -111,8 +114,10 @@ namespace PlaywrigthUITests.Tests
             await DemoQAWebTablesPage.ClickSubmit();
             await DemoQAWebTablesPage.RegistrationPopup.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Hidden });
             //Assert
-            var modifiedRow = await DemoQAWebTablesPage.FindRowInTable(firstName, lastName, email, age, salary, department);
-            Assert.That(modifiedRow, Is.True, "The modified row was not found in the table.");
+            var rowContent = await DemoQAWebTablesPage.FindRowContentByEmail(email);
+            Assert.That(rowContent, Is.Not.Null.And.Not.Empty, "The row was not found in the table.");
+            string expectedContent = $"{firstName}{lastName}{age}{email}{salary}{department}";
+            Assert.That(rowContent, Is.EqualTo(expectedContent), $"The row was not edited. Current content: {rowContent}, Expected content: {expectedContent}");
         }
         
         //Delete row and verify row deleted
@@ -124,30 +129,29 @@ namespace PlaywrigthUITests.Tests
         {
             //Arrange
             await AddNewRow(firstName, lastName, age, email, salary, department);
-            await DemoQAWebTablesPage.VerifyPopupVisible(false);
+            await DemoQAWebTablesPage.RegistrationPopup.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Hidden });
             //Act
             await DemoQAWebTablesPage.ClickDeleteButton(email);
             //Assert
-            var removedRow = await DemoQAWebTablesPage.FindRowInTable(firstName, lastName, email, age, salary, department);
-            Assert.That(removedRow, Is.False, "The row was found in the table.");
+            var rowContent = await DemoQAWebTablesPage.FindRowContentByEmail(email);
+            Assert.That(rowContent, Is.Null.Or.Empty, "The row was found in the table.");
         }
         
         [Test]
         [Description("Delete row and verify row deleted")]
-        [TestCase("Alden", "Cantrell", "alden@example.com", "45", "12000", "Compliance")]
-        [TestCase("Kierra", "Gentry", "kierra@example.com", "29", "2000", "Legal")]
-        [TestCase("Cierra", "Vega", "cierra@example.com", "39", "10000", "Insurance")]
-        public async Task DeleteRow(string firstName, string lastName, string email, string age, string salary,
-            string department)
+        [TestCase("alden@example.com")]
+        [TestCase("kierra@example.com")]
+        [TestCase("cierra@example.com")]
+        //[TestCase("jon@doe.com")] //Expected to fail, email is not present in the table
+        public async Task DeleteRow(string email)
         {
             //Arrange
             await DemoQAWebTablesPage.GoToDemoQaWebTablesPage();
-            await DemoQAWebTablesPage.FindRowInTable(firstName, lastName, email, age, salary, department);
             //Act
             await DemoQAWebTablesPage.ClickDeleteButton(email);
             //Assert
-            var removedRow = await DemoQAWebTablesPage.FindRowInTable(firstName, lastName, email, age, salary, department);
-            Assert.That(removedRow, Is.False, "The row was found in the table.");
+            var rowContent = await DemoQAWebTablesPage.FindRowContentByEmail(email);
+            Assert.That(rowContent, Is.Null.Or.Empty, "The row was found in the table.");
         }
     }
 }
