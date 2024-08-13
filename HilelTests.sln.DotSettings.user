@@ -1,4 +1,16 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c1cff8fa_002D11d9_002D459d_002D855f_002Ddabe1cdbd81b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="VerifyTheFieldIsMandatory" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.VerifyTheFieldIsMandatory&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.AddNewRow&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.EditRow&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.VerifyDepartmentFieldIsMandatory&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.DeleteRow("John","Doe","jon@doe.com","30","10000","IT")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.VerifyDepartmentIsMandatoryField&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.DeleteRow("Alden","Cantrell","alden@example.com","45","12000","Compliance")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.WebTableTests.DeleteRow&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=febf10cc_002D1511_002D4d27_002Daf43_002D32d573050ce4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestForeach #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::B5141481-09DA-47AC-A582-8AE96B26F7A2::net8.0::NUnitTests.Homework.LoopsAndCase.TestForeach&lt;/TestId&gt;&#xD;
