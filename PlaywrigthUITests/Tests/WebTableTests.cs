@@ -55,7 +55,6 @@ namespace PlaywrigthUITests.Tests
             await DemoQAWebTablesPage.FillSalary("555");
             await DemoQAWebTablesPage.FillDepartment("");
             await DemoQAWebTablesPage.ClickSubmit();
-            await DemoQAWebTablesPage.RegistrationPopup.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible });
             //Assert
             await Assertions.Expect(DemoQAWebTablesPage.FirstNameField).ToHaveCSSAsync("border-color", "rgb(40, 167, 69)");
             await Assertions.Expect(DemoQAWebTablesPage.LastNameField).ToHaveCSSAsync("border-color", "rgb(40, 167, 69)");
