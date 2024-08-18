@@ -17,15 +17,17 @@ namespace AtataUI_SolarPanelShop.PageObjects
         [FindByXPath("//label[contains(., 'Jinko Solar')]//input")]
         public CheckBox<_> JinkoSolarCheckbox { get; private set; }
 
-        [FindByXPath("//div[contains(@class, 'prod-holder')]//span[contains(@class, 'list-product-title') and contains(text(), 'Jinko Solar')]")]
-        public ControlList<ProductItem<_>, _> JinkoSolarProducts { get; private set; }
+        public ControlList<ProductItem, _> JinkoSolarProducts { get; private set; }
 
-        public class ProductItem<TOwner> : Control<TOwner>
-                    where TOwner : PageObject<TOwner>
+        [ControlDefinition("div", ContainingClass = "prod-holder")]
+        public class ProductItem : Control<_>
         {
 
-            [FindByXPath(".//span[contains(@class,'list-product-title')]")]
+            [FindByXPath("//span[contains(@class, 'list-product-title')]")]
             public Text<_> Title { get; private set; }
+            
+            [FindByCss(".add-product-to-cart")]
+            public Link<_> AddToCart { get; private set; }
         }
 
     }
