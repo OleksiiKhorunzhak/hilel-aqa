@@ -12,7 +12,7 @@
                     .WithArguments(
                         "start-maximized",
                         "disable-search-engine-choice-screen")
-                .UseBaseUrl("https://atata.io/")
+                .UseBaseUrl("https://solartechnology.com.ua/")
                 .UseCulture("en-US")
                 .UseAllNUnitFeatures();
 
