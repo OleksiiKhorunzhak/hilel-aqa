@@ -48,17 +48,59 @@ namespace AtataUI_SolarPanelShop.Tests
                         JinkoSolarCheckbox.Should.BeUnchecked().
                         JinkoSolarCheckbox.Script.Click().
                                   JinkoSolarCheckbox.Should.BeChecked();
-            //page.WaitSeconds(10).Until(() => page.JinkoSolarProducts.Count > 0);
                                   foreach (var product in page.JinkoSolarProducts)
                                   {
                                         product.Title.Should.BePresent();
                                         product.Title.Should.Contain("Jinko Solar");
                                   }
-                       
+
 
         }
 
+        [Test, Description("Verify that product can be added and removed from the Shopping Cart")]
+        public void AddAndRemoveJinkoSolarProductFromBusket()
+        {
+            var page = Go.To<SolarPanelPage>().
+            FilterButton.Click().
+                JinkoSolarCheckbox.ScrollTo();
+                var countBefore = page.JinkoSolarProducts.Count;
+                page.JinkoSolarCheckbox.Script.Click().
+                     JinkoSolarCheckbox.Should.BeChecked().
+                     JinkoSolarProducts.Count.WaitTo.BeLess(countBefore);
+                            var basketPage = page.JinkoSolarProducts[0].AddToCartButton.ScrollTo().
+                            JinkoSolarProducts[0].AddToCartButton.ClickAndGo<SolarBasketPage>();
+                                basketPage.MakeOrderBtn.WaitTo.BeVisible();
+                                basketPage.MakeOrderBtn.Click();
+                                basketPage.RemoveItemIcon.Click();
+            //basketPage.EmptyCartMessage.WaitTo.BeVisible();
+            
+        }
+
+
+        [Test, Description("Verify that product can be added and removed from the Shopping Cart")]
+        public void AddAndRemoveJinkoSolarProduct545FromBusket()
+        {
+            var page = Go.To<SolarPanelPage>().
+            FilterButton.Click().
+                JinkoSolarCheckbox.ScrollTo();
+            var countBefore = page.JinkoSolarProducts.Count;
+            page.JinkoSolarCheckbox.Script.Click().
+                 JinkoSolarCheckbox.Should.BeChecked().
+                 JinkoSolarProducts.Count.WaitTo.BeLess(countBefore);
+            page.JinkoSolarProducts[1].AddToCartButton.ScrollTo().
+                   JinkoSolarProducts[1].AddToCartButton.ClickAndGo<SolarBasketPage>().
+                   MakeOrderBtn.WaitTo.BeVisible().MakeOrderBtn.Click().
+                   RemoveItemIcon.Click();
+                           //EmptyCartMessage.WaitTo.BeVisible();
+        }
+
+
     }
+
     
+
+
+
+
 
 }

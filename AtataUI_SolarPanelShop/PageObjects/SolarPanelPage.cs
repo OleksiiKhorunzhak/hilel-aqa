@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AtataUI_SolarPanelShop.PageObjects.SolarPanelPage;
 using _ = AtataUI_SolarPanelShop.PageObjects.SolarPanelPage;
 
 namespace AtataUI_SolarPanelShop.PageObjects
@@ -17,15 +18,20 @@ namespace AtataUI_SolarPanelShop.PageObjects
         [FindByXPath("//label[contains(., 'Jinko Solar')]//input")]
         public CheckBox<_> JinkoSolarCheckbox { get; private set; }
 
-        [FindByXPath("//div[contains(@class, 'prod-holder')]//span[contains(@class, 'list-product-title') and contains(text(), 'Jinko Solar')]")]
-        public ControlList<ProductItem<_>, _> JinkoSolarProducts { get; private set; }
+        //[FindByXPath("//div[contains(@class, 'prod-holder')]//span[contains(@class, 'list-product-title') and contains(text(), 'Jinko Solar')]")]
+        public ControlList<ProductItem, _> JinkoSolarProducts { get; private set; }
 
-        public class ProductItem<TOwner> : Control<TOwner>
-                    where TOwner : PageObject<TOwner>
+        [ControlDefinition("div", ContainingClass = "prod-holder")]
+        public class ProductItem : Control<_>
         {
-
-            [FindByXPath(".//span[contains(@class,'list-product-title')]")]
+            [FindByXPath("//span[contains(@class,'list-product-title')]")]
             public Text<_> Title { get; private set; }
+
+            //[FindByXPath("//button[contains(@class, 'add-product-to-cart')]")]
+            //[FindByCss(".add-product-to-cart")]
+            [FindByClass("add-product-to-cart")]
+            public Link<_> AddToCartButton { get; private set; }
+
         }
 
     }
