@@ -61,19 +61,26 @@ namespace AtataUI_SolarPanelShop.Tests
         public void AddAndRemoveJinkoSolarProductFromBusket()
         {
             var page = Go.To<SolarPanelPage>().
-            FilterButton.Click().
+                PageLoaded.WaitTo.BeHidden(). 
+                FilterButton.Click().
                 JinkoSolarCheckbox.ScrollTo();
-                var countBefore = page.JinkoSolarProducts.Count;
-                page.JinkoSolarCheckbox.Script.Click().
-                     JinkoSolarCheckbox.Should.BeChecked().
-                     JinkoSolarProducts.Count.WaitTo.BeLess(countBefore);
-                            var basketPage = page.JinkoSolarProducts[0].AddToCartButton.ScrollTo().
-                            JinkoSolarProducts[0].AddToCartButton.ClickAndGo<SolarBasketPage>();
-                                basketPage.MakeOrderBtn.WaitTo.BeVisible();
-                                basketPage.MakeOrderBtn.Click();
-                                basketPage.RemoveItemIcon.Click();
+            var countBefore = page.JinkoSolarProducts.Count;
+            page.JinkoSolarCheckbox.Script.Click().
+                 JinkoSolarCheckbox.Should.BeChecked().
+                 JinkoSolarProducts.Count.WaitTo.BeLess(countBefore);
+            var basketPage = page.JinkoSolarProducts[0].AddToCartButton.ScrollTo().
+                JinkoSolarProducts[0].AddToCartButton.WaitTo.BeEnabled().
+                JinkoSolarProducts[0].AddToCartButton.ClickAndGo<SolarBasketPage>();
+            basketPage.MakeOrderBtn.WaitTo.BeVisible();
+            basketPage.MakeOrderBtn.Click();
+            page.PageLoaded.WaitTo.BeVisible();
+            page.PageLoaded.WaitTo.BeHidden();
+            basketPage.RemoveItemIcon.WaitTo.BeVisibleInViewport();
+            basketPage.RemoveItemIcon.WaitTo.BeEnabled();
+            basketPage.RemoveItemIcon.Click();
+            page.CartIcon.WaitTo.BeVisible().
+                CartIconWithProducts.Should.Not.BePresent();
             //basketPage.EmptyCartMessage.WaitTo.BeVisible();
-            
         }
 
 
