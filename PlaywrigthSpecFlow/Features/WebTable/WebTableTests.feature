@@ -10,7 +10,7 @@ and i can delete and edit item.
 Scenario Outline: I see item in the table
 	Given I am on DemoQA WebTable Page
 	When I see the WebTable
-	Then I see FirstNe>"ame "<FirstNam in a table
+	Then I see FirstName "<FirstName>" in a table
     Then I see LastName "<LastName>" in a table
 	Examples:
     | FirstName | LastName |
@@ -30,6 +30,10 @@ Scenario Outline: I see item in the table
     And I set Salary "<Salary>"
     And I set Department "<Department>"
     And I click Submit Button
+	Then I see FirstName "<FirstName>" in a table
+    Then I see LastName "<LastName>" in a table
+
+
 	Then I see FirstName "<FirstName>" in a table
     Then I see LastName "<LastName>" in a table
 

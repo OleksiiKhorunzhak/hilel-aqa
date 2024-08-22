@@ -6,9 +6,7 @@ namespace NUnitTests.Homework
     {
 
 
-
- 
- OlenaHr_main
+        #region[TestCases]
         //TODO: TestCases
         //Test Case 1: Test Acceleration
         //Description: Ensure that the method GetAcceleration correctly retrieves the current acceleration value.
