@@ -1,4 +1,5 @@
 ﻿using Gherkin;
+using Newtonsoft.Json.Linq;
 using PlaywrigthSpecFlow.API.Models;
 
 namespace PlaywrigthSpecFlow.API.Features.Account
@@ -31,7 +32,8 @@ namespace PlaywrigthSpecFlow.API.Features.Account
         internal async Task AccountApiCleanup()
         {
             AccountsApi account = new AccountsApi("https://demoqa.com/");
-            await account.DeleteAccountByID(UserId);
+            await account.DeleteAccountByID(UserId,Token);
+            
         }
         #endregion
         #region HelperMethods

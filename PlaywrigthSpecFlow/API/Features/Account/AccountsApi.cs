@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Gherkin;
+using Newtonsoft.Json;
 using PlaywrigthSpecFlow.API.Models;
 using System.Net;
 using System.Net.Http.Headers;
@@ -74,16 +75,18 @@ namespace PlaywrigthSpecFlow.API.Features.Account
             }
         }
 
-        public async Task DeleteAccountByID(string ID)
+        public async Task DeleteAccountByID(string userId, string token)
         {
-            var response = await Client.DeleteAsync($"Account/v1/User/{ID}");
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Barer", token);
+            HttpResponseMessage response = await Client.DeleteAsync($"/Account/v1/User/{userId}");
 
-            if (response.StatusCode == HttpStatusCode.OK)
+            if (response.StatusCode != HttpStatusCode.OK)
             {
-                Console.WriteLine("User deleted successfully.");
+                Console.WriteLine($"Error: {response.StatusCode}");
             }
 
-            Console.WriteLine($"Error: {response.StatusCode}");
+            Console.WriteLine($"User with id = {userId} was deleted succesfull");
+
         }
     }
 }
