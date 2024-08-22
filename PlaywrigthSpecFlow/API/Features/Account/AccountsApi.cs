@@ -58,8 +58,8 @@ namespace PlaywrigthSpecFlow.API.Features.Account
             }
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            var responseToken = JsonConvert.DeserializeObject<UserToken>(responseContent);
 
+            var responseToken = JsonConvert.DeserializeObject<UserToken>(responseContent);
             return responseToken.token;
         }
 
