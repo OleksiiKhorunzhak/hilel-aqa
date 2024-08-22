@@ -12,6 +12,15 @@ namespace AtataUI_SolarPanelShop.PageObjects
     [Url("/shop/solar-panels")]
     public sealed class SolarPanelPage : SolarTechnologyPage<_>
     {
+        [FindById("p_prldr")]
+        public Clickable<_> PageLoaded { get; private set; }
+
+        [FindByClass("cart-icon")]
+        public ListItem<_> CartIcon { get; private set; }
+
+        [FindByClass("cart-icon labeled")]
+        public ListItem<_> CartIconWithProducts { get; private set; }
+
         [FindByClass("filter-button")]
         public Link<_> FilterButton { get; private set; }
 
@@ -34,6 +43,15 @@ namespace AtataUI_SolarPanelShop.PageObjects
 
         }
 
-    }
+        [FindByXPath("//h4[contains(@class,'block-title')]")]
+        public Text<_> ProductTitle { get; private set; }
 
+        [FindByXPath("//td[contains(@class, 'col s12 m7 l6 xl4') and contains(@class, 'spec-title')]")]
+        public Text<_> ProductPower { get; private set; }
+
+        [FindByXPath("//td[text()='445 Вт']")]
+        public Text<_> PowerValue { get; private set; }
+
+    }
+    
 }

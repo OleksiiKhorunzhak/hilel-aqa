@@ -20,14 +20,9 @@ namespace AtataUI_SolarPanelShop.PageObjects
         //[FindByCss(".btn btn-success")]
         public Link<_> MakeOrderBtn { get; private set; }
 
-        [FindByXPath("//span[contains(@class, 'remove-from-cart')]/i[contains(@class, 'material-icons')]/ancestor::a")]
+        [FindByXPath("//span[contains(@class, 'remove-from-cart')]")]
         //[FindByClass("material-icons")]
-        public Link<_> RemoveItemIcon { get; private set; }
-
-        [FindByClass("empty-cart-message")]
-        public Text<_> EmptyCartMessage { get; private set; }
-
-
+        public Clickable<_> RemoveItemIcon { get; private set; }
 
     }
 }
