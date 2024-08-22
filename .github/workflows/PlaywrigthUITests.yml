@@ -5,29 +5,22 @@ name: Playwright
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "workflow" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: mcr.microsoft.com/playwright/dotnet:v1.44.0-jammy
 
     steps:
     - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
       working-directory: PlaywrigthUITests
     - name: Build
       run: dotnet build --no-restore
-      working-directory: PlaywrigthUITests
-    - name: PWInstall
-      run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
       working-directory: PlaywrigthUITests
     - name: Test
       run: dotnet test PlaywrigthUITests/PlaywrigthUITests.csproj --filter "Category=UI"
