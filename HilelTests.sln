@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrigthSpecFlow", "Playw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumWithApi", "SeleniumWithApi\SeleniumWithApi.csproj", "{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DifferentExamples", "DifferentExamples\DifferentExamples.csproj", "{6812F743-9C6A-4AFF-B4CD-4F124403B997}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6812F743-9C6A-4AFF-B4CD-4F124403B997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6812F743-9C6A-4AFF-B4CD-4F124403B997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6812F743-9C6A-4AFF-B4CD-4F124403B997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6812F743-9C6A-4AFF-B4CD-4F124403B997}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
