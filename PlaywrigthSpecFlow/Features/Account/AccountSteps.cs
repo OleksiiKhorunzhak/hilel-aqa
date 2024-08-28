@@ -26,6 +26,7 @@ namespace PlaywrigthSpecFlow.Features.Account
         {
             var presetup = _featureContext.Get<AccountPresetup>("AccountApiPresetup");
             Assert.That(presetup.UserId, Is.Not.Null, "Account not created");
+            
         }
 
         //TODO: add cleanup
@@ -33,7 +34,8 @@ namespace PlaywrigthSpecFlow.Features.Account
         public static async Task WhenICleanupAccountByAPI(FeatureContext featureContext)
         {
             var presetup = featureContext.Get<AccountPresetup>("AccountApiPresetup");
-            // presetup.
+            await presetup.AccountApiCleanup();
+            
         }
     }
 }
