@@ -33,7 +33,7 @@ namespace PlaywrigthSpecFlow.Features.Account
         public static async Task WhenICleanupAccountByAPI(FeatureContext featureContext)
         {
             var presetup = featureContext.Get<AccountPresetup>("AccountApiPresetup");
-            // presetup.
+            await presetup.AccountApiCleanup();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Playwright;
 
-namespace PlaywrigthUITests
+namespace UiTestFixture
 {
     [Parallelizable(ParallelScope.Self)]
     [TestFixture]

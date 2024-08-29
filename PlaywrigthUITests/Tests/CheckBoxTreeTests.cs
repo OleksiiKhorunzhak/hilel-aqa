@@ -82,7 +82,7 @@ namespace PlaywrigthUITests.Tests
         public async Task VerifyTextAFterDocumentsCheckboxChecked()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
-            await _demoQACheckBoxPage.OpenHome();
+            await _demoQACheckBoxPage.OpenHome();   
             await _demoQACheckBoxPage.CheckCheckbox("Documents");
             await _demoQACheckBoxPage.CheckTextAFterDocumentsCheckboxChecked("You have selected :documentsworkspacereactangularveuofficepublicprivateclassifiedgeneral");
         }

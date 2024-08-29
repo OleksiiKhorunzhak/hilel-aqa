@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Playwright;
+using Newtonsoft.Json;
 using PlaywrigthSpecFlow.API.Models;
 using System.Net;
 using System.Net.Http.Headers;
@@ -74,10 +75,18 @@ namespace PlaywrigthSpecFlow.API.Features.Account
             }
         }
 
-        public async Task DeleteAccountByID(string ID)
+        public async Task<HttpResponseMessage> DeleteAccountByID(string userId, string token)
         {
-            //TODO: implement
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await Client.DeleteAsync($"/Account/v1/User/{userId}");
+            if (response.StatusCode == HttpStatusCode.NoContent)
+            {
+                Console.WriteLine($"Error deleting user: {response.StatusCode}");
+            }
+            Console.WriteLine("User deleted successfully.");
+            return response;
         }
     }
 }
+
 

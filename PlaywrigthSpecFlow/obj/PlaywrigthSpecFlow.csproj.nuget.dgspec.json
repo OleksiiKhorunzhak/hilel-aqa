@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {}
+    "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {
+    "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+        "projectUniqueName": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
         "projectName": "PlaywrigthSpecFlow",
-        "projectPath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+        "projectPath": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
         "packagesPath": "C:\\Users\\deler\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\obj\\",
+        "outputPath": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deler\\AppData\\Roaming\\NuGet\\NuGet.Config",

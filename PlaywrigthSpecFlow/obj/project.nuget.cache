@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4sKHrez9QM5y+yyMWwJ0LX0GsYmU7y31/vkS1y75BmvCwAaqPYyMttpaI5cDQRHha0UAdvW8H3O21ItnaIedRw==",
+  "dgSpecHash": "/HkNIRqikHKZdodSu8WtHuPB7yJcDgunZOTHgqvhwKpXA0uFo2liNLo8aQijFTnDIBd2E3qQ4mPAB8SgGBWB/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+  "projectFilePath": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deler\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
     "C:\\Users\\deler\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",

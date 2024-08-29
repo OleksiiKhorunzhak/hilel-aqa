@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TCtwcc6fSXTxCgI1BPmZ0sWcnqlPOS+978tHwx5EUE5Qr3kzncqNZMy2iXiTuICbHzHJ8E1fIHflY6X8nbNrCw==",
+  "dgSpecHash": "CxdpuEF7N0TM39l7Qj64VKufwnwTSVYgPajc6HCtLCI19OtVhAxI0glRY21BgRgtGPF4wcor2eFAiZcMvH129A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
+  "projectFilePath": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deler\\.nuget\\packages\\atata\\3.1.0\\atata.3.1.0.nupkg.sha512",
     "C:\\Users\\deler\\.nuget\\packages\\atata.cli\\2.2.0\\atata.cli.2.2.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj": {}
+    "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj": {
+    "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
+        "projectUniqueName": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
         "projectName": "AtataSamples.SpecFlow",
-        "projectPath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
+        "projectPath": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\AtataSpecFlow\\AtataSamples.SpecFlow\\AtataSamples.SpecFlow.csproj",
         "packagesPath": "C:\\Users\\deler\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\AtataSpecFlow\\AtataSamples.SpecFlow\\obj\\",
+        "outputPath": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\AtataSpecFlow\\AtataSamples.SpecFlow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deler\\AppData\\Roaming\\NuGet\\NuGet.Config",
