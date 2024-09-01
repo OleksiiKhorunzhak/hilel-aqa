@@ -6359,11 +6359,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+      "projectUniqueName": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
       "projectName": "PlaywrigthSpecFlow",
-      "projectPath": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
+      "projectPath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\PlaywrigthSpecFlow.csproj",
       "packagesPath": "C:\\Users\\deler\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\deler\\source\\repos\\delernesto\\HilelAQA_HW\\PlaywrigthSpecFlow\\obj\\",
+      "outputPath": "C:\\Users\\deler\\source\\repos\\hilel-aqa1\\PlaywrigthSpecFlow\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\deler\\AppData\\Roaming\\NuGet\\NuGet.Config",

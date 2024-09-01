@@ -18,8 +18,8 @@ namespace SolarTechHW.Tests
             SolarTechShopItemPage = new SolarTechShopItemPage(Page);
 
             await SolarTechShopPage.GoToSolarTehchnologyShopPage();
-        }
 
+        }
 
         [Test]
         [Description("Test Filter Fields of Solar Panels")]
