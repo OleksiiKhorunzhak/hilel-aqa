@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static AtataUI_SolarPanelShop.PageObjects.SolarPanelPage;
-using _ = AtataUI_SolarPanelShop.PageObjects.SolarBasketPage;
+using static AtataUI_SolarPanelShop.PageObjects.CatalogPage;
+using _ = AtataUI_SolarPanelShop.PageObjects.BasketPage;
 
 namespace AtataUI_SolarPanelShop.PageObjects
 {
-    public sealed class SolarBasketPage: SolarTechnologyPage<_>
+    public sealed class BasketPage: SolarTechnologyPage<_>
     {
-        //[FindByXPath("//span[contains(text(), 'Jinko Solar 545 Вт')]")]
-        //public Control<_> JinkoSolar545Product { get; private set; }
-
-        [FindByXPath("//a[.//span[contains(text(), 'Jinko Solar 545 Вт')]]")]
-        public Link<_> JinkoSolar545Product { get; private set; }
 
         [FindByXPath("//*[@id='cart-modal']//a[@href='/cart']")]
         //[FindByCss(".btn btn-success")]

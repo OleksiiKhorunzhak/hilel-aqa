@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static AtataUI_SolarPanelShop.PageObjects.SolarPanelPage;
-using _ = AtataUI_SolarPanelShop.PageObjects.SolarPanelPage;
+using static AtataUI_SolarPanelShop.PageObjects.CatalogPage;
+using _ = AtataUI_SolarPanelShop.PageObjects.CatalogPage;
 
 namespace AtataUI_SolarPanelShop.PageObjects
 {
     [Url("/shop/solar-panels")]
-    public sealed class SolarPanelPage : SolarTechnologyPage<_>
+    public sealed class CatalogPage : SolarTechnologyPage<_>
     {
         [FindById("p_prldr")]
         public Clickable<_> PageLoaded { get; private set; }
@@ -33,7 +33,8 @@ namespace AtataUI_SolarPanelShop.PageObjects
         [ControlDefinition("div", ContainingClass = "prod-holder")]
         public class ProductItem : Control<_>
         {
-            [FindByXPath("//span[contains(@class,'list-product-title')]")]
+            //[FindByXPath("//span[contains(@class, 'list-product-title')]//td[contains(@class, 'spec-value')]")]
+            [FindByXPath("//span[contains(@class, 'list-product-title')]")]
             public Text<_> Title { get; private set; }
 
             //[FindByXPath("//button[contains(@class, 'add-product-to-cart')]")]
@@ -46,11 +47,10 @@ namespace AtataUI_SolarPanelShop.PageObjects
         [FindByXPath("//h4[contains(@class,'block-title')]")]
         public Text<_> ProductTitle { get; private set; }
 
-        [FindByXPath("//td[contains(@class, 'col s12 m7 l6 xl4') and contains(@class, 'spec-title')]")]
-        public Text<_> ProductPower { get; private set; }
 
-        [FindByXPath("//td[text()='445 Вт']")]
-        public Text<_> PowerValue { get; private set; }
+        //[FindByXPath("//td[text()='445 Вт']")]
+        [FindByXPath("//td[contains(@class, 'spec-value') and contains(text(), '445 Вт')]")]
+        public Text<_> ProductPower { get; private set; }
 
     }
     
