@@ -40,18 +40,18 @@ namespace AtataUI_SolarPanelShop.Tests
         public void VerifyFilterByJinkoSolarBrandFiltered()
         {
             var page = Go.To<CatalogPage>();
-                var countBefore = page.JinkoSolarProducts.Count;
-                page.JinkoSolarCheckbox.Script.Click().
-                JinkoSolarCheckbox.Should.BeChecked().
-                JinkoSolarProducts.Count.WaitTo.BeLess(countBefore);
-
+            var countBefore = page.JinkoSolarProducts.Count;
+            page.JinkoSolarCheckbox.Script.Click().
+            JinkoSolarCheckbox.Should.BeChecked().
+            JinkoSolarProducts.Count.WaitTo.BeLess(countBefore);
+            
             foreach (var product in page.JinkoSolarProducts)
             {
+                Assert.That(page.JinkoSolarProducts.Count.Value, Is.GreaterThan(0), "No products found after filtering by 'Jinko Solar'.");
                 product.Title.Should.BePresent();
                 product.Title.Should.Contain("Jinko Solar");
-                Assert.That(product.Title.Value, Does.Contain("Jinko Solar"), $"Product '{product.Title.Value}' does not contain 'Jinko Solar' in the title.");
+                //Assert.That(product.Title.Value, Does.Contain("Jinko Solar"), "The product title  does not contain 'Jinko Solar'.");
             }
-
 
         }
 
