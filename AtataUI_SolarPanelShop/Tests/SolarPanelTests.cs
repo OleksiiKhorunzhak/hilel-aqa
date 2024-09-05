@@ -44,14 +44,14 @@ namespace AtataUI_SolarPanelShop.Tests
             page.JinkoSolarCheckbox.Script.Click().
             JinkoSolarCheckbox.Should.BeChecked().
             JinkoSolarProducts.Count.WaitTo.BeLess(countBefore);
-            
-            foreach (var product in page.JinkoSolarProducts)
-            {
                 Assert.That(page.JinkoSolarProducts.Count.Value, Is.GreaterThan(0), "No products found after filtering by 'Jinko Solar'.");
-                product.Title.Should.BePresent();
-                product.Title.Should.Contain("Jinko Solar");
-                //Assert.That(product.Title.Value, Does.Contain("Jinko Solar"), "The product title  does not contain 'Jinko Solar'.");
-            }
+           
+                    foreach (var product in page.JinkoSolarProducts)
+                    {
+                        product.Title.Should.BePresent();
+                        product.Title.Should.Contain("Jinko Solar");
+                        //Assert.That(product.Title.Value, Does.Contain("Jinko Solar"), "The product title  does not contain 'Jinko Solar'.");
+                    }
 
         }
 
