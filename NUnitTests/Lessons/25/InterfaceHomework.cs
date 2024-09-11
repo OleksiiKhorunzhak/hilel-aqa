@@ -2,16 +2,22 @@
 {
 
     public interface IMyWebDriver
-    {
-        // TODO: add methods here
+   
+    { // TODO: add methods here
+        void Open(string url);
+        void FindElement(string locator);
+        void Close();
+
     }
 
     public interface IMyWindowsWebDriver
     {
         // TODO: add methods here
+        string GetWindowsVersion();
+
     }
 
-    public class CromeDriver // TODO: add interfaces here
+    public class CromeDriver: IMyWebDriver, IMyWindowsWebDriver   // TODO: add interfaces here
     {
         public static readonly string DriverName = "Chrome";
         public void Open(string url)
@@ -35,7 +41,7 @@
         }
     }
 
-    public class SafariDriver // TODO: add interfaces here
+    public class SafariDriver: IMyWebDriver  // TODO: add interfaces here
     {
         public static readonly string DriverName = "Safari";
         public void Open(string url)
@@ -55,7 +61,7 @@
 
     }
 
-    public class FirefoxDriver // TODO: add interfaces here
+    public class FirefoxDriver: IMyWebDriver, IMyWindowsWebDriver  // TODO: add interfaces here
     {
         public static readonly string DriverName = "Firefox";
 
