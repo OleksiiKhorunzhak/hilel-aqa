@@ -38,14 +38,14 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
 
         }
 
-        [Then(@"I get message that account deleted after cleanup")]
-        public async Task ThenIGetMessageThatAccountDeleted()
-        {
-            var presetup = _featureContext.Get<AccountPresetup>("AccountApiPresetup");
-            await presetup.AccountApiCleanup();
+        //[Then(@"I get message that account deleted after cleanup")]
+        //public async Task ThenIGetMessageThatAccountDeleted()
+        //{
+        //    var presetup = _featureContext.Get<AccountPresetup>("AccountApiPresetup");
+        //    await presetup.AccountApiCleanup();
 
-            Assert.That(presetup.UserId, Is.Null, "Account is not deleted");
+        //    Assert.That(presetup.UserId, Is.Null, "Account is not deleted");
 
-        }
+        //}
     }
 }

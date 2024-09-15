@@ -70,7 +70,7 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
             }
         }
 
-        public async Task<HttpResponseMessage> DeleteAccountByID(string userId, string token)
+        public async Task DeleteAccountByID(string userId, string token)
         {
 
             using (var requestMessage =
@@ -79,7 +79,8 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
                 requestMessage.Headers.Authorization =
                     new AuthenticationHeaderValue("Bearer",  token);
 
-                return await Client.SendAsync(requestMessage);
+               var result =  await Client.SendAsync(requestMessage);
+               Console.WriteLine(result);
             }
 
         }
