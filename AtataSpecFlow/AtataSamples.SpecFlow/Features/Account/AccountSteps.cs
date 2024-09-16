@@ -30,7 +30,7 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
         }
 
         //TODO: add cleanup
-        [AfterFeature(@"ICleanupAccountByAPI")]
+        [AfterFeature(@"ICreateAccountByAPI")]
         public static async Task WhenICleanupAccountByAPI(FeatureContext featureContext)
         {
             var presetup = featureContext.Get<AccountPresetup>("AccountApiPresetup");
